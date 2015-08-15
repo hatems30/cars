@@ -18,6 +18,8 @@
  * @property integer $branch_id
  * @property integer $store_id
  * @property integer $supplier_id
+ * @property string $notes
+ * @property integer $soled
  */
 class Carstbl extends CActiveRecord
 {
@@ -38,9 +40,11 @@ class Carstbl extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('brand_id, model_id, color_id, chass_no, motor_no, car_code, branch_id', 'required'),
-			array('brand_id, model_id, color_id, branch_id, store_id, supplier_id', 'numerical', 'integerOnly'=>true),
+			array('brand_id, model_id, color_id, branch_id, store_id, supplier_id' , 'numerical', 'integerOnly'=>true),
 			array('off_price, cost_price, sale_price', 'numerical'),
 			array('chass_no, motor_no, car_code, car_spec', 'length', 'max'=>255),
+                        array('notes', 'safe'),
+                        array('soled' , 'numerical'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('car_id, brand_id, model_id, color_id, chass_no, motor_no, off_price, cost_price, sale_price, car_code, car_spec, branch_id, store_id, supplier_id', 'safe', 'on'=>'search'),
@@ -56,12 +60,13 @@ class Carstbl extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                     		
-			'brand'=>array(self::BELONGS_TO,'brands','brand_id'),
-                        'branch' =>array(self::BELONGS_TO,'branchs','branch_id'),
+			'Brand'=>array(self::BELONGS_TO,'Brands','brand_id'),
+                        'Branch' =>array(self::BELONGS_TO,'Branchs','branch_id'),
                         'carmodel' =>array(self::BELONGS_TO,'carmodel','model_id'),
                         'colors' =>array(self::BELONGS_TO,'colors','color_id'),
                         'stores' =>array(self::BELONGS_TO,'stores','store_id'),
                         'suppliers' =>array(self::BELONGS_TO,'suppliers','supplier_id'),
+                        'salestbl' => array(self::HAS_MANY,'carstbl','car_id'),
 		);
 	}
 
@@ -85,6 +90,10 @@ class Carstbl extends CActiveRecord
 			'branch_id' => 'Branch',
 			'store_id' => 'Store',
 			'supplier_id' => 'Supplier',
+                        'notes' => 'notes',
+                        'soled' => 'Soled',
+                        
+                        
 		);
 	}
 
@@ -120,6 +129,9 @@ class Carstbl extends CActiveRecord
 		$criteria->compare('branch_id',$this->branch_id);
 		$criteria->compare('store_id',$this->store_id);
 		$criteria->compare('supplier_id',$this->supplier_id);
+                $criteria->compare('notes',$this->notes);
+                $criteria->compare('soled',$this->soled);
+                
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -10,15 +10,15 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('brand_id')); ?>:</b>
-	<?php echo CHtml::encode($data->brand_id); ?>
+	<?php echo CHtml::encode($data->Brand->brand_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('model_id')); ?>:</b>
-	<?php echo CHtml::encode($data->model_id); ?>
+	<?php echo CHtml::encode($data->carmodel->model_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('color_id')); ?>:</b>
-	<?php echo CHtml::encode($data->color_id); ?>
+	<?php echo CHtml::encode($data->colors->color_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('chass_no')); ?>:</b>
@@ -33,8 +33,8 @@
 	<?php echo CHtml::encode($data->off_price); ?>
 	<br />
 
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cost_price')); ?>:</b>
+	
+	<b> <?php echo CHtml::encode($data->getAttributeLabel('cost_price')); ?>:</b>
 	<?php echo CHtml::encode($data->cost_price); ?>
 	<br />
 
@@ -51,17 +51,17 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('branch_id')); ?>:</b>
-	<?php echo CHtml::encode($data->branch_id); ?>
+	<?php echo CHtml::encode($data->Branch->branch_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('store_id')); ?>:</b>
-	<?php echo CHtml::encode($data->store_id); ?>
+	<?php echo CHtml::encode($data->stores->store_name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('supplier_id')); ?>:</b>
-	<?php echo CHtml::encode($data->supplier_id); ?>
+	<?php echo CHtml::encode($data->suppliers->supplier_name ); ?>
 	<br />
 
-	*/ ?>
+	
 
 </div>

@@ -50,8 +50,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'model_id',
 		'color_id',
 		'chass_no',
-		'motor_no',
-		/*
+	/*	
+            'motor_no',
+		
 		'off_price',
 		'cost_price',
 		'sale_price',

@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form" dir='rtl'>
+<div class="form" >
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'carstbl-form',
@@ -24,30 +24,29 @@
 		
 		<?php //echo $form->textField($model,'brand_id'); ?>
 		<?php echo $form->labelEx($model,'brand_id'); ?>
-                <?php echo $form->dropDownList($model,'brand_id', CHtml::listData(brands::model()->findAll(), 'brand_id', 'brand_name')); ?>
+                <?php echo $form->dropDownList($model,'brand_id', CHtml::listData(Brands::model()->findAll(), 'brand_id', 'brand_name')); ?>
                 <?php echo $form->error($model,'brand_id'); ?>  
                            
 	</div>
 
 	<div class="row">
-            <!--
-		<?php echo $form->labelEx($model,'model_id'); ?>
-		<?php echo $form->textField($model,'model_id'); ?>
-		<?php echo $form->error($model,'model_id'); ?>
-            -->
-            <?php echo 'موديل السيارة' ?>
-            <?php echo $form->dropDownList($model,'model_id', CHtml::listData(carmodel::model()->findAll(), 'model_id', 'model_name')); ?>
+            
+	      <?php echo $form->labelEx($model,'model_id'); ?>
+		<?php //echo $form->textField($model,'model_id'); ?>
+		
+            
+            <?php echo $form->dropDownList($model,'model_id', CHtml::listData(carmodel::model()->findAll() , 'model_id', 'model_name')); ?>
+
+            <?php //echo $form->textfield($model,'model_id', CHtml::textfield(carmodel::model()->findBySql('select model_name from carmodel where model_id = 2') , 'model_id', 'model_name')); ?>
+            <?php //echo $form->textfield(carmodel::model() , carmodel::model()->findBySql('select model_name from carmodel where model_id = 2')); ?> 
+            <?php echo $form->error($model,'model_id'); ?>
 	</div>
 
 	<div class="row">
-	        <!--	
-                <?php echo $form->labelEx($model,'color_id'); ?> 
-            
-		<?php echo $form->textField($model,'color_id'); ?>
+	        
+                <?php echo $form->labelEx($model,'color_id'); ?> 		
 		<?php echo $form->error($model,'color_id'); ?>
-                -->
-            <?php echo 'لــون السيارة' ?>
-            <?php echo $form->dropDownList($model,'color_id', CHtml::listData(colors::model()->findAll(), 'color_id', 'color_name')); ?>
+                <?php echo $form->dropDownList($model,'color_id', CHtml::listData(colors::model()->findAll(), 'color_id', 'color_name')); ?>
 	</div>
 
 	<div class="row">
@@ -92,39 +91,51 @@
 		<?php echo $form->error($model,'car_spec'); ?>
 	</div>
 
-	<div class="row">
-            <!--
-		<?php echo $form->labelEx($model,'branch_id'); ?>
-		<?php echo $form->textField($model,'branch_id'); ?>
-		<?php echo $form->error($model,'branch_id'); ?>
-            -->
-            <?php echo 'الفرع' ?>
-            <?php echo $form->dropDownList($model,'branch_id', CHtml::listData(branchs::model()->findAll(), 'branch_id', 'branch_name')); ?>            
+	<div class="row">            
+		<?php echo $form->labelEx($model,'branch_id'); ?>	
+		<?php echo $form->error($model,'branch_id'); ?>                        
+                <?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name')); ?>            
         </div>
 
 	<div class="row">
            
 		<?php echo $form->labelEx($model,'store_id'); ?>          
-            <?php echo $form->dropDownList($model,'store_id', CHtml::listData(stores::model()->findAll(), 'store_id', 'store_name')); ?>  
-            		<?php echo $form->error($model,'store_id'); ?>
+                <?php echo $form->dropDownList($model,'store_id', CHtml::listData(stores::model()->findAll(), 'store_id', 'store_name')); ?>  
+            	<?php echo $form->error($model,'store_id'); ?>
 	</div>
 
-	<div class="row">
-            <!--
-		<?php // echo $form->labelEx($model,'supplier_id'); ?>
-		<?php //echo $form->textField($model,'supplier_id'); ?>
-		
-            -->
-            <?php echo '<b>المورد</b>' ?>
+	<div class="row">            
+           <?php echo $form->labelEx($model,'supplier_id'); ?>            
             <?php echo $form->dropDownList($model,'supplier_id', CHtml::listData(suppliers::model()->findAll(), 'supplier_id', 'supplier_name')); ?>  
             <?php echo $form->error($model,'supplier_id'); ?>
 	</div>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'notes'); ?>
+		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'notes'); ?>
+	</div>
+        
+        <div class="row" >
+		<?php echo $form->labelEx($model,'soled'); ?>
+		<?php echo $form->hiddenField($model,'soled' , array('value'=>'0' , )); ?>
+		<?php echo $form->error($model,'soled'); ?>
+	</div>
+        
+        
+
+        
+        
+        
+        
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
+        
+
 
 </div><!-- form -->
 
