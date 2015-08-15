@@ -8,6 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Abo Hetta Cars',
+    'language'=>'ar',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
