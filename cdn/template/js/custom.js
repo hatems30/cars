@@ -617,7 +617,7 @@ jQuery(document).ready(function() {
     if (hash != "") {
         ajax(hash, {});
     }
-
+/*
     // Bind the event.
 
     $(window).on('hashchange', function() {
@@ -632,6 +632,7 @@ jQuery(document).ready(function() {
             after_ajax();
         },null,jQuery(this).data("target"));
     });
+    */
 });
 
 function ajax(url, data, fn, searchOb, div) {

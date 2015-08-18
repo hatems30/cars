@@ -1,6 +1,6 @@
 <?php
-/* @var $this InscompsController */
-/* @var $model Inscomps */
+/* @var $this ColorsController */
+/* @var $model Colors */
 
 $this->breadcrumbs=array(
 	'Inscomps'=>array('index'),
@@ -8,14 +8,15 @@ $this->breadcrumbs=array(
 	'Update',
 );
 
-$this->menu=array(
-	array('label'=>'List Inscomps', 'url'=>array('index')),
-	array('label'=>'Create Inscomps', 'url'=>array('create')),
-	array('label'=>'View Inscomps', 'url'=>array('view', 'id'=>$model->insurance_comp_id)),
-	array('label'=>'Manage Inscomps', 'url'=>array('admin')),
-);
+
 ?>
 
-<h1>Update Inscomps <?php echo $model->insurance_comp_id; ?></h1>
+<h1 class="ar"><?php echo Yii::t("data","Inscomps");?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
+            <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

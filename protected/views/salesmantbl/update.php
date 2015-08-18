@@ -1,21 +1,20 @@
 <?php
-/* @var $this SalesmantblController */
-/* @var $model Salesmantbl */
+/* @var $this ColorsController */
+/* @var $model Colors */
 
 $this->breadcrumbs=array(
 	'Salesmantbls'=>array('index'),
 	$model->sales_man_id=>array('view','id'=>$model->sales_man_id),
 	'Update',
 );
-
-$this->menu=array(
-	array('label'=>'List Salesmantbl', 'url'=>array('index')),
-	array('label'=>'Create Salesmantbl', 'url'=>array('create')),
-	array('label'=>'View Salesmantbl', 'url'=>array('view', 'id'=>$model->sales_man_id)),
-	array('label'=>'Manage Salesmantbl', 'url'=>array('admin')),
-);
 ?>
 
-<h1>Update Salesmantbl <?php echo $model->sales_man_id; ?></h1>
+<h1 class="ar"><?php echo Yii::t("data","Update Salesmantbl");?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
+            <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

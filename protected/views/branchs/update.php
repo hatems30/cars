@@ -1,21 +1,19 @@
 <?php
-/* @var $this BranchsController */
-/* @var $model Branchs */
+/* @var $this BrandsController */
+/* @var $model Brands */
 
 $this->breadcrumbs=array(
-	'Branchs'=>array('index'),
+	'Brands'=>array('index'),
 	$model->branch_id=>array('view','id'=>$model->branch_id),
 	'Update',
 );
-
-$this->menu=array(
-	array('label'=>'List Branchs', 'url'=>array('index')),
-	array('label'=>'Create Branchs', 'url'=>array('create')),
-	array('label'=>'View Branchs', 'url'=>array('view', 'id'=>$model->branch_id)),
-	array('label'=>'Manage Branchs', 'url'=>array('admin')),
-);
 ?>
+<h1 class="ar"><?php echo Yii::t("data","Branchs");?></h1>
 
-<h1>Update Branchs <?php echo $model->branch_id; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
+            <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

@@ -8,14 +8,20 @@ $this->breadcrumbs=array(
 	'Update',
 );
 
-$this->menu=array(
-	array('label'=>'List Carmodel', 'url'=>array('index')),
-	array('label'=>'Create Carmodel', 'url'=>array('create')),
-	array('label'=>'View Carmodel', 'url'=>array('view', 'id'=>$model->model_id)),
-	array('label'=>'Manage Carmodel', 'url'=>array('admin')),
-);
+//$this->menu=array(
+//	array('label'=>'List Carmodel', 'url'=>array('index')),
+//	array('label'=>'Create Carmodel', 'url'=>array('create')),
+//	array('label'=>'View Carmodel', 'url'=>array('view', 'id'=>$model->model_id)),
+//	array('label'=>'Manage Carmodel', 'url'=>array('admin')),
+//);
 ?>
 
-<h1>Update Carmodel <?php echo $model->model_id; ?></h1>
+<h1 class="ar"><?php echo Yii::t("data","Models")?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
+            <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

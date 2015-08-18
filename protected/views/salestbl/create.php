@@ -1,18 +1,26 @@
 <?php
-/* @var $this SalestblController */
-/* @var $model Salestbl */
+/* @var $this BrandsController */
+/* @var $model Brands */
 
 $this->breadcrumbs=array(
 	'Salestbls'=>array('index'),
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List Salestbl', 'url'=>array('index')),
-	array('label'=>'Manage Salestbl', 'url'=>array('admin')),
+/*$this->menu=array(
+	array('label'=>'List Brands', 'url'=>array('index')),
+	array('label'=>'Manage Brands', 'url'=>array('admin')),
 );
+ * 
+ */
 ?>
 
-<h1>Create Salestbl</h1>
+<h1 class="ar"><?php echo Yii::t("data","Salestbls");?></h1>
 
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

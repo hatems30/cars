@@ -8,14 +8,15 @@ $this->breadcrumbs=array(
 	'Update',
 );
 
-$this->menu=array(
-	array('label'=>'List Colors', 'url'=>array('index')),
-	array('label'=>'Create Colors', 'url'=>array('create')),
-	array('label'=>'View Colors', 'url'=>array('view', 'id'=>$model->color_id)),
-	array('label'=>'Manage Colors', 'url'=>array('admin')),
-);
+
 ?>
 
-<h1>Update Colors <?php echo $model->color_id; ?></h1>
+<h1 class="ar"><?php echo Yii::t("data","Colors");?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
+            <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

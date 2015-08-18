@@ -52,16 +52,14 @@ class Customers extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'customer_id' => 'Customer',
-			'customer_name' => 'Customer Name',
-			'mobile' => 'Mobile',
-			'address' => 'Address',
-			'license_address' => 'License Address',
-		);
-	}
+	
+        public function attributeLabels() {
+            $newLabels = array();
+            foreach ($this::model()->attributes as $k => $v) {
+                $newLabels[$k] = Yii::t('data', $k);
+            }
+            return $newLabels;
+        }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

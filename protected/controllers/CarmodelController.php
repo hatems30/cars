@@ -39,7 +39,7 @@ class CarmodelController extends Controller
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
-			array('deny',  // deny all users
+			array('allow',  // deny all users
 				'users'=>array('*'),
 			),
 		);
@@ -71,7 +71,7 @@ class CarmodelController extends Controller
 		{
 			$model->attributes=$_POST['Carmodel'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->model_id));
+				$this->redirect(array('admin','id'=>$model->model_id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class CarmodelController extends Controller
 		{
 			$model->attributes=$_POST['Carmodel'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->model_id));
+				$this->redirect(array('admin','id'=>$model->model_id));
 		}
 
 		$this->render('update',array(

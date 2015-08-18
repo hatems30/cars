@@ -1,46 +1,50 @@
 <?php
-/* @var $this InscompsController */
-/* @var $model Inscomps */
+/* @var $this ColorsController */
+/* @var $model Colors */
 
 $this->breadcrumbs=array(
-	'Inscomps'=>array('index'),
+	'Colors'=>array('index'),
 	'Manage',
 );
-
-$this->menu=array(
-	array('label'=>'List Inscomps', 'url'=>array('index')),
-	array('label'=>'Create Inscomps', 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#inscomps-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
-<h1>Manage Inscomps</h1>
+<h1 class="ar"><?php echo Yii::t("data","Manage Inscomps");?></h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<div class="the-box no-border">
+    <div class="row">
+        <div class="col-sm-1 btn-toolbar" role="toolbar">
+            <?php //if (Yii::app()->user->checkAccess('Backoffice.Bank.Create')) : ?>
+            <div class="btn-group">
+                <?php echo CHtml::link('<i class="fa fa-plus"></i> '.Yii::t('data','Create'),array('create'), array(
+                    'class' => 'btn btn-success',
+                    'href' => 'sss',
+                )); ?>
+            </div>
+            <?php //endif; ?>
+            
+            <div class="btn-group">
+                
+                <?php $form = $this->beginWidget('CActiveForm', array(
+                    'id' => 'form-bank-filter',
+                    'method' => 'get',
+                    'htmlOptions' => array(
+                        'role' => 'form',
+                    ),
+                )); ?>
+                
+          
+                
+                <?php $this->endWidget(); ?>
+            </div>
+        </div>
+        
+     
+    </div>
+    
+        <div class="row">
+        <div class="col-sm-8">
+            <div class="the-box">
+          <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'inscomps-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
@@ -52,3 +56,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 	),
 )); ?>
+            </div>
+        </div>
+    </div>
+</div>

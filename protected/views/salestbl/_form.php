@@ -1,73 +1,186 @@
-<?php
-/* @var $this SalestblController */
-/* @var $model Salestbl */
-/* @var $form CActiveForm */
-?>
-<!-- 
- -----------------------------------------------------------------------------------------------
--->
+<div class="row">
+    <div class="col-md-6">
+   
+        <?php
+        $form = $this->beginWidget('CActiveForm', array(
+           // 'enableClientValidation' => true,
+            'id'=>'colors-form',
+            'clientOptions' => array(
+             //   'validateOnSubmit' => true,
+            ),
+            'htmlOptions' => array("class" => "form-horizontal")
+        ));
+        ?>
 
 
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="" class="panel-close">×</a>
+                    <a href="" class="minimize">−</a>
+                </div>
+                <h4 class="panel-title"><?php echo $model->isNewRecord ? Yii::t("data",'Add Brand') : Yii::t("data",'Update Color') ;?></h4>
+            </div>
+            <div class="panel-body">
+                
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'invoice_date',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                       	
+                        <?php echo $form->textField($model,'invoice_date',array("class" => "form-control dd", "placeholder" => Yii::t("data","color_name"))); ?>
+                        <?php echo $form->error($model,'invoice_date'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'branch_id',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                  
+                        <?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name'),array("class" => "form-control dd")); ?>                         
+                        <?php echo $form->error($model,'branch_id'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'sales_man_id',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                  
+                        <?php echo $form->dropDownList($model,'sales_man_id', CHtml::listData(Salesmantbl::model()->findAll(), 'sales_man_id', 'sales_man_name'),array("class" => "form-control dd",'empty'=>'Select Sales Man')); ?>                         
+                        <?php echo $form->error($model,'sales_man_id'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'car_id',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                  
+                        <?php echo $form->dropDownList($model,'car_id', CHtml::listData(Carstbl::model()->findAll() , 'car_id', 'chass_no'),array("class" => "form-control dd",'empty'=>'Select Car')); ?>                         
+                        <?php echo $form->error($model,'car_id'); ?>                                 
+                    </div>
+                    <span id ="ajax">
+          
+                    </span>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'customer_id',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                  
+                        <?php echo $form->dropDownList($model,'customer_id', CHtml::listData(customers::model()->findAll(), 'customer_id', 'customer_name'),array("class" => "form-control dd",'empty'=>'')); ?>                         
+                        <?php echo $form->error($model,'customer_id'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'finance_type',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                  
+                        <?php echo $form->dropDownList($model,'finance_type', array("نقدي"=>"نقدي","قسط مباشر"=>"قسط مباشر" ,"بنك"=>"بنك","تجاري"=>"تجاري"  ),array('empty'=>'Select Value'),array("class" => "form-control dd",'empty'=>'')); ?>                         
+                        <?php echo $form->error($model,'finance_type'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'cach_price',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                       	
+                        <?php echo $form->textField($model,'cach_price',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'cach_price'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'downpayment',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                       	
+                        <?php echo $form->textField($model,'downpayment',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'downpayment'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'monthly_premium',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                       	
+                        <?php echo $form->textField($model,'monthly_premium',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'monthly_premium'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'months_count',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                       	
+                        <?php echo $form->textField($model,'months_count',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'months_count'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'interest_rate',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                       	
+                        <?php echo $form->textField($model,'interest_rate',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'interest_rate'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'bank_id',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">     
+                        <?php echo $form->dropDownList($model,'bank_id', CHtml::listData(Banks::model()->findAll(), 'bank_id', 'bank_name'),array('empty'=>'Select Value'),array("class" => "form-control dd",'empty'=>'')); ?>                         
+                        <?php echo $form->error($model,'bank_id'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'transfer_amount',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">     
+                        <?php echo $form->textField($model,'transfer_amount',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'transfer_amount'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'bank_down_amount',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">     
+                        <?php echo $form->textField($model,'bank_down_amount',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'bank_down_amount'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'expenses',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">     
+                        <?php echo $form->textField($model,'expenses',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'expenses'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'insurance_comp_id',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">     
+                        <?php echo $form->dropDownList($model,'insurance_comp_id', CHtml::listData(Inscomps::model()->findAll(), 'insurance_comp_id', 'insurance_comp_name'),array('empty'=>'Select Value'),array("class" => "form-control dd",'empty'=>'')); ?>                         
+                        <?php echo $form->error($model,'insurance_comp_id'); ?>                                 
+                    </div>
+                </div>              
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'insurance_type',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">     
+                        <?php echo $form->dropDownList($model,'insurance_type', array("تحمل"=>"تحمل","بدون تحمل"=>"بدون تحمل"),array('empty'=>'Select Value'),array("class" => "form-control dd",'empty'=>'')); ?>                         
+                        <?php echo $form->error($model,'insurance_type'); ?>                                 
+                    </div>
+                </div>        
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'insurance_amount',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">     
+                        <?php echo $form->textField($model,'insurance_amount',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'insurance_amount'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'insurance_rate',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">     
+                        <?php echo $form->textField($model,'insurance_rate',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'insurance_rate'); ?>                                 
+                    </div>
+                </div>
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'notes',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">     
+                        <?php echo $form->textArea($model,'notes',array("class" => "form-control dd", "placeholder" => '')); ?>
+                        <?php echo $form->error($model,'notes'); ?>                                 
+                    </div>
+                </div>
+            </div><!-- panel-body -->
+            <div class="panel-footer">
+                <?php echo CHtml::submitButton($model->isNewRecord ? Yii::t("data",'Create') : Yii::t("data",'Save'),  array('class'=>'btn btn-success')); ?>
+                <button type="reset" class="btn btn-default"><?php echo Yii::t("data",'Reset'); ?></button>
+            </div><!-- panel-footer -->
+        </div><!-- panel-default -->
+<?php $this->endWidget(); ?>
 
-<!-- 
- -----------------------------------------------------------------------------------------------
--->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    </div><!-- col-md-6 -->
 
-<div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'salestbl-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
+</div>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'invoice_date'); ?>
-		<?php echo $form->dateField($model,'invoice_date',array('format'=>'yyyy-mm-dd')); ?>
-		<?php echo $form->error($model,'invoice_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'branch_id'); ?>
-		<?php //echo $form->textField($model,'branch_id'); ?>
-		<?php echo $form->error($model,'branch_id'); ?>
-                <?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name')); ?>  
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'sales_man_id'); ?>
-		<?php //echo $form->textField($model,'sales_man_id'); ?>
-		<?php echo $form->error($model,'sales_man_id'); ?>
-                <?php echo $form->dropDownList($model,'sales_man_id', CHtml::listData(Salesmantbl::model()->findAll(), 'sales_man_id', 'sales_man_name') , array('empty'=>'Select Sales Man')); ?>  
-	</div>
-
-	<div class="row">
-		
-            
-                <?php echo $form->labelEx($model,'car_id'); ?>
-		<?php //echo $form->textField($model,'car_id'); ?>
-		<?php echo $form->error($model,'car_id'); ?>
-                <?php                
-                        echo $form->dropDownList(
-                        $model,'car_id', 
-                      //  CHtml::listData(Carstbl::model()->findAllByAttributes(array('soled' => 0)) , 'car_id', 'chass_no'),
-                          CHtml::listData(Carstbl::model()->findAll() , 'car_id', 'chass_no'),
-                        
-                            array(
-                                     'empty'    => 'Select Car',
-                                                                   )                        
-                        );                                           
-                ?> 
-            
-        <script type ="text/javascript">
+<script type ="text/javascript">
 
       
 
@@ -106,125 +219,3 @@
       
       
         </script>
-        
-        <span id ="ajax">
-          
-        </span>
-
-            
-        </div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'customer_id'); ?>		
-                <?php echo $form->dropDownList($model,'customer_id', CHtml::listData(customers::model()->findAll(), 'customer_id', 'customer_name')); ?>  
-               <?php echo $form->error($model,'customer_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'finance_type'); ?>
-		<?php //echo $form->textField($model,'finance_type',array('size'=>60,'maxlength'=>255)); ?>
-                <?php echo $form->dropDownList($model,'finance_type',array("نقدي"=>"نقدي","قسط مباشر"=>"قسط مباشر" ,"بنك"=>"بنك","تجاري"=>"تجاري"  ),array('empty'=>'Select Value')); ?>
-		<?php echo $form->error($model,'finance_type'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'cach_price'); ?>
-		<?php echo $form->textField($model,'cach_price'); ?>
-		<?php echo $form->error($model,'cach_price'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'المقدم'); ?>
-		<?php echo $form->textField($model,'downpayment'); ?>
-		<?php echo $form->error($model,'downpayment'); ?>
-
-        </div>  
-        <div class="row">	
-		<?php echo $form->labelEx($model,'monthly_premium'); ?>
-		<?php echo $form->textField($model,'monthly_premium'); ?>
-		<?php echo $form->error($model,'monthly_premium'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'months_count'); ?>
-		<?php echo $form->textField($model,'months_count'); ?>
-		<?php echo $form->error($model,'months_count'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'interest_rate'); ?>
-		<?php echo $form->textField($model,'interest_rate'); ?>
-		<?php echo $form->error($model,'interest_rate'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'bank_id'); ?>
-		<?php //echo $form->textField($model,'bank_id'); ?>
-		<?php echo $form->error($model,'bank_id'); ?>
-                <?php echo $form->dropDownList($model,'bank_id', CHtml::listData(Banks::model()->findAll(), 'bank_id', 'bank_name')); ?>  
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'transfer_amount'); ?>
-		<?php echo $form->textField($model,'transfer_amount'); ?>
-		<?php echo $form->error($model,'transfer_amount'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'bank_down_amount'); ?>
-		<?php echo $form->textField($model,'bank_down_amount'); ?>
-		<?php echo $form->error($model,'bank_down_amount'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'expenses'); ?>
-		<?php echo $form->textField($model,'expenses'); ?>
-		<?php echo $form->error($model,'expenses'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'insurance_comp_id'); ?>
-		<?php echo $form->dropDownList($model,'insurance_comp_id', CHtml::listData(Inscomps::model()->findAll(), 'insurance_comp_id', 'insurance_comp_name')); ?>  
-		<?php echo $form->error($model,'insurance_comp_id'); ?>
-                
-                
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'insurance_type'); ?>
-		<?php //echo $form->textField($model, 'insurance_type'); ?>     
-                <?php echo $form->dropDownList($model,'insurance_type',array("تحمل"=>"تحمل","بدون تحمل"=>"بدون تحمل"),array('empty'=>'Select Value')); ?>
-		<?php echo $form->error($model,'insurance_type'); ?>
-	</div>
-        
-
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'insurance_amount'); ?>
-		<?php echo $form->textField($model,'insurance_amount'); ?>
-		<?php echo $form->error($model,'insurance_amount'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'insurance_rate'); ?>
-		<?php echo $form->textField($model,'insurance_rate'); ?>
-		<?php echo $form->error($model,'insurance_rate'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'notes'); ?>
-		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'notes'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', 
-                        array(
-                            'id'=>'buttonid',
-                        )
-                        ); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->

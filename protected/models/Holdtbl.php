@@ -53,17 +53,14 @@ class Holdtbl extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'hold_id' => 'Hold',
-			'car_id' => 'Car',
-			'branch_id' => 'Branch',
-			'sales_man_id' => 'Sales Man',
-			'customer_name' => 'Customer Name',
-			'notes' => 'Notes',
-		);
-	}
+	
+        public function attributeLabels() {
+            $newLabels = array();
+            foreach ($this::model()->attributes as $k => $v) {
+                $newLabels[$k] = Yii::t('data', $k);
+            }
+            return $newLabels;
+        }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

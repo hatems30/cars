@@ -7,12 +7,20 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
+/*$this->menu=array(
 	array('label'=>'List Brands', 'url'=>array('index')),
 	array('label'=>'Manage Brands', 'url'=>array('admin')),
 );
+ * 
+ */
 ?>
 
-<h1>Create Brands</h1>
+<h1 class="ar"><?php echo Yii::t("data","Brands");?></h1>
 
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

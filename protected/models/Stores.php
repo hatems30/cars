@@ -49,13 +49,14 @@ class Stores extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'store_id' => 'Store',
-			'store_name' => 'Store Name',
-		);
-	}
+	
+       public function attributeLabels() {
+            $newLabels = array();
+            foreach ($this::model()->attributes as $k => $v) {
+                $newLabels[$k] = Yii::t('data', $k);
+            }
+            return $newLabels;
+        }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

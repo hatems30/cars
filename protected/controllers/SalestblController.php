@@ -72,7 +72,7 @@ class SalestblController extends Controller
 			$model->attributes=$_POST['Salestbl'];
 			if($model->save())
                         {
-				$this->redirect(array('view','id'=>$model->invoice_id));
+				$this->redirect(array('admin','id'=>$model->invoice_id));
                                 
                                 
                         }
@@ -149,7 +149,7 @@ class SalestblController extends Controller
 		{
 			$model->attributes=$_POST['Salestbl'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->invoice_id));
+				$this->redirect(array('admin','id'=>$model->invoice_id));
 		}
 
 		$this->render('update',array(

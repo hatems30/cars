@@ -39,7 +39,7 @@ class InscompsController extends Controller
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
-			array('deny',  // deny all users
+			array('allow',  // deny all users
 				'users'=>array('*'),
 			),
 		);
@@ -71,7 +71,7 @@ class InscompsController extends Controller
 		{
 			$model->attributes=$_POST['Inscomps'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->insurance_comp_id));
+				$this->redirect(array('admin','id'=>$model->insurance_comp_id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class InscompsController extends Controller
 		{
 			$model->attributes=$_POST['Inscomps'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->insurance_comp_id));
+				$this->redirect(array('admin','id'=>$model->insurance_comp_id));
 		}
 
 		$this->render('update',array(

@@ -73,29 +73,14 @@ class Carstbl extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'car_id' => 'Car',
-			'brand_id' => 'Brand',                        
-			'model_id' => 'Model',
-			'color_id' => 'Color',
-			'chass_no' => 'Chass No',
-			'motor_no' => 'Motor No',
-			'off_price' => 'Off Price',
-			'cost_price' => 'Cost Price',
-			'sale_price' => 'Sale Price',
-			'car_code' => 'Car Code',
-			'car_spec' => 'Car Spec',
-			'branch_id' => 'Branch',
-			'store_id' => 'Store',
-			'supplier_id' => 'Supplier',
-                        'notes' => 'notes',
-                        'soled' => 'Soled',
-                        
-                        
-		);
-	}
+	
+        public function attributeLabels() {
+            $newLabels = array();
+            foreach ($this::model()->attributes as $k => $v) {
+                $newLabels[$k] = Yii::t('data', $k);
+            }
+            return $newLabels;
+        }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

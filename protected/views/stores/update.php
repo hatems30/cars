@@ -1,21 +1,19 @@
 <?php
-/* @var $this StoresController */
-/* @var $model Stores */
+/* @var $this BrandsController */
+/* @var $model Brands */
 
 $this->breadcrumbs=array(
-	'Stores'=>array('index'),
+	'Brands'=>array('index'),
 	$model->store_id=>array('view','id'=>$model->store_id),
 	'Update',
 );
-
-$this->menu=array(
-	array('label'=>'List Stores', 'url'=>array('index')),
-	array('label'=>'Create Stores', 'url'=>array('create')),
-	array('label'=>'View Stores', 'url'=>array('view', 'id'=>$model->store_id)),
-	array('label'=>'Manage Stores', 'url'=>array('admin')),
-);
 ?>
+<h1 class="ar"><?php echo Yii::t("data","Stores");?></h1>
 
-<h1>Update Stores <?php echo $model->store_id; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
+            <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

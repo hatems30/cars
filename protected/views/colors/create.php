@@ -7,12 +7,14 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List Colors', 'url'=>array('index')),
-	array('label'=>'Manage Colors', 'url'=>array('admin')),
-);
 ?>
 
-<h1>Create Colors</h1>
+<h1 class="ar"><?php echo Yii::t("data","Colors");?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
+            <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

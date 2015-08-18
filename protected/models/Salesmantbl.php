@@ -54,15 +54,14 @@ class Salesmantbl extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'sales_man_id' => 'Sales Man',
-			'sales_man_name' => 'Sales Man Name',
-			'branch_id' => 'Branch',
-			'manager_id' => 'Manager',
-		);
-	}
+	
+        public function attributeLabels() {
+            $newLabels = array();
+            foreach ($this::model()->attributes as $k => $v) {
+                $newLabels[$k] = Yii::t('data', $k);
+            }
+            return $newLabels;
+        }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

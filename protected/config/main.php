@@ -40,16 +40,14 @@ return array(
 		),
 
 		// uncomment the following to enable URLs in path-format
-		/*
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>/<id>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
@@ -74,6 +72,58 @@ return array(
 				*/
 			),
 		),
+            
+        'widgetFactory' => array(
+            'widgets' => array(
+                'CGridView' => array(
+                    'cssFile' => false,
+                    'itemsCssClass' => 'table table-th-block table-hover',
+                    'pagerCssClass' => 'data-grid-pagination',
+                    'summaryCssClass' => 'data-grid-summary',
+                    'summaryText' => false,
+                    'htmlOptions' => array(
+                        'class' => 'table-responsive',
+                    ),
+                ),
+                'CActiveForm' => array(
+                    'errorMessageCssClass' => 'help-block',
+                    'enableAjaxValidation' => true,
+                    'enableClientValidation' => true,
+                        'clientOptions' => array(
+                        'validateOnSubmit' => true,
+                        'validateOnChange' => true,
+                        'errorCssClass' => 'has-error has-feedback',
+                        'successCssClass' => 'has-success has-feedback',
+                        'inputContainer' => 'div.form-group',
+                    ),
+                ),
+                'CLinkPager' => array(
+                    'cssFile' => false,
+                    'header' => false,
+                    'hiddenPageCssClass' => 'disabled',
+                    'lastPageLabel' => '»',
+                    'nextPageLabel' => '›',
+                    'firstPageLabel' => '«',
+                    'prevPageLabel' => '‹',
+                    'selectedPageCssClass' => 'active',
+                    'htmlOptions' => array(
+                        'class' => 'pagination',
+                    ),
+                ),
+                'CBreadcrumbs' => array(
+                    'htmlOptions' => array(
+                        'class' => 'breadcrumb default',
+                    ),
+                    'encodeLabel' => false,
+                    'homeLink' => false,
+                    'tagName' => 'ol',
+                    'separator' => null,
+                    'activeLinkTemplate' => '<li><a href="{url}">{label}</a></li>',
+                    'inactiveLinkTemplate' => '<li class="active">{label}</li>',
+                ),
+            ),
+        ),
+    
 
 	),
 

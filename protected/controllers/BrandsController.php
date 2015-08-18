@@ -39,7 +39,7 @@ class BrandsController extends Controller
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
-			array('deny',  // deny all users
+			array('allow',  // deny all users
 				'users'=>array('*'),
 			),
 		);
@@ -71,7 +71,7 @@ class BrandsController extends Controller
 		{
 			$model->attributes=$_POST['Brands'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->brand_id));
+				$this->redirect(array('admin','id'=>$model->brand_id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class BrandsController extends Controller
 		{
 			$model->attributes=$_POST['Brands'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->brand_id));
+				$this->redirect(array('admin','id'=>$model->brand_id));
 		}
 
 		$this->render('update',array(
@@ -133,6 +133,7 @@ class BrandsController extends Controller
 	 */
 	public function actionAdmin()
 	{
+          
 		$model=new Brands('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Brands']))

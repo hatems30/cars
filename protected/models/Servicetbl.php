@@ -55,17 +55,14 @@ class Servicetbl extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'service_id' => 'Service',
-			'service_date' => 'Service Date',
-			'service_type' => 'Service Type',
-			'customer_id' => 'Customer',
-			'car_id' => 'Car',
-			'notes' => 'Notes',
-		);
-	}
+	
+        public function attributeLabels() {
+            $newLabels = array();
+            foreach ($this::model()->attributes as $k => $v) {
+                $newLabels[$k] = Yii::t('data', $k);
+            }
+            return $newLabels;
+        }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

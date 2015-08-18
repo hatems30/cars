@@ -1,21 +1,19 @@
 <?php
-/* @var $this CarstblController */
-/* @var $model Carstbl */
+/* @var $this BrandsController */
+/* @var $model Brands */
 
 $this->breadcrumbs=array(
 	'Carstbls'=>array('index'),
-	$model->car_id=>array('view','id'=>$model->car_id),
+	$model->brand_id=>array('view','id'=>$model->brand_id),
 	'Update',
 );
-
-$this->menu=array(
-	array('label'=>'List Carstbl', 'url'=>array('index')),
-	array('label'=>'Create Carstbl', 'url'=>array('create')),
-	array('label'=>'View Carstbl', 'url'=>array('view', 'id'=>$model->car_id)),
-	array('label'=>'Manage Carstbl', 'url'=>array('admin')),
-);
 ?>
+<h1 class="ar"><?php echo Yii::t("data","Carstbls");?></h1>
 
-<h1>Update Carstbl <?php echo $model->car_id; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
+            <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

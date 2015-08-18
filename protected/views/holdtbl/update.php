@@ -1,21 +1,19 @@
 <?php
-/* @var $this HoldtblController */
-/* @var $model Holdtbl */
+/* @var $this BrandsController */
+/* @var $model Brands */
 
 $this->breadcrumbs=array(
 	'Holdtbls'=>array('index'),
 	$model->hold_id=>array('view','id'=>$model->hold_id),
 	'Update',
 );
-
-$this->menu=array(
-	array('label'=>'List Holdtbl', 'url'=>array('index')),
-	array('label'=>'Create Holdtbl', 'url'=>array('create')),
-	array('label'=>'View Holdtbl', 'url'=>array('view', 'id'=>$model->hold_id)),
-	array('label'=>'Manage Holdtbl', 'url'=>array('admin')),
-);
 ?>
+<h1 class="ar"><?php echo Yii::t("data","Holdtbls");?></h1>
 
-<h1>Update Holdtbl <?php echo $model->hold_id; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
+            <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        </div>
+    </div>
+</div>

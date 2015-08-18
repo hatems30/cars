@@ -736,7 +736,7 @@ direction: rtl;
 }
 
 .pageheader .fa-file-text {
-	padding: 6px 10px;`
+	padding: 6px 10px;
 }
 
 .pageheader .fa-map-marker {
@@ -4493,4 +4493,18 @@ margin-left: 20px!important;
 
 td.center{
     text-align:center;
+}
+
+.ar{
+        direction: rtl;
+}
+.btn{
+    direction: rtl;
+}
+.table {
+    direction: rtl;
+}
+
+.table input{
+    width: 100%;
 }

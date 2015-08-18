@@ -19,10 +19,8 @@ font-family: 'Droid Arabic Kufi';
 
 </style>
   <link href="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/css/style.default.css" rel="stylesheet">
-  <link href="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/css/jquery.datatables.css" rel="stylesheet">
   <link href="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/jquery/themes/smoothness/jquery-ui.css" rel="stylesheet">
   <link href="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/jquery/themes/smoothness/jquery.ui.autocomplete.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/calender/jquery.calendars.picker.css">
 
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -32,171 +30,6 @@ font-family: 'Droid Arabic Kufi';
   <![endif]-->
   <style>
  
-#mini-clndr {
-  margin: 0 auto;
-}
-#mini-clndr .clndr {
-  overflow: hidden;
-  margin-bottom: 20px;
-  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08);
-  -moz-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.08);
-}
-#mini-clndr .clndr .controls {
-  color: #222;
-  border: 1px solid #ddd;
-  background: #f0f0f0;
-}
-#mini-clndr .clndr .controls .clndr-previous-button,
-#mini-clndr .clndr .controls .clndr-next-button {
-  width: 15%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-#mini-clndr .clndr .controls .month {
-  width: 70%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  display: inline-block;
-  text-align: center;
-  font: 400 20px / 32px "Source Sans Pro", Arial, sans-serif;
-}
-#mini-clndr .clndr .days-container {
-  position: relative;
-  display: block;
-  height: auto;
-}
-#mini-clndr .clndr .days-container .days {
-  width: 100%;
-  height: auto;
-  background-color: #fff;
-  border-left: 1px solid #ddd;
-}
-#mini-clndr .clndr .days-container .days .day,
-#mini-clndr .clndr .days-container .days .empty {
-  width: 14.285714%;
-  display: inline-block;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  font: 400 16px / 32px "Source Sans Pro", Arial, sans-serif;
-  text-align: center;
-  color: #222222;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  line-height: 32px;
-}
-#mini-clndr .clndr .days-container .days .day.event,
-#mini-clndr .clndr .days-container .days .empty.event {
-  cursor: pointer;
-  color: #222222;
-  position: relative;
-}
-#mini-clndr .clndr .days-container .days .day.event:after,
-#mini-clndr .clndr .days-container .days .empty.event:after {
-  position: absolute;
-  right: 25%;
-  bottom: 8px;
-  content: '';
-  display: block;
-  width: 50%;
-  height: 0px;
-  border-style: solid;
-  border-width: 0 0 3px;
-  border-color: #64b92a;
-}
-#mini-clndr .clndr .days-container .days .day .adjacent-month,
-#mini-clndr .clndr .days-container .days .empty .adjacent-month {
-  color: #aaa;
-  background: #ebebeb;
-}
-#mini-clndr .clndr .days-container .days .today {
-  background: #fcf3d0;
-}
-#mini-clndr .clndr .days-container .days .empty {
-  height: 31px;
-  vertical-align: bottom;
-}
-#mini-clndr .clndr .days-container .days .headers {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-}
-#mini-clndr .clndr .days-container .days .headers .day-header {
-  width: 14.285714%;
-  display: inline-block;
-  text-align: center;
-}
-#mini-clndr .clndr .days-container .events {
-  position: absolute;
-  left: 100%;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: left 0.5s;
-  transition: left 0.5s;
-  background-color: #ebebeb;
-  background: rgba(0, 0, 0, 0.75);
-}
-#mini-clndr .clndr .days-container .events .headers {
-  position: relative;
-}
-#mini-clndr .clndr .days-container .events .event-header {
-  width: 100%;
-  background-color: #fff;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-align: center;
-  color: #222222;
-}
-#mini-clndr .clndr .days-container .events .x-button {
-  position: absolute;
-  font-size: 80%;
-  top: 8px;
-  right: 12px;
-  cursor: pointer;
-}
-#mini-clndr .clndr .days-container .events .events-list-wrapper {
-  overflow: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 30px;
-  bottom: 0;
-}
-#mini-clndr .clndr .days-container .events .events-list {
-  padding: 10px;
-}
-#mini-clndr .clndr .days-container .events .events-list .event {
- padding: 4px 10px;
-text-align: right;
-direction: rtl;
-}
-#mini-clndr .clndr .days-container .events .events-list .event a {
-  position: relative;
-  font-size: 12px;
-  letter-spacing: 1px;
-  background-color: transparent;
-  color: #fff;
-  text-decoration: none;
-}
-#mini-clndr .clndr .days-container .events .events-list .event a:hover {
-  text-decoration: underline;
-}
-#mini-clndr .clndr .days-container.show-events .days {
-  left: -294px;
-}
-#mini-clndr .clndr .days-container.show-events .events {
-  left: 0;
-}
        .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
         float: right;
         }
@@ -264,7 +97,7 @@ padding: 5px 27px 5px 0px;
   <div class="leftpanel">
     
     <div class="logopanel">
-        <h1><span>[ </span>شئون الموظفين<span>]</span></h1>
+        <h1><span>[ </span>ابو حته موتورز<span>]</span></h1>
     </div><!-- logopanel -->
         
     <div class="leftpanelinner">    
@@ -290,128 +123,73 @@ padding: 5px 27px 5px 0px;
       
       <h5 class="sidebartitle"></h5>
       <ul class="nav nav-pills nav-stacked nav-bracket">
-          <li class="active" style="text-align: right;direction: rtl;font-weight:bold ; "><a href="<?php echo Yii::app()->request->baseUrl; ?>/dashboard"><i class="fa fa-home"></i> <span><?php echo Yii::t('data', 'Dashboard');  ?></span></a></li>
-       <li class="nav-parent"><a href=""><i class="glyphicon   glyphicon-lock"></i> <span><?php echo Yii::t('data', 'Users');  ?></span></a>
-          <ul class="children">
-       
-              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/brands/index"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Add User');  ?></a></li>
-         
-          </ul>
-        </li>
-        
-             <?php  // if(Yii::app()->user->checkAccess('المشرفين')):?>
-          <li class="nav-parent"><a href=""><i class="glyphicon   glyphicon-lock"></i> <span><?php echo Yii::t('data', 'Users');  ?></span></a>
-          <ul class="children">
-            <?php   if(Yii::app()->user->checkAccess('/dashboard/user/add')):?>
-              <li><a href="javascript:;"  onclick="ajax('/dashboard/user/add',{})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Add User');  ?></a></li>
-              <?php endif ;?> 
-               <?php   if(Yii::app()->user->checkAccess('/dashboard/user/manage')):?>
-              <li><a href="javascript:;"  onclick="ajax('/dashboard/user/manage',{})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Manage Users');  ?></a></li>
-              <?php endif ;?> 
-              <?php   if(Yii::app()->user->checkAccess('/dashboard/user/managerole')):?>
-              <li><a href="javascript:;"  onclick="ajax('/dashboard/user/managerole',{})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Users Roles');  ?></a></li>
-              <?php endif ;?> 
-<!--              <?php   if(Yii::app()->user->checkAccess('/dashboard/user/manageoperations')):?>
-              <li><a href="javascript:;"  onclick="ajax('/dashboard/user/manageoperations',{})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Operations');  ?></a></li>
-              <?php endif ;?> -->
-              <?php   if(Yii::app()->user->checkAccess('/dashboard/logs/manage')):?>
-              <li><a href="javascript:;"  onclick="ajax('/dashboard/logs/manage',{})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Users Logs');  ?></a></li>
-              <?php endif ;?> 
-          </ul>
-        </li>
-        <?php // endif; ?>
-
-             <?php   if(Yii::app()->user->checkAccess('التوظيف')):?>
       
-        <li class="nav-parent"><a href=""><i class="glyphicon  glyphicon-user"></i> <span><?php echo Yii::t('data', 'التوظيف');  ?></span></a>
-          <ul class="children">
-             
-              <?php   if(Yii::app()->user->checkAccess('/dashboard/employee/add')):?>
-              <li><a href="javascript:;"  onclick="ajax('/dashboard/employee/add',{})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Add Employees');  ?></a></li>
-              <?php endif ;?> 
-              <?php   if(Yii::app()->user->checkAccess('/dashboard/user/manage')):?>
-              <li><a href="javascript:;"  onclick="ajax('/dashboard/employee/manage',{'empty':'true'})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Manage Employees');  ?></a></li>
-           <?php endif ;?> 
-              
+          <li class="active" style="text-align: right;direction: rtl;font-weight:bold ; "><a href="<?php echo Yii::app()->request->baseUrl; ?>/dashboard"><i class="fa fa-home"></i> <span><?php echo Yii::t('data', 'Dashboard');  ?></span></a></li>
+       <li class="nav-parent nav-active"><a href=""><i class="glyphicon   glyphicon-lock"></i> <span><?php echo Yii::t('data', 'Basic Data');  ?></span></a>
+           <ul class="children" style="display: block;">
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/brands/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Brands');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/carmodel/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Models');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/colors/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Colors');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/branchs/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Branchs');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/stores/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Stores');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/suppliers/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Suppliers');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/banks/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Banks');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/customers/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Customers');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/salesmantbl/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Sales men');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/inscomps/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Insurance companies');  ?></a></li>
+            <?php // endif ;?> 
           </ul>
         </li>
-        <?php endif; ?>
-
-          <?php   if(Yii::app()->user->checkAccess('التشكيلات الإدارية')):?>
-
-        <li class="nav-parent"><a href=""><i class="glyphicon  glyphicon-list-alt"></i> <span><?php echo Yii::t('data', 'التشكيلات الإدارية');  ?></span></a>
-          <ul class="children">
-             
-              <?php   if(Yii::app()->user->checkAccess('/dashboard/formations/manage')):?>
-              <li><a href="javascript:;"  onclick="ajax('/dashboard/formations/manage',{'empty':'true'})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Manage Formations');  ?></a></li>
-           <?php endif ;?> 
-            
-          </ul>
-        </li>
-        <?php endif; ?>
         
-        <?php   if(Yii::app()->user->checkAccess('خدمات الموظيفين')):?>
-         <li class="nav-parent"><a href=""><i class="glyphicon  glyphicon-user"></i> <span><?php echo Yii::t('data', 'خدمات الموظيفين');  ?></span></a>
-          <ul class="children">
-           
+        <li class="nav-parent nav-active"><a href=""><i class="glyphicon   glyphicon-lock"></i> <span><?php echo Yii::t('data', 'Operations');  ?></span></a>
+           <ul class="children" style="display: block;">
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/carstbl/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Add New Car');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/salestbl/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Sales Incoice');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/Holdtbl/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Car Holding');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/Servicetbl/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Customer Service');  ?></a></li>
+            <?php // endif ;?> 
           </ul>
         </li>
-        <?php endif; ?>
+        <li class="nav-parent nav-active"><a href=""><i class="glyphicon   glyphicon-lock"></i> <span><?php echo Yii::t('data', 'Reports');  ?></span></a>
+           <ul class="children" style="display: block;">
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/salesreport/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Sales Report');  ?></a></li>
+            <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/salestbl/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Sales Incoice');  ?></a></li>
+            <?php // endif ;?> 
+   
+          </ul>
+        </li>
         
-                <?php   if(Yii::app()->user->checkAccess('الرواتب')):?>
-
-         <li class="nav-parent"><a href=""><i class="glyphicon  glyphicon-user"></i> <span><?php echo Yii::t('data', 'الرواتب');  ?></span></a>
-          <ul class="children">
-           
-                     <li><a href="javascript:;"  onclick="ajax('/salary/salary/table',{'empty':'true'})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'سلم الرواتب');  ?></a></li>
-                     <li><a href="javascript:;"  onclick="ajax('/salary/salary/grid',{'empty':'true'})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'رواتب الموظفين');  ?></a></li>
-                     <li><a href="javascript:;"  onclick="ajax('/salary/deduct/grid',{'empty':'true'})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'الحسومات');  ?></a></li>
-                     <li><a href="javascript:;"  onclick="ajax('/salary/salary/branchFinal',{'empty':'true'})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'خلاصة الفروع');  ?></a></li>
-                     <li><a href="javascript:;"  onclick="ajax('/salary/salary/generalFinal',{'empty':'true'})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'الخلاصة العامة');  ?></a></li>
-                     <li><a href="javascript:;"  onclick="ajax('/salary/deduct/bankReport',{'action':'search',bank_id:3})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'بيان  باقساط البنك العقاري');  ?></a></li>
-                     <li><a href="javascript:;"  onclick="ajax('/salary/deduct/bankReport',{'action':'search',bank_id:2})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'بيان باقساط بنك التسليف');  ?></a></li>
-                     <li><a href="javascript:;"  onclick="ajax('/salary/deduct/bankReport',{'action':'search',bank_id:1})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'بيان باقساط البنك الزراعي');  ?></a></li>
-                     <li><a href="javascript:;"  onclick="ajax('/salary/deduct/bankReportHistory',{'action':'search',bank_id:1})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'تقرير الحسومات');  ?></a></li>
-
-          </ul>
-        </li>
-        <?php endif; ?>
-                        <?php   if(Yii::app()->user->checkAccess('الإنتدابات')):?>
-
-         <li class="nav-parent"><a href=""><i class="glyphicon  glyphicon-user"></i> <span><?php echo Yii::t('data', 'الإنتدابات');  ?></span></a>
-          <ul class="children">
-          
-           
-          </ul>
-        </li>
-        <?php endif; ?>
-                                <?php   if(Yii::app()->user->checkAccess('التكليف')):?>
-
-         <li class="nav-parent"><a href=""><i class="glyphicon  glyphicon-user"></i> <span><?php echo Yii::t('data', 'التكليف');  ?></span></a>
-          <ul class="children">        
-          </ul>
-        </li>
-        <?php endif; ?>
-                                        <?php   if(Yii::app()->user->checkAccess('الترقيات')):?>
-
-         <li class="nav-parent"><a href=""><i class="glyphicon  glyphicon-user"></i> <span><?php echo Yii::t('data', 'الترقيات');  ?></span></a>
-          <ul class="children">           
-          <li><a href="javascript:;"  onclick="ajax('/upgrade/course/grid',{'empty':'true'})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'اضافة دورة');  ?></a></li>
-          <li><a href="javascript:;"  onclick="ajax('/upgrade/qualified/grid',{'empty':'true'})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'الموظفين المؤهيلن للترقيه');  ?></a></li>
-
-          </ul>
-        </li>
-        <?php endif; ?>
-                                        <?php   if(Yii::app()->user->checkAccess('البيانات الأساسية')):?>
-       
-            <li class="nav-parent"><a href=""><i class="glyphicon  glyphicon-paperclip"></i> <span><?php echo Yii::t('data', 'البيانات الأساسية');  ?></span></a>
-          <ul class="children">
-              <li><a href="javascript:;"  onclick="ajax('/dashboard/default/basic',{})"><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'البيانات الأساسية');  ?></a></li>
-             
-          </ul>
-        </li>
-        <?php endif; ?>
         
+         
                                         <?php   if(Yii::app()->user->checkAccess('الادارة')):?>
         
           <li class="nav-parent"><a href=""><i class="fa  fa-cog"></i> <span><?php echo Yii::t('data', 'الإدارة');  ?></span></a>
@@ -877,39 +655,17 @@ padding: 5px 27px 5px 0px;
 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/jquery-ui-1.10.3.min.js"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/modernizr.min.js"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/jquery.sparkline.min.js"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/toggles.min.js"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/retina.min.js"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/jquery.cookies.js"></script>
 
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/flot/flot.min.js"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/flot/flot.resize.min.js"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/morris.min.js"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/raphael-2.1.0.min.js"></script>
 
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/jquery.datatables.min.js"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/chosen.jquery.min.js"></script>
 
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 
-  <script src="http://tisa-admin.tzdthemes.com/assets/lib/CLNDR/src/clndr.js"></script>
-  <script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/clndr/example/moment-2.5.1.js"></script>
 
 
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/calender/jquery.calendars.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/calender/jquery.calendars.plus.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/calender/jquery.calendars.picker.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/calender/jquery.calendars.islamic.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/calender/jquery.calendars.islamic-ar.js"></script>
-
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/calender/jquery.calendars.picker-ar-EG.js"></script>
 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/custom.js"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/dashboard.js"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/clock/assets/js/script.js"></script>
-	<link href="<?php echo Yii::app()->request->baseUrl; ?>/cdn/template/js/clock/assets/css/style.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 </body>
 </html>

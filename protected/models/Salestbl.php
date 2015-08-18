@@ -75,32 +75,14 @@ class Salestbl extends CActiveRecord
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
-	public function attributeLabels()
-	{
-		return array(
-			'invoice_id' => 'Invoice',
-			'invoice_date' => 'Invoice Date',
-			'branch_id' => 'Branch',
-			'sales_man_id' => 'Sales Man',
-			'car_id' => 'Car',
-			'customer_id' => 'Customer',
-			'finance_type' => 'Finance Type',
-			'cach_price' => 'Cach Price',
-			'downpayment' => 'Downpayment',
-			'monthly_premium' => 'Monthly Premium',
-			'months_count' => 'Months Count',
-			'interest_rate' => 'Interest Rate',
-			'bank_id' => 'Bank',
-			'transfer_amount' => 'Transfer Amount',
-			'bank_down_amount' => 'Bank Down Amount',
-			'expenses' => 'Expenses',
-			'insurance_comp_id' => 'Insurance Comp',
-			'insurance_type' => 'Insurance Type',
-			'insurance_amount' => 'Insurance Amount',
-			'insurance_rate' => 'Insurance Rate',
-			'notes' => 'Notes',
-		);
-	}
+	
+        public function attributeLabels() {
+            $newLabels = array();
+            foreach ($this::model()->attributes as $k => $v) {
+                $newLabels[$k] = Yii::t('data', $k);
+            }
+            return $newLabels;
+        }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
