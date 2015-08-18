@@ -8172,3 +8172,89 @@ Stack trace:
 REQUEST_URI=/cars/Holdtbl/admin
 HTTP_REFERER=http://localhost/cars/index.php/carstbl/5
 ---
+2015/08/18 02:24:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر حل الطلب "images/favicon.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/favicon....')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cars/images/favicon.png
+HTTP_REFERER=http://localhost/cars/index.php?r=site/index
+---
+2015/08/18 02:24:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('brands/images/f...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/brands/images/favicon.png
+HTTP_REFERER=http://localhost/cars/brands/admin
+---
+2015/08/18 02:24:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carmodel/images...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/carmodel/images/favicon.png
+HTTP_REFERER=http://localhost/cars/carmodel/admin
+---
+2015/08/18 02:24:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carmodel/images...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/index.php/carmodel/images/favicon.png
+HTTP_REFERER=http://localhost/cars/index.php/carmodel/update?id=3
+---
+2015/08/18 02:24:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('stores/images/f...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/stores/images/favicon.png
+HTTP_REFERER=http://localhost/cars/stores/admin
+---
+2015/08/18 02:24:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Servicetbl/imag...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/Servicetbl/images/favicon.png
+HTTP_REFERER=http://localhost/cars/Servicetbl/admin
+---
+2015/08/18 02:28:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('salesmantbl/ima...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/salesmantbl/images/favicon.png
+HTTP_REFERER=http://localhost/cars/salesmantbl/admin
+---
+2015/08/18 02:28:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customers/image...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/customers/images/favicon.png
+HTTP_REFERER=http://localhost/cars/customers/admin
+---
