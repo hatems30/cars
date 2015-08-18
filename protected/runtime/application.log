@@ -8258,3 +8258,47 @@ Stack trace:
 REQUEST_URI=/cars/customers/images/favicon.png
 HTTP_REFERER=http://localhost/cars/customers/admin
 ---
+2015/08/18 02:31:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carstbl/images/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/carstbl/images/favicon.png
+HTTP_REFERER=http://localhost/cars/carstbl/admin
+---
+2015/08/18 02:31:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carstbl/images/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/index.php/carstbl/images/favicon.png
+HTTP_REFERER=http://localhost/cars/index.php/carstbl/create
+---
+2015/08/18 02:32:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Holdtbl/images/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/Holdtbl/images/favicon.png
+HTTP_REFERER=http://localhost/cars/Holdtbl/admin
+---
+2015/08/18 02:33:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'تعذر على النظام العثور على الإجراء المطلوب "images".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('holdtbl/images/...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/index.php/holdtbl/images/favicon.png
+HTTP_REFERER=http://localhost/cars/index.php/holdtbl/create
+---
