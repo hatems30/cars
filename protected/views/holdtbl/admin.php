@@ -50,9 +50,9 @@ $this->breadcrumbs=array(
 	'filter'=>$model,
 	'columns'=>array(
 		'hold_id',
-		'car_id',
-		'branch_id',
-		'sales_man_id',
+		array('name' => 'car_id','value' => '$data->carstbl->chass_no'),
+		array('name' => 'branch_id','value' => '$data->branch->branch_name'),
+		array('name' => 'sales_man_id','value' => '$data->salesmantbl->sales_man_name'),
 		'customer_name',
 		'notes',
 		array(

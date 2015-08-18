@@ -65,9 +65,9 @@
 	'data'=>$model,
 	'attributes'=>array(
 		'hold_id',
-		'car_id',
-		'branch_id',
-		'sales_man_id',
+		array('name' => 'car_id','value' => $model->carstbl->chass_no),
+		array('name' => 'branch_id','value' => $model->branch->branch_name),
+		array('name' => 'sales_man_id','value' => $model->salesmantbl->sales_man_name),
 		'customer_name',
 		'notes',
 	),

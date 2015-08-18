@@ -8302,3 +8302,67 @@ Stack trace:
 REQUEST_URI=/cars/index.php/holdtbl/images/favicon.png
 HTTP_REFERER=http://localhost/cars/index.php/holdtbl/create
 ---
+2015/08/18 02:45:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/favicon.png".' in C:\dev\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/favicon....')
+#1 C:\dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\dev\cars\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cars/images/favicon.png
+HTTP_REFERER=http://localhost/cars/
+---
+2015/08/18 03:08:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\dev\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\dev\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\dev\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('salesmantbl/ima...')
+#3 C:\dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\dev\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/salesmantbl/images/favicon.png
+HTTP_REFERER=http://localhost/cars/salesmantbl/admin
+---
+2015/08/18 03:08:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\dev\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\dev\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\dev\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('inscomps/images...')
+#3 C:\dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\dev\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/inscomps/images/favicon.png
+HTTP_REFERER=http://localhost/cars/inscomps/admin
+---
+2015/08/18 03:08:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\dev\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\dev\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\dev\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('salestbl/images...')
+#3 C:\dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\dev\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/salestbl/images/favicon.png
+HTTP_REFERER=http://localhost/cars/salestbl/admin
+---
+2015/08/18 03:21:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\dev\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\dev\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\dev\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carstbl/images/...')
+#3 C:\dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\dev\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/carstbl/images/favicon.png
+HTTP_REFERER=http://localhost/cars/carstbl/admin
+---
+2015/08/18 03:27:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\dev\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\dev\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 C:\dev\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 C:\dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/fav...')
+#3 C:\dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\dev\cars\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cars/index.php/site/images/favicon.png
+HTTP_REFERER=http://localhost/cars/index.php/site/login
+---

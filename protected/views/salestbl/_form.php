@@ -141,7 +141,7 @@
                 <div class="form-group">
                    <?php echo $form->labelEx($model, 'insurance_type',array("class"=>"col-sm-4 control-label")); ?>
                     <div class="col-sm-8">     
-                        <?php echo $form->dropDownList($model,'insurance_type', array("تحمل"=>"تحمل","بدون تحمل"=>"بدون تحمل"),array('empty'=>'Select Value'),array("class" => "form-control dd",'empty'=>'')); ?>                         
+                        <?php echo $form->dropDownList($model,'insurance_type', array("تحمل"=>"تحمل","بدون تحمل"=>"بدون تحمل"),array('empty'=>'Select Insurance Type',"class" => "form-control dd")); ?>                         
                         <?php echo $form->error($model,'insurance_type'); ?>                                 
                     </div>
                 </div>        

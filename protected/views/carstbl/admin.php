@@ -44,21 +44,38 @@ $this->breadcrumbs=array(
         <div class="row">
         <div class="col-sm-12">
             <div class="the-box">
-           <?php $this->widget('zii.widgets.grid.CGridView', array(
-                'id'=>'carstbl-grid',
-                'dataProvider'=>$model->search(),
-                'filter'=>$model,
-                'columns'=>array(
-                        'car_id',
-                        'brand_id',
-                        'model_id',
-                        'color_id',
-                        'chass_no',
-                        array(
-                                'class'=>'CButtonColumn',
-                        ),
-                            ),
-            )); ?>
+           
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'carstbl-grid',
+	'dataProvider'=>$model->search(),
+	//'filter'=>$model,
+               'filter'=> $model,
+
+	'columns'=>array(
+		'car_id',
+                array('name' => 'brand_id','value' => '$data->Brand->brand_name'),
+		array('name' => 'model_id','value' => '$data->carmodel->model_name'),
+                array('name' => 'color_id','value' => '$data->colors->color_name'),		
+
+		'chass_no',
+	
+            'motor_no',
+			
+		'off_price',
+            /*
+		'cost_price',
+		'sale_price',
+		'car_code',
+		'car_spec',
+		'branch_id',
+		'store_id',
+		'supplier_id',
+		*/
+		array(
+			'class'=>'CButtonColumn',
+		),
+	),
+)); ?>
             </div>
         </div>
     </div>

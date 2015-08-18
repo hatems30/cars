@@ -58,21 +58,16 @@
             <div class="the-box">
           
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'bank_id', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->bank_id ?></p>
-                        </div>
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'bank_name', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->bank_name ?></p>
-                        </div>
-                        
+                        <?php $this->widget('zii.widgets.CDetailView', array(
+                                'data'=>$model,
+                                'attributes'=>array(
+                                        'branch_id',
+                                        'branch_name',
+                                ),
+                        )); ?>
+
                     </div>
                     
                 </div>   

@@ -29,7 +29,7 @@ class Servicetbl extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('service_date, service_type, customer_id, car_id', 'required'),
+			array('service_date, service_type, customer_id', 'required'),
 			array('customer_id, car_id', 'numerical', 'integerOnly'=>true),
 			array('service_type', 'length', 'max'=>10),
 			array('notes', 'safe'),
@@ -49,6 +49,8 @@ class Servicetbl extends CActiveRecord
 		return array(
                     
                     'customers' =>array(self::BELONGS_TO,'customers','customer_id'),
+                    'carstbl' =>array(self::BELONGS_TO,'carstbl','car_id'),
+
 		);
 	}
 

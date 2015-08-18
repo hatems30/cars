@@ -52,8 +52,8 @@ $this->breadcrumbs=array(
 		'service_id',
 		'service_date',
 		'service_type',
-		'customer_id',
-		'car_id',
+		array('name' => 'customer_id','value' => '$data->customers->customer_name'),
+                array('name' => 'car_id','value' => '$data->carstbl->chass_no'),	
 		'notes',
 		array(
 			'class'=>'CButtonColumn',

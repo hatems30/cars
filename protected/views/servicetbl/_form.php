@@ -28,14 +28,14 @@
                 <div class="form-group">
                    <?php echo $form->labelEx($model, 'service_date',array("class"=>"col-sm-4 control-label")); ?>
                     <div class="col-sm-8">                       	
-                        <?php echo $form->textField($model,'service_date',array("class" => "form-control dd", "placeholder" => Yii::t("data","color_name"))); ?>
+                        <?php echo $form->DateField($model,'service_date',array("class" => "form-control dd", "placeholder" => Yii::t("data","color_name"))); ?>
                         <?php echo $form->error($model,'service_date'); ?>                                 
                     </div>
                 </div>
                 <div class="form-group">
                    <?php echo $form->labelEx($model, 'service_type',array("class"=>"col-sm-4 control-label")); ?>
-                    <div class="col-sm-8">                       	
-                        <?php echo $form->textField($model,'service_type',array("class" => "form-control dd", "placeholder" => Yii::t("data","color_name"))); ?>
+                    <div class="col-sm-8">      
+                        <?php echo $form->dropDownList($model,'service_type',array("صيانة"=>"صيانة","شكاوي"=>"شكاوي"),array('empty'=>'Select Customer Service',"class" => "form-control dd")); ?>
                         <?php echo $form->error($model,'service_type'); ?>                                 
                     </div>
                 </div>
@@ -73,7 +73,7 @@
 
         <script type ="text/javascript">             
     $(function(){
-          $('#Servicetbl_customer_id').on('change',function(){  
+          $('#Servicetbl_customer_id').on('click',function(){  
               
               
               

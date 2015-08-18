@@ -157,6 +157,9 @@ padding: 5px 27px 5px 0px;
         <?php  // if(Yii::app()->user->checkAccess('permission')):?>
               <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/inscomps/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Insurance companies');  ?></a></li>
             <?php // endif ;?> 
+        <?php  // if(Yii::app()->user->checkAccess('permission')):?>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/stud/admin"  ><i class="fa fa-caret-left"></i><?php echo Yii::t('data', 'Stud');  ?></a></li>
+            <?php // endif ;?> 
           </ul>
         </li>
         

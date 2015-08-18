@@ -45,6 +45,7 @@ class Carstbl extends CActiveRecord
 			array('chass_no, motor_no, car_code, car_spec', 'length', 'max'=>255),
                         array('notes', 'safe'),
                         array('soled' , 'numerical'),
+                        array('chass_no','unique','message'=>'{attribute}:{value} already exists!'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('car_id, brand_id, model_id, color_id, chass_no, motor_no, off_price, cost_price, sale_price, car_code, car_spec, branch_id, store_id, supplier_id', 'safe', 'on'=>'search'),
@@ -66,7 +67,8 @@ class Carstbl extends CActiveRecord
                         'colors' =>array(self::BELONGS_TO,'colors','color_id'),
                         'stores' =>array(self::BELONGS_TO,'stores','store_id'),
                         'suppliers' =>array(self::BELONGS_TO,'suppliers','supplier_id'),
-                        'salestbl' => array(self::HAS_MANY,'carstbl','car_id'),
+                        'salestbl' => array(self::HAS_MANY,'salestbl','car_id'),
+                        'holdtbl'=>array(self::HAS_MANY,'holdtbl','car_id'),
 		);
 	}
 

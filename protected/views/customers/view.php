@@ -47,37 +47,17 @@
                 <div class="row">
                     <div class="col-sm-4">
                         
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'customer_id', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->customer_id ?></p>
-                        </div>
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'customer_name', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->customer_name ?></p>
-                        </div>
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'mobile', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->mobile ?></p>
-                        </div>
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'address', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->address ?></p>
-                        </div>
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'license_address', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->license_address ?></p>
-                        </div>
-                        
+                        <?php $this->widget('zii.widgets.CDetailView', array(
+                            'data'=>$model,
+                            'attributes'=>array(
+                                    'customer_id',
+                                    'customer_name',
+                                    'mobile',
+                                    'address',
+                                    'license_address',
+                            ),
+                    )); ?>
+
                     </div>
                     
                 </div>   

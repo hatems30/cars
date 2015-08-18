@@ -33,6 +33,7 @@ class Holdtbl extends CActiveRecord
 			array('car_id, branch_id, sales_man_id', 'numerical', 'integerOnly'=>true),
 			array('customer_name', 'length', 'max'=>255),
 			array('notes', 'safe'),
+                        array('car_id','unique','message'=>'{attribute}:{value} already exists!'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('hold_id, car_id, branch_id, sales_man_id, customer_name, notes', 'safe', 'on'=>'search'),
@@ -47,6 +48,9 @@ class Holdtbl extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'carstbl'=>array(self::BELONGS_TO,'carstbl','car_id'),
+                    'branch'=>array(self::BELONGS_TO,'branchs','branch_id'),
+                    'salesmantbl'=>array(self::BELONGS_TO,'salesmantbl','sales_man_id'),
 		);
 	}
 

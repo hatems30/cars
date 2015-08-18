@@ -60,31 +60,17 @@
                 <div class="row">
                     <div class="col-sm-4">
                         
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'sales_man_id', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->sales_man_id ?></p>
-                        </div>
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'sales_man_name', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->sales_man_name ?></p>
-                        </div>
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'branch_id', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->branch_id ?></p>
-                        </div>
-                        <div class="form-group">
-                            <?php echo CHtml::activeLabel($model, 'manager_id', array(
-                                'class' => 'col-sm-5 control-label',
-                            )) ;?>
-                            <p class="form-control-static col-sm-7"><?php echo $model->manager_id ?></p>
-                        </div>
-                        
+                        <?php 
+                            $this->widget('zii.widgets.CDetailView', array(
+                                    'data'=>          $model,
+                                    'attributes'=>array(
+                                            'sales_man_id',
+                                            'sales_man_name' ,		                
+                                            'branch_id',
+                                            'manager_id',
+                                    ),
+                            )); ?>
+
                     </div>
                     
                 </div>   
