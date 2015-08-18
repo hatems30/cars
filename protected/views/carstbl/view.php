@@ -24,9 +24,9 @@ $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'car_id',
-		'brand_id',
-		'model_id',
-		'color_id',
+		array('name' => 'brand_id','value' => $model->Brand->brand_name),
+		array('name' => 'model_id','value' => $model->carmodel->model_name),
+                array('name' => 'color_id','value' => $model->colors->color_name),
 		'chass_no',            
 		'motor_no',		
                 'off_price',
@@ -34,9 +34,9 @@ $this->widget('zii.widgets.CDetailView', array(
 		'sale_price',
 		'car_code',
 		'car_spec',
-		'branch_id',
-		'store_id',
-		'supplier_id',
+		array('name' => 'branch_id','value' => $model->Branch->branch_name),
+		array('name' => 'store_id','value' => $model->stores->store_name),
+		array('name' => 'supplier_id','value' => $model->suppliers->supplier_name),
             
             
 	),

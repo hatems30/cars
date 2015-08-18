@@ -47,7 +47,8 @@ class Salesmantbl extends CActiveRecord
         'manager' => array(self::BELONGS_TO, 'salesmantbl', 'manager_id'),
         'salesmantbl' => array(self::HAS_MANY, 'salesmantbl', 'manager_id'),
         'salestbl'=>array(self::HAS_MANY,'salestbl','sales_man_id'),
-        'Branch' => array(self::BELONGS_TO, 'Branchs', 'branch_id'),                     
+        'Branch' => array(self::BELONGS_TO, 'Branchs', 'branch_id'),
+        'holdtbl'=>array(self::HAS_MANY,'holdtbl','sales_man_id'),
 		);
 	}
 

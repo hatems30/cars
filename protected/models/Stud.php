@@ -27,6 +27,7 @@ class Stud extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, address', 'length', 'max'=>255),
+                        array('address','unique','message'=>'{attribute}:{value} already exists!'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name, address', 'safe', 'on'=>'search'),

@@ -21,13 +21,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'service_date'); ?>
-		<?php echo $form->textField($model,'service_date'); ?>
+		<?php echo $form->DateField($model,'service_date'); ?>
 		<?php echo $form->error($model,'service_date'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'service_type'); ?>
-		<?php echo $form->textField($model,'service_type',array('size'=>10,'maxlength'=>10)); ?>
+		<?php //echo $form->textField($model,'service_type',array('size'=>10,'maxlength'=>10)); ?>
+                <?php echo $form->dropDownList($model,'service_type',array("صيانة"=>"صيانة","شكاوي"=>"شكاوي"),array('empty'=>'Select Customer Service')); ?>
 		<?php echo $form->error($model,'service_type'); ?>
 	</div>
 
@@ -39,10 +40,7 @@
         
                 <script type ="text/javascript">             
     $(function(){
-          $('#Servicetbl_customer_id').on('change',function(){  
-              
-              
-              
+          $('#Servicetbl_customer_id').on('click',function(){  
               $.ajax({
                   url: "<?php echo Yii::app()->request->baseUrl; ?>/"+"index.php?r=Servicetbl/Getcustomercar",
                   data:{"id":$(this).val()},
@@ -56,11 +54,10 @@
             
             
         </span>
-        <input type='text' value="12" name="12">
+        
 	<div class="row">
-		<?php //echo $form->labelEx($model,'car_id'); ?>
-                <?php  //$sql="SELECT salestbl.car_id, carstbl.chass_no FROM salestbl INNER JOIN carstbl ON carstbl.car_id = salestbl.car_id where salestbl.customer_id = 2 "?>
-		<?php //echo $form->dropDownList($model,'car_id', CHtml::listData( Yii::app()->db()-> mysql_fetch_array($sql)) , array('empty'=>'select Car',)); ?>  
+		<?php echo $form->labelEx($model,'car_id'); ?>
+                <?php //echo $form->dropDownList($model,'car_id', CHtml::listData(Carstbl::model()->findAll(), 'car_id', 'chass_no')); ?>  
 		<?php //echo $form->error($model,'car_id'); ?>
 	</div>
 

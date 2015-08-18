@@ -37,9 +37,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'branch_id'); ?>
-		<?php //echo $form->textField($model,'branch_id'); ?>
-		<?php echo $form->error($model,'branch_id'); ?>
+		<?php //echo $form->textField($model,'branch_id'); ?>		
                 <?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name')); ?>  
+                <?php echo $form->error($model,'branch_id'); ?>
 	</div>
 
 	<div class="row">
@@ -193,7 +193,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'insurance_type'); ?>
 		<?php //echo $form->textField($model, 'insurance_type'); ?>     
-                <?php echo $form->dropDownList($model,'insurance_type',array("تحمل"=>"تحمل","بدون تحمل"=>"بدون تحمل"),array('empty'=>'Select Value')); ?>
+                <?php echo $form->dropDownList($model,'insurance_type',array("تحمل"=>"تحمل","بدون تحمل"=>"بدون تحمل"),array('empty'=>'Select Insurance Type')); ?>
 		<?php echo $form->error($model,'insurance_type'); ?>
 	</div>
         

@@ -48,8 +48,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'service_id',
 		'service_date',
 		'service_type',
-		'customer_id',
-		'car_id',
+		array('name' => 'customer_id','value' => '$data->customers->customer_name'),
+                array('name' => 'car_id','value' => '$data->carstbl->chass_no'),		
 		'notes',
 		array(
 			'class'=>'CButtonColumn',

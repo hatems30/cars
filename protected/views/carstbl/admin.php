@@ -43,17 +43,20 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'carstbl-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	//'filter'=>$model,
+           'filter'=> "CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name')",
 	'columns'=>array(
 		'car_id',
-		'brand_id',
-		'model_id',
-		'color_id',
+                array('name' => 'brand_id','value' => '$data->Brand->brand_name'),
+		array('name' => 'model_id','value' => '$data->carmodel->model_name'),
+                array('name' => 'color_id','value' => '$data->colors->color_name'),		
+
 		'chass_no',
-	/*	
+	
             'motor_no',
-		
+			
 		'off_price',
+            /*
 		'cost_price',
 		'sale_price',
 		'car_code',

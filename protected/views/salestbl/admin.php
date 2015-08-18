@@ -43,19 +43,15 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'salestbl-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	//'filter'=>$model,
 	'columns'=>array(
 		'invoice_id',
-                
 		'invoice_date',
-                array(
-                    'name' => 'branch_id',
-                    'value' => '$data->branch->branch_name'
-                    ),
-                array('name' => 'sales_man_id','value' => '$data->branch->branch_name'),
-		'car_id',
-		'customer_id',
-		/*
+                array('name' => 'branch_id','value' => '$data->branch->branch_name'),
+                array('name' => 'sales_man_id','value' => '$data->salesmantbl->sales_man_name'),
+                array('name' => 'car_id','value' => '$data->carstbl->chass_no'),		
+                array('name' => 'customer_id','value' => '$data->customers->customer_name'),
+            /*
 		'finance_type',
 		'cach_price',
 		'downpayment',
@@ -70,8 +66,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'insurance_type',
 		'insurance_amount',
 		'insurance_rate',
+             * 
+             */
 		'notes',
-		*/
+		
 		array(
 			'class'=>'CButtonColumn',
       

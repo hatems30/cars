@@ -21,19 +21,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'car_id'); ?>
-		<?php echo $form->textField($model,'car_id'); ?>
+		<?php echo $form->dropDownList($model,'car_id', CHtml::listData(Carstbl::model()->findAll(), 'car_id', 'chass_no')); ?> 
 		<?php echo $form->error($model,'car_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'branch_id'); ?>
-		<?php echo $form->textField($model,'branch_id'); ?>
+                <?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name')); ?> 
 		<?php echo $form->error($model,'branch_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'sales_man_id'); ?>
-		<?php echo $form->textField($model,'sales_man_id'); ?>
+		<?php echo $form->dropDownList($model,'sales_man_id', CHtml::listData(Salesmantbl::model()->findAll(), 'sales_man_id', 'sales_man_name')); ?> 
 		<?php echo $form->error($model,'sales_man_id'); ?>
 	</div>
 

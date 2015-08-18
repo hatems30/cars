@@ -35,23 +35,23 @@
                 
                 array('label'=>'File', 
                   'items'=>array(
-                    array('label'=>'Brands' , 'url'=>array('/brands/index','view'=>'index')),
-                    array('label'=>'Models' ,'url'=>array('/carmodel/index','view'=>'index')),
-                    array('label'=>'Colors' , 'url'=>array('/colors/index','view'=>'index')),
-                    array('label'=>'Branchs' ,'url'=>array('/branchs/index','view'=>'index')),
-                    array('label'=>'Stores' , 'url'=>array('/stores/index','view'=>'index')),
-                    array('label'=>'Suppliers' ,'url'=>array('/suppliers/index','view'=>'index')),
-                    array('label'=>'Banks' ,'url'=>array('/banks/index','view'=>'index')),
-                    array('label'=>'Customers' ,'url'=>array('/customers/index','view'=>'index')),
-                    array('label'=>'Sales men' ,'url'=>array('/salesmantbl/index','view'=>'index')),
-                    array('label'=>'Insurance companies' ,'url'=>array('/inscomps/index','view'=>'index')),),),
+                    array('label'=>'Brands' , 'url'=>array('/brands/admin','view'=>'admin')),
+                    array('label'=>'Models' ,'url'=>array('/carmodel/admin','view'=>'admin')),
+                    array('label'=>'Colors' , 'url'=>array('/colors/admin','view'=>'admin')),
+                    array('label'=>'Branchs' ,'url'=>array('/branchs/admin','view'=>'admin')),
+                    array('label'=>'Stores' , 'url'=>array('/stores/admin','view'=>'admin')),
+                    array('label'=>'Suppliers' ,'url'=>array('/suppliers/admin','view'=>'admin')),
+                    array('label'=>'Banks' ,'url'=>array('/banks/admin','view'=>'admin')),
+                    array('label'=>'Customers' ,'url'=>array('/customers/admin','view'=>'admin')),
+                    array('label'=>'Sales men' ,'url'=>array('/salesmantbl/admin','view'=>'admin')),
+                    array('label'=>'Insurance companies' ,'url'=>array('/inscomps/admin','view'=>'admin')),),),
                 
                 array('label'=>'data',
                   'items'=>array(
-                    array('label'=>'Add New Car', 'url'=>array('/carstbl/index','view'=>'index')),
-                    array('label'=>'Sales Incoice', 'url'=>array('/salestbl/index','view'=>'index')),
-                    array('label'=>'Car Holding', 'url'=>array('/Holdtbl/index','view'=>'index')),
-                    array('label'=>'Customer Service', 'url'=>array('/Servicetbl/index','view'=>'index')),
+                    array('label'=>'Add New Car', 'url'=>array('/carstbl/admin','view'=>'admin')),
+                    array('label'=>'Sales Incoice', 'url'=>array('/salestbl/admin','view'=>'admin')),
+                    array('label'=>'Car Holding', 'url'=>array('/Holdtbl/admin','view'=>'admin')),
+                    array('label'=>'Customer Service', 'url'=>array('/Servicetbl/admin','view'=>'admin')),
                       
                       
                       )),

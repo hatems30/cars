@@ -45,6 +45,8 @@ class Branchs extends CActiveRecord
                     'carstbl'=>array(self::HAS_MANY,'carstbl','branch_id'),
                     'salestbl'=>array(self::HAS_MANY,'salestbl','branch_id'),
                     'salesmantbl'=>array(self::HAS_MANY,'salesmantbl','branch_id'),
+                    'holdtbl'=>array(self::HAS_MANY,'holdtbl','branch_id'),
+                    
                     
 		);
 	}

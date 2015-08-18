@@ -24,8 +24,8 @@ $this->menu=array(
 		'service_id',
 		'service_date',
 		'service_type',
-		'customer_id',
-		'car_id',
+	        array('name' => 'customer_id','value' => $model->customers->customer_name),	
+                array('name' => 'car_id','value' => $model->carstbl->chass_no),	
 		'notes',
 	),
 )); ?>
