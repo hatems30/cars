@@ -65,9 +65,10 @@
                                     'data'=>          $model,
                                     'attributes'=>array(
                                             'sales_man_id',
-                                            'sales_man_name' ,		                
-                                            'branch_id',
-                                            'manager_id',
+                                            'sales_man_name' ,	
+                                             array('name' => 'branch_id','value' => $model->Branch->branch_name),
+                                             array('name' => 'manager_id','value' => $model->manager->sales_man_name),
+                                            
                                     ),
                             )); ?>
 

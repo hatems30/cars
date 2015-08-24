@@ -46,10 +46,10 @@
                     <?php echo $form->error($model,'customer_id'); ?>                              
                     </div>
                 </div>
-                   <span id="ajax">
-            
-            
-        </span>
+                 <div class="form-group" id="ajax_chass_no">
+                    
+                </div>
+                   
                 <div class="form-group">
                    <?php echo $form->labelEx($model, 'notes',array("class"=>"col-sm-4 control-label")); ?>
                     <div class="col-sm-8">                       	
@@ -73,16 +73,25 @@
 
         <script type ="text/javascript">             
     $(function(){
-          $('#Servicetbl_customer_id').on('click',function(){  
+          $('#Servicetbl_customer_id').on('change',function(){  
               
-              
-              
-              $.ajax({
-                  url: "<?php echo Yii::app()->request->baseUrl; ?>/"+"index.php?r=Servicetbl/Getcustomercar",
-                  data:{"id":$(this).val()},
+              if($(this).val() !=''){
+                  $.ajax({
+                  url: "<?php echo Yii::app()->request->baseUrl; ?>/Servicetbl/Getcustomercar",
+                  data:{"id":$(this).val(),"car_id":"<?php echo $model->car_id ?>"},
                   method:'POST',
-                   success:function(data){$('#ajax').html(data);}                                
+                   success:function(data){$('#ajax_chass_no').html(data);}                                
               });
+              }
+ 
           })
-      })                  
+          
+           
+      }) 
+     
+
+     $(document).ready(function(){
+     
+;     $('#Servicetbl_customer_id').change();
+    })
         </script>

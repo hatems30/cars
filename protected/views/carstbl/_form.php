@@ -30,23 +30,23 @@
                 <div class="form-group">
                    <?php echo $form->labelEx($model, 'brand_id',array("class"=>"col-sm-4 control-label")); ?>
                     <div class="col-sm-8">                       	
-                        <?php echo $form->dropDownList($model,'brand_id', CHtml::listData(Brands::model()->findAll(), 'brand_id', 'brand_name'),array("class"=>"col-sm-4 control-label"));  ?>
+                        <?php echo $form->dropDownList($model,'brand_id', CHtml::listData(Brands::model()->findAll(), 'brand_id', 'brand_name'),array("class"=>"col-sm-4 control-label" , 'empty'=>'Select brand'));  ?>
                         <?php echo $form->error($model,'brand_id'); ?>                                
                     </div>
                 </div>
-                <div class="form-group">
-                   <?php echo $form->labelEx($model, 'model_id',array("class"=>"col-sm-4 control-label")); ?>
-                    <div class="col-sm-8">                       	
-                        <?php echo $form->dropDownList($model,'model_id', CHtml::listData(carmodel::model()->findAll() , 'model_id', 'model_name'),array("class"=>"col-sm-4 control-label"));  ?>
-                        <?php echo $form->error($model,'model_id'); ?>                                
-                    </div>
+                
+
+                
+                 <div class="form-group" id="ajax_models">
+                    
                 </div>
+                
                 <div class="form-group">
                    <?php echo $form->labelEx($model, 'color_id',array("class"=>"col-sm-4 control-label")); ?>
                     <div class="col-sm-8">                       	
                         <?php echo $form->dropDownList($model,'color_id', CHtml::listData(colors::model()->findAll(), 'color_id', 'color_name'),array("class"=>"col-sm-4 control-label"));  ?>
                         <?php echo $form->error($model,'color_id'); ?>                                
-                    </div>
+                    </div>"
                 </div>
                 <div class="form-group">
                    <?php echo $form->labelEx($model, 'chass_no',array("class"=>"col-sm-4 control-label")); ?>
@@ -100,17 +100,15 @@
                 <div class="form-group">
                    <?php echo $form->labelEx($model, 'branch_id',array("class"=>"col-sm-4 control-label")); ?>
                     <div class="col-sm-8">                       	
-                        <?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name'),array("class"=>"col-sm-4 control-label"));  ?>
+                        <?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name'),array("class"=>"col-sm-4 control-label" , 'empty'=>'Selct Branch'));  ?>
                         <?php echo $form->error($model,'branch_id'); ?>                                
                     </div>
                 </div>
-                <div class="form-group">
-                   <?php echo $form->labelEx($model, 'store_id',array("class"=>"col-sm-4 control-label")); ?>
-                    <div class="col-sm-8">                       	
-                        <?php echo $form->dropDownList($model,'store_id', CHtml::listData(Stores::model()->findAll(), 'store_id', 'store_name'),array("class"=>"col-sm-4 control-label"));  ?>
-                        <?php echo $form->error($model,'store_id'); ?>                                
-                    </div>
+                
+                 <div class="form-group" id="ajax_stores">
+                    
                 </div>
+                
                 <div class="form-group">
                    <?php echo $form->labelEx($model, 'supplier_id',array("class"=>"col-sm-4 control-label")); ?>
                     <div class="col-sm-8">                       	
@@ -140,4 +138,46 @@
 
 
 </div>
+        <script type ="text/javascript">             
+    $(function(){
+          $('#Carstbl_brand_id').on('change',function(){  
+              
+              if($(this).val() !==''){
+                  $.ajax({
+                  url: "<?php echo Yii::app()->request->baseUrl; ?>/Carstbl/Getmodels",
+                  data:{"id":$(this).val(),"model_id":"<?php echo $model->model_id ?>"},
+                  method:'POST',
+                   success:function(data){$('#ajax_models').html(data);}                                
+              });
+              }
+ 
+          })
+          
+           
+      }) 
+      
+          $(function(){
+          $('#Carstbl_branch_id').on('change',function(){  
+              
+              if($(this).val() !==''){
+                  $.ajax({
+                  url: "<?php echo Yii::app()->request->baseUrl; ?>/Carstbl/Getstores",
+                  data:{"id":$(this).val(),"model_id":"<?php echo $model->store_id ?>"},
+                  method:'POST',
+                   success:function(data){$('#ajax_stores').html(data);}                                
+              });
+              }
+ 
+          })
+          
+           
+      }) 
+     
+
+     $(document).ready(function(){
+     
+    $('#Carstbl_brand_id').change();
+    $('#Carstbl_branch_id').change();
+    })
+        </script>
 

@@ -103,6 +103,7 @@ class CarstblController extends Controller
 		));
 	}
 
+        
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -162,7 +163,49 @@ class CarstblController extends Controller
 	 * Performs the AJAX validation.
 	 * @param Carstbl $model the model to be validated
 	 */
-	protected function performAjaxValidation($model)
+                public function actionGetmodels()
+	{
+        	                  
+            $this->layout = false;
+		$id = $_REQUEST['id'];            
+                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
+
+              $sql="SELECT model_id , model_name from carmodel where brand_id = $id ";
+                
+              $connection=Yii::app()->db;   // assuming you have configured a "db" connection
+
+              $command=$connection->createCommand($sql);
+              $data = $command->queryAll($sql);
+
+              $this->render('getmodels',array(
+			'id'=>$_REQUEST['id'],
+			'model_id'=>$_REQUEST['model_id'],
+                         'data' => $data
+		));	
+	}
+
+                public function actionGetstores()
+	{
+        	                  
+            $this->layout = false;
+		$id = $_REQUEST['id'];            
+                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
+
+              $sql="SELECT store_id , store_name from stores where branch_id = $id ";
+                
+              $connection=Yii::app()->db;   // assuming you have configured a "db" connection
+
+              $command=$connection->createCommand($sql);
+              $data = $command->queryAll($sql);
+
+              $this->render('getstores',array(
+			'id'=>$_REQUEST['id'],
+			'store_id'=>$_REQUEST['store_id'],
+                         'data' => $data
+		));	
+	}
+        
+        protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='carstbl-form')
 		{

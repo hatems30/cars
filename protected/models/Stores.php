@@ -27,6 +27,7 @@ class Stores extends CActiveRecord
 		return array(
 			array('store_name', 'required'),
 			array('store_name', 'length', 'max'=>255),
+                        array('branch_id' , 'safe' ),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('store_id, store_name', 'safe', 'on'=>'search'),
@@ -43,6 +44,7 @@ class Stores extends CActiveRecord
 		return array(
                     
                     'carstbl' => array(self::HAS_MANY,'carstbl','store_id'),
+                    'branchs' => array(self::BELONGS_TO,'branchs','branch_id'),
 		);
 	}
 

@@ -51,8 +51,8 @@ $this->breadcrumbs=array(
                     'columns'=>array(
                         'sales_man_id',
                         'sales_man_name',
-                        'branch_id',                 
-                        'manager_id',
+                        array('name' => 'branch_id','value' => '$data->Branch->branch_name'),            
+                        array('name' => 'manager_id','value' => '$data->manager->sales_man_name'),
                         array(
                                 'class'=>'CButtonColumn',
                         ),

@@ -29,7 +29,13 @@
                         <?php echo $form->textField($model,'model_name',array("class" => "form-control dd", "placeholder" => Yii::t("data","model_name"))); ?>
                         <?php echo $form->error($model,'model_name'); ?>                                 
                     </div>
-                </div>
+                    
+                   <?php echo $form->labelEx($model, 'brand_id',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                       	
+                        <?php echo $form->dropDownList($model,'brand_id', CHtml::listData(Brands::model()->findAll(), 'brand_id', 'brand_name'),array('empty'=>'ماركة السيارة',"class"=>"col-sm-4 control-label"));  ?>
+                        <?php echo $form->error($model,'brand_id'); ?>                                
+                    </div>
+                    
                 
             </div><!-- panel-body -->
             <div class="panel-footer">

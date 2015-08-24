@@ -33,6 +33,15 @@
                     </div>
                 </div>
                 
+                <div class="form-group">
+                   <?php echo $form->labelEx($model, 'branch_id',array("class"=>"col-sm-4 control-label")); ?>
+                    <div class="col-sm-8">                       	
+                        <?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name'),array("class"=>"col-sm-4 control-label"));  ?>
+                        <?php echo $form->error($model,'branch_id'); ?>                                
+                    </div>
+                </div>
+                
+                
             </div><!-- panel-body -->
             <div class="panel-footer">
                 <?php echo CHtml::submitButton($model->isNewRecord ? Yii::t("data",'Create') : Yii::t("data",'Save'),  array('class'=>'btn btn-success')); ?>

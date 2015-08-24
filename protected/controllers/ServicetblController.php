@@ -182,6 +182,7 @@ class ServicetblController extends Controller
                 
                 $this->render('getcustomercar',array(
 			'id'=>$_REQUEST['id'],
+			'car_id'=>$_REQUEST['car_id'],
                          'data' => $data
 		));
                 

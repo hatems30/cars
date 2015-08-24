@@ -77,6 +77,7 @@ class Carstbl extends CActiveRecord
 	 */
 	
         public function attributeLabels() {
+           
             $newLabels = array();
             foreach ($this::model()->attributes as $k => $v) {
                 $newLabels[$k] = Yii::t('data', $k);

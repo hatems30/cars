@@ -65,6 +65,8 @@
                                 'attributes'=>array(
                                         'model_id',
                                         'model_name',
+                                        array('name' => 'brand_id','value' => $model->Brand->brand_name),
+                                        
                                 ),
                         )); ?>
 

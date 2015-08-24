@@ -25,8 +25,10 @@ class Carmodel extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('model_name', 'required'),
+			array('model_name', 'required'), 
 			array('model_name', 'length', 'max'=>255),
+                        array ('brand_id', 'numerical', 'integerOnly'=>true),
+                        array('brand_id', 'safe'), 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('model_id, model_name', 'safe', 'on'=>'search'),
@@ -42,6 +44,8 @@ class Carmodel extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                     'carstbl' => array(self::HAS_MANY,'carstbl','model_id'),
+                    'Brand'=>array(self::BELONGS_TO,'Brands','brand_id'),
+                    
 		);
 	}
 
@@ -50,11 +54,15 @@ class Carmodel extends CActiveRecord
 	 */
 	
         public function attributeLabels() {
+            
             $newLabels = array();
             foreach ($this::model()->attributes as $k => $v) {
                 $newLabels[$k] = Yii::t('data', $k);
             }
             return $newLabels;
+             
+             
+   
         }
 
 	/**

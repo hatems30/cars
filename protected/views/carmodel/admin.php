@@ -25,14 +25,20 @@ $this->breadcrumbs=array(
             
             <div class="btn-group">
                 
-                <?php $form = $this->beginWidget('CActiveForm', array(
+                <?php 
+                
+                $form = $this->beginWidget('CActiveForm', array(
                     'id' => 'form-bank-filter',
                     'method' => 'get',
                     'htmlOptions' => array(
                         'role' => 'form',
                     ),
-                )); ?>
+                )); 
+                
+                ?>
+                
                 <?php $this->endWidget(); ?>
+                
             </div>
         </div>
     </div>
@@ -47,6 +53,7 @@ $this->breadcrumbs=array(
                         'columns'=>array(
                                 'model_id',
                                 'model_name',
+                                 array('name' => 'brand_id','value' => '$data->Brand->brand_name'),
                                 array(
                                         'class'=>'CButtonColumn',
                                 ),

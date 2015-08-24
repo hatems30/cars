@@ -137,40 +137,15 @@ jQuery(document).ready(function() {
    });
    
    // Form Toggles
-   jQuery('.toggle').toggles({on: true});
+   //jQuery('.toggle').toggles({on: true});
    
-   jQuery('.toggle-chat1').toggles({on: false});
+   //jQuery('.toggle-chat1').toggles({on: false});
    
    // Sparkline
-   jQuery('#sidebar-chart').sparkline([4,3,3,1,4,3,2,2,3,10,9,6], {
-	  type: 'bar', 
-	  height:'30px',
-      barColor: '#428BCA'
-   });
+
    
-   jQuery('#sidebar-chart2').sparkline([1,3,4,5,4,10,8,5,7,6,9,3], {
-	  type: 'bar', 
-	  height:'30px',
-      barColor: '#D9534F'
-   });
-   
-   jQuery('#sidebar-chart3').sparkline([5,9,3,8,4,10,8,5,7,6,9,3], {
-	  type: 'bar', 
-	  height:'30px',
-      barColor: '#1CAF9A'
-   });
-   
-   jQuery('#sidebar-chart4').sparkline([4,3,3,1,4,3,2,2,3,10,9,6], {
-	  type: 'bar', 
-	  height:'30px',
-      barColor: '#428BCA'
-   });
-   
-   jQuery('#sidebar-chart5').sparkline([1,3,4,5,4,10,8,5,7,6,9,3], {
-	  type: 'bar', 
-	  height:'30px',
-      barColor: '#F0AD4E'
-   });
+
+
    
    
    // Minimize Button in Panels
@@ -232,41 +207,7 @@ jQuery(document).ready(function() {
         return false;
     });
 
-    // Form Toggles
-    jQuery('.toggle').toggles({on: true});
-
-    jQuery('.toggle-chat1').toggles({on: false});
-
-    // Sparkline
-    jQuery('#sidebar-chart').sparkline([4, 3, 3, 1, 4, 3, 2, 2, 3, 10, 9, 6], {
-        type: 'bar',
-        height: '30px',
-        barColor: '#428BCA'
-    });
-
-    jQuery('#sidebar-chart2').sparkline([1, 3, 4, 5, 4, 10, 8, 5, 7, 6, 9, 3], {
-        type: 'bar',
-        height: '30px',
-        barColor: '#D9534F'
-    });
-
-    jQuery('#sidebar-chart3').sparkline([5, 9, 3, 8, 4, 10, 8, 5, 7, 6, 9, 3], {
-        type: 'bar',
-        height: '30px',
-        barColor: '#1CAF9A'
-    });
-
-    jQuery('#sidebar-chart4').sparkline([4, 3, 3, 1, 4, 3, 2, 2, 3, 10, 9, 6], {
-        type: 'bar',
-        height: '30px',
-        barColor: '#428BCA'
-    });
-
-    jQuery('#sidebar-chart5').sparkline([1, 3, 4, 5, 4, 10, 8, 5, 7, 6, 9, 3], {
-        type: 'bar',
-        height: '30px',
-        barColor: '#F0AD4E'
-    });
+    
 
 
     // Minimize Button in Panels
@@ -505,19 +446,7 @@ jQuery(document).ready(function() {
 
 
 
-    jQuery.ajax({
-        'url': "/dashboard/data/getcalls",
-        'type': 'POST',
-        'data': {},
-        beforeSend: function() {
-
-        },
-        success: function(response) {
-
-            myCalendar.setEvents(jQuery.parseJSON(response));
-
-        }
-    });
+    
     jQuery(document).on('click', '#addCalender', function(e) {
 
         if (jQuery('#addCalenderForm').find('#calender-hidden-input').val() == "") {

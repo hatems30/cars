@@ -110,9 +110,53 @@ class SalestblController extends Controller
 			'id'=>$_REQUEST['id'],
                     'dataProvider' => $dataProvider
 		));
-                
-                
+  
 	}
+        
+        public function actionGetbranchcars()
+	{
+        	                  
+            $this->layout = false;
+		$id = $_REQUEST['id'];            
+                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
+
+              $sql="SELECT car_id , chass_no from carstbl where branch_id =  $id ";
+                
+              $connection=Yii::app()->db;   // assuming you have configured a "db" connection
+
+              $command=$connection->createCommand($sql);
+              $data = $command->queryAll($sql);
+
+              $this->render('getbranchcars',array(
+			'id'=>$_REQUEST['id'],
+			'car_id'=>$_REQUEST['car_id'],
+                         'data' => $data
+		));	
+	}
+        
+                public function actionGetsalesman()
+	{
+        	                  
+            $this->layout = false;
+		$id = $_REQUEST['id'];            
+                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
+
+              $sql="SELECT sales_man_id , sales_man_name from salesmantbl where branch_id =  $id ";
+                
+              $connection=Yii::app()->db;   // assuming you have configured a "db" connection
+
+              $command=$connection->createCommand($sql);
+              $data = $command->queryAll($sql);
+
+              $this->render('getsalesman',array(
+			'id'=>$_REQUEST['id'],
+			'sales_man_id'=>$_REQUEST['sales_man_id'],
+                         'data' => $data
+		));	
+	}
+        
+
+        
         
                 public function actionUpdateAjax()
 	{
