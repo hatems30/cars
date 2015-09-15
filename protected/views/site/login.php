@@ -41,7 +41,7 @@ $this->breadcrumbs=array(
             <div class="col-sm-3" dir =rtl>
 		<?php echo $form->labelEx($model,'username'); ?>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-6">
 		<?php echo $form->textField($model,'username' , array('class'=>'form-control')); ?>
 		<?php echo $form->error($model,'username'); ?>
             </div>
@@ -52,7 +52,7 @@ $this->breadcrumbs=array(
                 <div class="col-sm-3" dir =rtl>
 		<?php echo $form->labelEx($model,'password'); ?>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-6">
 		<?php echo $form->passwordField($model,'password' ,array('class'=>'form-control')); ?>
 		<?php echo $form->error($model,'password'); ?>
                 </div>
