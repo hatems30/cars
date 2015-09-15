@@ -48,8 +48,8 @@ class Servicetbl extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                     
-                    'customers' =>array(self::BELONGS_TO,'customers','customer_id'),
-                    'carstbl' =>array(self::BELONGS_TO,'carstbl','car_id'),
+                    'customers' =>array(self::BELONGS_TO,'Customers','customer_id'),
+                    'carstbl' =>array(self::BELONGS_TO,'Carstbl','car_id'),
 		);
 	}
 

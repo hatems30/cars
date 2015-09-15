@@ -42,11 +42,11 @@ class Branchs extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                     
-                    'carstbl'=>array(self::HAS_MANY,'carstbl','branch_id'),
-                    'salestbl'=>array(self::HAS_MANY,'salestbl','branch_id'),
-                    'salesmantbl'=>array(self::HAS_MANY,'salesmantbl','branch_id'),
-                    'holdtbl'=>array(self::HAS_MANY,'holdtbl','branch_id'),
-                    'stores'=>array(self::HAS_MANY,'stores','store_id'),
+                    'carstbl'=>array(self::HAS_MANY,'Carstbl','branch_id'),
+                    'salestbl'=>array(self::HAS_MANY,'Salestbl','branch_id'),
+                    'salesmantbl'=>array(self::HAS_MANY,'Salesmantbl','branch_id'),
+                    'holdtbl'=>array(self::HAS_MANY,'Holdtbl','branch_id'),
+                    'stores'=>array(self::HAS_MANY,'Stores','store_id'),
                     
                     
                     

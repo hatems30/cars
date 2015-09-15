@@ -43,8 +43,8 @@ class Customers extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'salestbl'=>array(self::HAS_MANY,'salestbl','customer_id'),
-                    'servicetbl'=>array(self::HAS_MANY,'servicetbl','customer_id'),
+                    'salestbl'=>array(self::HAS_MANY,'Salestbl','customer_id'),
+                    'servicetbl'=>array(self::HAS_MANY,'Servicetbl','customer_id'),
                     
 		);
 	}

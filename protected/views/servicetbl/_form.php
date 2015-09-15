@@ -34,7 +34,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'customer_id'); ?>
-		<?php echo $form->dropDownList($model,'customer_id', CHtml::listData(customers::model()->findAll(), 'customer_id', 'customer_name') , array('empty'=>'select customer name')); ?>  
+		<?php echo $form->dropDownList($model,'customer_id', CHtml::listData(Customers::model()->findAll(), 'customer_id', 'customer_name') , array('empty'=>'select customer name')); ?>  
 		<?php echo $form->error($model,'customer_id'); ?>
 	</div>
         

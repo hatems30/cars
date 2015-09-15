@@ -41,7 +41,7 @@ class Suppliers extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'carstbl' => array(self::HAS_MANY,'carstbl','supplier_id'),
+                    'carstbl' => array(self::HAS_MANY,'Carstbl','supplier_id'),
 		);
 	}
 

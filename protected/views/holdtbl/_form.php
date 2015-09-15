@@ -79,7 +79,7 @@
 		<?php echo $form->labelEx($model,'customer_id'); ?>
                 </div>
                 <div class ="col-sm-3">
-		<?php echo $form->dropDownList($model,'customer_id', CHtml::listData(customers::model()->findAll(), 'customer_id', 'customer_name') ,array('empty'=> '', 'class'=>'form-control')); ?>  
+		<?php echo $form->dropDownList($model,'customer_id', CHtml::listData(Customers::model()->findAll(), 'customer_id', 'customer_name') ,array('empty'=> '', 'class'=>'form-control')); ?>  
 		<?php echo $form->error($model,'customer_id'); ?>
                 </div>
 	</div>

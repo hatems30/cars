@@ -60,7 +60,7 @@
 		<?php echo $form->labelEx($model,'color_id'); ?>
                 </div>
                 <div class ="col-sm-4">
-		<?php echo $form->dropDownList($model,'color_id', CHtml::listData(colors::model()->findAll(), 'color_id', 'color_name'),array("class"=>"form-control"));  ?>
+		<?php echo $form->dropDownList($model,'color_id', CHtml::listData(Colors::model()->findAll(), 'color_id', 'color_name'),array("class"=>"form-control"));  ?>
 		<?php echo $form->error($model,'color_id'); ?>
                 </div>
 	        <div class ="col-sm-2" dir =rtl>

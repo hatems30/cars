@@ -42,8 +42,8 @@ class Stores extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'branch' => array(self::BELONGS_TO,'branchs','branch_id'),
-                    'carstbl' => array(self::HAS_MANY,'carstbl','store_id'),
+                    'branch' => array(self::BELONGS_TO,'Branchs','branch_id'),
+                    'carstbl' => array(self::HAS_MANY,'Carstbl','store_id'),
 		);
 	}
 

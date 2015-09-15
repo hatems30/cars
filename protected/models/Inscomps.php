@@ -40,7 +40,7 @@ class Inscomps extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'salestbl'=>array(self::HAS_MANY,'salestbl','insurance_comp_id'),
+                    'salestbl'=>array(self::HAS_MANY,'Salestbl','insurance_comp_id'),
 		);
 	}
 

@@ -56,7 +56,7 @@
 		<?php echo $form->labelEx($model,'branch_id'); ?>
                 </div>
                 <div class ="col-md-5">
-		<?php echo $form->dropDownList($model,'branch_id', CHtml::listData(branchs::model()->findAll(), 'branch_id', 'branch_name') , array ("class" => "form-control")); ?>  
+		<?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name') , array ("class" => "form-control")); ?>  
 		<?php echo $form->error($model,'branch_id'); ?>
                 </div>
 	</div>

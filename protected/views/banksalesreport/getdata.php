@@ -1,5 +1,5 @@
 <?php 
-     $this->widget('zii.widgets.grid.cgridview', array(
+     $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,
     'columns'=>array(                     
                      'invoice_id',                      
@@ -21,7 +21,7 @@
 ));
 
 
-     $this->widget('zii.widgets.grid.cgridview', array(
+     $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,
     'columns'=>array(                     
                /*      'invoice_id',                      
