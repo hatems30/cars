@@ -231,3 +231,7 @@ div.search-form
 .button-column{
 	width: 100px!important;
 }
+
+table.items input{
+	width: 80%
+}
