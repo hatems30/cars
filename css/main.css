@@ -247,3 +247,9 @@ table.items{
 form .col-md-1, form .col-md-10, form .col-md-11, form .col-md-12, form .col-md-2, form  .col-md-3, form .col-md-4, form .col-md-5, form .col-md-6, form .col-md-7, form .col-md-8, form .col-md-9 {
     float: right!important;!
 }
+
+
+
+form .col-sm-1, form .col-sm-10, form .col-sm-11, form  .col-sm-12, form .col-sm-2, form .col-sm-3, form .col-sm-4, form .col-sm-5, form .col-sm-6, form .col-sm-7, form .col-sm-8, form .col-sm-9 {
+    float: right!important;
+}
