@@ -240,3 +240,7 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
     margin: 0 auto!important;
     float: none!important;
 }
+
+.button-column{
+	width: 100px;
+}
