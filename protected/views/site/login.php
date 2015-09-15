@@ -38,7 +38,7 @@ $this->breadcrumbs=array(
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<div class="row">
-            <div class="col-sm-3" dir =rtl>
+            <div class="col-sm-2" dir =rtl>
 		<?php echo $form->labelEx($model,'username'); ?>
             </div>
             <div class="col-sm-6">
@@ -49,7 +49,7 @@ $this->breadcrumbs=array(
 </br>
 
 	<div class="row">
-                <div class="col-sm-3" dir =rtl>
+                <div class="col-sm-2" dir =rtl>
 		<?php echo $form->labelEx($model,'password'); ?>
                 </div>
                 <div class="col-sm-6">
