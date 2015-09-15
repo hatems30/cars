@@ -1,6 +1,6 @@
 <?php
 
-class carstockController extends Controller
+class CarstockController extends Controller
 {
 	
 	public $layout='//layouts/column1';
