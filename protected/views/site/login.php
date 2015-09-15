@@ -8,22 +8,6 @@ $this->breadcrumbs=array(
 	'Login',
 );
 ?>
-
-<h1>Login</h1>
-
-<p>Please fill out the followingform with your login credentials:</p>
-
-<div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'login-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-     
         
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +20,22 @@ $this->breadcrumbs=array(
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>        
 <body>
+
+
+
+
 <div class="container-fluid">
+<div class="form">
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'login-form',
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+	),
+)); ?>
+
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
+     
 	<div class="row">
             <div class="col-sm-3" dir =rtl>
 		<?php echo $form->labelEx($model,'username'); ?>
@@ -75,6 +74,7 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div>
+</div><!-- form -->
+
 </body>
 </html>
-</div><!-- form -->
