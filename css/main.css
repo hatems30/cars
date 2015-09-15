@@ -233,5 +233,6 @@ div.search-form
 }
 
 table.items input{
-	width: 80%!important
+	width: 80%!important;
+	    direction: rtl!important;
 }
