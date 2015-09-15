@@ -37,7 +37,7 @@ $this->menu=array(
 		'transfer_amount',
 		'bank_down_amount',
 		'expenses',
-                array('name' => 'insurance_comp_id','value' => $model->insuranceComp->insurance_comp_name),		
+                array('name' => 'insurance_comp_id','value' => isset($model->insuranceComp->insurance_comp_name)?$model->insuranceComp->insurance_comp_name:''),		
 		'insurance_type',
 		'insurance_amount',
 		'insurance_rate',
