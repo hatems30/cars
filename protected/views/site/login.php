@@ -75,5 +75,10 @@ $this->breadcrumbs=array(
 </div>
 </div><!-- form -->
 
+<style type="text/css">
+	.errorMessage{
+		color: red;
+	}
+</style>
 </body>
 </html>
