@@ -50,8 +50,8 @@ class Banks extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'bank_id' => 'Bank',
-			'bank_name' => 'Bank Name',
+			'bank_id' => 'الكود',
+			'bank_name' => 'اسم البنك',
 		);
 	}
 

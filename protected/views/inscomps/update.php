@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Inscomps <?php echo $model->insurance_comp_id; ?></h1>
+
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -26,44 +26,44 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Carstbls</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 
+       <div class="panel panel-default">            
+           <div class="panel-heading" dir =rtl>
+               <div class="row">
+               <div class="col-sm-6"><b><font size="5" color="blue">اضافة سيارة جديدة</font></b></div>           
+               <div class="col-sm-6" dir =rtl> <?php echo CHtml::link('<i class="fa fa-plus"></i> '.Yii::t('data','Create'),array('create'), array('class' => 'btn btn-default','href' => 'sss',)); ?></div>
+           </div>
+           </div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'carstbl-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
 		'car_id',
-		'brand_id',
-		'model_id',
-		'color_id',
-		'chass_no',
-	/*	
-            'motor_no',
-		
-		'off_price',
-		'cost_price',
-		'sale_price',
-		'car_code',
+		array('name' => 'brand_id','value' => '$data->brand->brand_name'),
+                array('name' => 'model_id','value' => '$data->carmodel->model_name'),		
+                array('name' => 'code_id','value' => '$data->code->code_name'),			
 		'car_spec',
+		array('name' => 'color_id','value' => '$data->color->color_name'),
+		'car_year',
+		'chass_no',
+		'motor_no',
+            /*
 		'branch_id',
 		'store_id',
 		'supplier_id',
+		'add_date',
+		'cost_price',
+		'off_price',
+		'sale_price_from',
+		'sale_price_to',
+		'notes',
 		*/
 		array(
 			'class'=>'CButtonColumn',
 		),
 	),
 )); ?>
+       </div>

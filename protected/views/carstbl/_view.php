@@ -10,17 +10,30 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('brand_id')); ?>:</b>
-	<?php echo CHtml::encode($data->Brand->brand_name); ?>
+	<?php echo CHtml::encode($data->brand_id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('model_id')); ?>:</b>
-	<?php echo CHtml::encode($data->carmodel->model_name); ?>
+	<?php echo CHtml::encode($data->model_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('code_id')); ?>:</b>
+	<?php echo CHtml::encode($data->code_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('car_spec')); ?>:</b>
+	<?php echo CHtml::encode($data->car_spec); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('color_id')); ?>:</b>
-	<?php echo CHtml::encode($data->colors->color_name); ?>
+	<?php echo CHtml::encode($data->color_id); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('car_year')); ?>:</b>
+	<?php echo CHtml::encode($data->car_year); ?>
+	<br />
+
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('chass_no')); ?>:</b>
 	<?php echo CHtml::encode($data->chass_no); ?>
 	<br />
@@ -29,39 +42,42 @@
 	<?php echo CHtml::encode($data->motor_no); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('branch_id')); ?>:</b>
+	<?php echo CHtml::encode($data->branch_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('store_id')); ?>:</b>
+	<?php echo CHtml::encode($data->store_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('supplier_id')); ?>:</b>
+	<?php echo CHtml::encode($data->supplier_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('add_date')); ?>:</b>
+	<?php echo CHtml::encode($data->add_date); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('cost_price')); ?>:</b>
+	<?php echo CHtml::encode($data->cost_price); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('off_price')); ?>:</b>
 	<?php echo CHtml::encode($data->off_price); ?>
 	<br />
 
-	
-	<b> <?php echo CHtml::encode($data->getAttributeLabel('cost_price')); ?>:</b>
-	<?php echo CHtml::encode($data->cost_price); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('sale_price_from')); ?>:</b>
+	<?php echo CHtml::encode($data->sale_price_from); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('sale_price')); ?>:</b>
-	<?php echo CHtml::encode($data->sale_price); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('sale_price_to')); ?>:</b>
+	<?php echo CHtml::encode($data->sale_price_to); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('car_code')); ?>:</b>
-	<?php echo CHtml::encode($data->car_code); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('notes')); ?>:</b>
+	<?php echo CHtml::encode($data->notes); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('car_spec')); ?>:</b>
-	<?php echo CHtml::encode($data->car_spec); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('branch_id')); ?>:</b>
-	<?php echo CHtml::encode($data->Branch->branch_name); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('store_id')); ?>:</b>
-	<?php echo CHtml::encode($data->stores->store_name); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('supplier_id')); ?>:</b>
-	<?php echo CHtml::encode($data->suppliers->supplier_name ); ?>
-	<br />
-
-	
+	*/ ?>
 
 </div>

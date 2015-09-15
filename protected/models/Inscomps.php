@@ -50,8 +50,8 @@ class Inscomps extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'insurance_comp_id' => 'Insurance Comp',
-			'insurance_comp_name' => 'Insurance Comp Name',
+			'insurance_comp_id' => 'رقم',
+			'insurance_comp_name' => 'اسم شركة التأمين',
 		);
 	}
 

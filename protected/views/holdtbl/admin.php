@@ -26,33 +26,31 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Holdtbls</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
+       <div class="panel panel-default">            
+           <div class="panel-heading" dir =rtl>
+               <div class="row">
+               <div class="col-sm-6"><b><font size="5" color="blue">حجز سيارة</font></b></div>                          
+           </div>
+           </div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'holdtbl-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	//'filter'=>$model,
 	'columns'=>array(
 		'hold_id',
-		'car_id',
-		'branch_id',
-		'sales_man_id',
-		'customer_name',
-		'notes',
+		'hold_date',
+		array('name' => 'branch_id','value' => '$data->branch->branch_name'), 
+		array('name' => 'employee_id','value' => '$data->employee->employee_name'), 
+		array('name' => 'customer_id','value' => '$data->customer->customer_name'), 
+		array('name' => 'car_id','value' => '$data->car->chass_no'), 		
+		'sale_type',
+		'price',
+		'hold_amount',
+		'notes',		
 		array(
 			'class'=>'CButtonColumn',
 		),
 	),
 )); ?>
+       </div>

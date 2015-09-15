@@ -26,20 +26,14 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Stores</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
+       <div class="panel panel-default">            
+           <div class="panel-heading" dir =rtl>
+               <div class="row">
+               <div class="col-sm-6"><b><font size="5" color="blue">المخــازن</font></b></div>           
+               <div class="col-sm-6" dir =rtl> <?php echo CHtml::link('<i class="fa fa-plus"></i> '.Yii::t('data','Create'),array('create'), array('class' => 'btn btn-default','href' => 'sss',)); ?></div>
+           </div>
+           </div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'stores-grid',
 	'dataProvider'=>$model->search(),
@@ -47,8 +41,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'store_id',
 		'store_name',
+                array('name' => 'branch_id','value' => '$data->branch->branch_name'),
 		array(
 			'class'=>'CButtonColumn',
 		),
 	),
 )); ?>
+       </div>

@@ -6,7 +6,7 @@ class SalestblController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -27,19 +27,16 @@ class SalestblController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
+	
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('allow',  // deny all users
+//			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+//				'actions'=>array('admin','delete'),
+//				'users'=>array('admin'),
+//			),
+			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
@@ -71,68 +68,14 @@ class SalestblController extends Controller
 		{
 			$model->attributes=$_POST['Salestbl'];
 			if($model->save())
-                        {
 				$this->redirect(array('view','id'=>$model->invoice_id));
-                                
-                                
-                        }
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
-             //-------------------------------------------------------------------   
-
-    
 	}
 
-        public function actionGetCarData()
-	{
-            $this->layout = false;
-		$id = $_REQUEST['id'];            
-                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
-
-                $sql="SELECT carstbl.car_id, brands.brand_name, carmodel.model_name, colors.color_name FROM brands INNER JOIN carstbl ON brands.brand_id = carstbl.brand_id INNER JOIN carmodel ON carmodel.model_id = carstbl.model_id INNER JOIN colors ON carstbl.color_id = colors.color_id where car_id='".$id."' and car_id not in (select car_id from salestbl)";
-                $dataProvider=new CSqlDataProvider($sql, array(
-                            'keyField' => 'car_id',
-                  //          'totalItemCount'=>$count,
-                            'sort'=>array(
-                            'attributes'=>array(
-                            'car_id',
-        ),
-    ),
-    'pagination'=>array(
-        'pageSize'=>10,
-    ),
-));
-                
-                $this->render('getcardata',array(
-			'id'=>$_REQUEST['id'],
-                    'dataProvider' => $dataProvider
-		));
-                
-                
-	}
-        
-                public function actionUpdateAjax()
-	{
-            $this->layout = false;
-		$id = $_REQUEST['id'];      
-               Yii::app()->db->createCommand("update carstbl set soled = 1 where car_id = $id")->queryScalar();
-
-                
-	}
-        
-        
-                public function actionSetSoledZero()
-	{
-            $this->layout = false;
-		$id = $_REQUEST['id'];      
-               Yii::app()->db->createCommand("update carstbl set soled = 0 where car_id = $id")->queryScalar();
-
-                
-	}
-        
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -169,7 +112,6 @@ class SalestblController extends Controller
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-                
 	}
 
 	/**
@@ -197,8 +139,7 @@ class SalestblController extends Controller
 			'model'=>$model,
 		));
 	}
-        
- 
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -226,6 +167,4 @@ class SalestblController extends Controller
 			Yii::app()->end();
 		}
 	}
-
-
 }

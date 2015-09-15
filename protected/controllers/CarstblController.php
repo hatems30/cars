@@ -6,7 +6,7 @@ class CarstblController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -27,18 +27,15 @@ class CarstblController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
+	
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
+//			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+//				'actions'=>array('admin','delete'),
+//				'users'=>array('admin'),
+//			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -162,6 +159,67 @@ class CarstblController extends Controller
 	 * Performs the AJAX validation.
 	 * @param Carstbl $model the model to be validated
 	 */
+                            public function actionGetmodels()
+	{
+        	                  
+            $this->layout = false;
+		$id = $_REQUEST['id'];            
+                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
+
+              $sql="SELECT model_id , model_name from carmodel where brand_id = $id ";
+                
+              $connection=Yii::app()->db;   // assuming you have configured a "db" connection
+
+              $command=$connection->createCommand($sql);
+              $data = $command->queryAll($sql);
+
+              $this->render('getmodels',array(
+			'id'=>$_REQUEST['id'],
+			'model_id'=>$_REQUEST['model_id'],
+                         'data' => $data
+		));	
+	}
+                           public function actionGetcode()
+	{
+        	                  
+            $this->layout = false;
+		$id = $_REQUEST['id'];            
+                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
+
+              $sql="SELECT code_id , code_name  from carcode where model_id = $id ";
+                
+              $connection=Yii::app()->db;   // assuming you have configured a "db" connection
+
+              $command=$connection->createCommand($sql);
+              $data = $command->queryAll($sql);
+
+              $this->render('getcode',array(
+			'id'=>$_REQUEST['id'],
+			'code_id'=>$_REQUEST['code_id'],
+                         'data' => $data
+		));	
+	}
+
+                public function actionGetstores()
+	{
+        	                  
+            $this->layout = false;
+		$id = $_REQUEST['id'];            
+                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
+
+              $sql="SELECT store_id , store_name from stores where branch_id = $id ";
+                
+              $connection=Yii::app()->db;   // assuming you have configured a "db" connection
+
+              $command=$connection->createCommand($sql);
+              $data = $command->queryAll($sql);
+
+              $this->render('getstores',array(
+			'id'=>$_REQUEST['id'],
+			'store_id'=>$_REQUEST['store_id'],
+                         'data' => $data
+		));	
+	}
 	protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='carstbl-form')

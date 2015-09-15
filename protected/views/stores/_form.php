@@ -19,16 +19,47 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>	        
+    <div  id="panel" class="panel panel-default">
+                        <div class="panel-heading" dir =rtl>
+               <div class="row">
+               <div class="col-sm-6"><b><font size="5" color="blue">اماكن التخزين</font></b></div>           
+               
+           </div>
+           </div>
+    <div class="panel-body">      
+        <div class="container-fluid">            
 	<div class="row">
+                <div class ="col-sm-3" dir =rtl>	
 		<?php echo $form->labelEx($model,'store_name'); ?>
-		<?php echo $form->textField($model,'store_name',array('size'=>60,'maxlength'=>255)); ?>
+                </div>
+                <div class ="col-sm-3">	
+		<?php echo $form->textField($model,'store_name',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'store_name'); ?>
+                </div>
 	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<div class="row">
+                <div class ="col-sm-3" dir =rtl>	
+		<?php echo $form->labelEx($model,'branch_id'); ?>
+                </div>
+                <div class ="col-sm-3">	
+		<?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
+		<?php echo $form->error($model,'branch_id'); ?>
+                </div>
+	</div>
+	<div class ="col-sm-3" dir =rtl>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
 
+        </div>
+    </div>
+    </div>
+    </body>
+</html>
 </div><!-- form -->

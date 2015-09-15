@@ -55,11 +55,11 @@ class Customers extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'customer_id' => 'Customer',
-			'customer_name' => 'Customer Name',
-			'mobile' => 'Mobile',
-			'address' => 'Address',
-			'license_address' => 'License Address',
+			'customer_id' => 'رقم',
+			'customer_name' => 'اسم العميل',
+			'mobile' => 'الموبايل',
+			'address' => 'عنوان العميل',
+			'license_address' => 'عنوان الرخصة',
 		);
 	}
 

@@ -13,5 +13,9 @@
 	<?php echo CHtml::encode($data->model_name); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('brand_id')); ?>:</b>
+	<?php echo CHtml::encode($data->brand_id); ?>
+	<br />
+
 
 </div>

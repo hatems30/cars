@@ -5,11 +5,21 @@
  *
  * The followings are the available columns in table 'holdtbl':
  * @property integer $hold_id
- * @property integer $car_id
+ * @property string $hold_date
  * @property integer $branch_id
- * @property integer $sales_man_id
- * @property string $customer_name
+ * @property integer $employee_id
+ * @property integer $customer_id
+ * @property integer $car_id
+ * @property string $sale_type
+ * @property double $price
+ * @property double $hold_amount
  * @property string $notes
+ *
+ * The followings are the available model relations:
+ * @property Branchs $branch
+ * @property Carstbl $car
+ * @property Customers $customer
+ * @property Employees $employee
  */
 class Holdtbl extends CActiveRecord
 {
@@ -29,13 +39,14 @@ class Holdtbl extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('car_id, branch_id, sales_man_id, customer_name', 'required'),
-			array('car_id, branch_id, sales_man_id', 'numerical', 'integerOnly'=>true),
-			array('customer_name', 'length', 'max'=>255),
+			array('hold_date, branch_id, employee_id, customer_id, car_id, sale_type, price, hold_amount', 'required'),
+			array('branch_id, employee_id, customer_id, car_id', 'numerical', 'integerOnly'=>true),
+			array('price, hold_amount', 'numerical'),
+			array('sale_type', 'length', 'max'=>255),
 			array('notes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('hold_id, car_id, branch_id, sales_man_id, customer_name, notes', 'safe', 'on'=>'search'),
+			array('hold_id, hold_date, branch_id, employee_id, customer_id, car_id, sale_type, price, hold_amount, notes', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,6 +58,10 @@ class Holdtbl extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'branch' => array(self::BELONGS_TO, 'Branchs', 'branch_id'),
+			'car' => array(self::BELONGS_TO, 'Carstbl', 'car_id'),
+			'customer' => array(self::BELONGS_TO, 'Customers', 'customer_id'),
+			'employee' => array(self::BELONGS_TO, 'Employees', 'employee_id'),
 		);
 	}
 
@@ -56,12 +71,16 @@ class Holdtbl extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'hold_id' => 'Hold',
-			'car_id' => 'Car',
-			'branch_id' => 'Branch',
-			'sales_man_id' => 'Sales Man',
-			'customer_name' => 'Customer Name',
-			'notes' => 'Notes',
+			'hold_id' => 'رقم',
+			'hold_date' => 'تاريخ الحجز',
+			'branch_id' => 'الفرع',
+			'employee_id' => 'مندوب المبيعات',
+			'customer_id' => 'العميل',
+			'car_id' => 'الشاسيه',
+			'sale_type' => 'نوع البيع',
+			'price' => 'السعر',
+			'hold_amount' => 'مقدم الحجز',
+			'notes' => 'ملاحظات',
 		);
 	}
 
@@ -84,10 +103,14 @@ class Holdtbl extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('hold_id',$this->hold_id);
-		$criteria->compare('car_id',$this->car_id);
+		$criteria->compare('hold_date',$this->hold_date,true);
 		$criteria->compare('branch_id',$this->branch_id);
-		$criteria->compare('sales_man_id',$this->sales_man_id);
-		$criteria->compare('customer_name',$this->customer_name,true);
+		$criteria->compare('employee_id',$this->employee_id);
+		$criteria->compare('customer_id',$this->customer_id);
+		$criteria->compare('car_id',$this->car_id);
+		$criteria->compare('sale_type',$this->sale_type,true);
+		$criteria->compare('price',$this->price);
+		$criteria->compare('hold_amount',$this->hold_amount);
 		$criteria->compare('notes',$this->notes,true);
 
 		return new CActiveDataProvider($this, array(

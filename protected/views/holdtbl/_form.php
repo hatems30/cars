@@ -19,38 +19,128 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'car_id'); ?>
-		<?php echo $form->textField($model,'car_id'); ?>
-		<?php echo $form->error($model,'car_id'); ?>
+       <div class="panel panel-default"> 
+            <div class="panel-heading" dir =rtl>
+               <div class="row">
+               <div class="col-sm-6"><b><font size="5" color="blue">حجز سيارة</font></b></div>           
+               
+           </div>
+           </div>        
+           <div class="panel-body">
+           <div class="container-fluid">        
+            <div class="row">
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->labelEx($model,'hold_date'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->dateField($model,'hold_date', array('class'=>'form-control')); ?>
+		<?php echo $form->error($model,'hold_date'); ?>
+                </div>
 	</div>
 
 	<div class="row">
+                <div class ="col-sm-3" dir =rtl>
 		<?php echo $form->labelEx($model,'branch_id'); ?>
-		<?php echo $form->textField($model,'branch_id'); ?>
+                </div>
+                <div class ="col-sm-3">
+                <?php
+                if (isset($_REQUEST['branch_id']))
+                {    
+                    echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAllByAttributes(array('branch_id'=>$_REQUEST['branch_id'])), 'branch_id', 'branch_name'),array('class'=>'form-control') );                  
+                }
+                else
+                {
+                    echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name'),array('class'=>'form-control') );                  
+                }
+                ?>
 		<?php echo $form->error($model,'branch_id'); ?>
+                </div>
+
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->labelEx($model,'employee_id'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php 
+                    if (isset($_REQUEST['branch_id']))
+                    {
+                     echo $form->dropDownList($model,'employee_id', CHtml::listData(Employees::model()->findAllByAttributes(array('branch_id'=>$_REQUEST['branch_id'])), 'employee_id', 'employee_name') , array('empty'=>'' ,'class'=>'form-control' ));
+                    }
+                    else
+                    {
+                     echo $form->dropDownList($model,'employee_id', CHtml::listData(Employees::model()->findAll(), 'employee_id', 'employee_name') , array('empty'=>'' ,'class'=>'form-control' ));   
+                    }
+                ?>  
+		<?php echo $form->error($model,'employee_id'); ?>
+                </div>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'sales_man_id'); ?>
-		<?php echo $form->textField($model,'sales_man_id'); ?>
-		<?php echo $form->error($model,'sales_man_id'); ?>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->labelEx($model,'customer_id'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->dropDownList($model,'customer_id', CHtml::listData(customers::model()->findAll(), 'customer_id', 'customer_name') ,array('empty'=> '', 'class'=>'form-control')); ?>  
+		<?php echo $form->error($model,'customer_id'); ?>
+                </div>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'customer_name'); ?>
-		<?php echo $form->textField($model,'customer_name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'customer_name'); ?>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->labelEx($model,'car_id'); ?>
+                </div>
+                <div class ="col-sm-3">
+                <?php
+                     if (isset($_REQUEST['car_id']))
+                     {
+                         echo $form->dropDownList($model,'car_id', CHtml::listData(Carstbl::model()->findAllByAttributes(array('car_id'=>$_REQUEST['car_id'])) , 'car_id', 'chass_no'),array('class'=>'form-control'));
+                         
+                     }
+                     else
+                     {
+                         echo $form->dropDownList($model,'car_id', CHtml::listData(Carstbl::model()->findAll() , 'car_id', 'chass_no'),array('class'=>'form-control'));
+                     }
+                     echo $form->error($model,'car_id'); 
+                     
+                ?>
+		<?php echo $form->error($model,'car_id'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->labelEx($model,'sale_type'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->dropDownList($model,'sale_type',array("نقدي"=>"نقدي","قسط مباشر"=>"قسط مباشر" ,"بنك"=>"بنك"),array('empty'=>'' ,'class'=>'form-control' )); ?>
+		<?php echo $form->error($model,'sale_type'); ?>
+                </div>
+        </div>
+        <div id="row">
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->labelEx($model,'price'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->textField($model,'price' , array('class'=>'form-control')); ?>
+		<?php echo $form->error($model,'price'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->labelEx($model,'hold_amount'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->textField($model,'hold_amount' , array('class'=>'form-control')); ?>
+		<?php echo $form->error($model,'hold_amount'); ?>
+                </div>
 	</div>
 
 	<div class="row">
+                <div class ="col-sm-3" dir =rtl>
 		<?php echo $form->labelEx($model,'notes'); ?>
-		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50)); ?>
+                </div>
+                <div class ="col-sm-9">
+		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50 , 'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'notes'); ?>
+                </div>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<div class ="col-sm-3" dir =rtl>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

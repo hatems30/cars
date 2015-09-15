@@ -27,6 +27,7 @@ class Stores extends CActiveRecord
 		return array(
 			array('store_name', 'required'),
 			array('store_name', 'length', 'max'=>255),
+                        array('branch_id','safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('store_id, store_name', 'safe', 'on'=>'search'),
@@ -41,7 +42,7 @@ class Stores extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    
+                    'branch' => array(self::BELONGS_TO,'branchs','branch_id'),
                     'carstbl' => array(self::HAS_MANY,'carstbl','store_id'),
 		);
 	}
@@ -52,8 +53,9 @@ class Stores extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'store_id' => 'Store',
-			'store_name' => 'Store Name',
+			'store_id' => 'رقم',
+			'store_name' => 'مكان التخزين',
+                        'branch_id' =>'الفرع',
 		);
 	}
 

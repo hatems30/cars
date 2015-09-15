@@ -17,8 +17,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'car_id'); ?>
-		<?php echo $form->textField($model,'car_id'); ?>
+		<?php echo $form->label($model,'hold_date'); ?>
+		<?php echo $form->textField($model,'hold_date'); ?>
 	</div>
 
 	<div class="row">
@@ -27,13 +27,33 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'sales_man_id'); ?>
-		<?php echo $form->textField($model,'sales_man_id'); ?>
+		<?php echo $form->label($model,'employee_id'); ?>
+		<?php echo $form->textField($model,'employee_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'customer_name'); ?>
-		<?php echo $form->textField($model,'customer_name',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'customer_id'); ?>
+		<?php echo $form->textField($model,'customer_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'car_id'); ?>
+		<?php echo $form->textField($model,'car_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'sale_type'); ?>
+		<?php echo $form->textField($model,'sale_type',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'price'); ?>
+		<?php echo $form->textField($model,'price'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'hold_amount'); ?>
+		<?php echo $form->textField($model,'hold_amount'); ?>
 	</div>
 
 	<div class="row">

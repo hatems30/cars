@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Servicetbl <?php echo $model->service_id; ?></h1>
+
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

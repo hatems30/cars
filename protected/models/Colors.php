@@ -51,8 +51,8 @@ class Colors extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'color_id' => 'Color',
-			'color_name' => 'Color Name',
+			'color_id' => 'مسلسل',
+			'color_name' => 'اللون',
 		);
 	}
 

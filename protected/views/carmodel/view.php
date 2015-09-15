@@ -23,5 +23,6 @@ $this->menu=array(
 	'attributes'=>array(
 		'model_id',
 		'model_name',
+		'brand_id',
 	),
 )); ?>

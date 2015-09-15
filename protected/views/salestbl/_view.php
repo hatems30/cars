@@ -14,19 +14,19 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('branch_id')); ?>:</b>
-	<?php echo CHtml::encode($data->Branch->branch_name); ?>
+	<?php echo CHtml::encode($data->branch_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('sales_man_id')); ?>:</b>
-	<?php echo CHtml::encode($data->salesmantbl->sales_man_name); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('employee_id')); ?>:</b>
+	<?php echo CHtml::encode($data->employee_id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('car_id')); ?>:</b>
-	<?php echo CHtml::encode($data->carstbl->chass_no); ?>
+	<?php echo CHtml::encode($data->car_id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('customer_id')); ?>:</b>
-	<?php echo CHtml::encode($data->customers->customer_name); ?>
+	<?php echo CHtml::encode($data->customer_id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('finance_type')); ?>:</b>

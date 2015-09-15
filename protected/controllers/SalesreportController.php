@@ -3,7 +3,7 @@
 class SalesreportController extends Controller
 {
 	
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
 
 
 	public function actionView()
@@ -27,13 +27,19 @@ salestbl.invoice_date,
 brands.brand_name,
 carmodel.model_name,
 carstbl.chass_no,
-customers.customer_name
+salestbl.cach_price,
+inscomps.insurance_comp_name,
+salestbl.insurance_type,
+salestbl.insurance_amount,
+salestbl.insurance_rate
 FROM
-salestbl
-INNER JOIN carstbl ON carstbl.car_id = salestbl.car_id
-INNER JOIN brands ON brands.brand_id = carstbl.brand_id
-INNER JOIN carmodel ON carmodel.model_id = carstbl.model_id
-INNER JOIN customers ON salestbl.customer_id = customers.customer_id where salestbl.branch_id = $id ";
+carstbl
+INNER JOIN salestbl ON salestbl.car_id = carstbl.car_id
+INNER JOIN brands ON carstbl.brand_id = brands.brand_id
+INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id
+INNER JOIN customers ON salestbl.customer_id = customers.customer_id
+INNER JOIN inscomps ON salestbl.insurance_comp_id = inscomps.insurance_comp_id
+where salestbl.branch_id = $id and salestbl.finance_type = 'نقدي'";
 
                 
                 $dataProvider=new CSqlDataProvider($sql, 

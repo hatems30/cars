@@ -14,80 +14,106 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
+        
+      	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/mycss.css" media="print">
+    
+        
 
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-</head>
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title>    
+        
+        
+
+       </head>
 
 <body>
 
-<div class="container" id="page">
+    <div class="container" id="page">
 
 	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
-
-
-	<div id="mainMbMenu">
+<!---------------------------------------------------------------------------------------------------------------->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"><b>Abo Hetta</b></a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Home</a></li>
         
-<?php $this->widget('application.extensions.mbmenu.MbMenu',array(
-            'items'=>array(
-                array('label'=>'Home', 'url'=>array('/site/index')),
-                
-                array('label'=>'File', 
-                  'items'=>array(
-                    array('label'=>'Brands' , 'url'=>array('/brands/index','view'=>'index')),
-                    array('label'=>'Models' ,'url'=>array('/carmodel/index','view'=>'index')),
-                    array('label'=>'Colors' , 'url'=>array('/colors/index','view'=>'index')),
-                    array('label'=>'Branchs' ,'url'=>array('/branchs/index','view'=>'index')),
-                    array('label'=>'Stores' , 'url'=>array('/stores/index','view'=>'index')),
-                    array('label'=>'Suppliers' ,'url'=>array('/suppliers/index','view'=>'index')),
-                    array('label'=>'Banks' ,'url'=>array('/banks/index','view'=>'index')),
-                    array('label'=>'Customers' ,'url'=>array('/customers/index','view'=>'index')),
-                    array('label'=>'Sales men' ,'url'=>array('/salesmantbl/index','view'=>'index')),
-                    array('label'=>'Insurance companies' ,'url'=>array('/inscomps/index','view'=>'index')),),),
-                
-                array('label'=>'data',
-                  'items'=>array(
-                    array('label'=>'Add New Car', 'url'=>array('/carstbl/index','view'=>'index')),
-                    array('label'=>'Sales Incoice', 'url'=>array('/salestbl/index','view'=>'index')),
-                    array('label'=>'Car Holding', 'url'=>array('/Holdtbl/index','view'=>'index')),
-                    array('label'=>'Customer Service', 'url'=>array('/Servicetbl/index','view'=>'index')),
-                      
-                      
-                      )),
-                
-                array('label'=>'Reports',
-                  'items'=>array(
-                    array('label'=>'Sales Report', 'url'=>array('/salesreport/view','view'=>'index')),
-                    array('label'=>'Sales Incoice', 'url'=>array('/salestbl/index','view'=>'index')),))
-                
-                
-                
-                )));
-                   /*
-                      array('label'=>'suppers',
-                      'items'=>array(
-                        array('label'=>'Sub sub 1', 'url'=>array('/site/page','view'=>'subsub1')),
-                        array('label'=>'Sub sub 2', 'url'=>array('/site/page','view'=>'subsub2')),
-                      ),
-                    ),
-                      
-                  ),                    
-                ),
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>File</b><span class="caret"></span></a>            
+            <ul class="dropdown-menu" alig="center">
+            <li ><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=brands/admin&view=admin"><b>الماركات</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carmodel/admin&view=admin"><b>الموديلات</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carcode/admin&view=admin"><b>الاكـــواد</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=colors/admin&view=admin"><b>الالـــوان</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=branchs/admin&view=admin"><b>الفـــروع</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=stores/admin&view=admin"><b>المخـــازن</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=suppliers/admin&view=admin"><b>المــوردين</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=employees/admin&view=admin"><b>الموظفين</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=inscomps/admin&view=admin"><b>شركات التأمين</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=banks/admin&view=admin"><b>البنـــوك</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=customers/admin&view=admin"><b>عملاء البيع المباشر</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Companiestbl/admin&view=admin"><b>عملاء الشركات</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=dealerstbl/admin&view=admin"><b>الموزعين</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=traffictbl/admin&view=admin"><b>وحدات المرور</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=mcenterstbl/admin&view=admin"><b>مراكز الصيانة</b></a></li>
+          </ul>            
+        </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Data</b><span class="caret"></span></a>            
+          <ul class="dropdown-menu" alig="center">
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstbl/admin&view=admin"><b>اضافة سيارة جديدة</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=innersaletbl/admin&view=admin"><b>التحويل بين الفروع</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=holdtbl/admin&view=admin"><b>حجز سيارة</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=salestbl/admin&view=admin"><b>البيع المباشر</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=companysalestbl/admin&view=admin"><b>مبيعات الشركات</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=dealersalestbl/admin&view=admin"><b>مبيعات الموزعين</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=bankofferstbl/admin&view=admin"><b>عروض البنوك</b></a></li>            
+          </ul>            
+        </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>After Sale</b><span class="caret"></span></a>            
+          <ul class="dropdown-menu" alig="center">
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=paperstbl/admin&view=admin"><b>تبليغ الاوراق</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Licensetbl/admin&view=admin"><b>التراخيص</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Maintenancetbl/admin&view=admin"><b>حجز صيانة</b></a></li>            
+          </ul>            
+        </li>  
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Reports</b><span class="caret"></span></a>            
+          <ul class="dropdown-menu" alig="center">
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=salesreport/view"><b>تقرير البيع النقدي</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Banksalesreport/view"><b>تقرير مبيعات البنوك</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Premiumsalesreport/view"><b>تقرير مبيعات التقسيط</b></a></li>            
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Dealersalesreport/view"><b>تقرير مبيعات التجاري</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Companysalesreport/view"><b>تقرير مبيعات الشركات</b></a></li>
+          </ul>            
+        </li>            
+        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstock/view">Car Stock</a></li>        
+        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=callstbl/admin&view=admin">CALLS</a></li>
+        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=site/logout">Logout</a></li>
+        <li><a href="#"><?php echo 'welcome '.Yii::app()->user->username?></a></li>
+      </ul>      
+    </div>
+  </div>
+</nav>
 
-                  array('label'=>'Contact Us', 'url'=>array('/site/contact')),
-            ),
-    )); */?>
-           
-     </div><!-- mainmenu -->
+<!---------------------------------------------------------------------------------------------------------------->        
+
+        
      
 	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
+		<?php //$this->widget('zii.widgets.CBreadcrumbs', array('links'=>$this->breadcrumbs,)); ?><!-- breadcrumbs -->
 	<?php endif?>
-
+                
+                
+        <div id="main-content">
 	<?php echo $content; ?>
+        </div>
+                
 
 	<div class="clear"></div>
 

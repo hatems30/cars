@@ -16,28 +16,28 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Salestbl #<?php echo $model->invoice_id; ?></h1>
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'invoice_id',
 		'invoice_date',
-		'branch_id',
-		'sales_man_id',
-		'car_id',
-		'customer_id',
+		array('name' => 'branch_id','value' => $model->branch->branch_name),
+		array('name' => 'employee_id','value' => $model->employee->employee_name),
+		array('name' => 'car_id','value' => $model->car->chass_no),
+		array('name' => 'customer_id','value' => $model->customer->customer_name),
 		'finance_type',
 		'cach_price',
 		'downpayment',
 		'monthly_premium',
 		'months_count',
 		'interest_rate',
-		'bank_id',
+		array('name' => 'bank_id','value' => isset($model->bank->bank_name)?$model->bank->bank_name:''),
 		'transfer_amount',
 		'bank_down_amount',
 		'expenses',
-		'insurance_comp_id',
+                array('name' => 'insurance_comp_id','value' => $model->insuranceComp->insurance_comp_name),		
 		'insurance_type',
 		'insurance_amount',
 		'insurance_rate',

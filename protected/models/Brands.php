@@ -51,8 +51,8 @@ class Brands extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'brand_id' => 'Brand',
-			'brand_name' => 'Brand Name',
+			'brand_id' => 'كود الماركة',
+			'brand_name' => 'ماركة السيارة',
 		);
 	}
 

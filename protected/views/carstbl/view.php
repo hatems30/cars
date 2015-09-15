@@ -18,33 +18,26 @@ $this->menu=array(
 
 <h1>View Carstbl #<?php echo $model->car_id; ?></h1>
 
-<?php 
-
-$this->widget('zii.widgets.CDetailView', array(
+<?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'car_id',
-		'brand_id',
-		'model_id',
-		'color_id',
-		'chass_no',            
-		'motor_no',		
-                'off_price',
-		'cost_price',
-		'sale_price',
-		'car_code',
+		array('name' => 'brand_id','value' => $model->brand->brand_name),
+		array('name' => 'model_id','value' => $model->carmodel->model_name),
+		array('name' => 'code_id','value' => $model->code->code_name),
 		'car_spec',
-		'branch_id',
-		'store_id',
-		'supplier_id',
-            
-            
+		array('name' => 'color_id','value' => $model->color->color_name),
+		'car_year',
+		'chass_no',
+		'motor_no',
+		array('name' => 'branch_id','value' => $model->branch->branch_name),
+		array('name' => 'store_id','value' => $model->store->store_name),
+		array('name' => 'supplier_id','value' => $model->supplier->supplier_name),
+		'add_date',
+		'cost_price',
+		'off_price',
+		'sale_price_from',
+		'sale_price_to',
+		'notes',
 	),
- 
- 
-)); 
-?>
- 
-
-
-
+)); ?>

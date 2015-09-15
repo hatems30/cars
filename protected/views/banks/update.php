@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Banks <?php echo $model->bank_id; ?></h1>
+
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

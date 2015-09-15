@@ -16,16 +16,20 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Holdtbl #<?php echo $model->hold_id; ?></h1>
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'hold_id',
-		'car_id',
-		'branch_id',
-		'sales_man_id',
-		'customer_name',
+		'hold_date',
+		array('name' => 'branch_id','value' => $model->branch->branch_name),
+		array('name' => 'employee_id','value' => $model->employee->employee_name),
+		array('name' => 'customer_id','value' => $model->customer->customer_name),
+		array('name' => 'car_id','value' => $model->car->chass_no),
+		'sale_type',
+		'price',
+		'hold_amount',
 		'notes',
 	),
 )); ?>

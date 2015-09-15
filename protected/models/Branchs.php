@@ -45,6 +45,11 @@ class Branchs extends CActiveRecord
                     'carstbl'=>array(self::HAS_MANY,'carstbl','branch_id'),
                     'salestbl'=>array(self::HAS_MANY,'salestbl','branch_id'),
                     'salesmantbl'=>array(self::HAS_MANY,'salesmantbl','branch_id'),
+                    'holdtbl'=>array(self::HAS_MANY,'holdtbl','branch_id'),
+                    'stores'=>array(self::HAS_MANY,'stores','store_id'),
+                    
+                    
+                    
                     
 		);
 	}
@@ -55,8 +60,8 @@ class Branchs extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'branch_id' => 'Branch',
-			'branch_name' => 'Branch Name',
+			'branch_id' => 'كود الفرع',
+			'branch_name' => 'اسم الفرع',
 		);
 	}
 

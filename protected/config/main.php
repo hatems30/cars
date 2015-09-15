@@ -57,7 +57,14 @@ return array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
 		),
-
+                'authManager'=>array(
+                   'class'=>'CDbAuthManager',
+                   'connectionID'=>'db',
+               ),
+            'user'=>array(
+			// enable cookie-based authentication
+			'allowAutoLogin'=>true,
+		),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(

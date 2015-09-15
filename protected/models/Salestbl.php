@@ -7,7 +7,7 @@
  * @property integer $invoice_id
  * @property string $invoice_date
  * @property integer $branch_id
- * @property integer $sales_man_id
+ * @property integer $employee_id
  * @property integer $car_id
  * @property integer $customer_id
  * @property string $finance_type
@@ -25,6 +25,14 @@
  * @property double $insurance_amount
  * @property double $insurance_rate
  * @property string $notes
+ *
+ * The followings are the available model relations:
+ * @property Employees $employee
+ * @property Banks $bank
+ * @property Branchs $branch
+ * @property Carstbl $car
+ * @property Customers $customer
+ * @property Inscomps $insuranceComp
  */
 class Salestbl extends CActiveRecord
 {
@@ -44,14 +52,14 @@ class Salestbl extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('invoice_date, branch_id, sales_man_id, car_id, customer_id, finance_type', 'required'),
-			array('branch_id, sales_man_id, car_id, customer_id, months_count, bank_id, insurance_comp_id', 'numerical', 'integerOnly'=>true),
+			array('invoice_date, branch_id, employee_id, car_id, customer_id, finance_type', 'required'),
+			array('branch_id, employee_id, car_id, customer_id, months_count, bank_id, insurance_comp_id', 'numerical', 'integerOnly'=>true),
 			array('cach_price, downpayment, monthly_premium, interest_rate, transfer_amount, bank_down_amount, expenses, insurance_amount, insurance_rate', 'numerical'),
 			array('finance_type, insurance_type', 'length', 'max'=>255),
 			array('notes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('invoice_id, invoice_date, branch_id, sales_man_id, car_id, customer_id, finance_type, cach_price, downpayment, monthly_premium, months_count, interest_rate, bank_id, transfer_amount, bank_down_amount, expenses, insurance_comp_id, insurance_type, insurance_amount, insurance_rate, notes', 'safe', 'on'=>'search'),
+			array('invoice_id, invoice_date, branch_id, employee_id, car_id, customer_id, finance_type, cach_price, downpayment, monthly_premium, months_count, interest_rate, bank_id, transfer_amount, bank_down_amount, expenses, insurance_comp_id, insurance_type, insurance_amount, insurance_rate, notes', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,12 +71,13 @@ class Salestbl extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'branch' =>array(self::BELONGS_TO,'Branchs','branch_id'),
-                    'salesmantbl' =>array(self::BELONGS_TO,'salesmantbl','sales_man_id'),
-                    'carstbl' =>array(self::BELONGS_TO,'carstbl','car_id'),
-                    'customers' =>array(self::BELONGS_TO,'customers','customer_id'),
-                    'banks' =>array(self::BELONGS_TO,'banks','bank_id'),
-                    'inscomps' =>array(self::BELONGS_TO,'inscomps','insurance_comp_id'),
+			'employee' => array(self::BELONGS_TO, 'Employees', 'employee_id'),
+			'bank' => array(self::BELONGS_TO, 'Banks', 'bank_id'),
+			'branch' => array(self::BELONGS_TO, 'Branchs', 'branch_id'),
+			'car' => array(self::BELONGS_TO, 'Carstbl', 'car_id'),
+			'customer' => array(self::BELONGS_TO, 'Customers', 'customer_id'),
+			'insuranceComp' => array(self::BELONGS_TO, 'Inscomps', 'insurance_comp_id'),
+                        'carstbl' => array(self::BELONGS_TO, 'Carstbl', 'car_id'),
 		);
 	}
 
@@ -78,27 +87,27 @@ class Salestbl extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'invoice_id' => 'Invoice',
-			'invoice_date' => 'Invoice Date',
-			'branch_id' => 'Branch',
-			'sales_man_id' => 'Sales Man',
-			'car_id' => 'Car',
-			'customer_id' => 'Customer',
-			'finance_type' => 'Finance Type',
-			'cach_price' => 'Cach Price',
-			'downpayment' => 'Downpayment',
-			'monthly_premium' => 'Monthly Premium',
-			'months_count' => 'Months Count',
-			'interest_rate' => 'Interest Rate',
-			'bank_id' => 'Bank',
-			'transfer_amount' => 'Transfer Amount',
-			'bank_down_amount' => 'Bank Down Amount',
-			'expenses' => 'Expenses',
-			'insurance_comp_id' => 'Insurance Comp',
-			'insurance_type' => 'Insurance Type',
-			'insurance_amount' => 'Insurance Amount',
-			'insurance_rate' => 'Insurance Rate',
-			'notes' => 'Notes',
+			'invoice_id' => 'رقم',
+			'invoice_date' => 'تاريخ البيع',
+			'branch_id' => 'الفرع',
+			'employee_id' => 'مندوب البيع',
+			'car_id' => 'الشاسيه',
+			'customer_id' => 'العميل',
+			'finance_type' => 'نوع التمويل',
+			'cach_price' => 'سعر النقدي',
+			'downpayment' => 'المقدم',
+			'monthly_premium' => 'القسط الشهري',
+			'months_count' => 'عدد الشهور',
+			'interest_rate' => 'نسبة الفائدة',
+			'bank_id' => 'البنك',
+			'transfer_amount' => 'قيمة التحويل',
+			'bank_down_amount' => 'مقدم البنك',
+			'expenses' => 'مصاريف ادارية',
+			'insurance_comp_id' => 'شركة التأمين',
+			'insurance_type' => 'نوع التأمين',
+			'insurance_amount' => 'قيمة التأمين',
+			'insurance_rate' => 'نسبة التأمين',
+			'notes' => 'ملاحظات',
 		);
 	}
 
@@ -123,7 +132,7 @@ class Salestbl extends CActiveRecord
 		$criteria->compare('invoice_id',$this->invoice_id);
 		$criteria->compare('invoice_date',$this->invoice_date,true);
 		$criteria->compare('branch_id',$this->branch_id);
-		$criteria->compare('sales_man_id',$this->sales_man_id);
+		$criteria->compare('employee_id',$this->employee_id);
 		$criteria->compare('car_id',$this->car_id);
 		$criteria->compare('customer_id',$this->customer_id);
 		$criteria->compare('finance_type',$this->finance_type,true);

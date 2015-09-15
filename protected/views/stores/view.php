@@ -23,5 +23,6 @@ $this->menu=array(
 	'attributes'=>array(
 		'store_id',
 		'store_name',
+                array('name' => 'branch_id','value' => $model->branch->branch_name),
 	),
 )); ?>

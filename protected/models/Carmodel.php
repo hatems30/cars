@@ -6,6 +6,11 @@
  * The followings are the available columns in table 'carmodel':
  * @property integer $model_id
  * @property string $model_name
+ * @property integer $brand_id
+ *
+ * The followings are the available model relations:
+ * @property Carcode[] $carcodes
+ * @property Brands $brand
  */
 class Carmodel extends CActiveRecord
 {
@@ -25,11 +30,12 @@ class Carmodel extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('model_name', 'required'),
+			array('model_name, brand_id', 'required'),
+			array('brand_id', 'numerical', 'integerOnly'=>true),
 			array('model_name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('model_id, model_name', 'safe', 'on'=>'search'),
+			array('model_id, model_name, brand_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -41,7 +47,9 @@ class Carmodel extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'carstbl' => array(self::HAS_MANY,'carstbl','model_id'),
+			'carcodes' => array(self::HAS_MANY, 'Carcode', 'model_id'),
+                        'carstbl' => array(self::HAS_MANY, 'Carstbl', 'model_id'), 
+			'brand' => array(self::BELONGS_TO, 'Brands', 'brand_id'),
 		);
 	}
 
@@ -51,8 +59,9 @@ class Carmodel extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'model_id' => 'Model',
-			'model_name' => 'Model Name',
+			'model_id' => 'الكود',
+			'model_name' => 'الموديل',
+			'brand_id' => 'الماركة',
 		);
 	}
 
@@ -76,6 +85,7 @@ class Carmodel extends CActiveRecord
 
 		$criteria->compare('model_id',$this->model_id);
 		$criteria->compare('model_name',$this->model_name,true);
+		$criteria->compare('brand_id',$this->brand_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
