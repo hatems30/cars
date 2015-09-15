@@ -229,5 +229,5 @@ div.search-form
 }
 
 .button-column{
-	width: 100px;
+	width: 100px!important;
 }
