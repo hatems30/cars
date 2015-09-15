@@ -25,7 +25,7 @@ $this->breadcrumbs=array(
 
 
 <div class="container-fluid">
-<div class="form">
+<div class="form" style="margin:10px auto; width:50%">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
@@ -33,9 +33,10 @@ $this->breadcrumbs=array(
 		'validateOnSubmit'=>true,
 	),
 )); ?>
+<h1>Login</h1>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
-     
+
 	<div class="row">
             <div class="col-sm-3" dir =rtl>
 		<?php echo $form->labelEx($model,'username'); ?>
