@@ -242,3 +242,8 @@ table.items{
 
 	    direction: rtl!important;
 }
+
+
+form .col-md-1, form .col-md-10, form .col-md-11, form .col-md-12, form .col-md-2, form  .col-md-3, form .col-md-4, form .col-md-5, form .col-md-6, form .col-md-7, form .col-md-8, form .col-md-9 {
+    float: left!important;!
+}
