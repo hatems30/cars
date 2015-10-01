@@ -33,8 +33,8 @@ dealerstbl.dealer_name
 FROM
 dealersalestbl
 INNER JOIN carstbl ON dealersalestbl.car_id = carstbl.car_id
-INNER JOIN brands ON carstbl.brand_id = brands.brand_id
-INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id
+INNER JOIN brands ON carstbl.brand_id = brands.brand_id 
+INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id AND carmodel.model_id = carstbl.model_id
 INNER JOIN dealerstbl ON dealersalestbl.dealer_id = dealerstbl.dealer_id
 
 

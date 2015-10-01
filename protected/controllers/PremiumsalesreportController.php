@@ -40,8 +40,8 @@ salestbl.insurance_rate
 FROM
 carstbl
 INNER JOIN salestbl ON salestbl.car_id = carstbl.car_id
-INNER JOIN brands ON carstbl.brand_id = brands.brand_id
-INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id
+INNER JOIN brands ON carstbl.brand_id = brands.brand_id 
+INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id AND carmodel.model_id = carstbl.model_id
 INNER JOIN inscomps ON salestbl.insurance_comp_id = inscomps.insurance_comp_id
 where salestbl.branch_id = $id and salestbl.finance_type = 'تقسيط'
 and salestbl.invoice_date > '$date_from' and salestbl.invoice_date < '$date_to'";

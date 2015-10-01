@@ -34,7 +34,7 @@ FROM
 companysalestbl
 INNER JOIN carstbl ON companysalestbl.car_id = carstbl.car_id
 INNER JOIN brands ON carstbl.brand_id = brands.brand_id
-INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id
+INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id AND carmodel.model_id = carstbl.model_id
 INNER JOIN companiestbl ON companysalestbl.company_id = companiestbl.company_id
 where companysalestbl.branch_id = $id
 and companysalestbl.invoice_date >= '$date_from' and companysalestbl.invoice_date <= '$date_to' ";    

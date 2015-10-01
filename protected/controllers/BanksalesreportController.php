@@ -42,7 +42,7 @@ FROM
 salestbl
 INNER JOIN carstbl ON salestbl.car_id = carstbl.car_id
 INNER JOIN brands ON carstbl.brand_id = brands.brand_id
-INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id
+INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id AND carmodel.model_id = carstbl.model_id
 INNER JOIN customers ON salestbl.customer_id = customers.customer_id
 INNER JOIN inscomps ON salestbl.insurance_comp_id = inscomps.insurance_comp_id
 INNER JOIN banks ON salestbl.bank_id = banks.bank_id
