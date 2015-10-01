@@ -52,7 +52,7 @@ class Suppliers extends CActiveRecord
 	{
 		return array(
 			'supplier_id' => 'Supplier',
-			'supplier_name' => 'Supplier Name',
+			'supplier_name' => 'المــورد',
 		);
 	}
 

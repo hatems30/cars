@@ -18,20 +18,10 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-
-    </head>
-    
-
-    <body>
-
   <div class="panel panel-default">
-                  <div class="panel-heading" dir =rtl>
+                  <div class="panel-heading">
                <div class="row">
-               <div class="col-sm-6"><b><font size="5" color="blue">مبيعات الموزعين</font></b></div>           
+               <div class="col-sm-7"><b><font size="5" color="blue">البيع التجاري</font></b></div>           
                
            </div>
            </div>
@@ -39,20 +29,20 @@
       
         <div class="container-fluid">
 	<div class="row">
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'invoice_date'); ?>
                 </div>
-                <div class ="col-sm-5">
+                <div class ="col-sm-3" dir =rtl>
 		<?php echo $form->dateField($model,'invoice_date',array('class'=>'form-control')); ?>
 		<?php echo $form->error($model,'invoice_date'); ?>
                 </div>
 	</div>
 
 	<div class="row">
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'branch_id'); ?>
                 </div>
-                <div class ="col-sm-5">
+                <div class ="col-sm-3" dir =rtl>
 		<?php
                 if (isset($_REQUEST['branch_id']))
                 {    
@@ -67,10 +57,10 @@
                 </div>
         </div>
         <div class="row">    
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'employee_id'); ?>
                 </div>
-                <div class ="col-sm-5">
+                <div class ="col-sm-3" dir="rtl">
 		<?php 
                     if (isset($_REQUEST['branch_id']))
                     {
@@ -86,20 +76,20 @@
 	</div>
 
 	<div class="row">
-               <div class ="col-sm-3" dir =rtl>
+               <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'dealer_id'); ?>
                </div>
-               <div class ="col-sm-5">
+               <div class ="col-sm-3" dir="rtl">
 		<?php echo $form->dropDownList($model,'dealer_id', CHtml::listData(Dealerstbl::model()->findAll(), 'dealer_id', 'dealer_name') , array('empty'=>'' ,'class'=>'form-control' ));   ?>
 		<?php echo $form->error($model,'dealer_id'); ?>
                </div>
 	</div>
 
 	<div class="row">
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'car_id'); ?>
                 </div>
-                <div class ="col-sm-3"> 
+                <div class ="col-sm-3" dir =rtl> 
 		 <?php
                      if (isset($_REQUEST['car_id']))
                      {
@@ -113,27 +103,27 @@
                 ?>
 		<?php echo $form->error($model,'car_id'); ?>
                 </div>
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'price'); ?>
                 </div>
-                <div class ="col-sm-3">
+                <div class ="col-sm-3" dir =rtl>
 		<?php echo $form->textField($model,'price' , array('class'=>'form-control')); ?>
 		<?php echo $form->error($model,'price'); ?>
                 </div>
 	</div>
 
 	<div class="row">
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'notes'); ?>
                 </div>
-                <div class ="col-sm-9">
+                <div class ="col-sm-9" dir =rtl>
 		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50 ,  'class'=>'form-control' )); ?>
 		<?php echo $form->error($model,'notes'); ?>
                 </div>
 	</div>
 
-	<div class ="col-sm-3" dir =rtl>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
+	<div class ="col-sm-3">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

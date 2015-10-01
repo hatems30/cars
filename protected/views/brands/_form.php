@@ -24,27 +24,28 @@
 
 
   <div class="panel panel-default">                
-           <div class="panel-heading" dir =rtl>
+           <div class="panel-heading">
                <div class="row">
-               <div class="col-sm-6"><b><font size="5" color="blue">الماركات</font></b></div>           
+               <div class="col-sm-7"><b><font size="5" color="blue">الماركات</font></b></div>           
                
            </div>
            </div>
   <div class="panel-body">      
         <div class="container-fluid">
             <div class="row">
-                 <div class ="col-sm-3" dir =rtl>
+                 <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'brand_name'); ?>
                  </div>
-                <div class ="col-sm-3">
+                <div class ="col-sm-3" dir =rtl>
 		<?php echo $form->textField($model,'brand_name',array('class'=>'form-control' )); ?>
 		<?php echo $form->error($model,'brand_name'); ?>
+                </div>            
+	    </div>
+            <div class="row">         
+                <div class ="col-sm-3">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>
                 </div>
-            
-                <div class ="col-sm-3" dir="rtl">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
-                </div>
-	</div>
+	    </div>
         </div>   
   </div>
   </div>

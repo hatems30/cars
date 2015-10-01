@@ -18,23 +18,18 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>	        
+        
     <div  id="panel" class="panel panel-default">
-                  <div class="panel-heading" dir =rtl>
+                  <div class="panel-heading">
                <div class="row">
-               <div class="col-sm-6"><b><font size="5" color="blue">شركات التأمين</font></b></div>           
+               <div class="col-sm-7"><b><font size="5" color="blue">شركات التأمين</font></b></div>           
                
            </div>
            </div>
     <div class="panel-body">      
         <div class="container-fluid">            
 	<div class="row">
-                <div class ="col-sm-3" dir =rtl>	
+                <div class ="col-sm-3">	
 		<?php echo $form->labelEx($model,'insurance_comp_name'); ?>
                 </div>
                 <div class ="col-sm-3" dir =rtl>	
@@ -43,8 +38,8 @@
                 </div>
 	</div>
 
-	<div class ="col-sm-3" dir =rtl>	
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
+	<div class ="col-sm-3">	
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
@@ -52,6 +47,4 @@
         </div>
     </div>
     </div>
-    </body>
-</html>
 </div><!-- form -->

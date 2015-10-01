@@ -34,10 +34,13 @@ $this->menu=array(
 		array('name' => 'store_id','value' => $model->store->store_name),
 		array('name' => 'supplier_id','value' => $model->supplier->supplier_name),
 		'add_date',
+            /*
 		'cost_price',
 		'off_price',
 		'sale_price_from',
 		'sale_price_to',
+             * 
+             */
 		'notes',
 	),
 )); ?>

@@ -18,7 +18,9 @@ class DealersalesreportController extends Controller
 	public function actionGetdata()
 	{
 	            $this->layout = false;
-		$id = $_REQUEST['id'];                            
+		$id = $_REQUEST['id'];                    
+                $date_from = $_REQUEST['date_from'];
+                $date_to = $_REQUEST['date_to'];                        
                 //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
                 
                  $sql = "SELECT
@@ -37,8 +39,12 @@ INNER JOIN dealerstbl ON dealersalestbl.dealer_id = dealerstbl.dealer_id
 
 
 
-where dealersalestbl.branch_id = $id";
-
+where dealersalestbl.branch_id = $id
+and dealersalestbl.invoice_date >= '$date_from' and dealersalestbl.invoice_date <= '$date_to' ";
+                 if(!empty($_REQUEST['dealer_id']))
+                    {
+                     $sql.=" and dealersalestbl.dealer_id ='{$_REQUEST['dealer_id']}'";
+                    }                                         
                 
                 $dataProvider=new CSqlDataProvider($sql, 
                             array(

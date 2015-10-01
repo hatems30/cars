@@ -19,19 +19,12 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
 
-    </head>
-    
-
-    <body>
 
   <div class="panel panel-default">
-                  <div class="panel-heading" dir =rtl>
+                  <div class="panel-heading">
                <div class="row">
-               <div class="col-sm-6"><b><font size="5" color="blue">عملاء بيع الشركات</font></b></div>           
+               <div class="col-sm-7"><b><font size="5" color="blue">عملاء بيع الشركات</font></b></div>           
                
            </div>
            </div>
@@ -39,33 +32,31 @@
       
         <div class="container-fluid">
 	<div class="row">
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'company_name'); ?>
                 </div>
-                <div class ="col-sm-8">
+                <div class ="col-sm-3" dir =rtl>
 		<?php echo $form->textField($model,'company_name',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'company_name'); ?>
                 </div>
 	</div>
 
 	<div class="row">
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'notes'); ?>
                 </div>
-                <div class ="col-sm-8">
+                <div class ="col-sm-3">
 		<?php echo $form->textField($model,'notes',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'notes'); ?>
                 </div>
 	</div>
 
 	<div class ="col-sm-3" dir =rtl>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
         </div>
   </div>
   </div>
-    </body>
-</html>
 </div><!-- form -->

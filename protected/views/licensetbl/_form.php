@@ -21,19 +21,19 @@
 
 
        <div class="panel panel-default"> 
-                       <div class="panel-heading" dir =rtl>
+                       <div class="panel-heading">
                <div class="row">
-               <div class="col-sm-6"><b><font size="5" color="blue">التراخيص</font></b></div>           
+               <div class="col-sm-7"><b><font size="5" color="blue">التراخيص</font></b></div>           
                
            </div>
            </div>
            <div class="panel-body">
            <div class="container-fluid">
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'branch_id'); ?>
                 </div>
-                <div class ="col-md-3">
+                <div class ="col-md-3" dir="rtl">
 		<?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
 		<?php echo $form->error($model,'branch_id'); ?>
                 </div>
@@ -46,20 +46,20 @@
 	</div>
 
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'employee_id'); ?>
                 </div>
-                <div class ="col-md-3">
+                <div class ="col-md-3" dir="rtl">
 		<?php echo $form->dropDownList($model,'employee_id', CHtml::listData(Employees::model()->findAll(), 'employee_id', 'employee_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
 		<?php echo $form->error($model,'employee_id'); ?>
                 </div>
 	</div>
 
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'traffic_id'); ?>
                 </div>
-                <div class ="col-md-3">
+                <div class ="col-md-3" dir="rtl">
 		<?php echo $form->dropDownList($model,'traffic_id', CHtml::listData(Traffictbl::model()->findAll(), 'traffic_id', 'traffic_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
 		<?php echo $form->error($model,'traffic_id'); ?>
                 </div>
@@ -67,27 +67,27 @@
 	</div>
 
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'super_employee_id'); ?>
                 </div>
-                <div class ="col-md-3">
+                <div class ="col-md-3" dir="rtl">
 		<?php echo $form->dropDownList($model,'super_employee_id', CHtml::listData(Employees::model()->findAll(), 'employee_id', 'employee_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
 		<?php echo $form->error($model,'super_employee_id'); ?>
                 </div>
 	</div>
 
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'notes'); ?>
                 </div>
-                <div class ="col-md-3">
+                <div class ="col-md-3" dir="rtl">
 		<?php echo $form->textField($model,'notes',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'notes'); ?>
                 </div>
 	</div>
 
-	<div class ="col-md-3" dir =rtl>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
+	<div class ="col-md-3">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

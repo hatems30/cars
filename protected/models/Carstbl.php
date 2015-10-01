@@ -50,7 +50,7 @@ class Carstbl extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('brand_id, model_id, code_id, color_id, car_year, chass_no, motor_no, branch_id, supplier_id, add_date, cost_price, off_price, sale_price_from, sale_price_to', 'required'),
+			array('brand_id, model_id, code_id, color_id, car_year, chass_no, motor_no, branch_id, supplier_id, add_date', 'required'),
 			array('brand_id, model_id, code_id, color_id, branch_id, store_id, supplier_id', 'numerical', 'integerOnly'=>true),
 			array('cost_price, off_price, sale_price_from, sale_price_to', 'numerical'),
 			array('car_spec, chass_no, motor_no', 'length', 'max'=>255),

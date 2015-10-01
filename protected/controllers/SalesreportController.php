@@ -11,14 +11,14 @@ class SalesreportController extends Controller
 		$this->render('index');
 		
 	}
-
-
         
 
 	public function actionGetdata()
 	{
 	            $this->layout = false;
-		$id = $_REQUEST['id'];                            
+		$id = $_REQUEST['id'];    
+                $date_from = $_REQUEST['date_from'];
+                $date_to = $_REQUEST['date_to'];                  
                 //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
                 
                  $sql = "SELECT
@@ -39,7 +39,8 @@ INNER JOIN brands ON carstbl.brand_id = brands.brand_id
 INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id
 INNER JOIN customers ON salestbl.customer_id = customers.customer_id
 INNER JOIN inscomps ON salestbl.insurance_comp_id = inscomps.insurance_comp_id
-where salestbl.branch_id = $id and salestbl.finance_type = 'نقدي'";
+where salestbl.branch_id = $id and salestbl.finance_type = 'نقدي'
+and salestbl.invoice_date >= '$date_from' and salestbl.invoice_date <= '$date_to'";
 
                 
                 $dataProvider=new CSqlDataProvider($sql, 

@@ -58,6 +58,7 @@ class Employees extends CActiveRecord
 			'salestbls' => array(self::HAS_MANY, 'Salestbl', 'sales_man_id'),
                         'callsman' => array(self::HAS_MANY, 'Callstbl', 'call_employee_id'),
                         'serviceman' => array(self::HAS_MANY, 'Callstbl', 'service_employee_id'),
+                        'user'=>array(self::HAS_MANY,'user','employee_id'), 
                         
                     
 		);

@@ -18,7 +18,9 @@ class BanksalesreportController extends Controller
 	public function actionGetdata()
 	{
 	            $this->layout = false;
-		$id = $_REQUEST['id'];                            
+		$id = $_REQUEST['id'];                    
+                $date_from = $_REQUEST['date_from'];
+                $date_to = $_REQUEST['date_to']; 
                 //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
                 
                  $sql = "SELECT
@@ -46,9 +48,12 @@ INNER JOIN inscomps ON salestbl.insurance_comp_id = inscomps.insurance_comp_id
 INNER JOIN banks ON salestbl.bank_id = banks.bank_id
 
 
-where salestbl.branch_id = $id and salestbl.finance_type = 'بنك' ";
-
-                
+where salestbl.branch_id = $id   and salestbl.finance_type = 'بنك'
+and salestbl.invoice_date >= '$date_from' and salestbl.invoice_date <= '$date_to' ";
+                if(!empty($_REQUEST['bank_id']))
+                    {
+                     $sql.=" and salestbl.bank_id ='{$_REQUEST['bank_id']}'";
+                    }                                  
                 $dataProvider=new CSqlDataProvider($sql, 
                             array(
                            'keyField' => 'invoice_id',

@@ -20,16 +20,16 @@
 	<?php echo $form->errorSummary($model); ?>
 
         <div class="panel panel-default"> 
-            <div class="panel-heading" dir =rtl>
+            <div class="panel-heading">
                <div class="row">
-               <div class="col-sm-6"><b><font size="5" color="blue">عروض البنوك</font></b></div>           
+               <div class="col-sm-7"><b><font size="5" color="blue">عروض البنوك</font></b></div>           
                
            </div>
            </div>
            <div class="panel-body">
            <div class="container-fluid">
 	<div class="row">
-                <div class ="col-sm-3" dir = rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'offer_date'); ?>
                 </div>    
                 <div class ="col-sm-3">
@@ -40,20 +40,20 @@
 	</div>
 
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'customer_id'); ?>
                 </div>
-                <div class ="col-md-3">
+                <div class ="col-md-3"  dir =rtl>
 		<?php echo $form->dropDownList($model,'customer_id', CHtml::listData(Customers::model()->findAll(), 'customer_id', 'customer_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
 		<?php echo $form->error($model,'customer_id'); ?>
                 </div>
 	</div>
 
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'brand_id'); ?>
                 </div>
-                <div class ="col-md-3">
+                <div class ="col-md-3" dir =rtl>
 		<?php echo $form->dropDownList($model,'brand_id', CHtml::listData(Brands::model()->findAll(), 'brand_id', 'brand_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
 		<?php echo $form->error($model,'brand_id'); ?>
                 </div>
@@ -69,27 +69,27 @@
 	</div>
 
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'bank_id'); ?>
                 </div>
-                <div class ="col-md-3">
+                <div class ="col-md-3" dir =rtl>
 		<?php echo $form->dropDownList($model,'bank_id', CHtml::listData(Banks::model()->findAll(), 'bank_id', 'bank_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
 		<?php echo $form->error($model,'bank_id'); ?>
                 </div>
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3" >
 		<?php echo $form->labelEx($model,'banker'); ?>
                 </div>
-                <div class ="col-md-3">
+                <div class ="col-md-3" dir =rtl>
 		<?php echo $form->textField($model,'banker',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'banker'); ?>
                 </div>
 	</div>
 
 	<div class="row">
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'branch_id'); ?>
                 </div>
-                <div class ="col-sm-3">
+                <div class ="col-sm-3"  dir =rtl>
 		<?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
 		<?php echo $form->error($model,'branch_id'); ?>
                 </div>
@@ -99,37 +99,37 @@
 	</div>
 
 	<div class="row">
-                <div class ="col-sm-3" dir =rtl>
+                <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'offer_status'); ?>
                 </div>
-                <div class ="col-sm-3">
+                <div class ="col-sm-3"  dir =rtl>
 		<?php echo $form->dropDownList($model,'offer_status',array("موافقة"=>"موافقة","رفض"=>"رفض" ,"قيد الاجراء"=>"قيد الاجراء"),array('empty'=>'' ,'class'=>'form-control' )); ?>
 		<?php echo $form->error($model,'offer_status'); ?>
                 </div>
 	</div>
 
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'results'); ?>
                 </div>
-                <div class ="col-md-8">
+                <div class ="col-md-8"  dir =rtl>
 		<?php echo $form->textArea($model,'results',array('rows'=>6, 'cols'=>50 , 'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'results'); ?>
                 </div>
 	</div>
 
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'notes'); ?>
                 </div>
-                <div class ="col-md-8">
+                <div class ="col-md-8"  dir =rtl>
 		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50 , 'class'=>'form-control' )); ?>
 		<?php echo $form->error($model,'notes'); ?>
                 </div>
 	</div>
 
 	<div class ="col-md-3" dir =rtl>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

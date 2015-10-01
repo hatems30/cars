@@ -25,21 +25,38 @@ class BrandsController extends Controller
 	 * @return array access control rules
 	 */
 	public function accessRules()
-	{
-		return array(
-	
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','view'),
-				'users'=>array('@'),
-			),
-//			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-//				'actions'=>array('admin','delete'),
-//				'users'=>array('admin'),
-//			),
-			array('allow',  // deny all users
-				'users'=>array('*'),
-			),
-		);
+	{           
+            $cont = Yii::app()->controller->id;
+            $user_name = Yii::app()->user->username;
+              $sql="SELECT userpertbl.per_type
+FROM userpertbl
+INNER JOIN `user` ON userpertbl.user_id = `user`.id
+INNER JOIN controllers ON userpertbl.controller_id = controllers.controller_id 
+where `user`.username= '$user_name' and controllers.controller_code_name ='$cont'";       
+              $connection=Yii::app()->db;   // assuming you have configured a "db" connection
+              $command=$connection->createCommand($sql);
+              $data = $command->queryAll($sql);
+              foreach ($data as $row){foreach ($row as $key=>$value){$per_type=$value;}}                                          
+              if ($per_type=='ReadWrite')
+              {
+                  return array(
+                      	        array('allow', // allow authenticated user to perform 'create' and 'update' actions
+			       	      'actions'=>array('create','update','admin','delete','view'),
+				      'users'=>array('@'),),
+                        	 array('deny',  // deny all users
+				       'users'=>array('*'),),                      
+                  )   ; 
+              }
+              elseif ($per_type=='Read') 
+              {
+                                return array(
+                      	        array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('view','admin'),
+				'users'=>array('@'),),
+                        	 array('deny',  // deny all users
+				       'users'=>array('*'),),                                                          
+                  )   ; 
+              }              
 	}
 
 	/**

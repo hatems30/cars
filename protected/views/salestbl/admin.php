@@ -39,7 +39,7 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'salestbl-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+//	'filter'=>$model,
 	'columns'=>array(
 		'invoice_id',
 		'invoice_date',

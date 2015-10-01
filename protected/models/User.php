@@ -28,7 +28,11 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username', 'required')		);
+			array('username , password , branch_id , employee_id', 'required')	,	
+                        array('password', 'safe'),
+                        array('branch_id', 'safe'),
+                        array('employee_id', 'safe')
+                    );
 	}
 
 	/**
@@ -40,6 +44,8 @@ class User extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'posts' => array(self::HAS_MANY, 'Post', 'author_id'),
+                        'branch' => array(self::BELONGS_TO,'Branchs','branch_id'),
+                        'employee' => array(self::BELONGS_TO, 'Employees', 'employee_id'),
 		);
 	}
 
@@ -72,10 +78,34 @@ class User extends CActiveRecord
         }
         public function attributeLabels()
         {
+            
+            		return array(
+			'username' => 'اسم المستخدم',
+			'password' => 'كلمة السر',
+                        'branch_id' => 'الفرع',
+                        'employee_id' => 'اسم الموظف',    
+		);
+            /*
                 $newLabels=array();
                 foreach(User::model()->attributes as $k=>$v){
                     $newLabels[$k]= Yii::t('data', $k);
                 }
                return $newLabels;
+             * 
+             * 
+             */
         }
+        
+        	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('username',$this->username);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
 }

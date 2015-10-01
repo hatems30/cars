@@ -1,4 +1,4 @@
-<?php echo CHtml::label(Yii::t('data', 'model'),'',array("class"=>"col-sm-3" , "dir"=>"rtl")); ?>
+<?php echo CHtml::label(Yii::t('data', 'الموديل'),'',array("class"=>"col-sm-3")); ?>
 
 <div class="col-sm-3" >                 
 

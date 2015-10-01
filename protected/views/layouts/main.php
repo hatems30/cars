@@ -58,21 +58,21 @@
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=employees/admin&view=admin"><b>الموظفين</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=inscomps/admin&view=admin"><b>شركات التأمين</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=banks/admin&view=admin"><b>البنـــوك</b></a></li>
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=customers/admin&view=admin"><b>عملاء البيع المباشر</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=customers/admin&view=admin"><b>العمـــلاء</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Companiestbl/admin&view=admin"><b>عملاء الشركات</b></a></li>
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=dealerstbl/admin&view=admin"><b>الموزعين</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=dealerstbl/admin&view=admin"><b>عملاء البيع التجاري</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=traffictbl/admin&view=admin"><b>وحدات المرور</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=mcenterstbl/admin&view=admin"><b>مراكز الصيانة</b></a></li>
           </ul>            
         </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Data</b><span class="caret"></span></a>            
           <ul class="dropdown-menu" alig="center">
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstbl/admin&view=admin"><b>اضافة سيارة جديدة</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstbl/admin&view=admin"><b>اضافة سيارة جديدة</b></a></li>            
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=innersaletbl/admin&view=admin"><b>التحويل بين الفروع</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=holdtbl/admin&view=admin"><b>حجز سيارة</b></a></li>
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=salestbl/admin&view=admin"><b>البيع المباشر</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=salestbl/admin&view=admin"><b>مبيعات العملاء</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=companysalestbl/admin&view=admin"><b>مبيعات الشركات</b></a></li>
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=dealersalestbl/admin&view=admin"><b>مبيعات الموزعين</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=dealersalestbl/admin&view=admin"><b>البيع التجاري</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=bankofferstbl/admin&view=admin"><b>عروض البنوك</b></a></li>            
           </ul>            
         </li>
@@ -90,10 +90,18 @@
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Premiumsalesreport/view"><b>تقرير مبيعات التقسيط</b></a></li>            
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Dealersalesreport/view"><b>تقرير مبيعات التجاري</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Companysalesreport/view"><b>تقرير مبيعات الشركات</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Bankoffersreport/view"><b>تقرير عروض البنك</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Holdsreport/view"><b>تقرير الحجوزات </b></a></li>            
           </ul>            
         </li>            
         <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstock/view">Car Stock</a></li>        
         <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=callstbl/admin&view=admin">CALLS</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Users</b><span class="caret"></span></a>            
+          <ul class="dropdown-menu" alig="center">
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=User/admin&view=admin"><b>بيانات المستخدمين</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=userpertbl/admin&view=admin"><b>صلاحيات المستخدمين</b></a></li>        
+          </ul>            
+        </li>    
         <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=site/logout">Logout</a></li>
         <li><a href="#"><?php echo 'welcome '.Yii::app()->user->username?></a></li>
       </ul>      

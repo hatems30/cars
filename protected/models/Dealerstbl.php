@@ -52,7 +52,7 @@ class Dealerstbl extends CActiveRecord
 	{
 		return array(
 			'dealer_id' => 'رقم',
-			'dealer_name' => 'اسم الموزع',
+			'dealer_name' => 'اسم العميل',
 			'notes' => 'ملاحظات',
 		);
 	}

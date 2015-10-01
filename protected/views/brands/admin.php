@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
        <div class="panel panel-default">            
            <div class="panel-heading" dir =rtl>
                <div class="row">
-               <div class="col-sm-7"><b><font size="5" color="blue">ماركات السيارات</font></b></div>           
+               <div class="col-sm-7"><b><font size="5" color="blue">الماركات</font></b></div>           
                <div class="col-sm-5" dir =rtl> <?php echo CHtml::link('<i class="fa fa-plus"></i> '.Yii::t('data','Create'),array('create'), array('class' => 'btn btn-default','href' => 'sss',)); ?></div>
            </div>
            </div>

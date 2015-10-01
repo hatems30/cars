@@ -25,7 +25,8 @@ class Stores extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('store_name', 'required'),
+			array('store_name','required'),
+                        array('branch_id','required'),
 			array('store_name', 'length', 'max'=>255),
                         array('branch_id','safe'),
 			// The following rule is used by search().

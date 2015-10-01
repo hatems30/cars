@@ -17,61 +17,55 @@
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->errorSummary($model); ?>
-        
-<!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>	        
+	<?php echo $form->errorSummary($model); ?>	        
     <div  id="panel" class="panel panel-default">
-                  <div class="panel-heading" dir =rtl>
+                  <div class="panel-heading">
                <div class="row">
-               <div class="col-sm-6"><b><font size="5" color="blue">الموظفين</font></b></div>           
+               <div class="col-sm-7"><b><font size="5" color="blue">الموظفين</font></b></div>           
                
            </div>
            </div>
     <div class="panel-body">      
         <div class="container-fluid">            
 	<div class="row">
-                <div class ="col-sm-3" dir =rtl>	
+                <div class ="col-sm-3">	
 		<?php echo $form->labelEx($model,'employee_name'); ?>
                 </div>
-                <div class ="col-md-9">
+            <div class ="col-md-3" dir =rtl>
 		<?php echo $form->textField($model,'employee_name',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'employee_name'); ?>
                 </div>
         </div>
         <div class="row">    
-	        <div class ="col-md-3" dir =rtl>
+	        <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'employee_type'); ?>
                 </div>
-                <div class ="col-md-5">
+                <div class ="col-md-3" dir =rtl>
                 <?php echo $form->dropDownList($model,'employee_type',array("مبيعات"=>"مبيعات","تراخيص"=>"تراخيص" ,"خدمة عملاء"=>"خدمة عملاء"),array('empty'=>'' ,'class'=>'form-control' )); ?>    
 		<?php echo $form->error($model,'employee_type'); ?>
                 </div>
 	</div>
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'branch_id'); ?>
                 </div>
-                <div class ="col-md-5">
+                <div class ="col-md-3" dir =rtl>
 		<?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name') , array ("class" => "form-control")); ?>  
 		<?php echo $form->error($model,'branch_id'); ?>
                 </div>
 	</div>
 	<div class="row">
-                <div class ="col-md-3" dir =rtl>
+                <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'manager_id'); ?>
                 </div>
-                <div class ="col-md-5">
+                <div class ="col-md-3" dir =rtl>
 		<?php echo $form->dropDownList($model,'manager_id', CHtml::listData(Employees::model()->findAll() , 'employee_id', 'employee_name') , array ('empty' => '' ,"class" => "form-control")); ?>
 		<?php echo $form->error($model,'manager_id'); ?>
                 </div>
 	</div>
         <div class ="col-md-3">    
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>
 	</div>
         </div>
 
@@ -79,7 +73,5 @@
         </div>
     </div>
     </div>
-    </body>
-</html>
 </div>
 

@@ -102,9 +102,9 @@ class Carcode extends CActiveRecord
 	{
 		return array(
 			'code_id' => 'Code',
-			'code_name' => 'Code Name',
-			'brand_id' => 'Brand',
-			'model_id' => 'Model',
+			'code_name' => 'الكـود',
+			'brand_id' => 'الماركة',
+			'model_id' => 'الموديل',
 			'code_01' => 'ناقل الحركة',
 			'code_02' => 'المقابض',
 			'code_03' => 'المفتاح',

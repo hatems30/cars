@@ -26,6 +26,7 @@ class Inscomps extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('insurance_comp_name', 'length', 'max'=>255),
+                        array('insurance_comp_name','required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('insurance_comp_id, insurance_comp_name', 'safe', 'on'=>'search'),

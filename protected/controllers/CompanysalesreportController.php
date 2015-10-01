@@ -18,7 +18,9 @@ class CompanysalesreportController extends Controller
 	public function actionGetdata()
 	{
 	            $this->layout = false;
-		$id = $_REQUEST['id'];                            
+		$id = $_REQUEST['id'];    
+                $date_from = $_REQUEST['date_from'];
+                $date_to = $_REQUEST['date_to'];                   
                 //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
                 
                  $sql = "SELECT
@@ -34,10 +36,13 @@ INNER JOIN carstbl ON companysalestbl.car_id = carstbl.car_id
 INNER JOIN brands ON carstbl.brand_id = brands.brand_id
 INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id
 INNER JOIN companiestbl ON companysalestbl.company_id = companiestbl.company_id
+where companysalestbl.branch_id = $id
+and companysalestbl.invoice_date >= '$date_from' and companysalestbl.invoice_date <= '$date_to' ";    
 
-
-
-where companysalestbl.branch_id = $id ";
+                  if(!empty($_REQUEST['company_id']))
+                    {
+                     $sql.=" and companysalestbl.company_id ='{$_REQUEST['company_id']}'";
+                    }  
 
                 
                 $dataProvider=new CSqlDataProvider($sql, 
@@ -54,6 +59,7 @@ where companysalestbl.branch_id = $id ";
     ),
 ));
                 
+            
                 $this->render('getdata',array('id'=>$_REQUEST['id'],'dataProvider' => $dataProvider));
                 		
 	}
