@@ -118,7 +118,7 @@
 		<?php echo $form->labelEx($model,'code_08'); ?>
                 </div>
                 <div class ="col-sm-3" dir =rtl>
-		<?php echo $form->dropDownList($model,'code_08', array("لايوجد"=>"لايوجد","نيكل"=>"نيكل","عادية"=>"عادية"),array("class" => "form-control dd")); ?>                         
+		<?php echo $form->dropDownList($model,'code_08', array("لايوجد"=>"لايوجد","نيكل"=>"نيكل","عادية"=>"عادية","سوداء"=>"سوداء"),array("class" => "form-control dd")); ?>                         
 		<?php echo $form->error($model,'code_08'); ?>
                 </div>
 	</div>
@@ -220,7 +220,7 @@
 		<?php echo $form->labelEx($model,'code_20'); ?>
                 </div>
                 <div class ="col-sm-3"  dir =rtl>
-		<?php echo $form->dropDownList($model,'code_20', array("لايوجد"=>"لايوجد","عادي"=>"عادي","تاتش"=>"تاتش"),array("class" => "form-control")); ?>   
+		<?php echo $form->dropDownList($model,'code_20', array("لايوجد"=>"لايوجد","MT"=>"MT","AT"=>"AT","Touch"=>"Touch"),array("class" => "form-control")); ?>   
 		<?php echo $form->error($model,'code_20'); ?>
                 </div>
 	</div>
@@ -247,7 +247,7 @@
 		<?php echo $form->labelEx($model,'code_23'); ?>
                 </div>
                 <div class ="col-sm-3"  dir =rtl>
-		<?php echo $form->dropDownList($model,'code_23', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?>   
+		<?php echo $form->dropDownList($model,'code_23', array("لايوجد"=>"لايوجد","أمامي"=>"أمامي","خلفى"=>"خلفى" ,"أمامي خلفى"=>"أمامي خلفى"),array("class" => "form-control")); ?>   
 		<?php echo $form->error($model,'code_23'); ?>
                 </div>
 	        <div class ="col-sm-3">
@@ -394,6 +394,150 @@
 		<?php echo $form->error($model,'code_40'); ?>
                 </div>
 	</div>
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_41'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'code_41', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_41'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_42'); ?>
+                </div>
+                <div class ="col-sm-3"  dir =rtl>
+		<?php echo $form->dropDownList($model,'code_42', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_42'); ?>
+                </div>
+	</div>                          
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_43'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'code_43', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_43'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_44'); ?>
+                </div>
+                <div class ="col-sm-3"  dir =rtl>
+		<?php echo $form->dropDownList($model,'code_44', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_44'); ?>
+                </div>
+	</div>                           
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_45'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'code_45', array("لايوجد"=>"لايوجد","أمامي"=>"أمامي","خلفى"=>"خلفى","امامي و خلفي"=>"أمامي و خلفي"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_45'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_46'); ?>
+                </div>
+                <div class ="col-sm-3"  dir =rtl>
+		<?php echo $form->dropDownList($model,'code_46', array("عادي"=>"عادي","تحكم طارة"=>"تحكم طارة","تحكم طارة وبلوتوث"=>"تحكم طارة وبلوتوث"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_46'); ?>
+                </div>
+	</div>     
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_47'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'code_47', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_47'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_48'); ?>
+                </div>
+                <div class ="col-sm-3"  dir =rtl>
+		<?php echo $form->dropDownList($model,'code_48', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_48'); ?>
+                </div>
+	</div>                             
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_49'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'code_49', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_49'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_50'); ?>
+                </div>
+                <div class ="col-sm-3"  dir =rtl>
+		<?php echo $form->dropDownList($model,'code_50', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_50'); ?>
+                </div>
+	</div>           
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_51'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'code_51', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_51'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_52'); ?>
+                </div>
+                <div class ="col-sm-3"  dir =rtl>
+		<?php echo $form->dropDownList($model,'code_52', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_52'); ?>
+                </div>
+	</div>   
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_53'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'code_53', array("لايوجد"=>"لايوجد","أمامي"=>"أمامي","خلفي"=>"خلفي","أمامي خلفي"=>"أمامي خلفي"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_53'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_54'); ?>
+                </div>
+                <div class ="col-sm-3"  dir =rtl>
+		<?php echo $form->dropDownList($model,'code_54', array("لايوجد"=>"لايوجد","أمامي"=>"أمامي","خلفي"=>"خلفي","أمامي خلفي"=>"أمامي خلفي"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_54'); ?>
+                </div>
+	</div>   
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_55'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'code_55', array("لايوجد"=>"لايوجد","فرش جلد"=>"فرش جلد","نص جلد"=>"نص جلد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_55'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_56'); ?>
+                </div>
+                <div class ="col-sm-3"  dir =rtl>
+		<?php echo $form->dropDownList($model,'code_56', array("لايوجد"=>"لايوجد","جلد"=>"جلد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_56'); ?>
+                </div>
+	</div>      
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_57'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'code_57', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_57'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_58'); ?>
+                </div>
+                <div class ="col-sm-3"  dir =rtl>
+		<?php echo $form->dropDownList($model,'code_58', array("14"=>"14","15"=>"15","16"=>"16","17"=>"17","18"=>"18","19"=>"19"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_58'); ?>
+                </div>
+	</div>                           
 	<div class="row buttons">
                 <div class ="col-sm-3">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>

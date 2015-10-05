@@ -61,9 +61,9 @@ $this->breadcrumbs=array(
         <div class="row">
 	<div class="row rememberMe">
                 <div class="col-sm-6">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
+		<?php //echo $form->checkBox($model,'rememberMe'); ?>
+		<?php //echo $form->label($model,'rememberMe'); ?>
+		<?php //echo $form->error($model,'rememberMe'); ?>
                 </div>
 	</div>
         </div>

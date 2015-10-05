@@ -31651,3 +31651,1812 @@ Stack trace:
 REQUEST_URI=/cars/index.php?r=salestbl/admin&view=admin
 in C:\xampp\htdocs\cars\protected\controllers\SalestblController.php (40)
 in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 16:06:27 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:16:11 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:16:19 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:17:25 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:17:27 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:18:50 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:18:52 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:19:42 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:22:27 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:24:13 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:24:53 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:24:55 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:24:56 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:24:58 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:25:31 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 16:25:33 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_41" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_41')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_41')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Carcode), 'code_41')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Carcode), 'code_41', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): CHtml::activeTextField(Object(Carcode), 'code_41', Array)
+#5 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(402): CActiveForm->textField(Object(Carcode), 'code_41', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 21:49:48 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_53" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_53')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_53')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Carcode), 'code_53')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Carcode), 'code_53', Array, Array)
+#4 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(498): CActiveForm->dropDownList(Object(Carcode), 'code_53', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 22:37:57 [error] [exception.CException] exception 'CException' with message 'Property "Carcode.code_55" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('code_55')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('code_55')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Carcode), 'code_55')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Carcode), 'code_55', Array, Array)
+#4 C:\xampp\htdocs\cars\protected\views\carcode\_form.php(514): CActiveForm->dropDownList(Object(Carcode), 'code_55', Array, Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\cars\protected\views\carcode\create.php(17): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php(93): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CarcodeController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carcode/create')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/cars/index.php?r=carcode/create
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/admin&view=admin
+---
+2015/10/03 22:39:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Getmodels')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Carcode/Getmode...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=Carcode/Getmodels
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/update&id=8
+---
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_42" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_43" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_44" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_45" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_46" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_47" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_48" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_49" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_50" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_51" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_52" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_53" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_54" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_55" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_56" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_57" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:39:46 [warning] [application] Failed to set unsafe attribute "code_58" of "Carcode".
+in C:\xampp\htdocs\cars\protected\controllers\CarcodeController.php (110)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:40:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Getmodels')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Carcode/Getmode...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=Carcode/Getmodels
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/update&id=8
+---
+2015/10/03 22:43:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Getmodels')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Carcode/Getmode...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=Carcode/Getmodels
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/update&id=8
+---
+2015/10/03 22:45:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Getmodels')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Carcode/Getmode...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=Carcode/Getmodels
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/update&id=8
+---
+2015/10/03 22:46:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('Getmodels')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Carcode/Getmode...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=Carcode/Getmodels
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/update&id=8
+---
+2015/10/03 22:47:01 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (40)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:47:12 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\EmployeesController.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): EmployeesController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): EmployeesController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=employees/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\EmployeesController.php (40)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:48:59 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (40)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:52:27 [error] [php] Use of undefined constant x - assumed 'x' (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (40)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:52:52 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:53:42 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:53:45 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:54:00 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (41)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:54:16 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (41)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:55:51 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (41)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 22:55:56 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (41)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 23:22:47 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:43)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (43)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 23:25:19 [error] [php] mysql_num_rows() expects parameter 1 to be resource, array given (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (40)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 23:28:30 [error] [php] mysql_fetch_row() expects parameter 1 to be resource, array given (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (40)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 23:32:46 [error] [exception.CException] exception 'CException' with message 'CDbConnection and its behaviors do not have a method or closure named "query".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(40): CComponent->__call('query', Array)
+#1 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(40): CDbConnection->query('SELECT userpert...')
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('suppliers/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=suppliers/admin&view=admin
+---
+2015/10/03 23:33:39 [error] [php] Undefined variable: total (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (41)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 23:34:12 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:44)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (44)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 23:35:37 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:46)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (46)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 23:35:41 [error] [php] Undefined variable: per_type (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:46)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (46)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 23:49:37 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/03 23:55:10 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.username" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('username')
+#1 C:\xampp\htdocs\cars\protected\views\layouts\main.php(106): CWebUser->__get('username')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\cars\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\cars\protected\controllers\SiteController.php(54): CController->render('index')
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/cars/index.php
+---
+2015/10/03 23:55:21 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.username" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('username')
+#1 C:\xampp\htdocs\cars\protected\views\layouts\main.php(106): CWebUser->__get('username')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\cars\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\cars\protected\controllers\SiteController.php(54): CController->render('index')
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/cars/index.php
+---
+2015/10/04 00:22:57 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:24:29 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:24:35 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:24:52 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:32:05 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:37:18 [error] [php] Undefined offset: 0 (C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (40)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:38:41 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:41:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('suppliers/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=suppliers/admin&view=admin
+---
+2015/10/04 00:41:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('suppliers/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=suppliers/admin&view=admin
+---
+2015/10/04 00:51:36 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.username" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('username')
+#1 C:\xampp\htdocs\cars\protected\views\layouts\main.php(106): CWebUser->__get('username')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\cars\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\cars\protected\controllers\SiteController.php(54): CController->render('index')
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/cars/index.php
+---
+2015/10/04 00:53:14 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.username" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('username')
+#1 C:\xampp\htdocs\cars\protected\views\layouts\main.php(106): CWebUser->__get('username')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#9 C:\xampp\htdocs\cars\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\cars\protected\controllers\SiteController.php(54): CController->render('index')
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/cars/index.php
+---
+2015/10/04 00:54:07 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:54:50 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:54:53 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:55:16 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:55:29 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:56:07 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:57:33 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:57:53 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:58:01 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:59:53 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 00:59:56 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 01:01:20 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 01:01:29 [error] [php] array_merge(): Argument #2 is not an array (C:\xampp\htdocs\yii\framework\db\CDbCommand.php:472)
+Stack trace:
+#0 C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php(39): CDbCommand->query()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(1144): SuppliersController->accessRules()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SuppliersController->filterAccessControl()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): SuppliersController->runActionWithFilters()
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SuppliersController->run()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+in C:\xampp\htdocs\cars\protected\controllers\SuppliersController.php (39)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 01:02:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('suppliers/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/04 01:03:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('suppliers/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=suppliers/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/04 01:52:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customers/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=customers/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=suppliers/admin&view=admin
+---
+2015/10/04 01:52:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mcenterstbl/adm...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=mcenterstbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=customers/admin&view=admin
+---
+2015/10/04 01:52:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carstbl/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=carstbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=userpertbl/admin&view=admin
+---
+2015/10/04 01:55:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Maintenancetbl/...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=Maintenancetbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/04 01:57:58 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(265): BankofferstblController->runActionWithFilters()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): BankofferstblController->run()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=bankofferstbl/admin&view=admin
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 01:58:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('dealersalestbl/...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=dealersalestbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=bankofferstbl/admin&view=admin
+---
+2015/10/04 01:58:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bankofferstbl/a...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=bankofferstbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/04 02:00:55 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('innersaletbl/ad...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=innersaletbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---
+2015/10/04 02:00:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carstbl/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=carstbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=innersaletbl/admin&view=admin
+---
+2015/10/04 02:01:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('holdtbl/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=holdtbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=carcode/create
+---
+2015/10/04 02:01:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('companysalestbl...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=companysalestbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=holdtbl/admin&view=admin
+---
+2015/10/04 22:46:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('callstbl/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=callstbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/04 23:15:20 [error] [exception.CException] exception 'CException' with message 'Property "User.user_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('user_id')
+#1 C:\xampp\htdocs\cars\protected\views\user\_form.php(67): CActiveRecord->__get('user_id')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\cars\protected\views\user\update.php(21): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#10 C:\xampp\htdocs\cars\protected\controllers\UserController.php(134): CController->render('update', Array)
+#11 [internal function]: UserController->actionUpdate('2')
+#12 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#13 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/update')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/cars/index.php?r=user/update&id=2
+HTTP_REFERER=http://localhost/cars/index.php?r=User/admin&view=admin
+---
+2015/10/04 23:22:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carmodel/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=carmodel/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/04 23:22:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('User/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=User/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=colors/admin&view=admin
+---
+2015/10/04 23:22:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('userpertbl/admi...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=userpertbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=User/admin&view=admin
+---
+2015/10/04 23:23:55 [error] [php] Undefined index: id (C:\xampp\htdocs\cars\protected\views\userpertbl\admin.php:37)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UserpertblController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): UserpertblController->renderPartial()
+#2 C:\xampp\htdocs\cars\protected\controllers\UserpertblController.php(168): UserpertblController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UserpertblController->actionAdmin()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UserpertblController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UserpertblController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): UserpertblController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UserpertblController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=userpertbl/admin&view=admin
+in C:\xampp\htdocs\cars\protected\views\userpertbl\admin.php (37)
+in C:\xampp\htdocs\cars\protected\controllers\UserpertblController.php (168)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/04 23:35:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('User/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=User/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/04 23:36:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('carstbl/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=carstbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---
+2015/10/04 23:36:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('salestbl/create')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=salestbl/create&car_id=11&branch_id=1
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---
+2015/10/04 23:37:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paperstbl/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=paperstbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---

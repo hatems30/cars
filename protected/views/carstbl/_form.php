@@ -122,7 +122,23 @@
                 </div>
 	</div>
                                       </br>
-<div id="ajax-hidden" class="hidden">
+<?php
+           $cont = Yii::app()->controller->id;
+            $user_name = Yii::app()->user->username;
+            $sql = "SELECT userpertbl.per_type
+                    FROM userpertbl
+                    INNER JOIN `user` ON userpertbl.user_id = `user`.id
+                    INNER JOIN controllers ON userpertbl.controller_id = controllers.controller_id 
+                    where `user`.username= '$user_name' and controllers.controller_code_name ='carprice' limit 1";
+            $connection = Yii::app()->db;   // assuming you have configured a "db" connection
+            $command = $connection->createCommand($sql);
+            $data = $command->queryAll($sql);
+            if (isset($data[0]['per_type']) && !empty($data[0]['per_type'])) 
+                {            
+                    $per_type = $data[0]['per_type'];
+                    if ($per_type == 'ReadWrite') 
+                        {                        
+?>
 	<div class="row">
                 <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'cost_price'); ?>
@@ -156,7 +172,9 @@
 		<?php echo $form->error($model,'sale_price_to'); ?>
                 </div>
 	</div>
-</div>                                           
+  <?php
+                }}
+  ?>
                                              </br>
 	<div class="row">
                 <div class ="col-sm-3">

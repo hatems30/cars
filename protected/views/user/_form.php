@@ -65,9 +65,21 @@
                 
         </div>
 
+        <div class="row">
 	<div class ="col-sm-3"> 
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
+	    <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save' , array('class'=>'btn btn-default')); ?>
+        </div>
+            <div class ="col-sm-3" dir =rtl>    
+            <?php if (isset($model->id ) && !empty($model->id))
+            {
+                ?>
+            <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=userpertbl/admin&view=admin&id=<?php echo $model->id ?>">تعديل الصلاحيات</a>
+            
+            <?php
+            }
+            ?>            
 	</div>
+        </div>
 
 <?php $this->endWidget(); ?>
   </div>

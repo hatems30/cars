@@ -96,12 +96,8 @@
         </li>            
         <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstock/view">Car Stock</a></li>        
         <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=callstbl/admin&view=admin">CALLS</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Users</b><span class="caret"></span></a>            
-          <ul class="dropdown-menu" alig="center">
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=User/admin&view=admin"><b>بيانات المستخدمين</b></a></li>
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=userpertbl/admin&view=admin"><b>صلاحيات المستخدمين</b></a></li>        
-          </ul>            
-        </li>    
+        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=User/admin&view=admin">Users</a></li>
+
         <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=site/logout">Logout</a></li>
         <li><a href="#"><?php echo 'welcome '.Yii::app()->user->username?></a></li>
       </ul>      
@@ -126,9 +122,10 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		Eng. Mahmoud Mohamed Atia<br/>
+		m.atia81@yahoo.com<br/>
+                01002537952
+		<?php //echo Yii::powered(); ?>
 	</div><!-- footer -->
 
 </div><!-- page -->

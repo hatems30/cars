@@ -85,7 +85,7 @@ class Userpertbl extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('per_id',$this->per_id);
-		$criteria->compare('user_id',$this->user_id);
+		$criteria->compare('user_id',$id);
 		$criteria->compare('controller_id',$this->controller_id);
 		$criteria->compare('per_type',$this->per_type,true);
 

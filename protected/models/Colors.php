@@ -52,7 +52,7 @@ class Colors extends CActiveRecord
 	{
 		return array(
 			'color_id' => 'مسلسل',
-			'color_name' => 'اللون '.'داخلى'.' / '.'خارجي',
+			'color_name' => 'اللون '.'خارجي'.' / '.'داخلي',
 		);
 	}
 

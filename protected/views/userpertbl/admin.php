@@ -34,8 +34,8 @@ $('.search-form form').submit(function(){
            </div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'userpertbl-grid',
-	'dataProvider'=>$model->search(2),
-	'filter'=>$model,
+	'dataProvider'=>$model->search($_REQUEST['id']),
+	//'filter'=>$model,
 	'columns'=>array(
 		'per_id',
 		

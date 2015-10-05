@@ -48,6 +48,7 @@
  * @property string $code_38
  * @property string $code_39
  * @property string $code_40
+ * @property string $code_41
  *
  * The followings are the available model relations:
  * @property Carmodel $model
@@ -75,6 +76,7 @@ class Carcode extends CActiveRecord
 			array('brand_id, model_id', 'numerical', 'integerOnly'=>true),
 			array('code_name', 'length', 'max'=>255),
 			array('code_01, code_02, code_03, code_04, code_05, code_06, code_07, code_08, code_09, code_10, code_11, code_12, code_13, code_14, code_15, code_16, code_17, code_18, code_19, code_20, code_21, code_22, code_23, code_24, code_25, code_26, code_27, code_28, code_29, code_30, code_31, code_32, code_33, code_34, code_35, code_36, code_37, code_38, code_39, code_40', 'length', 'max'=>255),
+                        array('code_41 , code_42 , code_43, code_44, code_45, code_46, code_47, code_48, code_49, code_50, code_51, code_52, code_53, code_54, code_55, code_56, code_57, code_58' ,'safe'), 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('code_id, code_name, brand_id, model_id, code_01, code_02, code_03, code_04, code_05, code_06, code_07, code_08, code_09, code_10, code_11, code_12, code_13, code_14, code_15, code_16, code_17, code_18, code_19, code_20, code_21, code_22, code_23, code_24, code_25, code_26, code_27, code_28, code_29, code_30, code_31, code_32, code_33, code_34, code_35, code_36, code_37, code_38, code_39, code_40', 'safe', 'on'=>'search'),
@@ -145,6 +147,24 @@ class Carcode extends CActiveRecord
 			'code_38' => 'سعة المحرك CC',
 			'code_39' => 'قوة المحرك',
 			'code_40' => 'عدد السلندرات',
+                        'code_41' => 'مخرج طاقة',
+                        'code_42' => 'مخرج تكييف خلفي',
+                        'code_43' => 'كرسي هيدروليك',
+                        'code_44' => 'طي المقعدالخلفي',
+                        'code_45' => 'LED',
+                        'code_46' => 'الطارة',                    
+                        'code_47' => 'بلوتوث',
+                        'code_48' => 'شفتات طارة',                         
+                        'code_49' => 'مساحة خلفية',
+                        'code_50' => 'مرايات تعتيم',
+                        'code_51' => 'حامل نظارة',
+                        'code_52' => 'نور قرأة',
+                        'code_53' => 'حامل اكواب',
+                        'code_54' => 'مسند يد',
+                        'code_55' => 'فرش جلد',
+                        'code_56' => 'فرش الابواب',
+                        'code_57' => 'نظام التوازن الكتروني',
+                        'code_58' => 'مقاس الجنط',
 		);
 	}
 
@@ -210,7 +230,10 @@ class Carcode extends CActiveRecord
 		$criteria->compare('code_38',$this->code_38,true);
 		$criteria->compare('code_39',$this->code_39,true);
 		$criteria->compare('code_40',$this->code_40,true);
-
+		$criteria->compare('code_41',$this->code_41,true);
+		$criteria->compare('code_42',$this->code_42,true);
+		$criteria->compare('code_43',$this->code_43,true);
+		$criteria->compare('code_44',$this->code_44,true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
