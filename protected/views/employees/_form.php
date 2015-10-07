@@ -41,7 +41,7 @@
 		<?php echo $form->labelEx($model,'employee_type'); ?>
                 </div>
                 <div class ="col-md-3" dir =rtl>
-                <?php echo $form->dropDownList($model,'employee_type',array("مبيعات"=>"مبيعات","تراخيص"=>"تراخيص" ,"خدمة عملاء"=>"خدمة عملاء"),array('empty'=>'' ,'class'=>'form-control' )); ?>    
+                <?php echo $form->dropDownList($model,'employee_type',array("مبيعات"=>"مبيعات","تجاري"=>"تجاري","المخازن"=>"المخازن","الاوراق"=>"الاوراق","تراخيص"=>"تراخيص" ,"خدمة عملاء"=>"خدمة عملاء"),array('empty'=>'' ,'class'=>'form-control' )); ?>    
 		<?php echo $form->error($model,'employee_type'); ?>
                 </div>
 	</div>

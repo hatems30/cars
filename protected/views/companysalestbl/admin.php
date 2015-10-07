@@ -38,7 +38,7 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'companysalestbl-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	//'filter'=>$model,
 	'columns'=>array(
 		'invoice_id',
 		'invoice_date',
@@ -47,6 +47,7 @@ $('.search-form form').submit(function(){
 		 array('name' => 'car_id','value' => '$data->car->chass_no'),
 		'price',		
 		array('name' => 'company_id','value' => '$data->company->company_name'),
+                'confirm_stat',
             /*
 		'notes',
 		*/

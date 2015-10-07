@@ -121,7 +121,13 @@
 		<?php echo $form->error($model,'notes'); ?>
                 </div>
 	</div>
-
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'confirm_stat'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+                <?php echo $form->dropDownList($model,'confirm_stat',array("غيرمعتمد"=>"غيرمعتمد","معتمد"=>"معتمد"),array('empty'=>'' , 'class'=>'form-control' )); ?>
+		<?php echo $form->error($model,'confirm_stat'); ?>
+                </div>
 	<div class ="col-sm-3">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>
 	</div>

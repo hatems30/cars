@@ -41,8 +41,8 @@
 		<?php echo $form->labelEx($model,'password'); ?>
                 </div>
                 <div class ="col-sm-3"> 
-		<?php //echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>128)); ?>
-                <?php echo $form->textField($model,'password',array('size'=>60,'maxlength'=>128 , 'class'=>'form-control' )); ?>
+		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>128 , 'class'=>'form-control')); ?>
+                <?php //echo $form->textField($model,'password',array('size'=>60,'maxlength'=>128 , 'class'=>'form-control' )); ?>
 		<?php echo $form->error($model,'password'); ?>
                 </div>
 	</div>

@@ -76,7 +76,7 @@ class Carcode extends CActiveRecord
 			array('brand_id, model_id', 'numerical', 'integerOnly'=>true),
 			array('code_name', 'length', 'max'=>255),
 			array('code_01, code_02, code_03, code_04, code_05, code_06, code_07, code_08, code_09, code_10, code_11, code_12, code_13, code_14, code_15, code_16, code_17, code_18, code_19, code_20, code_21, code_22, code_23, code_24, code_25, code_26, code_27, code_28, code_29, code_30, code_31, code_32, code_33, code_34, code_35, code_36, code_37, code_38, code_39, code_40', 'length', 'max'=>255),
-                        array('code_41 , code_42 , code_43, code_44, code_45, code_46, code_47, code_48, code_49, code_50, code_51, code_52, code_53, code_54, code_55, code_56, code_57, code_58' ,'safe'), 
+                        array('code_41 , code_42 , code_43, code_44, code_45, code_46, code_47, code_48, code_49, code_50, code_51, code_52, code_53, code_54, code_55, code_56, code_57, code_58 , code_59' ,'safe'), 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('code_id, code_name, brand_id, model_id, code_01, code_02, code_03, code_04, code_05, code_06, code_07, code_08, code_09, code_10, code_11, code_12, code_13, code_14, code_15, code_16, code_17, code_18, code_19, code_20, code_21, code_22, code_23, code_24, code_25, code_26, code_27, code_28, code_29, code_30, code_31, code_32, code_33, code_34, code_35, code_36, code_37, code_38, code_39, code_40', 'safe', 'on'=>'search'),
@@ -130,7 +130,7 @@ class Carcode extends CActiveRecord
 			'code_21' => 'مرايات كهرباء',
 			'code_22' => 'طي المريات كهربائيا',
 			'code_23' => 'فوانيس شبورة',
-			'code_24' => 'مسند يد',
+			'code_24' => 'اشارات فى المرايات',
 			'code_25' => 'حساس ركن امامي',
 			'code_26' => 'حساس ركن خلفي',
 			'code_27' =>  'حساس نور',
@@ -138,7 +138,7 @@ class Carcode extends CActiveRecord
 			'code_29' =>  'كاميرا خلفية',
 			'code_30' =>  'سنتر لوك',
 			'code_31' =>  'باور استيرنج',
-			'code_32' => 'جنوط رياضية',
+			'code_32' => 'طاسات',
 			'code_33' => 'فامية خلفى',
 			'code_34' => 'كرسي كهرباء',
 			'code_35' => 'سبويلر',
@@ -165,6 +165,7 @@ class Carcode extends CActiveRecord
                         'code_56' => 'فرش الابواب',
                         'code_57' => 'نظام التوازن الكتروني',
                         'code_58' => 'مقاس الجنط',
+                        'code_59' => 'مبرد تابلوه',
 		);
 	}
 

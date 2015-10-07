@@ -82,6 +82,15 @@
                 <div class ="col-sm-3" dir =rtl>
                     
 		<?php 
+                $sql="SELECT
+employees.employee_id as employee_id,
+employees.employee_name as employee_name,
+`user`.username
+FROM
+`user`
+INNER JOIN employees ON `user`.employee_id = employees.employee_id
+
+";
                     if (isset($_REQUEST['branch_id']))
                     {
                      echo $form->dropDownList($model,'employee_id', CHtml::listData(Employees::model()->findAllByAttributes(array('branch_id'=>$_REQUEST['branch_id'])), 'employee_id', 'employee_name') , array('empty'=>'' ,'class'=>'form-control' ));
@@ -162,6 +171,15 @@
 		<?php echo $form->error($model,'interest_rate'); ?>
                 </div>
         </div>
+      	<div class="row">
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'premium_price'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->textField($model,'premium_price' , array('class'=>'form-control')); ?>
+		<?php echo $form->error($model,'premium_price'); ?>
+                </div>
+        </div>
 </div>
 
 <div id ="bank-hidden" class="hidden">
@@ -199,7 +217,16 @@
 		<?php echo $form->textField($model,'expenses' , array('class'=>'form-control')); ?>
 		<?php echo $form->error($model,'expenses'); ?>
                 </div>
-            </div>
+        </div>
+        <div class="row">
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'bank_price'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->textField($model,'bank_price' , array('class'=>'form-control')); ?>
+		<?php echo $form->error($model,'bank_price'); ?>
+                </div>
+        </div>
 </div>
 </br>
 	<div class="row">
@@ -215,7 +242,7 @@
 		<?php echo $form->labelEx($model,'insurance_type'); ?>
                 </div>
                 <div class ="col-sm-3" dir =rtl>
-                <?php echo $form->dropDownList($model,'insurance_type',array("تحمل"=>"تحمل","بدون تحمل"=>"بدون تحمل"),array('empty'=>'Select Insurance Type' , 'class'=>'form-control' )); ?>
+                <?php echo $form->dropDownList($model,'insurance_type',array("تحمل"=>"تحمل","بدون تحمل"=>"بدون تحمل"),array('empty'=>'' , 'class'=>'form-control' )); ?>
 		<?php echo $form->error($model,'insurance_type'); ?>
                 </div>
 	</div>
@@ -237,6 +264,16 @@
                 </div>
 	</div>
 </br>
+        <div class="row">
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'cust_pic'); ?>
+                </div>
+                <div class ="col-sm-6" dir =rtl>
+		<?php echo $form->textField($model,'cust_pic' , array('class'=>'form-control') ); ?>
+		<?php echo $form->error($model,'cust_pic'); ?>
+                </div>
+        </div>
+</br>
 	<div class="row">
                 <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'notes'); ?>
@@ -246,7 +283,14 @@
 		<?php echo $form->error($model,'notes'); ?>
                 </div>
 	</div>
-
+        
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'confirm_stat'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+                <?php echo $form->dropDownList($model,'confirm_stat',array("غيرمعتمد"=>"غيرمعتمد","معتمد"=>"معتمد"),array('empty'=>'' , 'class'=>'form-control' )); ?>
+		<?php echo $form->error($model,'confirm_stat'); ?>
+                </div>
 	<div class ="col-sm-3">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>
 	</div>

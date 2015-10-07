@@ -77,6 +77,16 @@
 	</div>
 
 	<div class="row">
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'cotchnier'); ?>
+                </div>
+                <div class ="col-sm-6" dir =rtl>
+		<?php echo $form->textField($model,'cotchnier' ,array('class'=>'form-control')); ?>
+		<?php echo $form->error($model,'cotchnier'); ?>
+                </div>
+	</div>
+               
+	<div class="row">
                 <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'notes'); ?>
                 </div>

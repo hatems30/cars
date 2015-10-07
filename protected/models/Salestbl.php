@@ -57,6 +57,11 @@ class Salestbl extends CActiveRecord
 			array('cach_price, downpayment, monthly_premium, interest_rate, transfer_amount, bank_down_amount, expenses, insurance_amount, insurance_rate', 'numerical'),
 			array('finance_type, insurance_type', 'length', 'max'=>255),
 			array('notes', 'safe'),
+                        array('premium_price', 'safe'),
+                        array('bank_price', 'safe'),
+                        array('cust_pic', 'safe'),
+                        array('confirm_stat','safe'),
+                    
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('invoice_id, invoice_date, branch_id, employee_id, car_id, customer_id, finance_type, cach_price, downpayment, monthly_premium, months_count, interest_rate, bank_id, transfer_amount, bank_down_amount, expenses, insurance_comp_id, insurance_type, insurance_amount, insurance_rate, notes', 'safe', 'on'=>'search'),
@@ -108,6 +113,10 @@ class Salestbl extends CActiveRecord
 			'insurance_amount' => 'قيمة التأمين',
 			'insurance_rate' => 'نسبة التأمين',
 			'notes' => 'ملاحظات',
+                        'premium_price' => 'سعر السيارة',
+                        'bank_price' => 'سعر السيارة',
+                        'cust_pic'=>'صورة العميل',
+                        'confirm_stat'=>'اعتماد المدير'
 		);
 	}
 

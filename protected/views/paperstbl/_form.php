@@ -82,6 +82,16 @@
 	</div>
 
 	<div class="row">
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'cust_lic'); ?>
+                </div>
+                <div class ="col-sm-6" dir =rtl>
+		<?php echo $form->textField($model,'cust_lic' ,array('class'=>'form-control')); ?>
+		<?php echo $form->error($model,'cust_lic'); ?>
+                </div>
+	</div>               
+
+	<div class="row">
                 <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'notes'); ?>
                 </div>

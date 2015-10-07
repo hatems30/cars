@@ -534,10 +534,19 @@
 		<?php echo $form->labelEx($model,'code_58'); ?>
                 </div>
                 <div class ="col-sm-3"  dir =rtl>
-		<?php echo $form->dropDownList($model,'code_58', array("14"=>"14","15"=>"15","16"=>"16","17"=>"17","18"=>"18","19"=>"19"),array("class" => "form-control")); ?> 
+		<?php echo $form->dropDownList($model,'code_58', array("لايوجد"=>"لايوجد","13"=>"13","14"=>"14","15"=>"15","16"=>"16","17"=>"17","18"=>"18","19"=>"19"),array("class" => "form-control")); ?> 
 		<?php echo $form->error($model,'code_58'); ?>
                 </div>
-	</div>                           
+	</div>   
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'code_59'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'code_59', array("لايوجد"=>"لايوجد","يوجد"=>"يوجد"),array("class" => "form-control")); ?> 
+		<?php echo $form->error($model,'code_59'); ?>
+                </div>
+	</div>                          
 	<div class="row buttons">
                 <div class ="col-sm-3">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>

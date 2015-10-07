@@ -45,7 +45,7 @@ $('.search-form form').submit(function(){
 		'employee_name',
 		'employee_type',
 		array('name' => 'branch_id','value' => '$data->branch->branch_name'),
-                array('name' => 'manager_id','value' => '$data->manager->employee_name'),		
+                array('name' => 'manager_id','value' =>'$data->manager->employee_name'),		
 		array(
 			'class'=>'CButtonColumn',
 		),

@@ -33460,3 +33460,824 @@ Stack trace:
 REQUEST_URI=/cars/index.php?r=paperstbl/admin&view=admin
 HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
 ---
+2015/10/06 20:54:40 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('employees/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=employees/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/06 20:54:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('User/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=User/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=employees/admin&view=admin
+---
+2015/10/06 20:54:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('User/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=User/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=User/admin&view=admin
+---
+2015/10/06 20:54:55 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('User/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=User/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=User/admin&view=admin
+---
+2015/10/06 20:54:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('User/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=User/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=User/admin&view=admin
+---
+2015/10/06 20:55:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('employees/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=employees/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/06 21:06:23 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\yii\framework\base\CComponent.php(612) : eval()'d code:1)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(231): CDataColumn->getDataCellContent()
+#1 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(154): CDataColumn->renderDataCellContent()
+#2 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(638): CDataColumn->renderDataCell()
+#3 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(622): CGridView->renderDataCell()
+#4 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(578): CGridView->renderTableRow()
+#5 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(488): CGridView->renderTableBody()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(181): CGridView->renderItems()
+#7 unknown(0): CGridView->renderSection()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(149): CGridView->renderContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(181): CGridView->run()
+#11 C:\xampp\htdocs\cars\protected\views\employees\admin.php(53): EmployeesController->widget()
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): EmployeesController->renderInternal()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): EmployeesController->renderFile()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): EmployeesController->renderPartial()
+#16 C:\xampp\htdocs\cars\protected\controllers\EmployeesController.php(167): EmployeesController->render()
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): EmployeesController->actionAdmin()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): EmployeesController->runAction()
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): EmployeesController->filterAccessControl()
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): EmployeesController->runActionWithFilters()
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): EmployeesController->run()
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=employees/admin&view=admin
+in C:\xampp\htdocs\cars\protected\views\employees\admin.php (53)
+in C:\xampp\htdocs\cars\protected\controllers\EmployeesController.php (167)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/06 21:13:10 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\yii\framework\base\CComponent.php(612) : eval()'d code:1)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(231): CDataColumn->getDataCellContent()
+#1 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(154): CDataColumn->renderDataCellContent()
+#2 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(638): CDataColumn->renderDataCell()
+#3 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(622): CGridView->renderDataCell()
+#4 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(578): CGridView->renderTableRow()
+#5 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(488): CGridView->renderTableBody()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(181): CGridView->renderItems()
+#7 unknown(0): CGridView->renderSection()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(149): CGridView->renderContent()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(181): CGridView->run()
+#11 C:\xampp\htdocs\cars\protected\views\employees\admin.php(53): EmployeesController->widget()
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): EmployeesController->renderInternal()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): EmployeesController->renderFile()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): EmployeesController->renderPartial()
+#16 C:\xampp\htdocs\cars\protected\controllers\EmployeesController.php(167): EmployeesController->render()
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): EmployeesController->actionAdmin()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): EmployeesController->runAction()
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): EmployeesController->filterAccessControl()
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): EmployeesController->runActionWithFilters()
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): EmployeesController->run()
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=employees/admin&view=admin
+in C:\xampp\htdocs\cars\protected\views\employees\admin.php (53)
+in C:\xampp\htdocs\cars\protected\controllers\EmployeesController.php (167)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/06 21:46:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('companysalestbl...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=companysalestbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/06 21:48:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('dealersalestbl/...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=dealersalestbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=companysalestbl/update&id=2
+---
+2015/10/06 21:49:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('dealersalestbl/...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=dealersalestbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=userpertbl/view&id=19
+---
+2015/10/06 22:11:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Licensetbl/admi...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=Licensetbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/06 22:17:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paperstbl/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=paperstbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/06 22:35:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('stores/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=stores/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/06 22:37:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bankofferstbl/a...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=bankofferstbl/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php
+---
+2015/10/06 23:04:38 [warning] [application] Failed to set unsafe attribute "confirm_stat" of "Companysalestbl".
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (120)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/06 23:04:55 [warning] [application] Failed to set unsafe attribute "confirm_stat" of "Companysalestbl".
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (120)
+in C:\xampp\htdocs\cars\index.php (13)
+2015/10/07 23:15:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('companysalestbl...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---
+2015/10/07 23:15:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('companysalestbl...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---
+2015/10/07 23:15:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('User/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=User/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+---
+2015/10/07 23:21:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('employees/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/cars/index.php?r=employees/admin&view=admin
+HTTP_REFERER=http://localhost/cars/index.php?r=companysalestbl/update&id=3
+---
+2015/10/07 23:26:10 [error] [php] htmlspecialchars() expects parameter 1 to be string, object given (C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php:108)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(163): renderAttributes()
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2454): tag()
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): activeInputField()
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): activeTextField()
+#4 C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php(76): CActiveForm->textField()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#8 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CompanysalestblController->renderPartial()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CompanysalestblController->renderPartial()
+#13 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CompanysalestblController->render()
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanysalestblController->runAction()
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanysalestblController->filterAccessControl()
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CompanysalestblController->runActionWithFilters()
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CompanysalestblController->run()
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (76)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/07 23:30:08 [error] [php] htmlspecialchars() expects parameter 1 to be string, object given (C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php:108)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(163): renderAttributes()
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2454): tag()
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): activeInputField()
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(792): activeTextField()
+#4 C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php(76): CActiveForm->textField()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#8 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CompanysalestblController->renderPartial()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CompanysalestblController->renderPartial()
+#13 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CompanysalestblController->render()
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanysalestblController->runAction()
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanysalestblController->filterAccessControl()
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CompanysalestblController->runActionWithFilters()
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CompanysalestblController->run()
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (76)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/07 23:36:59 [error] [exception.CException] exception 'CException' with message 'Property "Employees.0" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 C:\xampp\htdocs\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php(78): CModel->offsetGet(0)
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('companysalestbl...')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---
+2015/10/08 00:05:09 [error] [php] Undefined index: branch_id (C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php:56)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#1 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CompanysalestblController->renderPartial()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CompanysalestblController->renderPartial()
+#6 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CompanysalestblController->render()
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanysalestblController->runAction()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanysalestblController->filterAccessControl()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CompanysalestblController->runActionWithFilters()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CompanysalestblController->run()
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (56)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:07:49 [error] [php] Undefined index: branch_id (C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php:56)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#1 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CompanysalestblController->renderPartial()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CompanysalestblController->renderPartial()
+#6 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CompanysalestblController->render()
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanysalestblController->runAction()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanysalestblController->filterAccessControl()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CompanysalestblController->runActionWithFilters()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CompanysalestblController->run()
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (56)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:09:58 [error] [php] Undefined index: branch_id (C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php:57)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#1 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CompanysalestblController->renderPartial()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CompanysalestblController->renderPartial()
+#6 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CompanysalestblController->render()
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanysalestblController->runAction()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanysalestblController->filterAccessControl()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CompanysalestblController->runActionWithFilters()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CompanysalestblController->run()
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (57)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:10:33 [error] [php] Undefined index: branch_id (C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php:57)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#1 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CompanysalestblController->renderPartial()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CompanysalestblController->renderPartial()
+#6 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CompanysalestblController->render()
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanysalestblController->runAction()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanysalestblController->filterAccessControl()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CompanysalestblController->runActionWithFilters()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CompanysalestblController->run()
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (57)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:11:21 [error] [php] Undefined index: branch_id (C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php:57)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#1 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CompanysalestblController->renderPartial()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CompanysalestblController->renderPartial()
+#6 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CompanysalestblController->render()
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanysalestblController->runAction()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanysalestblController->filterAccessControl()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CompanysalestblController->runActionWithFilters()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CompanysalestblController->run()
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (57)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:11:44 [error] [php] Undefined index: branch_id (C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php:58)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#1 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CompanysalestblController->renderPartial()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CompanysalestblController->renderPartial()
+#6 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CompanysalestblController->render()
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanysalestblController->runAction()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanysalestblController->filterAccessControl()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CompanysalestblController->runActionWithFilters()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CompanysalestblController->run()
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (58)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:13:07 [error] [php] Undefined index: branch_id (C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php:58)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#1 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CompanysalestblController->renderPartial()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CompanysalestblController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CompanysalestblController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CompanysalestblController->renderPartial()
+#6 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CompanysalestblController->render()
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CompanysalestblController->runAction()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CompanysalestblController->filterAccessControl()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CompanysalestblController->runActionWithFilters()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CompanysalestblController->run()
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\cars\index.php(13): CWebApplication->run()
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (58)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:16:51 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hatem' in 'where clause'. The SQL statement executed was: SELECT branch_id from user where username= hatem.
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (55)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:16:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hatem' in 'where clause'. The SQL statement executed was: SELECT branch_id from user where username= hatem' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1563): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php(55): CActiveRecord->findBySql('SELECT branch_i...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('companysalestbl...')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---
+2015/10/08 00:17:33 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hatem' in 'where clause'. The SQL statement executed was: SELECT `user`.branch_id FROM `user` where `user`.username = hatem.
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (55)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:17:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hatem' in 'where clause'. The SQL statement executed was: SELECT `user`.branch_id FROM `user` where `user`.username = hatem' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1563): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php(55): CActiveRecord->findBySql('SELECT `user`.b...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('companysalestbl...')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---
+2015/10/08 00:17:36 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hatem' in 'where clause'. The SQL statement executed was: SELECT `user`.branch_id FROM `user` where `user`.username = hatem.
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (55)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:17:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hatem' in 'where clause'. The SQL statement executed was: SELECT `user`.branch_id FROM `user` where `user`.username = hatem' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1563): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php(55): CActiveRecord->findBySql('SELECT `user`.b...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('companysalestbl...')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---
+2015/10/08 00:17:47 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hatem' in 'where clause'. The SQL statement executed was: SELECT `user`.branch_id FROM `user` where `user`.username = hatem.
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (55)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:17:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hatem' in 'where clause'. The SQL statement executed was: SELECT `user`.branch_id FROM `user` where `user`.username = hatem' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1563): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php(55): CActiveRecord->findBySql('SELECT `user`.b...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('companysalestbl...')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---
+2015/10/08 00:18:36 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'mahmoud' in 'where clause'. The SQL statement executed was: SELECT `user`.branch_id FROM `user` where `user`.username = mahmoud.
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php (55)
+in C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php (18)
+in C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php (103)
+2015/10/08 00:18:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'mahmoud' in 'where clause'. The SQL statement executed was: SELECT `user`.branch_id FROM `user` where `user`.username = mahmoud' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1563): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\cars\protected\views\companysalestbl\_form.php(55): CActiveRecord->findBySql('SELECT `user`.b...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\cars\protected\views\companysalestbl\create.php(18): CController->renderPartial('_form', Array)
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#11 C:\xampp\htdocs\cars\protected\controllers\CompanysalestblController.php(103): CController->render('create', Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CompanysalestblController->actionCreate()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('companysalestbl...')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\cars\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/cars/index.php?r=companysalestbl/create&car_id=4&branch_id=1
+HTTP_REFERER=http://localhost/cars/index.php?r=carstock/view
+---

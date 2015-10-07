@@ -39,7 +39,8 @@ class Licensetbl extends CActiveRecord
 		return array(
 			array('branch_id, car_id, employee_id, traffic_id, super_employee_id', 'required'),
 			array('branch_id, car_id, employee_id, traffic_id, super_employee_id', 'numerical', 'integerOnly'=>true),
-			array('notes', 'length', 'max'=>255),
+			array('notes', 'length', 'max'=>255),                        
+                        array('cotchnier','safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('License_id, branch_id, car_id, employee_id, traffic_id, super_employee_id, notes', 'safe', 'on'=>'search'),
@@ -75,6 +76,7 @@ class Licensetbl extends CActiveRecord
 			'traffic_id' => 'المرور',
 			'super_employee_id' => 'مشرف الترخيص',
 			'notes' => 'ملاحظات',
+                        'cotchnier'=>'كوتشنير',
 		);
 	}
 

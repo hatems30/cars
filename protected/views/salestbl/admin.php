@@ -63,6 +63,7 @@ $('.search-form form').submit(function(){
 		'insurance_type',
 		'insurance_amount',
 		'insurance_rate',
+                'confirm_stat',
 		//'notes',
 		
 		array(

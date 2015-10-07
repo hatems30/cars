@@ -41,6 +41,7 @@ class Dealersalestbl extends CActiveRecord
 			array('branch_id, employee_id, dealer_id, car_id', 'numerical', 'integerOnly'=>true),
 			array('price', 'numerical'),
 			array('notes', 'safe'),
+                        array('confirm_stat','safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('invoice_id, invoice_date, branch_id, employee_id, dealer_id, car_id, price, notes', 'safe', 'on'=>'search'),
@@ -76,6 +77,7 @@ class Dealersalestbl extends CActiveRecord
 			'car_id' => 'الشاسيه',
 			'price' => 'السعر',
 			'notes' => 'ملاحظات',
+                        'confirm_stat'=>'اعتماد المدير',
 		);
 	}
 
