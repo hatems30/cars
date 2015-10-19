@@ -34,14 +34,36 @@
 		<?php echo $form->labelEx($model,'call_date'); ?>
                 </div>
                 <div class ="col-sm-3" dir =rtl>
-		<?php echo $form->dateField($model,'call_date' , array('class'=>'form-control')); ?>
+                    <?php
+		                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'Callstbl[call_date]', 
+                                                                          'model' => $model,
+                                                                          'id' => 'Callstbl_call_date'       ,             
+                                                                          'value' => $model->call_date,
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                    ?>
 		<?php echo $form->error($model,'call_date'); ?>
                 </div>
                 <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'call_time'); ?>
                 </div>
                 <div class ="col-sm-3" dir =rtl>
-		<?php echo $form->timeField($model,'call_time' ,array('class'=>'form-control')); ?>
+                    <?php
+                    /*
+		                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'Callstbl[call_time]', 
+                                                                          'model' => $model,
+                                                                          'id' => 'Callstbl_call_time'       ,             
+                                                                          'value' => $model->call_date,
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'H:M:S',),
+                                                                          'htmlOptions'=>array('class'=>'form-control'),
+                                                                        ));                                           
+                     * 
+                     */
+                    ?>
+                    <?php echo $form->timeField($model,'call_time',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'call_time'); ?>
                 </div>
 	</div>
@@ -103,10 +125,36 @@
 		<?php echo $form->labelEx($model,'how'); ?>
                 </div>
                 <div class ="col-sm-3" dir =rtl>
-		<?php echo $form->textField($model,'how',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
+		<?php echo $form->dropDownList($model,'how',array("Facebook"=>"Facebook","E_mail"=>"E_mail","Call"=>"Call"),array('class'=>'form-control' )); ?>
 		<?php echo $form->error($model,'how'); ?>
                 </div>
 	</div>
+	<div class="row" class="disabled">
+                <div class ="col-sm-3"> 
+		<?php echo $form->labelEx($model,'status'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->dropDownList($model,'status',array("مفتوح"=>"مفتوح","مغلق"=>"مغلق"),array('class'=>'form-control' )); ?>
+		<?php echo $form->error($model,'status'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'status_date'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+                    <?php
+		                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'Callstbl[status_date]', 
+                                                                          'model' => $model,
+                                                                          'id' => 'Callstbl_status_date'       ,             
+                                                                          'value' => $model->status_date,
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                    ?>
+		<?php echo $form->error($model,'status_date'); ?>
+                </div>
+	</div>
+            
          <div class="row">
                 <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'notes'); ?>

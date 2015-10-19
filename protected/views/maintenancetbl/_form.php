@@ -34,7 +34,16 @@
 		<?php echo $form->labelEx($model,'m_hold_date'); ?>
                 </div>
                 <div class ="col-sm-3" dir="rtl">
-		<?php echo $form->dateField($model,'m_hold_date' , array('class'=>'form-control')); ?>
+		<?php                    
+                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'Maintenancetbl[m_hold_date]', 
+                                                                          'model' => $model,
+                                                                          'id' => 'Maintenancetbl_m_hold_date'       ,             
+                                                                          'value' => $model->m_hold_date,
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                ?>
 		<?php echo $form->error($model,'m_hold_date'); ?>
                 </div>
 	</div>
@@ -74,7 +83,7 @@
 		<?php echo $form->labelEx($model,'m_center_id'); ?>
                 </div>
                 <div class ="col-sm-3" dir="rtl">
-		<?php echo $form->dropDownList($model,'m_center_id', CHtml::listData(Maintenancetbl::model()->findAll(), 'm_center_id', 'm_center_name'),array('class'=>'form-control') );  ?>
+		<?php echo $form->dropDownList($model,'m_center_id', CHtml::listData(Mcenterstbl::model()->findAll(), 'm_center_id', 'm_center_name'),array('class'=>'form-control') );  ?>
 		<?php echo $form->error($model,'m_center_id'); ?>
                 </div>
 	</div>
@@ -84,7 +93,16 @@
 		<?php echo $form->labelEx($model,'m_date'); ?>
                 </div>
                 <div class ="col-sm-3" dir="rtl">
-		<?php echo $form->dateField($model,'m_date' , array('class'=>'form-control')); ?>
+		<?php                    
+                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'Maintenancetbl[m_date]', 
+                                                                          'model' => $model,
+                                                                          'id' => 'Maintenancetbl_m_date'       ,             
+                                                                          'value' => $model->m_date,
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                ?>
 		<?php echo $form->error($model,'m_date'); ?>
                 </div>
 	</div>

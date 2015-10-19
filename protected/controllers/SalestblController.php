@@ -94,33 +94,61 @@ class SalestblController extends Controller
 
 		if(isset($_POST['Salestbl']))
 		{
+                        $rnd =time().rand(0,9999);                       //customer image
 			$model->attributes=$_POST['Salestbl'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->invoice_id));
-		}
+                        $uploadedFile=CUploadedFile::getInstance($model,'image');
+                        $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                        $model->image = $fileName;                      
+			if($model->save())  
+                        {
+                            if(!empty($uploadedFile))
+                            {
+                                           $uploadedFile->saveAs('./test/'.$fileName);
+			                   $this->redirect(array('view','id'=>$model->invoice_id));
+                            }
+                            else
+                            {                                                                           
+			                   $this->redirect(array('view','id'=>$model->invoice_id));
+                            }
+                        }
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+                                                                     
+		}
+		$this->render('create',array('model'=>$model,));
 	}
 
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
+	 * @param integer $id the ID of the model to be updatedf
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-
+		$model=$this->loadModel($id);                
+                $old_image =$model->image;                
+                
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Salestbl']))
 		{
-			$model->attributes=$_POST['Salestbl'];
+                                     
+	              $model->attributes=$_POST['Salestbl'];  
+                      
+                      if(!empty($_FILES['Salestbl']["tmp_name"]["image"]))
+                      {
+                          $rnd =time().rand(0,9999);    
+                          $model->image  = $rnd.$_FILES['Salestbl']["name"]["image"];
+                          move_uploaded_file($_FILES['Salestbl']["tmp_name"]["image"], "./test/".$rnd.$_FILES['Salestbl']["name"]["image"]);
+                      }
+                      else 
+                      {
+                          $model->image = $old_image;                           
+                      }                      
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->invoice_id));
+                        {                                       
+                        $this->redirect(array('view','id'=>$model->invoice_id));                                                            
+                        }				
 		}
 
 		$this->render('update',array(
@@ -136,6 +164,15 @@ class SalestblController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
+                /*
+                $soled ='غير مباعة';                
+                $sql ="update holdtbl set car_status = '$soled' where car_id in (select car_id from salestbl where invoice_id = $id)";
+                $connection = Yii::app()->db;   // assuming you have configured a "db" connection                        
+                $command = $connection->createCommand($sql);
+                $command->execute(); 
+                 * 
+                 */
+
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

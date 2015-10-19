@@ -33,7 +33,16 @@
 		<?php echo $form->labelEx($model,'offer_date'); ?>
                 </div>    
                 <div class ="col-sm-3">
-		<?php echo $form->dateField($model,'offer_date' , array('class'=>'form-control')); ?>
+		<?php                    
+                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'Bankofferstbl[offer_date]', 
+                                                                          'model' => $model,
+                                                                          'id' => 'Bankofferstbl_offer_date'       ,             
+                                                                          'value' => $model->offer_date,
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                ?>
 		<?php echo $form->error($model,'offer_date'); ?>
                 </div>
         

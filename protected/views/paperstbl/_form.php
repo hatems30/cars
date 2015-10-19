@@ -13,6 +13,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+        'htmlOptions' => array('enctype' => 'multipart/form-data',),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -33,7 +34,16 @@
 		<?php echo $form->labelEx($model,'paper_date'); ?>
                 </div>
                 <div class ="col-md-3" dir="rtl">
-		<?php echo $form->dateField($model,'paper_date',array('class'=>'form-control')); ?>
+		<?php                    
+                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'Paperstbl[paper_date]', 
+                                                                          'model' => $model,
+                                                                          'id' => 'Paperstbl_paper_date'       ,             
+                                                                          'value' => $model->paper_date,
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                ?>
 		<?php echo $form->error($model,'paper_date'); ?>
                 </div>
 	</div>
@@ -81,15 +91,20 @@
                 </div>
 	</div>
 
-	<div class="row">
+       <div class="row">
+                <div class="col-sm-3">
+                <?php echo $form->labelEx($model,'image'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+                <?php echo CHtml::activeFileField($model, 'image'); ?>
+                <?php echo $form->error($model,'image'); ?>
+                </div>
                 <div class ="col-sm-3">
-		<?php echo $form->labelEx($model,'cust_lic'); ?>
+                <?php //if($model->isNewRecord !='1'){ ?>
+                <?php echo CHtml::image(Yii::app()->request->baseUrl.'/test/'.$model->image,"image",array("width"=>200)); ?>
+                <?php //} ?>
                 </div>
-                <div class ="col-sm-6" dir =rtl>
-		<?php echo $form->textField($model,'cust_lic' ,array('class'=>'form-control')); ?>
-		<?php echo $form->error($model,'cust_lic'); ?>
-                </div>
-	</div>               
+        </div>             
 
 	<div class="row">
                 <div class ="col-md-3">

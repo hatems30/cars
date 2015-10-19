@@ -73,6 +73,8 @@ class Callstbl extends CActiveRecord
 			'area' => 'المنطقة',
 			'how' => 'الطريقة',
                         'notes'=>'الاجراءات',
+                        'status'=>'حالة المكالمة',
+                        'status_date' =>'تاريخ الحالة',
 		);
 	}
 

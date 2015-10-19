@@ -31,7 +31,10 @@ class User extends CActiveRecord
 			array('username , password , branch_id , employee_id', 'required')	,	
                         array('password', 'safe'),
                         array('branch_id', 'safe'),
-                        array('employee_id', 'safe')
+                        array('employee_id', 'safe'),
+                        array('per_type','safe'),
+                        array('image','safe'),                      
+                        array('image', 'length', 'max'=>255, 'on'=>'insert,update'),
                     );
 	}
 
@@ -83,7 +86,9 @@ class User extends CActiveRecord
 			'username' => 'اسم المستخدم',
 			'password' => 'كلمة السر',
                         'branch_id' => 'الفرع',
-                        'employee_id' => 'اسم الموظف',    
+                        'employee_id' => 'اسم الموظف',   
+                        'image' => 'صورة الموظف',
+                            
 		);
             /*
                 $newLabels=array();

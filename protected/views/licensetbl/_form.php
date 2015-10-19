@@ -13,6 +13,7 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+        'htmlOptions' => array('enctype' => 'multipart/form-data',),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -75,17 +76,20 @@
 		<?php echo $form->error($model,'super_employee_id'); ?>
                 </div>
 	</div>
-
-	<div class="row">
+        <div class="row">
+                <div class="col-sm-3">
+                <?php echo $form->labelEx($model,'image'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+                <?php echo CHtml::activeFileField($model, 'image'); ?>
+                <?php echo $form->error($model,'image'); ?>
+                </div>
                 <div class ="col-sm-3">
-		<?php echo $form->labelEx($model,'cotchnier'); ?>
+                <?php //if($model->isNewRecord !='1'){ ?>
+                <?php echo CHtml::image(Yii::app()->request->baseUrl.'/test/'.$model->image,"image",array("width"=>200)); ?>
+                <?php //} ?>
                 </div>
-                <div class ="col-sm-6" dir =rtl>
-		<?php echo $form->textField($model,'cotchnier' ,array('class'=>'form-control')); ?>
-		<?php echo $form->error($model,'cotchnier'); ?>
-                </div>
-	</div>
-               
+        </div>               
 	<div class="row">
                 <div class ="col-md-3">
 		<?php echo $form->labelEx($model,'notes'); ?>

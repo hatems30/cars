@@ -39,8 +39,9 @@ class Paperstbl extends CActiveRecord
 			array('branch_id, car_id, supplier_id', 'numerical', 'integerOnly'=>true),
 			array('paper_status', 'length', 'max'=>50),
 			array('notes','safe'),
-                        array('sale_type','safe'),
-                        array('cust_lic','safe'),
+                        array('sale_type','safe'),                        
+                        array('image','safe'),
+                        array('image', 'length', 'max'=>255, 'on'=>'insert,update'),
                     
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -76,7 +77,7 @@ class Paperstbl extends CActiveRecord
 			'supplier_id' => 'المبلغ له',
 			'paper_status' => 'حالة الاوراق',
 			'notes' => 'ملاحظات',
-                        'cust_lic'=>'صورة الرخصة',
+                        'image'=>'صورة الرخصة',
 		);
 	}
 

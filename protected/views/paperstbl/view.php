@@ -30,3 +30,4 @@ $this->menu=array(
 		'notes',
 	),
 )); ?>
+<?php echo CHtml::image(Yii::app()->request->baseUrl.'/test/'.$model->image,"image",array("width"=>200)); ?>

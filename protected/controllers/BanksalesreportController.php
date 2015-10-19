@@ -29,6 +29,7 @@ salestbl.invoice_date,
 brands.brand_name,
 carmodel.model_name,
 carstbl.chass_no,
+salestbl.bank_price,
 banks.bank_name,
 salestbl.transfer_amount,
 salestbl.bank_down_amount,
@@ -46,8 +47,6 @@ INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id AND carmodel.model_id
 INNER JOIN customers ON salestbl.customer_id = customers.customer_id
 INNER JOIN inscomps ON salestbl.insurance_comp_id = inscomps.insurance_comp_id
 INNER JOIN banks ON salestbl.bank_id = banks.bank_id
-
-
 where salestbl.branch_id = $id   and salestbl.finance_type = 'بنك'
 and salestbl.invoice_date >= '$date_from' and salestbl.invoice_date <= '$date_to' ";
                 if(!empty($_REQUEST['bank_id']))

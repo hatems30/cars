@@ -58,9 +58,12 @@ class Salestbl extends CActiveRecord
 			array('finance_type, insurance_type', 'length', 'max'=>255),
 			array('notes', 'safe'),
                         array('premium_price', 'safe'),
-                        array('bank_price', 'safe'),
-                        array('cust_pic', 'safe'),
-                        array('confirm_stat','safe'),
+                        array('bank_price', 'safe'),                        
+                        array('confirm_stat','safe'),                       
+                        array('image','safe'),                      
+                        array('image', 'length', 'max'=>255, 'on'=>'insert,update'),
+                        array('discount','safe'), 
+                        array('final_price','safe'), 
                     
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -115,8 +118,10 @@ class Salestbl extends CActiveRecord
 			'notes' => 'ملاحظات',
                         'premium_price' => 'سعر السيارة',
                         'bank_price' => 'سعر السيارة',
-                        'cust_pic'=>'صورة العميل',
-                        'confirm_stat'=>'اعتماد المدير'
+                        'image'=>'صورة العميل',
+                        'confirm_stat'=>'اعتماد المدير',
+                        'discount'=>'نسبة الخصم',
+                        'final_price'=>'السعر بعد الخصم'
 		);
 	}
 

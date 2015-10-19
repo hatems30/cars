@@ -69,11 +69,18 @@ class TestController extends Controller
 
 		if(isset($_POST['Test']))
 		{
+                    date("Y-md-H:i:s",time());
+                        $rnd =time().rand(0,9999);
 			$model->attributes=$_POST['Test'];
+                        $uploadedFile=CUploadedFile::getInstance($model,'image');
+                        $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                        $model->image = $fileName;            
 			if($model->save())
+                                $uploadedFile->saveAs('./test/'.$fileName); 
 				$this->redirect(array('view','id'=>$model->id));
+                                
 		}
-
+       
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -93,9 +100,17 @@ class TestController extends Controller
 
 		if(isset($_POST['Test']))
 		{
-			$model->attributes=$_POST['Test'];
+                        $_POST['Banner']['image'] = $model->image;
+			$model->attributes=$_POST['Test'];         
+                        $uploadedFile=CUploadedFile::getInstance($model,'image');                        
 			if($model->save())
+                        {
+                                if(!empty($uploadedFile))  // check if uploaded file is set or not
+                                  {
+                                    $uploadedFile->saveAs(Yii::app()->basePath.'/test/'.$model->image);
+                                  }
 				$this->redirect(array('view','id'=>$model->id));
+                        }
 		}
 
 		$this->render('update',array(

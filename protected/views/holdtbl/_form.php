@@ -33,7 +33,16 @@
 		<?php echo $form->labelEx($model,'hold_date'); ?>
                 </div>
                 <div class ="col-sm-3" dir="rtl">
-		<?php echo $form->dateField($model,'hold_date', array('class'=>'form-control')); ?>
+		    <?php                    
+                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'Holdtbl[hold_date]', 
+                                                                          'model' => $model,
+                                                                          'id' => 'Holdtbl_hold_date'       ,             
+                                                                          'value' => $model->hold_date,
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                    ?>
 		<?php echo $form->error($model,'hold_date'); ?>
                 </div>
 	</div>
@@ -44,14 +53,18 @@
                 </div>
                 <div class ="col-sm-3" dir="rtl">
                 <?php
-                if (isset($_REQUEST['branch_id']))
-                {    
-                    echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAllByAttributes(array('branch_id'=>$_REQUEST['branch_id'])), 'branch_id', 'branch_name'),array('class'=>'form-control') );                  
-                }
-                else
-                {
-                    echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name'),array('class'=>'form-control') );                  
-                }
+                       if($this->action->Id=='update')                         
+                       {
+                            echo $form->textField($model,'branch_id' ,array('class'=>'form-control' , 'class'=>'hidden'));                       
+                            echo $form->textField(Branchs::model()->findByAttributes(array('branch_id' => $model->branch_id)),'branch_name' ,array('class'=>'form-control' , 'readonly'=>'true'));
+                       } 
+                       elseif ($this->action->Id=='create')
+                       {
+                            $user_name = Yii::app()->user->username;
+                            $emps = User::model()->findBySql("SELECT `user`.branch_id FROM `user` where `user`.username = '$user_name'");                              
+                            echo $form->textField($model,'branch_id' ,array('class'=>'form-control' , 'class'=>'hidden' , 'value'=>$emps['branch_id']));                       
+                            echo $form->textField(Branchs::model()->findByAttributes(array('branch_id'=>$emps['branch_id'])),'branch_name' ,array('class'=>'form-control' , 'readonly'=>'true'));                           
+                       }
                 ?>
 		<?php echo $form->error($model,'branch_id'); ?>
                 </div>
@@ -61,14 +74,20 @@
                 </div>
                 <div class ="col-sm-3" dir="rtl">
 		<?php 
-                    if (isset($_REQUEST['branch_id']))
-                    {
-                     echo $form->dropDownList($model,'employee_id', CHtml::listData(Employees::model()->findAllByAttributes(array('branch_id'=>$_REQUEST['branch_id'])), 'employee_id', 'employee_name') , array('empty'=>'' ,'class'=>'form-control' ));
-                    }
-                    else
-                    {
-                     echo $form->dropDownList($model,'employee_id', CHtml::listData(Employees::model()->findAll(), 'employee_id', 'employee_name') , array('empty'=>'' ,'class'=>'form-control' ));   
-                    }
+                       if($this->action->Id=='update')                         
+                       {
+                            echo $form->textField($model,'employee_id' ,array('class'=>'form-control' , 'class'=>'hidden'));                       
+                            echo $form->textField(Employees::model()->findByAttributes(array('employee_id' => $model->employee_id)),'employee_name' ,array('class'=>'form-control' , 'readonly'=>'true'));
+		            echo $form->error($model,'employee_id');     
+                       } 
+                       elseif ($this->action->Id=='create')
+                       {
+                            $user_name = Yii::app()->user->username;
+                            $emps = Employees::model()->findBySql("SELECT employees.employee_id FROM `user` INNER JOIN employees ON `user`.employee_id = employees.employee_id where `user`.username ='$user_name' LIMIT 1" , 'employee_id');                                                                                                                                        
+                            echo $form->textField($model,'employee_id' ,array('class'=>'form-control' , 'class'=>'hidden' , 'value'=>$emps['employee_id']));                       
+                            echo $form->textField(Employees::model()->findBysql("SELECT employees.employee_id,employees.employee_name FROM `user` INNER JOIN employees ON `user`.employee_id = employees.employee_id where `user`.username ='$user_name' LIMIT 1"),'employee_name' ,array('class'=>'form-control' , 'readonly'=>'true'));                           
+		            echo $form->error($model,'employee_id');  
+                       }
                 ?>  
 		<?php echo $form->error($model,'employee_id'); ?>
                 </div>
@@ -90,15 +109,16 @@
                 </div>
                 <div class ="col-sm-3" dir =rtl>
                 <?php
-                     if (isset($_REQUEST['car_id']))
-                     {
-                         echo $form->dropDownList($model,'car_id', CHtml::listData(Carstbl::model()->findAllByAttributes(array('car_id'=>$_REQUEST['car_id'])) , 'car_id', 'chass_no'),array('class'=>'form-control'));
-                         
-                     }
-                     else
-                     {
-                         echo $form->dropDownList($model,'car_id', CHtml::listData(Carstbl::model()->findAll() , 'car_id', 'chass_no'),array('class'=>'form-control'));
-                     }
+                     if($this->action->Id=='update')                         
+                       {
+                            echo $form->textField($model,'car_id' ,array('class'=>'form-control' , 'class'=>'hidden'));                       
+                            echo $form->textField(Carstbl::model()->findByAttributes(array('car_id' => $model->car_id)),'chass_no' ,array('class'=>'form-control' , 'readonly'=>'true'));
+                       } 
+                       elseif ($this->action->Id=='create')
+                       {                         
+                            echo $form->textField($model,'car_id' ,array('class'=>'form-control' , 'class'=>'hidden' , 'value'=>$_REQUEST['car_id']));                       
+                            echo $form->textField(Carstbl::model()->findByAttributes(array("car_id"=>$_REQUEST['car_id'])),'chass_no' ,array('class'=>'form-control' , 'readonly'=>'true'));
+                       }  
                      echo $form->error($model,'car_id'); 
                      
                 ?>
@@ -138,7 +158,14 @@
 		<?php echo $form->error($model,'notes'); ?>
                 </div>
 	</div>
-
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'car_status'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->textField($model,'car_status' , array('class'=>'form-control' , 'readonly'=>'true')); ?>
+		<?php echo $form->error($model,'car_status'); ?>
+                </div>
+               
 	<div class ="col-sm-3">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>
 	</div>

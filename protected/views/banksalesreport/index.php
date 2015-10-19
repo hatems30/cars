@@ -35,14 +35,28 @@
                      From
                 </div>
                 <div class ="col-sm-3">
-                     <?php echo CHtml::dateField('date_from','',array("class"=>"form-control")) ?>
+                    <?php                    
+                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'date_from',                                                                                                                                                          
+                                                                          //'value' => date('yy-m-d'),
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                    ?>                
                 </div>
     
                 <div class ="col-sm-1" dir="rtl">
                      To
                 </div>
                 <div class ="col-sm-3">
-                     <?php echo CHtml::dateField('date_to' ,'',array("class"=>"form-control")) ?>
+                    <?php                    
+                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'date_to',                                                                                                                                                          
+                                                                          //'value' => date('yy-m-d'),
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                    ?>                
                 </div>
         
                 <div class ="col-sm-4" dir =rtl>

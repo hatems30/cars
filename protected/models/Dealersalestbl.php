@@ -42,6 +42,8 @@ class Dealersalestbl extends CActiveRecord
 			array('price', 'numerical'),
 			array('notes', 'safe'),
                         array('confirm_stat','safe'),
+                        array('discount','safe'), 
+                        array('final_price','safe'),                    
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('invoice_id, invoice_date, branch_id, employee_id, dealer_id, car_id, price, notes', 'safe', 'on'=>'search'),
@@ -78,6 +80,8 @@ class Dealersalestbl extends CActiveRecord
 			'price' => 'السعر',
 			'notes' => 'ملاحظات',
                         'confirm_stat'=>'اعتماد المدير',
+                        'discount' => 'نسبة الخصم',
+                        'final_price' => 'السعر بعد الخصم'
 		);
 	}
 

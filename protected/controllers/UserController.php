@@ -93,10 +93,24 @@ class UserController extends Controller
 
 		if(isset($_POST['User']))
 		{
+                        $rnd =time().rand(0,9999);                       //customer image
 			$model->attributes=$_POST['User'];
-                        $model->password=$model->hashPassword($model->password);
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                        $uploadedFile=CUploadedFile::getInstance($model,'image');
+                        $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                        $model->image = $fileName;                      
+                        $model->password = $model->hashPassword($_POST['User']['password']);
+			if($model->save())  
+                        {
+                            if(!empty($uploadedFile))
+                            {
+                                           $uploadedFile->saveAs('./test/'.$fileName);
+			                   $this->redirect(array('view','id'=>$model->id));
+                            }
+                            else
+                            {                                                                           
+			                   $this->redirect(array('view','id'=>$model->id));
+                            }
+                        }
 		}
 
 		$this->render('create',array(
@@ -112,20 +126,31 @@ class UserController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+                $old_image =$model->image;          
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['User']))
 		{
-                        
-			$model->attributes=$_POST['User'];
-                        if(!empty($model->password)){
-                             $model->password=$model->hashPassword($model->password);
-                        }
-                       
+	              $model->attributes=$_POST['User'];  
+                      
+                      
+                      if(!empty($_FILES['User']["tmp_name"]["image"]))
+                      {
+                          $rnd =time().rand(0,9999);    
+                          $model->image  = $rnd.$_FILES['User']["name"]["image"];
+                          move_uploaded_file($_FILES['User']["tmp_name"]["image"], "./test/".$rnd.$_FILES['User']["name"]["image"]);
+                      }
+                      else 
+                      {
+                          $model->image = $old_image;                           
+                      }
+                        $model->password =  $model->hashPassword($_POST['User']['password']);
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                        {                                       
+                        $this->redirect(array('view','id'=>$model->id));                                                            
+                        }	
 		}
                 
                 $model->password=null;
