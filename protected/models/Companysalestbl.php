@@ -43,6 +43,10 @@ class Companysalestbl extends CActiveRecord
 			array('notes', 'safe'),
                         array('cust_pic', 'safe'),
                         array('confirm_stat','safe'),
+                        array('discount','safe'), 
+                        array('final_price','safe'),
+                        array('image','safe'),                      
+                        array('image', 'length', 'max'=>255, 'on'=>'insert,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('invoice_id, invoice_date, branch_id, employee_id, car_id, price, company_id, notes', 'safe', 'on'=>'search'),
@@ -78,8 +82,10 @@ class Companysalestbl extends CActiveRecord
 			'price' => 'سعر البيع',
 			'company_id' => 'الشركة',
 			'notes' => 'ملاحظات',
-                        'cust_pic'=>'صورة العميل',
+                        'image'=>'صورة العميل',
                         'confirm_stat'=>'اعتماد المدير',
+                        'discount' => 'نسبة الخصم',
+                        'final_price' => 'السعر بعد الخصم',
 		);
 	}
 

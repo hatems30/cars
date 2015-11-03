@@ -24,9 +24,11 @@ $this->menu=array(
 		'License_id',
 		array('name' => 'branch_id','value' => $model->branch->branch_name),
 		array('name' => 'car_id','value' => $model->car->chass_no),
+                'license_date',
 		array('name' => 'employee_id','value' => $model->employee->employee_name),
 		array('name' => 'traffic_id','value' => $model->traffic->traffic_name),
                 array('name' => 'super_employee_id','value' => $model->employee->employee_name),
 		'notes',
 	),
 )); ?>
+<?php echo CHtml::image(Yii::app()->request->baseUrl.'/test/'.$model->image,"image",array("width"=>200)); ?>

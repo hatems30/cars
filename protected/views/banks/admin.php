@@ -42,6 +42,7 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'bank_id',
 		'bank_name',
+                'factor',
 		array(
 			'class'=>'CButtonColumn',
 		),

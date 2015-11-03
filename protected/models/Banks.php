@@ -27,6 +27,7 @@ class Banks extends CActiveRecord
 		return array(
                         array('bank_name', 'required'),
 			array('bank_name', 'length', 'max'=>255),
+                        array('factor' , 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('bank_id, bank_name', 'safe', 'on'=>'search'),
@@ -53,6 +54,7 @@ class Banks extends CActiveRecord
 		return array(
 			'bank_id' => 'الكود',
 			'bank_name' => 'اسم البنك',
+                        'factor' => 'معامل البنك',
 		);
 	}
 

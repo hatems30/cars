@@ -7,6 +7,7 @@
                       array('name'=>'الماركة', 'type' => 'raw' , 'value'=> '$data[\'brand_name\']'),  
                       array('name'=>'الموديل', 'type' => 'raw' , 'value'=> '$data[\'model_name\']'),  
                       array('name'=>'رقم الشاسيه', 'type' => 'raw' , 'value'=> '$data[\'chass_no\']'),                       
+                      array('name'=>'سعر السيارة', 'type' => 'raw' , 'value'=> '$data[\'bank_price\']'),         
                       array('name'=>'البنك', 'type' => 'raw' , 'value'=> '$data[\'bank_name\']'),
                       array('name'=>'مبلغ التحويل', 'type' => 'raw' , 'value'=> '$data[\'transfer_amount\']'),
                       array('name'=>'مقدم البنك', 'type' => 'raw' , 'value'=> '$data[\'bank_down_amount\']'),        

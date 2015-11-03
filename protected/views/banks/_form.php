@@ -39,6 +39,15 @@
 		<?php echo $form->error($model,'bank_name'); ?>
                 </div>
 	</div>
+        <div class="row">
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'factor'); ?>
+                </div>
+                <div class ="col-sm-3"  dir =rtl>
+		<?php echo $form->textField($model,'factor',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
+		<?php echo $form->error($model,'factor'); ?>
+                </div>
+	</div>    
 
             <div class ="col-sm-3">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>

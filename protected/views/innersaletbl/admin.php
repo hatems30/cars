@@ -45,7 +45,8 @@ $('.search-form form').submit(function(){
 		'trs_date',		
                  array('name' => 'from_branch_id','value' => '$data->fromBranch->branch_name'), 
 		 array('name' => 'to_branch_id','value' => '$data->toBranch->branch_name'), 
-                 array('name' => 'car_id','value' => '$data->car->chass_no'), 		
+                 array('name' => 'car_id','value' => '$data->car->chass_no'), 
+                 array('name' => 'employee_id','value' => '$data->employees->employee_name'),                  
 		'price',
 		array(
 			'class'=>'CButtonColumn',

@@ -47,9 +47,9 @@ $('.search-form form').submit(function(){
                 array('name' => 'employee_id','value' => '$data->employee->employee_name'),		
 		array('name' => 'car_id','value' => '$data->carstbl->chass_no'),
 		array('name' => 'customer_id','value' => '$data->customer->customer_name'),		
-		'finance_type',
-            /*
-		'cach_price',
+		'finance_type',            
+		'car_price',
+/*            
 		'downpayment',
 		'monthly_premium',
 		'months_count',

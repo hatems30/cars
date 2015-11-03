@@ -57,8 +57,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'how'); ?>
-		<?php echo $form->textField($model,'how',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'how_id'); ?>
+		<?php echo $form->textField($model,'how_id',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row buttons">

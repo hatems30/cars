@@ -33,9 +33,15 @@ $('.search-form form').submit(function(){
                <div class="col-sm-6"><b><font size="5" color="blue">حجز سيارة</font></b></div>                          
            </div>
            </div>
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php 
+
+    $user_name = Yii::app()->user->username;
+    $emps = Employees::model()->findBySql("SELECT employees.employee_id FROM `user` INNER JOIN employees ON `user`.employee_id = employees.employee_id where `user`.username ='$user_name' LIMIT 1" , 'employee_id');
+    $emp_id = $emps['employee_id'] ;    
+
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'holdtbl-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->search($emp_id),
 	//'filter'=>$model,
 	'columns'=>array(
 		'hold_id',
@@ -47,10 +53,10 @@ $('.search-form form').submit(function(){
 		'sale_type',
 		'price',
 		'hold_amount',
-		'notes',		
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
+                'car_status',
+		//'notes',		
+		array('class'=>'CButtonColumn',),
+                array('name'=>'مبيعات العملاء','type' => 'raw','value'=>'CHtml::link($data[\'car_id\'],array("/salestbl/create","car_id"=>$data[\'car_id\']))'), 
+	                ),
 )); ?>
        </div>

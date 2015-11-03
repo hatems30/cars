@@ -86,21 +86,31 @@ class PaperstblController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Paperstbl;
-
+		$model=new Paperstbl;		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Paperstbl']))
 		{
+                        $rnd =time().rand(0,9999);                       //customer image
 			$model->attributes=$_POST['Paperstbl'];
+                        $uploadedFile=CUploadedFile::getInstance($model,'image');
+                        $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                        $model->image = $fileName;                      
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->paper_id));
+                        {
+                            if(!empty($uploadedFile))
+                            {
+                                $uploadedFile->saveAs('./test/'.$fileName);
+			        $this->redirect(array('view','id'=>$model->paper_id));                                
+                            }
+                            else 
+                            {
+                                $this->redirect(array('view','id'=>$model->paper_id));
+                            }
+                        }                          
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array('model'=>$model,));
 	}
 
 	/**
@@ -110,22 +120,35 @@ class PaperstblController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-
+		$model=$this->loadModel($id);                
+                $old_image =$model->image;                
+                
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Paperstbl']))
 		{
-			$model->attributes=$_POST['Paperstbl'];
+                                     
+	              $model->attributes=$_POST['Paperstbl'];  
+                      
+                      if(!empty($_FILES['Paperstbl']["tmp_name"]["image"]))
+                      {
+                          $rnd =time().rand(0,9999);    
+                          $model->image  = $rnd.$_FILES['Paperstbl']["name"]["image"];
+                          move_uploaded_file($_FILES['Paperstbl']["tmp_name"]["image"], "./test/".$rnd.$_FILES['Paperstbl']["name"]["image"]);
+                      }
+                      else 
+                      {
+                          $model->image = $old_image;                           
+                      }                      
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->paper_id));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
+                        {                                       
+                        $this->redirect(array('view','id'=>$model->paper_id));                                                            
+                        }	
+	        }
+        		$this->render('update',array('model'=>$model,));
+        }
+        
 
 	/**
 	 * Deletes a particular model.
@@ -205,10 +228,9 @@ class PaperstblController extends Controller
               elseif ($_REQUEST['sale_type']=='شركات') 
               {
               $sql="SELECT companysalestbl.car_id, carstbl.chass_no FROM companysalestbl INNER JOIN carstbl ON companysalestbl.car_id = carstbl.car_id where companysalestbl.branch_id = $id and companysalestbl.car_id in (select car_id from companysalestbl)";
-              }              
-                
+              }                            
+              
               $connection=Yii::app()->db;   // assuming you have configured a "db" connection
-
               $command=$connection->createCommand($sql);
               $data = $command->queryAll($sql);
 

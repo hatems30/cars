@@ -40,13 +40,24 @@ class Licensetbl extends CActiveRecord
 			array('branch_id, car_id, employee_id, traffic_id, super_employee_id', 'required'),
 			array('branch_id, car_id, employee_id, traffic_id, super_employee_id', 'numerical', 'integerOnly'=>true),
 			array('notes', 'length', 'max'=>255),                        
-                        array('cotchnier','safe'),
+                        array('image','safe'),
+                        array('license_date','safe'),
+                        array('license_date','checkdate','on'=>'insert,update'),
+                        array('image', 'length', 'max'=>255, 'on'=>'insert,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('License_id, branch_id, car_id, employee_id, traffic_id, super_employee_id, notes', 'safe', 'on'=>'search'),
 		);
 	}
-
+        public function checkdate($attribute)                
+        {        
+            $tmp_papers = Paperstbl::model()->findByAttributes(array('car_id'=>$this->car_id),'paper_date'); 
+            
+            if ( $tmp_papers['paper_date']> $this->license_date )
+            {
+                $this->addError($attribute,'عفوا تاريخ الترخيص قبل تاريخ تبيلغ الاوراق');
+            }
+        }
 	/**
 	 * @return array relational rules.
 	 */
@@ -72,11 +83,12 @@ class Licensetbl extends CActiveRecord
 			'License_id' => 'رقم',
 			'branch_id' => 'الفرع',
 			'car_id' => 'الشاسيه',
+                        'license_date' => 'تاريخ الترخيص',
 			'employee_id' => 'مندوب الترخيص',
 			'traffic_id' => 'المرور',
 			'super_employee_id' => 'مشرف الترخيص',
 			'notes' => 'ملاحظات',
-                        'cotchnier'=>'كوتشنير',
+                        'image'=>'كوتشنير',
 		);
 	}
 

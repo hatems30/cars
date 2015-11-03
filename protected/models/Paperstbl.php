@@ -39,8 +39,10 @@ class Paperstbl extends CActiveRecord
 			array('branch_id, car_id, supplier_id', 'numerical', 'integerOnly'=>true),
 			array('paper_status', 'length', 'max'=>50),
 			array('notes','safe'),
-                        array('sale_type','safe'),
-                        array('cust_lic','safe'),
+                        array('sale_type','safe'),                        
+                        array('image','safe'),
+                        array('image', 'length', 'max'=>255, 'on'=>'insert,update'),
+                        array('paper_date','checksalesdate','on'=>'insert,update'),
                     
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -51,7 +53,26 @@ class Paperstbl extends CActiveRecord
 	/**
 	 * @return array relational rules.
 	 */
-	public function relations()
+        public function checksalesdate($attribute)                
+        {        
+            $tmp_salestbl = Salestbl::model()->findByAttributes(array('car_id'=>$this->car_id),'invoice_date');
+            $tmp_dealers = Dealersalestbl::model()->findByAttributes(array('car_id'=>$this->car_id),'invoice_date');
+            $tmp_company = Companysalestbl::model()->findByAttributes(array('car_id'=>$this->car_id),'invoice_date')     ;   
+            
+            if ( $tmp_salestbl['invoice_date']> $this->paper_date )
+            {
+                $this->addError($attribute,'عفوا تاريخ تبليغ الاوراق قبل تاريخ البيع');
+            }
+            else if ( $tmp_dealers> $this->paper_date )
+            {
+                $this->addError($attribute,'عفوا تاريخ تبليغ الاوراق قبل تاريخ البيع');
+            }
+            else if ($tmp_company > $this->paper_date )
+            {
+                $this->addError($attribute,'عفوا تاريخ تبليغ الاوراق قبل تاريخ البيع');
+            }
+        }
+        public function relations()
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
@@ -76,7 +97,7 @@ class Paperstbl extends CActiveRecord
 			'supplier_id' => 'المبلغ له',
 			'paper_status' => 'حالة الاوراق',
 			'notes' => 'ملاحظات',
-                        'cust_lic'=>'صورة الرخصة',
+                        'image'=>'صورة الرخصة',
 		);
 	}
 

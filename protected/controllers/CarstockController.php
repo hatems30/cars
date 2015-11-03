@@ -50,7 +50,7 @@ colors.color_name,
 carstbl.car_year,
 carstbl.chass_no,
 stores.store_name,
-carstbl.off_price
+carcode.sale_price
 FROM
 carstbl
 INNER JOIN brands ON carstbl.brand_id = brands.brand_id
@@ -67,7 +67,13 @@ and carstbl.car_id not in (select car_id from companysalestbl)
 and carstbl.car_id not in (select car_id from holdtbl)
 and carstbl.car_id not in (select car_id from innersaletbl where innersaletbl.from_branch_id = $id)";
                 
-$sql2="or carstbl.car_id in (SELECT innersaletbl.car_id FROM innersaletbl INNER JOIN carstbl ON innersaletbl.car_id = carstbl.car_id where innersaletbl.to_branch_id = $id)";                
+$sql2="or carstbl.car_id in (SELECT innersaletbl.car_id FROM innersaletbl INNER JOIN carstbl ON innersaletbl.car_id = carstbl.car_id
+where innersaletbl.to_branch_id = $id
+and carstbl.car_id not in (select car_id from salestbl) 
+and carstbl.car_id not in (select car_id from dealersalestbl) 
+and carstbl.car_id not in (select car_id from companysalestbl)
+and carstbl.car_id not in (select car_id from holdtbl)
+and carstbl.car_id not in (select car_id from innersaletbl where innersaletbl.from_branch_id = $id))";                
 
                   if(!empty($_REQUEST['brand_id']))
                     {

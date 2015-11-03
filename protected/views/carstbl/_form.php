@@ -116,14 +116,23 @@
 	        <div class ="col-sm-3" >
 		<?php echo $form->labelEx($model,'add_date'); ?>
                 </div>
-                <div class ="col-sm-3" dir =rtl>		
-                <?php echo $form->dateField($model,'add_date',array("class" => "form-control")); ?>
+                <div class ="col-sm-3" dir =rtl>		               
+                    <?php                    
+                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'Carstbl[add_date]', 
+                                                                          'model' => $model,
+                                                                          'id' => 'Carstbl_add_date'       ,             
+                                                                          'value' => $model->add_date,
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                    ?>
 		<?php echo $form->error($model,'add_date'); ?>
                 </div>
 	</div>
                                       </br>
 <?php
-           $cont = Yii::app()->controller->id;
+           $cont = Yii::app()->controller->id;                   // check the permission of car price 
             $user_name = Yii::app()->user->username;
             $sql = "SELECT userpertbl.per_type
                     FROM userpertbl
@@ -155,23 +164,7 @@
 		<?php echo $form->error($model,'off_price'); ?>
                 </div>
 	</div>
-                                           </br>
-	<div class="row">
-                <div class ="col-sm-3">
-		<?php echo $form->labelEx($model,'sale_price_from'); ?>
-                </div>
-                <div class ="col-sm-3" dir =rtl>
-		<?php echo $form->textField($model,'sale_price_from' ,array("class"=>"form-control") ); ?>
-		<?php echo $form->error($model,'sale_price_from'); ?>
-                </div>
-	        <div class ="col-sm-3">
-		<?php echo $form->labelEx($model,'sale_price_to' ); ?>
-                </div>
-                <div class ="col-sm-3" dir =rtl>
-		<?php echo $form->textField($model,'sale_price_to' ,array("class"=>"form-control") ); ?>
-		<?php echo $form->error($model,'sale_price_to'); ?>
-                </div>
-	</div>
+                                        
   <?php
                 }}
   ?>
@@ -198,6 +191,7 @@
    
    
     $(function(){
+        
         
         
           $('#Carstbl_brand_id').on('change',function(){  
@@ -255,5 +249,5 @@
     $('#Carstbl_brand_id').change();
     $('#Carstbl_branch_id').change();
     $('#Carstbl_model_id').change();
-    })
+    });
         </script>

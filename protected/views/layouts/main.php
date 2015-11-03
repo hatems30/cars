@@ -19,12 +19,22 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/mycss.css" media="print">
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/mycss.css">
     
         
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>    
         
+                <div class ="col-sm-3">
+                <?php //if($model->isNewRecord !='1'){ ?>
+                <?php
+                       $img = User::model()->findByAttributes(array('username' => Yii::app()->user->username),'image');
+                       
+                ?>
+                
+                <?php //} ?>
+                </div>
+       
         
 
        </head>
@@ -34,14 +44,19 @@
     <div class="container" id="page">
 
 	<div id="header">
+            <div class="row">
+                <div class="col-sm-3">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+                </div>
+                <div class="col-sm-9" dir =rtl>
+                <div dir = rtl  id="logo"><font face="andalus">المحاسب لشركات السيارات</font></div>
+                </div>
+            </div>
 	</div><!-- header -->
 <!---------------------------------------------------------------------------------------------------------------->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#"><b>Abo Hetta</b></a>
-    </div>
+
     <div>
         <ul class="nav navbar-nav">
         <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">Home</a></li>
@@ -67,6 +82,7 @@
         </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Data</b><span class="caret"></span></a>            
           <ul class="dropdown-menu" alig="center">
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstock/view"><font color="red">Car Stock</font></a></li>          
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstbl/admin&view=admin"><b>اضافة سيارة جديدة</b></a></li>            
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=innersaletbl/admin&view=admin"><b>التحويل بين الفروع</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=holdtbl/admin&view=admin"><b>حجز سيارة</b></a></li>
@@ -92,14 +108,33 @@
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Companysalesreport/view"><b>تقرير مبيعات الشركات</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Bankoffersreport/view"><b>تقرير عروض البنك</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Holdsreport/view"><b>تقرير الحجوزات </b></a></li>            
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=employeesalesreport/view"><b>تقرير مبيعات Sales </b></a></li>   
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=buyreport/view"><b>تقرير السيارت المستلمة  </b></a></li> 
           </ul>            
-        </li>            
-        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstock/view">Car Stock</a></li>        
-        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=callstbl/admin&view=admin">CALLS</a></li>
-        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=User/admin&view=admin">Users</a></li>
+        </li>  
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Customer Service</b><span class="caret"></span></a>            
+          <ul class="dropdown-menu" alig="center">
+             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=callstbl/admin&view=admin">المكالمات</a></li>    
+             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=visitstbl/admin&view=admin">الزيارات</a></li> 
+             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=howtbl/admin&view=admin">طرق الاتصال</a></li> 
+             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=callsreport/view">تقرير المكالمات الواردة</a></li>
+             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=visitsreport/view">تقرير الزيارات</a></li>
+          </ul>            
+        </li> 
+        
+        
+        
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Settings</b><span class="caret"></span></a>            
+          <ul class="dropdown-menu" alig="center">
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=User/admin&view=admin">Users</a></li>
+              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Factorstbl/admin&view=admin">معامل البيع</a></li>
+          </ul>            
+        </li>  
+        
 
         <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=site/logout">Logout</a></li>
-        <li><a href="#"><?php echo 'welcome '.Yii::app()->user->username?></a></li>
+        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=employeepage/view"><?php echo 'welcome '.Yii::app()->user->username?></a></li>
+        <li><a href="#"><?php echo CHtml::image(Yii::app()->request->baseUrl.'/test/'.$img['image'],"image",array("width"=>100)); ?></a></li>
       </ul>      
     </div>
   </div>
@@ -122,9 +157,9 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Eng. Mahmoud Mohamed Atia<br/>
-		m.atia81@yahoo.com<br/>
-                01002537952
+            <font size = 2 color="blue"><b>Eng. Mahmoud Mohamed Atia</b></font><br/>
+            <font size = 2 color="red"><b>m.atia81@yahoo.com</b></font><br/>
+            <font size = 2 color="blue"><b>01002537952</b></font><br/>
 		<?php //echo Yii::powered(); ?>
 	</div><!-- footer -->
 

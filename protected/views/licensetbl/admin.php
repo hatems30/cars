@@ -43,6 +43,7 @@ $('.search-form form').submit(function(){
 		'License_id',
 		array('name' => 'branch_id','value' => '$data->branch->branch_name'),
 		array('name' => 'car_id','value' => '$data->car->chass_no'),
+                'license_date',
 		array('name' => 'employee_id','value' => '$data->employee->employee_name'),
 		array('name' => 'traffic_id','value' => '$data->traffic->traffic_name'),
                 array('name' => 'super_employee_id','value' => '$data->employee->employee_name'),		

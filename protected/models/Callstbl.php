@@ -33,13 +33,13 @@ class Callstbl extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('call_date, call_time, car_data, call_employee_id, customer, mobile, service_employee_id, area, how', 'required'),
+			array('call_date, call_time, car_data, call_employee_id, customer, mobile, service_employee_id, area', 'required'),
 			array('call_employee_id, service_employee_id', 'numerical', 'integerOnly'=>true),
-			array('car_data, customer, mobile, area, how', 'length', 'max'=>255),
-                        array('notes','safe'),
+			array('car_data, customer, mobile, area', 'length', 'max'=>255),
+                        array('notes , branch_id , how_id','safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('call_id, call_date, call_time, car_data, call_employee_id, customer, mobile, service_employee_id, area, how', 'safe', 'on'=>'search'),
+			array('call_id, call_date, call_time, car_data, call_employee_id, customer, mobile, service_employee_id, area', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,6 +53,8 @@ class Callstbl extends CActiveRecord
 		return array(
                     'callsman' => array(self::BELONGS_TO, 'Employees', 'call_employee_id'),
                     'serviceman' => array(self::BELONGS_TO, 'Employees', 'service_employee_id'),
+                    'branch' => array(self::BELONGS_TO, 'Branchs', 'branch_id'),
+                    'howtbl' => array(self::BELONGS_TO, 'Howtbl', 'how_id'),
 		);
 	}
 
@@ -62,17 +64,23 @@ class Callstbl extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'call_id' => 'م',
-			'call_date' => 'التاريخ',
-			'call_time' => 'الوقت',
-			'car_data' => 'بيانات السيارة',
-			'call_employee_id' => 'موظف الاتصال',
-			'customer' => 'العميل',
-			'mobile' => 'الموبايل',
-			'service_employee_id' => 'الموظف المسئول',
-			'area' => 'المنطقة',
-			'how' => 'الطريقة',
-                        'notes'=>'الاجراءات',
+			
+                    'call_id' => 'م',			
+                    'call_date' => 'التاريخ',			
+                    'call_time' => 'الوقت',			
+                    'branch_id' => 'الفرع' ,
+                    'car_data' => 'بيانات السيارة',			
+                    'call_employee_id' => 'موظف الاتصال',			
+                    'customer' => 'العميل',			
+                    'mobile' => 'الموبايل',			
+                    'service_employee_id' => 'الموظف المسئول',			
+                    'area' => 'المنطقة',			
+                    'how_id' => 'الطريقة',                        
+                    'notes'=>'الاجراءات',                        
+                    'status'=>'حالة المكالمة',                        
+                    'status_date' =>'تاريخ الحالة',
+                    
+                    
 		);
 	}
 
@@ -103,7 +111,7 @@ class Callstbl extends CActiveRecord
 		$criteria->compare('mobile',$this->mobile,true);
 		$criteria->compare('service_employee_id',$this->service_employee_id);
 		$criteria->compare('area',$this->area,true);
-		$criteria->compare('how',$this->how,true);
+		$criteria->compare('how_id',$this->how_id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

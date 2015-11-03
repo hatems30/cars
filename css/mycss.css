@@ -1,9 +1,23 @@
-        
-            
-         .body>   .panel-default > .panel-heading{
-                
-                margin: auto;
-                direction: rtl;
-                
-            }
-        
+.panel-default
+{
+  //background-color : bisque!important;
+  background-color :#fcefa1!important;
+}
+
+#header
+{
+  background-color: black!important;    
+}
+
+#logo{
+    color: white!important;
+}
+
+.container
+
+{
+   
+}
+#note{
+
+}

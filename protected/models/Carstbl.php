@@ -52,10 +52,11 @@ class Carstbl extends CActiveRecord
 		return array(
 			array('brand_id, model_id, code_id, color_id, car_year, chass_no, motor_no, branch_id, supplier_id, add_date', 'required'),
 			array('brand_id, model_id, code_id, color_id, branch_id, store_id, supplier_id', 'numerical', 'integerOnly'=>true),
-			array('cost_price, off_price, sale_price_from, sale_price_to', 'numerical'),
+			array('cost_price, off_price, sale_price', 'numerical'),
 			array('car_spec, chass_no, motor_no', 'length', 'max'=>255),
 			array('car_year', 'length', 'max'=>4),
-			array('notes', 'safe'),
+			array('notes , car_factor', 'safe'),
+                        array('sale_price' , 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('car_id, brand_id, model_id, code_id, car_spec, color_id, car_year, chass_no, motor_no, branch_id, store_id, supplier_id, add_date, cost_price, off_price, sale_price_from, sale_price_to, notes', 'safe', 'on'=>'search'),
@@ -102,9 +103,9 @@ class Carstbl extends CActiveRecord
 			'add_date' => 'تاريخ الشراء',
 			'cost_price' => 'سعر الشراء',
 			'off_price' => 'السعر الرسمي',
-			'sale_price_from' => 'سعر البيع من',
-			'sale_price_to' => 'الى',
+			'sale_price' => 'سعر البيع ',			
 			'notes' => 'ملاحظات',
+                        'car_factor' => 'الوزن النسبي',
 		);
 	}
 
@@ -141,8 +142,7 @@ class Carstbl extends CActiveRecord
 		$criteria->compare('add_date',$this->add_date,true);
 		$criteria->compare('cost_price',$this->cost_price);
 		$criteria->compare('off_price',$this->off_price);
-		$criteria->compare('sale_price_from',$this->sale_price_from);
-		$criteria->compare('sale_price_to',$this->sale_price_to);
+		$criteria->compare('sale_price_from',$this->sale_price);		
 		$criteria->compare('notes',$this->notes,true);
 
 		return new CActiveDataProvider($this, array(

@@ -28,7 +28,7 @@ $this->menu=array(
 		array('name' => 'car_id','value' => $model->car->chass_no),
 		array('name' => 'customer_id','value' => $model->customer->customer_name),
 		'finance_type',
-		'cach_price',
+		'car_price',
 		'downpayment',
 		'monthly_premium',
 		'months_count',
@@ -44,3 +44,4 @@ $this->menu=array(
 		'notes',
 	),
 )); ?>
+<?php echo CHtml::image(Yii::app()->request->baseUrl.'/test/'.$model->image,"image",array("width"=>200)); ?>

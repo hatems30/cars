@@ -25,13 +25,6 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
        <div class="panel panel-default">            
            <div class="panel-heading" dir =rtl>
                <div class="row">
@@ -53,7 +46,7 @@ $('.search-form form').submit(function(){
 		'mobile',		
                 array('name' => 'service_employee_id','value' => '$data->serviceman->employee_name'),	 
 		'area',
-		'how',		
+		array('name' => 'how_id','value' => '$data->howtbl->how_name'),
 		array(
 			'class'=>'CButtonColumn',
 		),

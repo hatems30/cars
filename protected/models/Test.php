@@ -27,6 +27,8 @@ class Test extends CActiveRecord
 		return array(
 			array('name', 'required'),
 			array('name', 'length', 'max'=>255),
+                        array('image', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true, 'on'=>'update'),
+                        array('image', 'length', 'max'=>255, 'on'=>'insert,update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name', 'safe', 'on'=>'search'),

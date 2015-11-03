@@ -44,6 +44,7 @@ class Holdtbl extends CActiveRecord
 			array('price, hold_amount', 'numerical'),
 			array('sale_type', 'length', 'max'=>255),
 			array('notes', 'safe'),
+                        array('car_status', 'safe'),                    
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('hold_id, hold_date, branch_id, employee_id, customer_id, car_id, sale_type, price, hold_amount, notes', 'safe', 'on'=>'search'),
@@ -81,6 +82,7 @@ class Holdtbl extends CActiveRecord
 			'price' => 'السعر',
 			'hold_amount' => 'مقدم الحجز',
 			'notes' => 'ملاحظات',
+                        'car_status' => 'حالة السيارة',
 		);
 	}
 
@@ -96,21 +98,21 @@ class Holdtbl extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($emp_id)
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
-
+                $unsoled ='غير مباعة';
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('hold_id',$this->hold_id);
 		$criteria->compare('hold_date',$this->hold_date,true);
 		$criteria->compare('branch_id',$this->branch_id);
-		$criteria->compare('employee_id',$this->employee_id);
+		$criteria->compare('employee_id',$emp_id);
 		$criteria->compare('customer_id',$this->customer_id);
 		$criteria->compare('car_id',$this->car_id);
 		$criteria->compare('sale_type',$this->sale_type,true);
 		$criteria->compare('price',$this->price);
-		$criteria->compare('hold_amount',$this->hold_amount);
+		$criteria->compare('hold_amount',$this->hold_amount);                
 		$criteria->compare('notes',$this->notes,true);
 
 		return new CActiveDataProvider($this, array(

@@ -93,14 +93,26 @@ class LicensetblController extends Controller
 
 		if(isset($_POST['Licensetbl']))
 		{
+                        $rnd =time().rand(0,9999);                       //customer image
 			$model->attributes=$_POST['Licensetbl'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->License_id));
+                        $uploadedFile=CUploadedFile::getInstance($model,'image');
+                        $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                        $model->image = $fileName;                      
+			if($model->save())  
+                        {
+                            if(!empty($uploadedFile))
+                            {
+                                $uploadedFile->saveAs('./test/'.$fileName);
+			        $this->redirect(array('view','id'=>$model->License_id));                                
+                            }
+                            else 
+                            {
+                                $this->redirect(array('view','id'=>$model->License_id));
+                            }
+                        }                                       
+                                                                     
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array('model'=>$model,));
 	}
 
 	/**
@@ -110,16 +122,31 @@ class LicensetblController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-
+		$model=$this->loadModel($id);                
+                $old_image =$model->image;                
+                
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Licensetbl']))
 		{
-			$model->attributes=$_POST['Licensetbl'];
+                                     
+	              $model->attributes=$_POST['Licensetbl'];  
+                      
+                      if(!empty($_FILES['Licensetbl']["tmp_name"]["image"]))
+                      {
+                          $rnd =time().rand(0,9999);    
+                          $model->image  = $rnd.$_FILES['Licensetbl']["name"]["image"];
+                          move_uploaded_file($_FILES['Licensetbl']["tmp_name"]["image"], "./test/".$rnd.$_FILES['Licensetbl']["name"]["image"]);
+                      }
+                      else 
+                      {
+                          $model->image = $old_image;                           
+                      }                      
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->License_id));
+                        {                                       
+                        $this->redirect(array('view','id'=>$model->License_id));                                                            
+                        }				
 		}
 
 		$this->render('update',array(

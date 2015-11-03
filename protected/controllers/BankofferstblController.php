@@ -43,7 +43,7 @@ class BankofferstblController extends Controller
                         {
                             return array(
                                         array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                                              'actions' => array('create', 'update', 'admin', 'delete', 'view'),
+                                              'actions' => array('create', 'update', 'admin', 'delete', 'view' , 'Getmodels' , 'Getcode' , 'Getemployee'),
                                               'users' => array('@'),),
                                         array('deny', // deny all users
                                               'users' => array('*'),),

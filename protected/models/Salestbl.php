@@ -11,7 +11,7 @@
  * @property integer $car_id
  * @property integer $customer_id
  * @property string $finance_type
- * @property double $cach_price
+ * @property double $car_price
  * @property double $downpayment
  * @property double $monthly_premium
  * @property integer $months_count
@@ -54,19 +54,35 @@ class Salestbl extends CActiveRecord
 		return array(
 			array('invoice_date, branch_id, employee_id, car_id, customer_id, finance_type', 'required'),
 			array('branch_id, employee_id, car_id, customer_id, months_count, bank_id, insurance_comp_id', 'numerical', 'integerOnly'=>true),
-			array('cach_price, downpayment, monthly_premium, interest_rate, transfer_amount, bank_down_amount, expenses, insurance_amount, insurance_rate', 'numerical'),
+			array('car_price, downpayment, monthly_premium, interest_rate, transfer_amount, bank_down_amount, expenses, insurance_amount, insurance_rate', 'numerical'),
 			array('finance_type, insurance_type', 'length', 'max'=>255),
-			array('notes', 'safe'),
-                        array('premium_price', 'safe'),
-                        array('bank_price', 'safe'),
-                        array('cust_pic', 'safe'),
-                        array('confirm_stat','safe'),
+			array('notes', 'safe'),                      
+                        array('confirm_stat','safe'),                       
+                        array('image','safe'), 
+                        array('car_price','safe'),
+                        array('image', 'length', 'max'=>255, 'on'=>'insert,update'),                
+                        array('car_price', 'checkprice', 'on'=>'insert,update'),  
+                        array('discount','safe'), 
+                        array('final_price','safe'), 
                     
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('invoice_id, invoice_date, branch_id, employee_id, car_id, customer_id, finance_type, cach_price, downpayment, monthly_premium, months_count, interest_rate, bank_id, transfer_amount, bank_down_amount, expenses, insurance_comp_id, insurance_type, insurance_amount, insurance_rate, notes', 'safe', 'on'=>'search'),
+			array('invoice_id, invoice_date, branch_id, employee_id, car_id, customer_id, finance_type, car_price, downpayment, monthly_premium, months_count, interest_rate, bank_id, transfer_amount, bank_down_amount, expenses, insurance_comp_id, insurance_type, insurance_amount, insurance_rate, notes', 'safe', 'on'=>'search'),
 		);
+
 	}
+        
+        public function checkprice($attribute)                
+        {   
+            $tmp_code = Carstbl::model()->findByAttributes(array('car_id'=>$this->car_id),'code_id');    
+            $tmp = Carcode::model()->findByAttributes(array('code_id'=>$tmp_code['code_id']),'sale_price');            
+               if ( $tmp['sale_price'] > $this->car_price )
+                  {
+                    $this->addError($attribute,'عفوا السعر اقل من سعر البيع');
+                  }                                      
+        } 
+          
+         
 
 	/**
 	 * @return array relational rules.
@@ -99,24 +115,24 @@ class Salestbl extends CActiveRecord
 			'car_id' => 'الشاسيه',
 			'customer_id' => 'العميل',
 			'finance_type' => 'نوع التمويل',
-			'cach_price' => 'سعر النقدي',
+			'car_price' => 'سعر البيع',
 			'downpayment' => 'المقدم',
 			'monthly_premium' => 'القسط الشهري',
 			'months_count' => 'عدد الشهور',
 			'interest_rate' => 'نسبة الفائدة',
 			'bank_id' => 'البنك',
-			'transfer_amount' => 'قيمة التحويل',
+			'transfer_amount' => 'قيمة التمويل',
 			'bank_down_amount' => 'مقدم البنك',
 			'expenses' => 'مصاريف ادارية',
 			'insurance_comp_id' => 'شركة التأمين',
 			'insurance_type' => 'نوع التأمين',
 			'insurance_amount' => 'قيمة التأمين',
 			'insurance_rate' => 'نسبة التأمين',
-			'notes' => 'ملاحظات',
-                        'premium_price' => 'سعر السيارة',
-                        'bank_price' => 'سعر السيارة',
-                        'cust_pic'=>'صورة العميل',
-                        'confirm_stat'=>'اعتماد المدير'
+			'notes' => 'ملاحظات',                                                
+                        'image'=>'صورة العميل',
+                        'confirm_stat'=>'اعتماد المدير',
+                        'discount'=>'نسبة الخصم',
+                        'final_price'=>'السعر بعد الخصم'
 		);
 	}
 
@@ -145,7 +161,7 @@ class Salestbl extends CActiveRecord
 		$criteria->compare('car_id',$this->car_id);
 		$criteria->compare('customer_id',$this->customer_id);
 		$criteria->compare('finance_type',$this->finance_type,true);
-		$criteria->compare('cach_price',$this->cach_price);
+		$criteria->compare('car_price',$this->car_price);
 		$criteria->compare('downpayment',$this->downpayment);
 		$criteria->compare('monthly_premium',$this->monthly_premium);
 		$criteria->compare('months_count',$this->months_count);

@@ -38,6 +38,7 @@ class Innersaletbl extends CActiveRecord
 			array('from_branch_id, to_branch_id, car_id', 'numerical', 'integerOnly'=>true),
 			array('price', 'numerical'),
                         array('notes','safe'),
+                        array('employee_id','safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('trs_id, trs_date, from_branch_id, to_branch_id, car_id, price', 'safe', 'on'=>'search'),
@@ -55,6 +56,7 @@ class Innersaletbl extends CActiveRecord
 			'fromBranch' => array(self::BELONGS_TO, 'Branchs', 'from_branch_id'),
 			'car' => array(self::BELONGS_TO, 'Carstbl', 'car_id'),
 			'toBranch' => array(self::BELONGS_TO, 'Branchs', 'to_branch_id'),
+                        'employees' => array(self::BELONGS_TO, 'employees', 'employee_id'),
 		);
 	}
 
@@ -71,6 +73,7 @@ class Innersaletbl extends CActiveRecord
 			'car_id' => 'الشاسيه',
 			'price' => 'السعر',
                         'notes' => 'ملاحظات',
+                        'employee_id' => 'المندوب',
 		);
 	}
 

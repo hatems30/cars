@@ -54,6 +54,23 @@
                           </br>
 	<div class="row">
                 <div class ="col-sm-3"> 	       
+         	<?php echo $form->labelEx($model,'factor'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+                <?php echo $form->textField($model,'factor',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
+		<?php echo $form->error($model,'factor'); ?>
+                </div>	
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'sale_price'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->textField($model,'sale_price',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
+		<?php echo $form->error($model,'sale_price'); ?>
+                </div>
+        </div>
+                          
+	<div class="row">
+                <div class ="col-sm-3"> 	       
          	<?php echo $form->labelEx($model,'code_01'); ?>
                 </div>
                 <div class ="col-sm-3" dir="rtl">
