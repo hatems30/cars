@@ -37,12 +37,12 @@
                 </div>
         </div>
         <div class="row">    
-	        <div class ="col-md-3">
-		<?php echo $form->labelEx($model,'employee_type'); ?>
+	        <div class ="col-md-3">		
+                    <?php echo $form->labelEx($model,'employee_type'); ?>
                 </div>
-                <div class ="col-md-3" dir =rtl>
-                <?php echo $form->dropDownList($model,'employee_type',array("مبيعات"=>"مبيعات","تجاري"=>"تجاري","المخازن"=>"المخازن","الاوراق"=>"الاوراق","تراخيص"=>"تراخيص" ,"خدمة عملاء"=>"خدمة عملاء"),array('empty'=>'' ,'class'=>'form-control' )); ?>    
-		<?php echo $form->error($model,'employee_type'); ?>
+                <div class ="col-md-3" dir =rtl>                
+                    <?php echo $form->dropDownList($model,'employee_type',array("مبيعات"=>"مبيعات","تجاري"=>"تجاري","المخازن"=>"المخازن","الاوراق"=>"الاوراق","تراخيص"=>"تراخيص" ,"خدمة عملاء"=>"خدمة عملاء"),array('empty'=>'' ,'class'=>'form-control' )); ?>    		
+                    <?php echo $form->error($model,'employee_type'); ?>
                 </div>
 	</div>
 	<div class="row">
@@ -63,6 +63,17 @@
 		<?php echo $form->error($model,'manager_id'); ?>
                 </div>
 	</div>
+            	
+            <div class="row">                
+                <div class ="col-sm-3">	
+		<?php echo $form->labelEx($model,'target'); ?>
+                </div>
+            <div class ="col-md-3" dir =rtl>
+		<?php echo $form->textField($model,'target',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
+		<?php echo $form->error($model,'target'); ?>
+                </div>
+            </div>
+            
         <div class ="col-md-3">    
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'اضافة' : 'حفظ' , array('class'=>'btn btn-default' , 'style'=>'font-size:18px')); ?>

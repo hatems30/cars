@@ -38,6 +38,7 @@ class Employees extends CActiveRecord
 			array('branch_id, manager_id', 'numerical', 'integerOnly'=>true),
 			array('employee_name', 'length', 'max'=>255),
 			array('employee_type', 'length', 'max'=>30),
+                        array('target','safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('employee_id, employee_name, employee_type, branch_id, manager_id', 'safe', 'on'=>'search'),
@@ -76,6 +77,7 @@ class Employees extends CActiveRecord
 			'employee_type' => 'طبيعة العمل',
 			'branch_id' => 'الفرع',
 			'manager_id' => 'المدير المباشر',
+                        
 		);
 	}
 

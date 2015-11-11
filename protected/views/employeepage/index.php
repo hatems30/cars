@@ -21,14 +21,20 @@
                      <b>Sales</b> 
                 </div>
                 <div class ="col-sm-3">
-                     <?php
-                         
-                             $empid = $models = User::model()->findByAttributes(array('username'=>Yii::app()->user->username),'employee_id');                                   
+                     <?php                         
+                             $empid = User::model()->findByAttributes(array('username'=>Yii::app()->user->username),'employee_id');                                   
                              $models = Employees::model()->findallByAttributes(array('employee_id'=>$empid['employee_id']));
                              $list = CHtml::listData($models, 'employee_id', 'employee_name');
-                             echo CHtml::dropDownList('employees', $models, $list,array( 'class'=>'form-control')); 
+                             echo CHtml::dropDownList('employees', $models, $list,array( 'class'=>'form-control'));                              
                       ?>
-                </div>                 
+                </div> 
+                 <div class="col-sm-2" dir="rtl">
+                     <?php
+                             $mah = User::model()->findByAttributes(array('username'=>Yii::app()->user->username),'employee_id');                                   
+                             $tar=  Employees::model()->findByAttributes(array('employee_id'=>$mah['employee_id']),'target');                             
+                             echo chtml::textField('target',$tar['target'],array('class'=>'form-control' , 'readonly'=>'true'));
+                      ?>
+                 </div>
              </div>    
             </br>
             <div class="row">
@@ -61,13 +67,13 @@
                     ?>                              
                 </div>            
             <div class ="col-sm-3">
-                 <button id="mybutton" class="btn btn-default"> Get Branch Sales  </button> 
+                 <button id="mybutton" class="btn btn-default"> Get Data  </button> 
             </div>
         </div>
 </div>
         <span id ="ajax">
           
-        </span>
+        </span>]
         </div>
   </div>
 <script type ="text/javascript">

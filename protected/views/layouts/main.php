@@ -46,10 +46,10 @@
 	<div id="header">
             <div class="row">
                 <div class="col-sm-3">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+                    <div id="logo"><font size = 6 color = "red"><?php echo CHtml::encode(Yii::app()->name); ?></font></div>                
                 </div>
-                <div class="col-sm-9" dir =rtl>
-                <div dir = rtl  id="logo"><font face="andalus">المحاسب لشركات السيارات</font></div>
+                <div class="col-sm-8" dir =rtl>
+                   <font size = 10 color="red">19788</font>    
                 </div>
             </div>
 	</div><!-- header -->
@@ -83,6 +83,7 @@
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Data</b><span class="caret"></span></a>            
           <ul class="dropdown-menu" alig="center">
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstock/view"><font color="red">Car Stock</font></a></li>          
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=outstocktbl/admin&view=admin"><font color="red">Stock خارجي</font></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstbl/admin&view=admin"><b>اضافة سيارة جديدة</b></a></li>            
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=innersaletbl/admin&view=admin"><b>التحويل بين الفروع</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=holdtbl/admin&view=admin"><b>حجز سيارة</b></a></li>
@@ -157,9 +158,9 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-            <font size = 2 color="blue"><b>Eng. Mahmoud Mohamed Atia</b></font><br/>
-            <font size = 2 color="red"><b>m.atia81@yahoo.com</b></font><br/>
-            <font size = 2 color="blue"><b>01002537952</b></font><br/>
+          
+                    <?php echo CHtml::image(Yii::app()->request->baseUrl.'/test/'.'mahmoud.jpg',"image",array("width"=>150)); ?>                                               
+      
 		<?php //echo Yii::powered(); ?>
 	</div><!-- footer -->
 
