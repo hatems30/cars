@@ -39,7 +39,7 @@ class CarstockController extends Controller
 	{
             $this->layout = false;
 		$id = $_REQUEST['id'];            
-                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
+                
 
                 $sql1="SELECT
 carstbl.car_id,
@@ -88,27 +88,28 @@ and carstbl.car_id not in (select car_id from innersaletbl where innersaletbl.fr
                     } 
                    
                     
-                    $sql = $sql1.$sql2;
-     
+                    $sql = $sql1.$sql2;    
+                    $all=Yii::app()->db->createCommand($sql)->queryAll();                 
+                    $params=array();
+                    if (isset($_REQUEST['id']))
+                    {
+                    $params['id']= $_REQUEST['id'];
+                    }
+                    if (isset($_REQUEST['brand_id']))
+                    {
+                    $params['brand_id']= $_REQUEST['brand_id'];
+                    }
+                    if (isset($_REQUEST['model_id']))
+                    {
+                    $params['model_id']= $_REQUEST['model_id'];
+                    }                    
                 $dataProvider=new CSqlDataProvider($sql, array(
                             'keyField' => 'car_id',
-                  //          'totalItemCount'=>$count,
-                            'sort'=>array(
-                            'attributes'=>array(
-                            'car_id',
-        ),
-    ),
-    'pagination'=>array(
-        'pageSize'=>10,
-    ),
-));
-                
-                $this->render('getdata',array(
-			'id'=>$_REQUEST['id'],
-                    'dataProvider' => $dataProvider
-		));
-                
-                
-	}
-        
+                             'totalItemCount'=>count($all),
+                            'sort'=>array('attributes'=>array('car_id',),),
+                         //   'enablePagination'=>true,
+                            'pagination'=>array('pageSize'=>10,'params'=>$params),
+));                
+                $this->render('getdata',array('dataProvider' => $dataProvider));                                
+	}        
 }

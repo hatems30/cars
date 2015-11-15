@@ -1,8 +1,11 @@
 <?php 
+
 $user_name = Yii::app()->user->username;
 $emps = User::model()->findBySql("SELECT `user`.branch_id FROM `user` where `user`.username = '$user_name'");
-if($_REQUEST['id']==$emps['branch_id'])
+$branch = $_REQUEST['id'] ;
+if($branch==$emps['branch_id'])
 {
+
      $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,
     //'filter'=> array(''),         
@@ -23,9 +26,13 @@ if($_REQUEST['id']==$emps['branch_id'])
                      array('name'=>'حجز سيارة','type' => 'raw','value'=>'CHtml::link($data[\'car_id\'],array("/holdtbl/create","car_id"=>$data[\'car_id\'],"branch_id"=>$_REQUEST["id"]))'),                      
                     ),         
 ));    
+
+     
 }
  else
 {
+       
+      
      $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,
     //'filter'=> array(''),         
@@ -39,6 +46,7 @@ if($_REQUEST['id']==$emps['branch_id'])
                      array('name'=>'الشاسيه', 'type' => 'raw' , 'value'=> '$data[\'chass_no\']'),                       
                     ),         
 ));  
+     
 }
 
 ?>

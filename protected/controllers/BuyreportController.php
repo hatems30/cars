@@ -58,9 +58,7 @@ and carstbl.add_date >= '$start_date' and carstbl.add_date <= '$end_date' ";
                             'carstbl.car_id',
         ),
     ),
-    'pagination'=>array(
-        'pageSize'=>10,
-    ),
+   'pagination'=>array('pageSize'=>10,),
 ));
                 
                 $this->render('getdata',array('id'=>$_REQUEST['id'],'dataProvider' => $dataProvider));
