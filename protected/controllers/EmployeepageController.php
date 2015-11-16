@@ -177,20 +177,21 @@ and companysalestbl.invoice_date >= '$start_date' and companysalestbl.invoice_da
 callstbl.call_id,
 callstbl.call_date,
 callstbl.call_time,
-employees.employee_name as call_man ,
 callstbl.car_data,
 callstbl.customer,
 callstbl.mobile,
-emp.employee_name as service_man ,
+empcall.employee_name AS call_man,
+empserv.employee_name AS service_man,
 callstbl.area,
-howtbl.how_name,
 callstbl.notes,
-callstbl.`status`
+callstbl.`status`,
+howtbl.how_name
 FROM
 callstbl
-INNER JOIN employees ON employees.employee_id = callstbl.call_employee_id
-INNER JOIN employees emp ON employees.manager_id = employees.employee_id AND emp.employee_id = callstbl.service_employee_id
-INNER JOIN howtbl ON howtbl.how_id = callstbl.how_id
+INNER JOIN employees AS empcall ON empcall.employee_id = callstbl.call_employee_id
+INNER JOIN employees AS empserv ON empserv.employee_id = callstbl.service_employee_id
+INNER JOIN howtbl ON callstbl.how_id = howtbl.how_id
+
 where callstbl.branch_id = $id and callstbl.service_employee_id = $empid
 and callstbl.call_date >= '$start_date' and callstbl.call_date <= '$end_date' ";                              
                 $dataProvider6=new CSqlDataProvider($sql6, 

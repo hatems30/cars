@@ -40,6 +40,7 @@ $('.search-form form').submit(function(){
 		'call_id',
 		'call_date',
 		'call_time',
+                array('name' => 'branch_id','value' => '$data->branch->branch_name'),
 		'car_data',		
                 array('name' => 'call_employee_id','value' => '$data->callsman->employee_name'),	
 		'customer',		
