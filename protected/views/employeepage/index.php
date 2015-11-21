@@ -46,7 +46,7 @@
                     <?php                    
                     $this->widget('zii.widgets.jui.CJuiDatePicker',array(
                                                                           'name'=>'start_date',                                                                                                                                                          
-                                                                          //'value' => date('yy-m-d'),
+                                                                          'value' => date('Y-m-d'),
                                                                           'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
                                                                           'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
                                                                         ));                                           
@@ -60,7 +60,7 @@
                     <?php                    
                     $this->widget('zii.widgets.jui.CJuiDatePicker',array(
                                                                           'name'=>'end_date',                                                                                                                                                          
-                                                                          //'value' => date('yy-m-d'),
+                                                                          'value' => date('Y-m-d'),
                                                                           'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
                                                                           'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
                                                                         ));                                           
@@ -88,7 +88,12 @@
                   url: "<?php echo Yii::app()->request->baseUrl; ?>/"+"index.php?r=Employeepage/Getdata",
                   data:{"id":$('#branchs').val() ,"start_date":$('#start_date').val() ,"end_date":$('#end_date').val() , "empid":$('#employees').val()},
                   method:'POST',
-                  success:function(data){$('#ajax').html(data);}                 
+                  success:function(data)
+                          {
+                                 $('#ajax').html(data);    
+                                 //alert("success");
+                                                                                      
+                          }                 
               });
           })
       })

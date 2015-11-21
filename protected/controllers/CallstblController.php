@@ -59,6 +59,16 @@ class CallstblController extends Controller
                                               'users' => array('*'),),
                                         );
                         }
+                    elseif ($per_type == 'edit') 
+                        {
+                           return array(
+                                        array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                                              'actions' => array('update', 'view'),
+                                              'users' => array('@'),),
+                                        array('deny', // deny all users
+                                              'users' => array('*'),),
+                                        );
+                        }
                 } 
             else 
                 {

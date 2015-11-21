@@ -111,15 +111,18 @@
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Holdsreport/view"><b>تقرير الحجوزات </b></a></li>            
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=employeesalesreport/view"><b>تقرير مبيعات Sales </b></a></li>   
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=buyreport/view"><b>تقرير السيارت المستلمة  </b></a></li> 
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carpage/view"><b>Car Page</b></a></li> 
           </ul>            
         </li>  
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Customer Service</b><span class="caret"></span></a>            
           <ul class="dropdown-menu" alig="center">
              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=callstbl/admin&view=admin">المكالمات</a></li>    
              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=visitstbl/admin&view=admin">الزيارات</a></li> 
+             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=complaintstbl/admin&view=admin">الشكاوي</a></li> 
              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=howtbl/admin&view=admin">طرق الاتصال</a></li> 
              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=callsreport/view">تقرير المكالمات الواردة</a></li>
              <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=visitsreport/view">تقرير الزيارات</a></li>
+             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=complaintsreport/view">تقرير الشكاوى</a></li>
           </ul>            
         </li> 
         

@@ -255,3 +255,27 @@ $total_points = $total_cach_points + $total_premium_points + $total_banks_points
 ));
 
      ?>
+
+<div class="col-sm-10" dir="rtl">    
+    <b> <font size="4" color="blue">الشكاوى</font></b>
+</div>
+<?php  
+     $this->widget('zii.widgets.grid.CGridView', array(
+    'dataProvider'=>$dataProvider8,
+    'columns'=>array( 
+                   
+                     array('name'=>'مسلسل', 'type' => 'raw' , 'value'=> '$data[\'complaint_id\']'), 
+                     array('name'=>'التاريخ', 'type' => 'raw' , 'value'=> '$data[\'complaint_date\']'), 
+                     array('name'=>'الموظف المسئول', 'type' => 'raw' , 'value'=> '$data[\'employee_name\']'), 
+                     array('name'=>'العميل', 'type' => 'raw' , 'value'=> '$data[\'customer_name\']'),        
+                     array('name'=>'بيانات السيارة', 'type' => 'raw' , 'value'=> '$data[\'car_data\']'),                
+                     array('name'=>'تفاصيل الشكوى', 'type' => 'raw' , 'value'=> '$data[\'complaint_detail\']'),                      
+                     array('name'=>'ملاحظات', 'type' => 'raw' , 'value'=> '$data[\'notes\']'),                       
+                     array('name'=>'تسجيل المتابعة','type' => 'raw','value'=>'CHtml::link($data[\'complaint_id\'],array("/complaintstbl/update","id"=>$data[\'complaint_id\']))'), 
+         
+                     
+                    ),         
+      
+));
+
+     ?>

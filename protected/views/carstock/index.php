@@ -42,6 +42,10 @@
           
         </span>
 
+        <span id ="code-ajax">
+            
+        </span>
+            
         </div>
 </div>
 </div>
@@ -64,7 +68,7 @@
           })
           
            
-      }) 
+      }) ;
       
           $(function(){
           $('#mybutton').on('click',function(){
@@ -78,13 +82,8 @@
                   success:function(data){$('#ajax').html(data);}                 
               });
           })
-      })
-      
+      });     
       
 </script>
 
 
-        
-        <span id ="ajax">
-          
-        </span>

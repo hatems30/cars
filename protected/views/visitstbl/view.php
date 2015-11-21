@@ -23,9 +23,10 @@ $this->menu=array(
 	'attributes'=>array(
 		'visit_id',
 		'visit_date',
+                array('name' => 'branch_id','value' => $model->branch->branch_name),
 		'customer_name',
 		'car_data',
-		'employee_id',
+		array('name' => 'employee_id','value' => $model->employee->employee_name),
 		'emp_comment',
 	),
 )); ?>

@@ -169,6 +169,22 @@
                 }}
   ?>
                                              </br>
+    	<div class="row">
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'deposit_type'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+		 <?php echo $form->dropDownList($model,'deposit_type',array("امانة من"=>"امانة من","امانة الى"=>"امانة الى"),array('empty'=>'' , 'class'=>'form-control' )); ?>
+		<?php echo $form->error($model,'deposit_type'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'deposit_name'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->textField($model,'deposit_name' ,array("class"=>"form-control") ); ?>
+		<?php echo $form->error($model,'deposit_name'); ?>
+                </div>
+	</div>                                         
 	<div class="row">
                 <div class ="col-sm-3">
 		<?php echo $form->labelEx($model,'notes'); ?>

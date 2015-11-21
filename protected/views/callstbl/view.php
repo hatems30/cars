@@ -16,8 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Callstbl #<?php echo $model->call_id; ?></h1>
-
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
@@ -25,10 +23,10 @@ $this->menu=array(
 		'call_date',
 		'call_time',
 		'car_data',
-		'call_employee_id',
+                array('name' => 'call_employee_id','value' => $model->callsman->employee_name),
 		'customer',
 		'mobile',
-		'service_employee_id',
+                array('name' => 'call_employee_id','value' => $model->serviceman->employee_name), 
 		'area',
 		'how',
 	),

@@ -56,7 +56,7 @@ class Carstbl extends CActiveRecord
 			array('car_spec, chass_no, motor_no', 'length', 'max'=>255),
 			array('car_year', 'length', 'max'=>4),
 			array('notes , car_factor', 'safe'),
-                        array('sale_price' , 'safe'),
+                        array('sale_price , deposit_type , deposit_name' , 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('car_id, brand_id, model_id, code_id, car_spec, color_id, car_year, chass_no, motor_no, branch_id, store_id, supplier_id, add_date, cost_price, off_price, sale_price_from, sale_price_to, notes', 'safe', 'on'=>'search'),
@@ -106,6 +106,8 @@ class Carstbl extends CActiveRecord
 			'sale_price' => 'سعر البيع ',			
 			'notes' => 'ملاحظات',
                         'car_factor' => 'الوزن النسبي',
+                        'deposit_type' => 'امانات',
+                        'deposit_name' => 'طرف الامانة'
 		);
 	}
 

@@ -222,8 +222,30 @@ and visitstbl.visit_date >= '$start_date' and visitstbl.visit_date <= '$end_date
                             'sort'=>array(
                             'attributes'=>array('visitstbl.visit_id',),),
                             'pagination'=>array('pageSize'=>10),
-                                ));                   
-                $this->render('getdata',array('id'=>$_REQUEST['id'],'dataProvider1' => $dataProvider1 , 'dataProvider2' => $dataProvider2 , 'dataProvider3' => $dataProvider3 , 'dataProvider4' => $dataProvider4 ,'dataProvider5' => $dataProvider5  ,'dataProvider6' => $dataProvider6 ,'dataProvider7' => $dataProvider7));
+                                )); 
+//--------------------------------------------------الشكاوى-----------------------------------------------                
+                 $sql8 = "SELECT
+complaintstbl.complaint_id,
+complaintstbl.complaint_date,
+employees.employee_name,
+complaintstbl.customer_name,
+complaintstbl.car_data,
+complaintstbl.complaint_detail,
+complaintstbl.notes
+FROM
+complaintstbl
+INNER JOIN employees ON complaintstbl.employee_id = employees.employee_id
+where complaintstbl.branch_id = $id and complaintstbl.employee_id = $empid
+and complaintstbl.complaint_date >= '$start_date' and complaintstbl.complaint_date <= '$end_date' ";                              
+                $dataProvider8=new CSqlDataProvider($sql8, 
+                            array(
+                           'keyField' => 'complaint_id',
+                           // 'totalItemCount'=>$count,
+                            'sort'=>array(
+                            'attributes'=>array('complaintstbl.complaint_id',),),
+                            'pagination'=>array('pageSize'=>10),
+                                ));                    
+                $this->render('getdata',array('id'=>$_REQUEST['id'],'dataProvider1' => $dataProvider1 , 'dataProvider2' => $dataProvider2 , 'dataProvider3' => $dataProvider3 , 'dataProvider4' => $dataProvider4 ,'dataProvider5' => $dataProvider5  ,'dataProvider6' => $dataProvider6 ,'dataProvider7' => $dataProvider7,'dataProvider8' => $dataProvider8));
                 		
 	}
         

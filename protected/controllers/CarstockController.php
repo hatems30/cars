@@ -33,7 +33,12 @@ class CarstockController extends Controller
 		));	
 	}        
 
-        
+        public function actionGetcode()
+	{
+        	                  
+            $this->layout = false;           
+              $this->render('getcode');	
+	}        
 
         public function actionGetData()
 	{
@@ -45,12 +50,15 @@ class CarstockController extends Controller
 carstbl.car_id,
 brands.brand_name,
 carmodel.model_name,
+carstbl.code_id,
 carcode.code_name,
 colors.color_name,
 carstbl.car_year,
 carstbl.chass_no,
 stores.store_name,
-carcode.sale_price
+carcode.sale_price,
+carstbl.deposit_type,
+carstbl.deposit_name
 FROM
 carstbl
 INNER JOIN brands ON carstbl.brand_id = brands.brand_id

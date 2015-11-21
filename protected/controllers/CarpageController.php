@@ -1,0 +1,133 @@
+<?php
+
+class CarpageController extends Controller
+{
+	
+	public $layout='//layouts/column1';
+
+
+	public function actionView()
+	{
+		$this->render('index');
+		
+	}
+
+
+        
+
+	public function actionGetdata()
+	{
+	            $this->layout = false;
+                    $id = $_REQUEST['id'];                                                                     
+                 $sql = "SELECT
+carstbl.car_id,
+brands.brand_name,
+carmodel.model_name,
+carcode.code_name,
+carstbl.car_spec,
+colors.color_name,
+carstbl.car_year,
+carstbl.chass_no,
+suppliers.supplier_name,
+carstbl.add_date
+FROM
+carstbl
+INNER JOIN carmodel ON carmodel.model_id = carstbl.model_id
+INNER JOIN brands ON carstbl.brand_id = brands.brand_id AND carmodel.brand_id = brands.brand_id
+INNER JOIN carcode ON carcode.brand_id = brands.brand_id AND carcode.model_id = carmodel.model_id AND carstbl.code_id = carcode.code_id
+INNER JOIN colors ON carstbl.color_id = colors.color_id
+INNER JOIN suppliers ON carstbl.supplier_id = suppliers.supplier_id AND carstbl.supplier_id = suppliers.supplier_id
+where carstbl.chass_no = $id";                
+                 $dataProvider=new CSqlDataProvider($sql, 
+                            array(
+                           'keyField' => 'car_id',
+                           // 'totalItemCount'=>$count,
+                            'sort'=>array(
+                            'attributes'=>array(
+                            'carstbl.car_id',
+        ),
+    ),
+    'pagination'=>array(
+        'pageSize'=>1000,
+    ),
+));
+//echo "<pre>";
+//print_r($dataProvider->data[0]['car_id']);
+//exit;
+$car = $dataProvider->data[0]['car_id'];
+                 
+                 $sql1 = "SELECT
+salestbl.invoice_id,
+salestbl.invoice_date,
+employees.employee_name,
+customers.customer_name,
+salestbl.finance_type
+FROM
+salestbl
+INNER JOIN employees ON salestbl.employee_id = employees.employee_id
+INNER JOIN customers ON salestbl.customer_id = customers.customer_id
+where salestbl.car_id = $car";    
+                 $dataProvider1=new CSqlDataProvider($sql1, 
+                            array(
+                           'keyField' => 'invoice_id',
+                           // 'totalItemCount'=>$count,
+                            'sort'=>array(
+                            'attributes'=>array(
+                            'salestbl.invoice_id',
+        ),
+    ),
+    'pagination'=>array(
+        'pageSize'=>1000,
+    ),
+));  
+
+                 $sql2 = "SELECT
+paperstbl.paper_id,
+paperstbl.paper_date,
+paperstbl.paper_status,
+paperstbl.notes
+FROM
+paperstbl
+where paperstbl.car_id = $car";    
+                 $dataProvider2=new CSqlDataProvider($sql2, 
+                            array(
+                           'keyField' => 'paper_id',
+                           // 'totalItemCount'=>$count,
+                            'sort'=>array(
+                            'attributes'=>array(
+                            'paperstbl.paper_id',
+        ),
+    ),
+    'pagination'=>array(
+        'pageSize'=>1000,
+    ),
+));    
+
+                 $sql3 = "SELECT
+licensetbl.License_id,
+licensetbl.license_date,
+traffictbl.traffic_name,
+employees.employee_name
+FROM
+licensetbl
+INNER JOIN employees ON licensetbl.employee_id = employees.employee_id 
+INNER JOIN traffictbl ON licensetbl.traffic_id = traffictbl.traffic_id
+where licensetbl.car_id = $car";    
+                 $dataProvider3=new CSqlDataProvider($sql3, 
+                            array(
+                           'keyField' => 'License_id',
+                           // 'totalItemCount'=>$count,
+                            'sort'=>array(
+                            'attributes'=>array(
+                            'licensetbl.License_id',
+        ),
+    ),
+    'pagination'=>array(
+        'pageSize'=>1000,
+    ),
+));                 
+                $this->render('getdata',array('dataProvider' => $dataProvider,'dataProvider1' => $dataProvider1 ,'dataProvider2' => $dataProvider2 , 'dataProvider3' => $dataProvider3));
+                		
+	}
+        
+}
