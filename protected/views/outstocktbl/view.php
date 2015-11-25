@@ -16,14 +16,17 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Outstocktbl #<?php echo $model->car_id; ?></h1>
-
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'car_id',
+		'car_id',		
+                array('name' => 'section_id','value' => $model->section->section_name),
 		'car_name',
 		'car_color',
+		'car_price',
+	//	'image',
 		'notes',
 	),
 )); ?>
+<?php echo CHtml::image(Yii::app()->request->baseUrl.'/test/out/'.$model->image,"image",array("width"=>300)); ?>
+

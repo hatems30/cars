@@ -17,6 +17,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'section_id'); ?>
+		<?php echo $form->textField($model,'section_id'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'car_name'); ?>
 		<?php echo $form->textField($model,'car_name',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
@@ -24,6 +29,16 @@
 	<div class="row">
 		<?php echo $form->label($model,'car_color'); ?>
 		<?php echo $form->textField($model,'car_color',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'car_price'); ?>
+		<?php echo $form->textField($model,'car_price',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'image'); ?>
+		<?php echo $form->textField($model,'image',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">

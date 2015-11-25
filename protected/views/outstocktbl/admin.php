@@ -26,23 +26,24 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-
        <div class="panel panel-default">            
            <div class="panel-heading" dir =rtl>
                <div class="row">
-               <div class="col-sm-6"><font size="5" color="blue">Stock خارجي</font></div>           
-               <div class="col-sm-6" dir =rtl> <?php echo CHtml::link('<i class="fa fa-plus"></i> '.Yii::t('data','Create'),array('create'), array('class' => 'btn btn-default','href' => 'sss',)); ?></div>
+               <div class="col-sm-7"><b><font size="5" color="blue">Stock خارجي</font></b></div>           
+             <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=outstocktbl/create&section_id=<?php echo $_REQUEST['section_id'] ?>">اضافة سيارة خارجي</a>
            </div>
-           </div>
+           </div>           
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'outstocktbl-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->search($_REQUEST['section_id']),
 	'filter'=>$model,
 	'columns'=>array(
 		'car_id',
+		 array('name' => 'section_id','value' => '$data->section->section_name'),
 		'car_name',
 		'car_color',
-		'notes',
+		'car_price',			
+		'notes',	
 		array(
 			'class'=>'CButtonColumn',
 		),

@@ -43,7 +43,7 @@ class OutstocktblController extends Controller
                         {
                             return array(
                                         array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                                              'actions' => array('create', 'update', 'admin', 'delete', 'view','Getcar'),
+                                              'actions' => array('create', 'update', 'admin', 'delete', 'view' , 'Getmodels'),
                                               'users' => array('@'),),
                                         array('deny', // deny all users
                                               'users' => array('*'),),
@@ -86,21 +86,31 @@ class OutstocktblController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Outstocktbl;
-
+		$model=new Outstocktbl;		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Outstocktbl']))
+		if(isset($_POST['Salestbl']))
 		{
+                        $rnd =time().rand(0,9999);                       //customer image
 			$model->attributes=$_POST['Outstocktbl'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->car_id));
+                        $uploadedFile=CUploadedFile::getInstance($model,'image1');
+                        $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                        $model->image1 = $fileName;                      
+			if($model->save())  
+                        {
+                            if(!empty($uploadedFile))
+                            {
+                                           $uploadedFile->saveAs('./test/out/'.$fileName);
+			                   $this->redirect(array('view','id'=>$model->car_id));
+                            }
+                            else
+                            {                                                                           
+			                   $this->redirect(array('view','id'=>$model->car_id));
+                            }
+                        }                                                                     
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array('model'=>$model,));
 	}
 
 	/**
@@ -110,21 +120,34 @@ class OutstocktblController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-
+		$model=$this->loadModel($id);                
+                $old_image =$model->image;                
+                
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Outstocktbl']))
 		{
-			$model->attributes=$_POST['Outstocktbl'];
+                                     
+	              $model->attributes=$_POST['Outstocktbl'];  
+                      
+                      if(!empty($_FILES['Outstocktbl']["tmp_name"]["image"]))
+                      {
+                          $rnd =time().rand(0,9999);    
+                          $model->image  = $rnd.$_FILES['Outstocktbl']["name"]["image"];
+                          move_uploaded_file($_FILES['Outstocktbl']["tmp_name"]["image"], "./test/out/".$rnd.$_FILES['Outstocktbl']["name"]["image"]);
+                      }
+                      else 
+                      {
+                          $model->image = $old_image;                           
+                      }                      
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->car_id));
+                        {                                       
+                        $this->redirect(array('view','id'=>$model->car_id));                                                            
+                        }				
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+		$this->render('update',array('model'=>$model,));
 	}
 
 	/**

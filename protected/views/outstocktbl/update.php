@@ -15,7 +15,4 @@ $this->menu=array(
 	array('label'=>'Manage Outstocktbl', 'url'=>array('admin')),
 );
 ?>
-
-
-
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

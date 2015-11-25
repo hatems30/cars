@@ -110,9 +110,7 @@ class SalestblController extends Controller
                             {                                                                           
 			                   $this->redirect(array('view','id'=>$model->invoice_id));
                             }
-                        }
-
-                                                                     
+                        }                                                                     
 		}
 		$this->render('create',array('model'=>$model,));
 	}

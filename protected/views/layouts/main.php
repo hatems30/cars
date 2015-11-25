@@ -83,14 +83,15 @@
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Data</b><span class="caret"></span></a>            
           <ul class="dropdown-menu" alig="center">
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstock/view"><font color="red">Car Stock</font></a></li>          
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=outstocktbl/admin&view=admin"><font color="red">Stock خارجي</font></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=sectionstbl/admin&view=admin"><font color="red">Stock خارجي</font></a></li>           
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carstbl/admin&view=admin"><b>اضافة سيارة جديدة</b></a></li>            
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=innersaletbl/admin&view=admin"><b>التحويل بين الفروع</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=holdtbl/admin&view=admin"><b>حجز سيارة</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=salestbl/admin&view=admin"><b>مبيعات العملاء</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=companysalestbl/admin&view=admin"><b>مبيعات الشركات</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=dealersalestbl/admin&view=admin"><b>البيع التجاري</b></a></li>
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=bankofferstbl/admin&view=admin"><b>عروض البنوك</b></a></li>            
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=bankofferstbl/admin&view=admin"><b>عروض البنوك</b></a></li> 
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carpage/view"><b><font color="blue">Car Page</font></b></a></li> 
           </ul>            
         </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>After Sale</b><span class="caret"></span></a>            
@@ -111,7 +112,7 @@
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Holdsreport/view"><b>تقرير الحجوزات </b></a></li>            
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=employeesalesreport/view"><b>تقرير مبيعات Sales </b></a></li>   
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=buyreport/view"><b>تقرير السيارت المستلمة  </b></a></li> 
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carpage/view"><b>Car Page</b></a></li> 
+            
           </ul>            
         </li>  
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Customer Service</b><span class="caret"></span></a>            

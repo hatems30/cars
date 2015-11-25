@@ -53,6 +53,7 @@
                 <div id="code-ajax">
                 
                 </div>
+                <?php echo $form->error($model,'code_id'); ?>
 	</div>
                           </br>
 	<div class="row">

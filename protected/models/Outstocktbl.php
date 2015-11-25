@@ -5,9 +5,15 @@
  *
  * The followings are the available columns in table 'outstocktbl':
  * @property integer $car_id
+ * @property integer $section_id
  * @property string $car_name
  * @property string $car_color
+ * @property string $car_price
+ * @property string $image
  * @property string $notes
+ *
+ * The followings are the available model relations:
+ * @property Sectionstbl $section
  */
 class Outstocktbl extends CActiveRecord
 {
@@ -27,11 +33,13 @@ class Outstocktbl extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('car_name', 'required'),
-			array('car_name, car_color, notes', 'length', 'max'=>255),
+			array('section_id, car_name', 'required'),
+			array('section_id', 'numerical', 'integerOnly'=>true),
+			array('car_name, car_color, car_price, notes', 'length', 'max'=>255),
+                        array('image', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('car_id, car_name, car_color, notes', 'safe', 'on'=>'search'),
+			array('car_id, section_id, car_name, car_color, car_price, image, notes', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -43,6 +51,7 @@ class Outstocktbl extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'section' => array(self::BELONGS_TO, 'Sectionstbl', 'section_id'),
 		);
 	}
 
@@ -52,10 +61,12 @@ class Outstocktbl extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'car_id' => 'م',
-			'car_name' => 'بيانات السيارة',
-			'car_color' => 'لون السيارة',
-			'notes' => 'ملاحظات',
+			'car_id' => 'Car',
+			'section_id' => 'Section',
+			'car_name' => 'البيــان',
+			'car_color' => 'الالــــوان',
+			'car_price' => 'الاسعــار',			
+			'notes' => 'ملاخظــات',
 		);
 	}
 
@@ -71,20 +82,18 @@ class Outstocktbl extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($id)
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
 		$criteria->compare('car_id',$this->car_id);
+		$criteria->compare('section_id',$id);
 		$criteria->compare('car_name',$this->car_name,true);
 		$criteria->compare('car_color',$this->car_color,true);
+		$criteria->compare('car_price',$this->car_price,true);		
 		$criteria->compare('notes',$this->notes,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
+		return new CActiveDataProvider($this, array('criteria'=>$criteria,));
 	}
 
 	/**
