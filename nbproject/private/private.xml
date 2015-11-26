@@ -12,19 +12,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/cars/protected/views/salestbl/view.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/models/Outstocktbl.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/views/layouts/main.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/views/carstock/index.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/models/Carstbl.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/views/carstock/getdata.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/views/salestbl/_form.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/views/outstocktbl/_form.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/views/carstbl/getcode.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/controllers/SalestblController.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/views/carstbl/_form.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/views/outstocktbl/view.php</file>
-            <file>file:/C:/xampp/htdocs/cars/protected/controllers/OutstocktblController.php</file>
+            <file>file:/C:/xampp/htdocs/cars/protected/controllers/PremiumsalesreportController.php</file>
+            <file>file:/C:/xampp/htdocs/cars/protected/controllers/DealersalesreportController.php</file>
+            <file>file:/C:/xampp/htdocs/cars/protected/controllers/SalesreportController.php</file>
+            <file>file:/C:/xampp/htdocs/cars/protected/controllers/BanksalesreportController.php</file>
+            <file>file:/C:/xampp/htdocs/cars/protected/controllers/BankoffersreportController.php</file>
+            <file>file:/C:/xampp/htdocs/cars/protected/controllers/CarstockController.php</file>
         </group>
     </open-files>
 </project-private>

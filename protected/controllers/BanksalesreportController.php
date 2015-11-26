@@ -52,22 +52,28 @@ and salestbl.invoice_date >= '$date_from' and salestbl.invoice_date <= '$date_to
                 if(!empty($_REQUEST['bank_id']))
                     {
                      $sql.=" and salestbl.bank_id ='{$_REQUEST['bank_id']}'";
-                    }                                  
+                    }  
+                    
+                    $all=Yii::app()->db->createCommand($sql)->queryAll();                 
+                    $params=array();
+                    $params['id'] = $_REQUEST['id'];
+                    $params['date_from'] = $_REQUEST['date_from'];
+                    $params['date_to']   =$_REQUEST['date_to']     ;                
+                    if (isset($_REQUEST['bank_id']))
+                    {
+                    $params['band_id']= $_REQUEST['bank_id'];
+                    }
+                    
                 $dataProvider=new CSqlDataProvider($sql, 
                             array(
-                           'keyField' => 'invoice_id',
-                           // 'totalItemCount'=>$count,
+                            'keyField' => 'invoice_id',
+                            'totalItemCount'=>count($all),
                             'sort'=>array(
-                            'attributes'=>array(
-                            'salestbl.invoice_id',
-        ),
-    ),
-    'pagination'=>array(
-        'pageSize'=>10,
-    ),
+                            'attributes'=>array('salestbl.invoice_id',),),
+                            'pagination'=>array('pageSize'=>10,'params'=>$params),
 ));
                 
-                $this->render('getdata',array('id'=>$_REQUEST['id'],'dataProvider' => $dataProvider));
+                $this->render('getdata',array('dataProvider' => $dataProvider));   
                 		
 	}
         

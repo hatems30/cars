@@ -55,26 +55,27 @@ and bankofferstbl.offer_date >= '$date_from' and bankofferstbl.offer_date <= '$d
                     {
                      $sql.=" and bankofferstbl.offer_status ='{$_REQUEST['status']}'";
                     } 
-                
-              
-                
-                    
-                
+                                                                  
+                    $all=Yii::app()->db->createCommand($sql)->queryAll();                 
+                    $params=array();
+                    $params['id'] = $_REQUEST['id'];
+                    $params['date_from'] = $_REQUEST['date_from'];
+                    $params['date_to']   =$_REQUEST['date_to'];                
+                    $params['status']   =$_REQUEST['status'];    
+                    if (isset($_REQUEST['bank_id']))
+                    {
+                    $params['bank_id']= $_REQUEST['bank_id'];
+                    }                       
+ 
                 $dataProvider=new CSqlDataProvider($sql, 
                             array(
                            'keyField' => 'offer_id',
-                           // 'totalItemCount'=>$count,
-                            'sort'=>array(
-                            'attributes'=>array(
-                            'bankofferstbl.offer_id',
-        ),
-    ),
-    'pagination'=>array(
-        'pageSize'=>10,
-    ),
+                           'totalItemCount'=>count($all),
+                            'sort'=>array('attributes'=>array('bankofferstbl.offer_id',),),
+                            'pagination'=>array('pageSize'=>10,'params'=>$params),
 ));
                 
-                $this->render('getdata',array('id'=>$_REQUEST['id'],'dataProvider' => $dataProvider));
+                $this->render('getdata',array('dataProvider' => $dataProvider));
                 		
 	}
         
