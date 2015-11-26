@@ -7,7 +7,7 @@
                      array('name'=>'الماركة', 'type' => 'raw' , 'value'=> '$data[\'brand_name\']'), 
                      array('name'=>'الموديل', 'type' => 'raw' , 'value'=> '$data[\'model_name\']'), 
                      array('name'=>'رقم الشاسيه', 'type' => 'raw' , 'value'=> '$data[\'chass_no\']'), 
-                     array('name'=>'سعر السيارة', 'type' => 'raw' , 'value'=> '$data[\'premium_price\']'),         
+                     array('name'=>'سعر السيارة', 'type' => 'raw' , 'value'=> '$data[\'car_price\']'),         
                      array('name'=>'المقدم', 'type' => 'raw' , 'value'=> '$data[\'downpayment\']'),                      
                      array('name'=>'القسط الشهري', 'type' => 'raw' , 'value'=> '$data[\'monthly_premium\']'), 
                      array('name'=>'عدد الشهور', 'type' => 'raw' , 'value'=> '$data[\'months_count\']'), 

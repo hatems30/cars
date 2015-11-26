@@ -8,7 +8,7 @@
                      array('name'=>'الماركة', 'type' => 'raw' , 'value'=> '$data[\'brand_name\']'), 
                      array('name'=>'الموديل', 'type' => 'raw' , 'value'=> '$data[\'model_name\']'), 
                      array('name'=>'رقم الشاسيه', 'type' => 'raw' , 'value'=> '$data[\'chass_no\']'), 
-                     array('name'=>'السعر', 'type' => 'raw' , 'value'=> '$data[\'cach_price\']'), 
+                     array('name'=>'السعر', 'type' => 'raw' , 'value'=> '$data[\'car_price\']'), 
                      array('name'=>'شركة التأمين', 'type' => 'raw' , 'value'=> '$data[\'insurance_comp_name\']'), 
                      array('name'=>'نوع التأمين', 'type' => 'raw' , 'value'=> '$data[\'insurance_type\']'),         
                      array('name'=>'قيمة التأمين', 'type' => 'raw' , 'value'=> '$data[\'insurance_amount\']'), 
