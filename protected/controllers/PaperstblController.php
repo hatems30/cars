@@ -43,7 +43,7 @@ class PaperstblController extends Controller
                         {
                             return array(
                                         array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                                              'actions' => array('create', 'update', 'admin', 'delete', 'view','Getcar'),
+                                              'actions' => array('create', 'update', 'admin', 'delete', 'view'),
                                               'users' => array('@'),),
                                         array('deny', // deny all users
                                               'users' => array('*'),),
@@ -86,31 +86,21 @@ class PaperstblController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Paperstbl;		
+		$model=new Paperstbl;
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Paperstbl']))
 		{
-                        $rnd =time().rand(0,9999);                       //customer image
 			$model->attributes=$_POST['Paperstbl'];
-                        $uploadedFile=CUploadedFile::getInstance($model,'image');
-                        $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
-                        $model->image = $fileName;                      
 			if($model->save())
-                        {
-                            if(!empty($uploadedFile))
-                            {
-                                $uploadedFile->saveAs('./test/'.$fileName);
-			        $this->redirect(array('view','id'=>$model->paper_id));                                
-                            }
-                            else 
-                            {
-                                $this->redirect(array('view','id'=>$model->paper_id));
-                            }
-                        }                          
+				$this->redirect(array('view','id'=>$model->paper_id));
 		}
-		$this->render('create',array('model'=>$model,));
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -120,35 +110,22 @@ class PaperstblController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);                
-                $old_image =$model->image;                
-                
+		$model=$this->loadModel($id);
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Paperstbl']))
 		{
-                                     
-	              $model->attributes=$_POST['Paperstbl'];  
-                      
-                      if(!empty($_FILES['Paperstbl']["tmp_name"]["image"]))
-                      {
-                          $rnd =time().rand(0,9999);    
-                          $model->image  = $rnd.$_FILES['Paperstbl']["name"]["image"];
-                          move_uploaded_file($_FILES['Paperstbl']["tmp_name"]["image"], "./test/".$rnd.$_FILES['Paperstbl']["name"]["image"]);
-                      }
-                      else 
-                      {
-                          $model->image = $old_image;                           
-                      }                      
+			$model->attributes=$_POST['Paperstbl'];
 			if($model->save())
-                        {                                       
-                        $this->redirect(array('view','id'=>$model->paper_id));                                                            
-                        }	
-	        }
-        		$this->render('update',array('model'=>$model,));
-        }
-        
+				$this->redirect(array('view','id'=>$model->paper_id));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
 
 	/**
 	 * Deletes a particular model.
@@ -209,37 +186,6 @@ class PaperstblController extends Controller
 	 * Performs the AJAX validation.
 	 * @param Paperstbl $model the model to be validated
 	 */
-                        public function actionGetcar()
-	{
-        	                  
-            $this->layout = false;
-		$id = $_REQUEST['id'];            
-                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
-                
-              if ($_REQUEST['sale_type']=='بيع مباشر')
-              {
-              $sql="SELECT carstbl.chass_no, salestbl.car_id FROM salestbl INNER JOIN carstbl ON salestbl.car_id = carstbl.car_id where salestbl.branch_id = $id and salestbl.car_id in (select car_id from salestbl)";    
-              
-              }
-              elseif ($_REQUEST['sale_type']=='موزعين') 
-              {
-              $sql = "SELECT dealersalestbl.car_id, carstbl.chass_no FROM dealersalestbl INNER JOIN carstbl ON dealersalestbl.car_id = carstbl.car_id where dealersalestbl.branch_id = $id and dealersalestbl.car_id in (select car_id from dealersalestbl) ";
-              }
-              elseif ($_REQUEST['sale_type']=='شركات') 
-              {
-              $sql="SELECT companysalestbl.car_id, carstbl.chass_no FROM companysalestbl INNER JOIN carstbl ON companysalestbl.car_id = carstbl.car_id where companysalestbl.branch_id = $id and companysalestbl.car_id in (select car_id from companysalestbl)";
-              }                            
-              
-              $connection=Yii::app()->db;   // assuming you have configured a "db" connection
-              $command=$connection->createCommand($sql);
-              $data = $command->queryAll($sql);
-
-              $this->render('getcar',array(
-			'id'=>$_REQUEST['id'],
-			'car_id'=>$_REQUEST['car_id'],
-                         'data' => $data
-		));	
-	}
 	protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='paperstbl-form')

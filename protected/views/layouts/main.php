@@ -91,7 +91,7 @@
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=companysalestbl/admin&view=admin"><b>مبيعات الشركات</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=dealersalestbl/admin&view=admin"><b>البيع التجاري</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=bankofferstbl/admin&view=admin"><b>عروض البنوك</b></a></li> 
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carpage/view"><b><font color="blue">Car Page</font></b></a></li> 
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=carpage/view"><b><font color="blue">Car Search</font></b></a></li> 
           </ul>            
         </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>After Sale</b><span class="caret"></span></a>            

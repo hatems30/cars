@@ -55,6 +55,8 @@ where carstbl.chass_no = $id";
 //print_r($dataProvider->data[0]['car_id']);
 //exit;
 $car = $dataProvider->data[0]['car_id'];
+
+//----------------------------------------------المبيعات----------------------------------------
                  
                  $sql1 = "SELECT
 salestbl.invoice_id,
@@ -80,6 +82,7 @@ where salestbl.car_id = $car";
         'pageSize'=>1000,
     ),
 ));  
+//--------------------------------------------------------الاوراق-------------------------------------------------                 
 
                  $sql2 = "SELECT
 paperstbl.paper_id,
@@ -102,6 +105,7 @@ where paperstbl.car_id = $car";
         'pageSize'=>1000,
     ),
 ));    
+//------------------------------------------------------------التراخيص-------------------------------------------                 
 
                  $sql3 = "SELECT
 licensetbl.License_id,

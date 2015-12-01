@@ -17,6 +17,10 @@
 	<?php echo CHtml::encode($data->branch_id); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('paper_type')); ?>:</b>
+	<?php echo CHtml::encode($data->paper_type); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('car_id')); ?>:</b>
 	<?php echo CHtml::encode($data->car_id); ?>
 	<br />
@@ -25,6 +29,11 @@
 	<?php echo CHtml::encode($data->supplier_id); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('to_branch_id')); ?>:</b>
+	<?php echo CHtml::encode($data->to_branch_id); ?>
+	<br />
+
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('paper_status')); ?>:</b>
 	<?php echo CHtml::encode($data->paper_status); ?>
 	<br />
@@ -33,5 +42,6 @@
 	<?php echo CHtml::encode($data->notes); ?>
 	<br />
 
+	*/ ?>
 
 </div>

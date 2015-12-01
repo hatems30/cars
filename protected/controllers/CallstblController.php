@@ -43,7 +43,7 @@ class CallstblController extends Controller
                         {
                             return array(
                                         array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                                              'actions' => array('create', 'update', 'admin', 'delete', 'view'),
+                                              'actions' => array('create', 'update', 'admin', 'delete', 'view','getemployees'),
                                               'users' => array('@'),),
                                         array('deny', // deny all users
                                               'users' => array('*'),),
@@ -196,6 +196,18 @@ class CallstblController extends Controller
 	 * Performs the AJAX validation.
 	 * @param Callstbl $model the model to be validated
 	 */
+       public function actionGetemployees()
+	{
+        	                  
+              $this->layout = false;
+              $id = $_REQUEST['id'];                          
+              $sql="SELECT employee_id , employee_name from employees where branch_id = $id ";                
+              $connection=Yii::app()->db;   // assuming you have configured a "db" connection
+              $command=$connection->createCommand($sql);
+              $data = $command->queryAll($sql);
+              $this->render('getemployees',array('id'=>$_REQUEST['id'],'service_employee_id'=>$_REQUEST['service_employee_id'],'data' => $data));	
+	}   
+        
 	protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='callstbl-form')

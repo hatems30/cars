@@ -53,7 +53,7 @@
 		<?php echo $form->labelEx($model,'per_type'); ?>
                 </div>
                 <div class ="col-md-3" dir="rtl">
-		<?php echo $form->dropDownList($model,'per_type',array("ReadWrite"=>"ReadWrite","Read"=>"Read" ,"edit"=>"edit","Deny"=>"Deny"),array('empty'=>'' ,'class'=>'form-control' )); ?>
+		<?php echo $form->dropDownList($model,'per_type',array("ReadWrite"=>"ReadWrite","Add"=>"Add","Read"=>"Read" ,"edit"=>"edit","Deny"=>"Deny"),array('empty'=>'' ,'class'=>'form-control' )); ?>
 		<?php echo $form->error($model,'per_type'); ?>
                 </div>
 	</div>

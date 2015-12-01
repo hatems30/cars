@@ -59,6 +59,16 @@ class CompanysalestblController extends Controller
                                               'users' => array('*'),),
                                         );
                         }
+                    elseif ($per_type == 'Add') 
+                        {
+                           return array(
+                                        array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                                              'actions' => array('view', 'create'),
+                                              'users' => array('@'),),
+                                        array('deny', // deny all users
+                                              'users' => array('*'),),
+                                        );
+                        }                         
                 } 
             else 
                 {
@@ -97,7 +107,15 @@ class CompanysalestblController extends Controller
 			$model->attributes=$_POST['Companysalestbl'];
                         $uploadedFile=CUploadedFile::getInstance($model,'image');
                         $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
-                        $model->image = $fileName;                      
+                        $model->image = $fileName;    
+                        
+                        
+                        $car = Carstbl::model()->findByAttributes(array('car_id'=>$_POST['Companysalestbl']['car_id']));                      
+                        $code = Carcode::model()->findByAttributes(array('code_id'=>$car['code_id']));
+                        $model->car_factor = $code['factor'];
+                        
+                        $model->sales_factor = Factorstbl::model()->find()->company_factor;                            
+                        
 			if($model->save())  
                         {
                             if(!empty($uploadedFile))

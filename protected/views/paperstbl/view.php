@@ -16,18 +16,19 @@ $this->menu=array(
 );
 ?>
 
-
+<h1>View Paperstbl #<?php echo $model->paper_id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'paper_id',
 		'paper_date',
-		array('name' => 'branch_id','value' => $model->branch->branch_name),
-		array('name' => 'car_id','value' => $model->car->chass_no),
-		array('name' => 'supplier_id','value' => $model->supplier->supplier_name),
+		'branch_id',
+		'paper_type',
+		'car_id',
+		'supplier_id',
+		'to_branch_id',
 		'paper_status',
 		'notes',
 	),
 )); ?>
-<?php echo CHtml::image(Yii::app()->request->baseUrl.'/test/'.$model->image,"image",array("width"=>200)); ?>

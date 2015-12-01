@@ -27,6 +27,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'paper_type'); ?>
+		<?php echo $form->textField($model,'paper_type',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'car_id'); ?>
 		<?php echo $form->textField($model,'car_id'); ?>
 	</div>
@@ -34,6 +39,11 @@
 	<div class="row">
 		<?php echo $form->label($model,'supplier_id'); ?>
 		<?php echo $form->textField($model,'supplier_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'to_branch_id'); ?>
+		<?php echo $form->textField($model,'to_branch_id'); ?>
 	</div>
 
 	<div class="row">

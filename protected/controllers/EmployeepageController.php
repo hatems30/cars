@@ -33,8 +33,9 @@ carcode.factor,
 carstbl.chass_no,
 salestbl.car_price,
 customers.customer_name,
-(select cach_factor from factorstbl limit 1) as cach_factor,
-carcode.factor * (select cach_factor from factorstbl limit 1) as car_points
+salestbl.car_factor,
+salestbl.sales_factor,
+salestbl.car_factor * salestbl.sales_factor as car_points
 FROM
 salestbl
 INNER JOIN carstbl ON salestbl.car_id = carstbl.car_id
@@ -60,12 +61,12 @@ salestbl.invoice_date,
 brands.brand_name,
 carmodel.model_name,
 carcode.code_name,
-carcode.factor,
 carstbl.chass_no,
 salestbl.car_price,
 customers.customer_name,
-(select premium_factor from factorstbl limit 1) as premium_factor,
-carcode.factor * (select premium_factor from factorstbl limit 1) as car_points
+salestbl.car_factor,
+salestbl.sales_factor,
+salestbl.car_factor * salestbl.sales_factor as car_points
 FROM
 salestbl
 INNER JOIN carstbl ON salestbl.car_id = carstbl.car_id
@@ -89,13 +90,13 @@ salestbl.invoice_date,
 brands.brand_name,
 carmodel.model_name,
 carcode.code_name,
-carcode.factor    as car_factor,
 carstbl.chass_no,
 salestbl.car_price,
 customers.customer_name,
 banks.bank_name,
-banks.factor  as bank_factor ,
-carcode.factor *  banks.factor as car_points
+salestbl.car_factor,
+salestbl.sales_factor,
+salestbl.car_factor * salestbl.sales_factor as car_points
 FROM
 salestbl
 INNER JOIN carstbl ON salestbl.car_id = carstbl.car_id
@@ -120,12 +121,12 @@ dealersalestbl.invoice_date,
 brands.brand_name,
 carmodel.model_name,
 carcode.code_name,
-carcode.factor,
 carstbl.chass_no,
 dealersalestbl.price,
 dealerstbl.dealer_name,
-(select dealer_factor from factorstbl limit 1) as dealer_factor,
-carcode.factor * (select dealer_factor from factorstbl limit 1) as car_points
+dealersalestbl.car_factor,
+dealersalestbl.sales_factor,
+dealersalestbl.car_factor * dealersalestbl.sales_factor as car_points
 FROM
 dealersalestbl
 INNER JOIN carstbl ON dealersalestbl.car_id = carstbl.car_id
@@ -149,12 +150,12 @@ companysalestbl.invoice_date,
 brands.brand_name,
 carmodel.model_name,
 carcode.code_name,
-carcode.factor,
 carstbl.chass_no,
 companysalestbl.price,
 companiestbl.company_name,
-(select company_factor from factorstbl limit 1) as company_factor,
-carcode.factor * (select company_factor from factorstbl limit 1) as car_points
+companysalestbl.car_factor,
+companysalestbl.sales_factor,
+companysalestbl.car_factor * companysalestbl.sales_factor as car_points
 FROM
 companysalestbl
 INNER JOIN carstbl ON companysalestbl.car_id = carstbl.car_id
@@ -180,20 +181,18 @@ callstbl.call_time,
 callstbl.car_data,
 callstbl.customer,
 callstbl.mobile,
-empcall.employee_name AS call_man,
-empserv.employee_name AS service_man,
+callstbl.service_branch_id,
+employees.employee_name,
 callstbl.area,
-callstbl.notes,
-callstbl.`status`,
-howtbl.how_name
+howtbl.how_name,
+callstbl.notes
 FROM
 callstbl
-INNER JOIN employees AS empcall ON empcall.employee_id = callstbl.call_employee_id
-INNER JOIN employees AS empserv ON empserv.employee_id = callstbl.service_employee_id
+INNER JOIN employees ON employees.employee_id = callstbl.call_employee_id
 INNER JOIN howtbl ON callstbl.how_id = howtbl.how_id
-
 where callstbl.branch_id = $id and callstbl.service_employee_id = $empid
-and callstbl.call_date >= '$start_date' and callstbl.call_date <= '$end_date' ";                              
+and callstbl.call_date >= '$start_date' and callstbl.call_date <= '$end_date' ";                    
+   
                 $dataProvider6=new CSqlDataProvider($sql6, 
                             array(
                            'keyField' => 'call_id',

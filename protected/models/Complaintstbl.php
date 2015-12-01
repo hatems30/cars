@@ -36,6 +36,7 @@ class Complaintstbl extends CActiveRecord
 			array('complaint_date, employee_id, customer_name, complaint_detail', 'required'),
 			array('employee_id', 'numerical', 'integerOnly'=>true),
 			array('customer_name, car_data, complaint_detail, notes', 'length', 'max'=>255),
+                        array('branch_id , telephone , email , old_car','safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('complaint_id, complaint_date, employee_id, customer_name, car_data, complaint_detail, notes', 'safe', 'on'=>'search'),
@@ -61,14 +62,18 @@ class Complaintstbl extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'complaint_id' => 'م',
-			'complaint_date' => 'تاريخ الشكوى',
-                        'branch_id' => 'الفرع',
-			'employee_id' => 'الموظف المسئول',
-			'customer_name' => 'اسم العميل',
-			'car_data' => 'بيانات السيارة',
-			'complaint_detail' => 'تفاصيل الشكوى',
-			'notes' => 'ملاحظات',
+			
+                    'complaint_id' => 'م',			
+                    'complaint_date' => 'تاريخ الشكوى',                        
+                    'branch_id' => 'الفرع',			
+                    'employee_id' => 'الموظف المسئول',			
+                    'customer_name' => 'اسم العميل',
+                    'telephone' => 'تليفون العميل',			
+                    'email' => 'الايميل',
+                    'old_car' => 'السيارة القديمة',
+                    'car_data' => 'بيانات السيارة',			
+                    'complaint_detail' => 'تفاصيل الشكوى',			
+                    'notes' => 'ملاحظات',
 		);
 	}
 

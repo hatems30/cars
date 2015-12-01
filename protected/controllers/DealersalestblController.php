@@ -59,6 +59,16 @@ class DealersalestblController extends Controller
                                               'users' => array('*'),),
                                         );
                         }
+                    elseif ($per_type == 'Add') 
+                        {
+                           return array(
+                                        array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                                              'actions' => array('view', 'create'),
+                                              'users' => array('@'),),
+                                        array('deny', // deny all users
+                                              'users' => array('*'),),
+                                        );
+                        }                         
                 } 
             else 
                 {
@@ -94,8 +104,15 @@ class DealersalestblController extends Controller
 		if(isset($_POST['Dealersalestbl']))
 		{
 			$model->attributes=$_POST['Dealersalestbl'];
+                        $car = Carstbl::model()->findByAttributes(array('car_id'=>$_POST['Dealersalestbl']['car_id']));                      
+                        $code = Carcode::model()->findByAttributes(array('code_id'=>$car['code_id']));
+                        $model->car_factor = $code['factor'];
+                        
+                        $model->sales_factor = Factorstbl::model()->find()->dealer_factor;
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->invoice_id));
+                        {
+                            $this->redirect(array('view','id'=>$model->invoice_id));
+                        }				
 		}
 
 		$this->render('create',array(

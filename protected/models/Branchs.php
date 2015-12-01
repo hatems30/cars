@@ -51,10 +51,7 @@ class Branchs extends CActiveRecord
                     'callstbl'=>array(self::HAS_MANY,'Callstbl','branch_id'),
                     'visitstbl'=>array(self::HAS_MANY,'Visitstbl','branch_id'),
                     'complaintstbl'=>array(self::HAS_MANY,'complaintstbl','branch_id'),
-                    
-                    
-                    
-                    
+                    'callstblservice'=>array(self::HAS_MANY,'Callstbl','service_branch_id'),                                                                                
 		);
 	}
 

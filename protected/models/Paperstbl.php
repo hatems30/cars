@@ -7,8 +7,10 @@
  * @property integer $paper_id
  * @property string $paper_date
  * @property integer $branch_id
+ * @property string $paper_type
  * @property integer $car_id
  * @property integer $supplier_id
+ * @property integer $to_branch_id
  * @property string $paper_status
  * @property string $notes
  *
@@ -16,6 +18,7 @@
  * @property Branchs $branch
  * @property Carstbl $car
  * @property Suppliers $supplier
+ * @property Branchs $toBranch
  */
 class Paperstbl extends CActiveRecord
 {
@@ -35,44 +38,20 @@ class Paperstbl extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('paper_date, branch_id, car_id, supplier_id, paper_status', 'required'),
-			array('branch_id, car_id, supplier_id', 'numerical', 'integerOnly'=>true),
-			array('paper_status', 'length', 'max'=>50),
-			array('notes','safe'),
-                        array('sale_type','safe'),                        
-                        array('image','safe'),
-                        array('image', 'length', 'max'=>255, 'on'=>'insert,update'),
-                        array('paper_date','checksalesdate','on'=>'insert,update'),
-                    
+			array('paper_date, branch_id, paper_type, car_id, paper_status', 'required'),
+			array('branch_id, car_id, supplier_id, to_branch_id', 'numerical', 'integerOnly'=>true),
+			array('paper_type, paper_status', 'length', 'max'=>50),
+			array('notes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('paper_id, paper_date, branch_id, car_id, supplier_id, paper_status, notes', 'safe', 'on'=>'search'),
+			array('paper_id, paper_date, branch_id, paper_type, car_id, supplier_id, to_branch_id, paper_status, notes', 'safe', 'on'=>'search'),
 		);
 	}
 
 	/**
 	 * @return array relational rules.
 	 */
-        public function checksalesdate($attribute)                
-        {        
-            $tmp_salestbl = Salestbl::model()->findByAttributes(array('car_id'=>$this->car_id),'invoice_date');
-            $tmp_dealers = Dealersalestbl::model()->findByAttributes(array('car_id'=>$this->car_id),'invoice_date');
-            $tmp_company = Companysalestbl::model()->findByAttributes(array('car_id'=>$this->car_id),'invoice_date')     ;   
-            
-            if ( $tmp_salestbl['invoice_date']> $this->paper_date )
-            {
-                $this->addError($attribute,'عفوا تاريخ تبليغ الاوراق قبل تاريخ البيع');
-            }
-            else if ( $tmp_dealers> $this->paper_date )
-            {
-                $this->addError($attribute,'عفوا تاريخ تبليغ الاوراق قبل تاريخ البيع');
-            }
-            else if ($tmp_company > $this->paper_date )
-            {
-                $this->addError($attribute,'عفوا تاريخ تبليغ الاوراق قبل تاريخ البيع');
-            }
-        }
-        public function relations()
+	public function relations()
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
@@ -80,6 +59,7 @@ class Paperstbl extends CActiveRecord
 			'branch' => array(self::BELONGS_TO, 'Branchs', 'branch_id'),
 			'car' => array(self::BELONGS_TO, 'Carstbl', 'car_id'),
 			'supplier' => array(self::BELONGS_TO, 'Suppliers', 'supplier_id'),
+			'toBranch' => array(self::BELONGS_TO, 'Branchs', 'to_branch_id'),
 		);
 	}
 
@@ -89,15 +69,15 @@ class Paperstbl extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'paper_id' => 'رقم',
+			'paper_id' => 'م',
 			'paper_date' => 'تاريخ التبليغ',
-			'branch_id' => 'الفرع',
-                        'sale_type'=>'نوع البيع' ,
-			'car_id' => 'الشاسيه',
-			'supplier_id' => 'المبلغ له',
+			'branch_id' => 'الفرع المبلغ منه',
+			'paper_type' => 'نوع التبليغ',
+			'car_id' => 'رقم الشاسيه',
+			'supplier_id' => 'المورد المبلغ له',
+			'to_branch_id' => 'الفرع المبلغ له',
 			'paper_status' => 'حالة الاوراق',
 			'notes' => 'ملاحظات',
-                        'image'=>'صورة الرخصة',
 		);
 	}
 
@@ -122,8 +102,10 @@ class Paperstbl extends CActiveRecord
 		$criteria->compare('paper_id',$this->paper_id);
 		$criteria->compare('paper_date',$this->paper_date,true);
 		$criteria->compare('branch_id',$this->branch_id);
+		$criteria->compare('paper_type',$this->paper_type,true);
 		$criteria->compare('car_id',$this->car_id);
 		$criteria->compare('supplier_id',$this->supplier_id);
+		$criteria->compare('to_branch_id',$this->to_branch_id);
 		$criteria->compare('paper_status',$this->paper_status,true);
 		$criteria->compare('notes',$this->notes,true);
 

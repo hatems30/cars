@@ -127,12 +127,14 @@
 
 	<div class="row">
                 <div class ="col-sm-3"> 
-		<?php echo $form->labelEx($model,'service_employee_id'); ?>
+		<?php echo $form->labelEx($model,'service_branch_id'); ?>
                 </div>
-                <div class ="col-sm-3" dir =rtl> 
-                <?php $user_branch = Yii::app()->user->branch_id; ?>    
-		<?php echo $form->dropDownList($model,'service_employee_id', CHtml::listData(Employees::model()->findAllByAttributes(array('branch_id'=>$user_branch)), 'employee_id', 'employee_name') , array('empty'=>'' ,'class'=>'form-control' )); ?>
-		<?php echo $form->error($model,'service_employee_id'); ?>
+                <div class ="col-sm-3" dir =rtl>                 
+		<?php echo $form->dropDownList($model,'service_branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name') , array('empty'=>'' ,'class'=>'form-control' )); ?>
+		<?php echo $form->error($model,'service_branch_id'); ?>
+                </div>
+                <div id ="ajax_employee">
+		
                 </div>
 	</div>
 
@@ -197,3 +199,25 @@
   </div>
 </div>
 </div><!-- form -->
+
+<script type ="text/javascript">             
+   
+   
+    $(function(){                
+          $('#Callstbl_service_branch_id').on('change',function(){                
+              if($(this).val() !==''){
+                  $.ajax({
+                  url: "<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Callstbl/Getemployees",
+                  data:{"id":$(this).val() ,"service_employee_id":"<?php echo $model->service_employee_id ?>"},
+                  method:'POST',
+                   success:function(data){$('#ajax_employee').html(data);}                             
+              });
+              }
+          });                     
+      }) ;
+    $(document).ready(function(){
+     $('#Callstbl_service_branch_id').change();
+     
+          });
+          
+</script>

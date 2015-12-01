@@ -59,6 +59,16 @@ class SalestblController extends Controller
                                               'users' => array('*'),),
                                         );
                         }
+                    elseif ($per_type == 'Add') 
+                        {
+                           return array(
+                                        array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                                              'actions' => array('view', 'create'),
+                                              'users' => array('@'),),
+                                        array('deny', // deny all users
+                                              'users' => array('*'),),
+                                        );
+                        }                        
                 } 
             else 
                 {
@@ -98,7 +108,27 @@ class SalestblController extends Controller
 			$model->attributes=$_POST['Salestbl'];
                         $uploadedFile=CUploadedFile::getInstance($model,'image');
                         $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
-                        $model->image = $fileName;                      
+                        $model->image = $fileName;
+                        
+                        
+                        $car = Carstbl::model()->findByAttributes(array('car_id'=>$_POST['Salestbl']['car_id']));                      
+                        $code = Carcode::model()->findByAttributes(array('code_id'=>$car['code_id']));
+                        $model->car_factor = $code['factor'];
+                        
+                        if ($_POST['Salestbl']['finance_type'] == 'نقدي' )
+                        {
+                        $model->sales_factor = Factorstbl::model()->find()->cach_factor;    
+                        }
+                        elseif($_POST['Salestbl']['finance_type'] == 'قسط مباشر')
+                        {
+                        $model->sales_factor = Factorstbl::model()->find()->premium_factor;     
+                        }
+                        elseif($_POST['Salestbl']['finance_type'] == 'بنك')
+                        {
+                            $bank_factor = Banks::model()->findByAttributes(array('bank_id'=>$_POST['Salestbl']['bank_id']))    ;
+                            $model->sales_factor = $bank_factor['factor'];
+                        }
+                        
 			if($model->save())  
                         {
                             if(!empty($uploadedFile))

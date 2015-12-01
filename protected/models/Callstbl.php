@@ -37,6 +37,7 @@ class Callstbl extends CActiveRecord
 			array('call_employee_id, service_employee_id', 'numerical', 'integerOnly'=>true),
 			array('car_data, customer, mobile, area', 'length', 'max'=>255),
                         array('notes , branch_id , how_id','safe'),
+                        array('service_branch_id','safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('call_id, call_date, call_time, car_data, call_employee_id, customer, mobile, service_employee_id, area', 'safe', 'on'=>'search'),
@@ -55,6 +56,7 @@ class Callstbl extends CActiveRecord
                     'serviceman' => array(self::BELONGS_TO, 'Employees', 'service_employee_id'),
                     'branch' => array(self::BELONGS_TO, 'Branchs', 'branch_id'),
                     'howtbl' => array(self::BELONGS_TO, 'Howtbl', 'how_id'),
+                    'servicebranch' => array(self::BELONGS_TO, 'Branchs', 'service_branch_id'),
 		);
 	}
 
@@ -79,6 +81,7 @@ class Callstbl extends CActiveRecord
                     'notes'=>'الاجراءات',                        
                     'status'=>'حالة المكالمة',                        
                     'status_date' =>'تاريخ الحالة',
+                    'service_branch_id'=>'الفرع المحول له المكالمة',
                     
                     
 		);

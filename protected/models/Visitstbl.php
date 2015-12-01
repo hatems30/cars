@@ -36,6 +36,7 @@ class Visitstbl extends CActiveRecord
 			array('employee_id', 'numerical', 'integerOnly'=>true),
 			array('customer_name, car_data', 'length', 'max'=>255),
 			array('emp_comment', 'safe'),
+                        array('branch_id , telephone , email , old_car','safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('visit_id, visit_date, customer_name, car_data, employee_id, emp_comment', 'safe', 'on'=>'search'),
@@ -65,6 +66,9 @@ class Visitstbl extends CActiveRecord
 			'visit_date' => 'تاريخ الزيارة',
                         'branch_id' => 'الفرع',
 			'customer_name' => 'اسم العميل',
+                        'telephone' => 'تليفون العميل',			
+                        'email' => 'الايميل',
+                        'old_car' => 'السيارة القديمة',
 			'car_data' => 'بيانات السيارة',
 			'employee_id' => 'الموظف المسئول',
 			'emp_comment' => 'تعليق الموظف',
