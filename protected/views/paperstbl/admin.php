@@ -34,7 +34,8 @@ $('.search-form form').submit(function(){
            </div>
            </div>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php 
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'paperstbl-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
@@ -44,11 +45,19 @@ $('.search-form form').submit(function(){
 		array('name' => 'branch_id','value' => '$data->branch->branch_name'),            
 		'paper_type',
 		array('name' => 'car_id','value' => '$data->car->chass_no'),
-		array('name' => 'supplier_id','value' => '$data->supplier->supplier_name'),	
-		array('name' => 'to_branch_id','value' => '$data->tobranch->branch_name'),
+		//array('name' => 'supplier_id','value' => '$data->supplier->supplier_name'),	
+               // array('name' => 'supplier_id','value' =>isset($model->supplier_id)? '$data->supplier->supplier_name':'0'),
+	//	array('name' => 'to_branch_id','value' =>isset($model->to_branch_id)? '$data->tobranch->branch_name':'0'),
 		'paper_status',
 		'notes',		
 		array('class'=>'CButtonColumn',),),
-)); ?>
+));      
+ 
+  
+
+
+
+
+?>
 
        </div>
