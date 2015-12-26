@@ -62,6 +62,7 @@ class Salestbl extends CActiveRecord
                         array('car_price','safe'),
                         array('image', 'length', 'max'=>255, 'on'=>'insert,update'),                
                         array('car_price', 'checkprice', 'on'=>'insert,update'),  
+                        array('bank_id', 'checkbank', 'on'=>'insert,update'),  
                         array('discount','safe'), 
                         array('final_price','safe'), 
                     
@@ -79,6 +80,16 @@ class Salestbl extends CActiveRecord
                if ( $tmp['sale_price'] > $this->car_price )
                   {
                     $this->addError($attribute,'عفوا السعر اقل من سعر البيع');
+                  }                                      
+        } 
+                public function checkbank($attribute)                
+        {   
+            $tmp_code = Carstbl::model()->findByAttributes(array('car_id'=>$this->car_id),'code_id');    
+            $tmp = Carcode::model()->findByAttributes(array('code_id'=>$tmp_code['code_id']),'sale_price');  
+            
+               if (empty($this->bank_id) && $this->finance_type=='بنك')
+                  {
+                    $this->addError($attribute,'عفوا يجب تسجيل البنك');
                   }                                      
         } 
           

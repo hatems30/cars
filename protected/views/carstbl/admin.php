@@ -50,8 +50,9 @@ $('.search-form form').submit(function(){
 		'car_year',
 		'chass_no',
 		'motor_no',
-            /*
+            
 		'branch_id',
+            /*
 		'store_id',
 		'supplier_id',
 		'add_date',

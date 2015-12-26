@@ -68,6 +68,15 @@
 		<?php echo $form->error($model,'sale_price'); ?>
                 </div>
         </div>
+	<div class="row">
+	        <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'off_price'); ?>
+                </div>
+                <div class ="col-sm-3" dir="rtl">
+		<?php echo $form->textField($model,'off_price',array('size'=>60,'maxlength'=>255 , 'class'=>'form-control')); ?>
+		<?php echo $form->error($model,'off_price'); ?>
+                </div>
+        </div>                          
                           
 	<div class="row">
                 <div class ="col-sm-3"> 	       

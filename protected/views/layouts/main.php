@@ -112,6 +112,7 @@
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Holdsreport/view"><b>تقرير الحجوزات </b></a></li>            
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=employeesalesreport/view"><b>تقرير مبيعات Sales </b></a></li>   
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=buyreport/view"><b>تقرير السيارت المستلمة  </b></a></li> 
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=fullsalesreport/view"><b>احصائية باجمالي المبيعات</b></a></li> 
             
           </ul>            
         </li>  

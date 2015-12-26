@@ -208,9 +208,7 @@
    
    
     $(function(){
-        
-        
-        
+                        
           $('#Carstbl_brand_id').on('change',function(){  
               
               if($(this).val() !==''){
@@ -222,10 +220,10 @@
               });
               }
  
-          })
+          });
           
            
-      }) 
+      }); 
    
     $(function(){
         
@@ -242,7 +240,7 @@
           });
           
            
-      })       
+      })   ;    
           $(function(){
           $('#Carstbl_branch_id').on('change',function(){  
               
@@ -255,16 +253,16 @@
               });
               }
  
-          })
+          });
           
            
-      }) 
+      }) ;
  
       
-     $(document).ready(function(){
-     
+    $(document).ready(function(){     
+    $('#Carstbl_model_id').change();
     $('#Carstbl_brand_id').change();
     $('#Carstbl_branch_id').change();
-    $('#Carstbl_model_id').change();
+    
     });
         </script>
