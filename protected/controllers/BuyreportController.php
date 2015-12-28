@@ -47,21 +47,35 @@ and carstbl.add_date >= '$start_date' and carstbl.add_date <= '$end_date' ";
                  if(!empty($_REQUEST['supplier_id']))
                     {
                      $sql.=" and carstbl.supplier_id ='{$_REQUEST['supplier_id']}'";
-                    }                                         
+                    }       
+                    
+                    $all=Yii::app()->db->createCommand($sql)->queryAll();                 
+                    $params=array();
+                    if (isset($_REQUEST['id']))
+                    {
+                        $params['id']= $_REQUEST['id'];
+                    }                    
+                    if (isset($_REQUEST['supplier_id']))
+                    {
+                        $params['supplier_id']= $_REQUEST['supplier_id'];
+                    }  
+                    if (isset($_REQUEST['start_date']))
+                    {
+                        $params['start_date']= $_REQUEST['start_date'];
+                    }  
+                    if (isset($_REQUEST['end_date']))
+                    {
+                        $params['end_date']= $_REQUEST['end_date'];
+                    }                      
+                $dataProvider=new CSqlDataProvider($sql, array(
+                            'keyField' => 'car_id',
+                             'totalItemCount'=>count($all),
+                            'sort'=>array('attributes'=>array('car_id',),),
+                         //   'enablePagination'=>true,
+                            'pagination'=>array('pageSize'=>10,'params'=>$params),
+                    )); 
                 
-                $dataProvider=new CSqlDataProvider($sql, 
-                            array(
-                           'keyField' => 'car_id',
-                           // 'totalItemCount'=>$count,
-                            'sort'=>array(
-                            'attributes'=>array(
-                            'carstbl.car_id',
-        ),
-    ),
-   'pagination'=>array('pageSize'=>10,),
-));
-                
-                $this->render('getdata',array('id'=>$_REQUEST['id'],'dataProvider' => $dataProvider));
+                            $this->render('getdata',array('dataProvider' => $dataProvider));                                
                 		
 	}
         
