@@ -38,12 +38,13 @@
 		<?php echo $form->dropDownList($model,'branch_id', CHtml::listData(Branchs::model()->findAll(), 'branch_id', 'branch_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
 		<?php echo $form->error($model,'branch_id'); ?>
                 </div>
-	</div>
-
-	<div class="row">
-            <div id="ajax-car">
-                
-            </div>
+                <div class ="col-md-3">
+		<?php echo $form->labelEx($model,'car_id'); ?>
+                </div>
+                <div class ="col-md-3" dir="rtl">
+		<?php echo $form->dropDownList($model,'car_id', CHtml::listData(Carstbl::model()->findAll(), 'car_id', 'chass_no'),array("class"=>"form-control" , 'empty'=>''));  ?>
+		<?php echo $form->error($model,'car_id'); ?>
+                </div>
 	</div>
 	<div class="row">
                 <div class ="col-md-3">
@@ -124,23 +125,3 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-
-<script type ="text/javascript">      
-    $(function(){
-        
-        
-          $('#Licensetbl_branch_id').on('change',function(){                  
-              if($(this).val() !==''){
-                  $.ajax({
-                  url: "<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Licensetbl/Getcar",
-                  data:{"id":$(this).val(),"car_id":"<?php echo $model->car_id ?>",},
-                  method:'POST',
-                   success:function(data){$('#ajax-car').html(data);}                                
-              });
-              }
-          })                     
-      })               
-     $(document).ready(function(){     
-    $('#Licensetbl_branch_id').change();    
-    })
-        </script>

@@ -67,17 +67,11 @@ if($branch==$emps['branch_id'])
                   data:{"code_id":$(this).data('id')},
                   method:'POST',
                   success:function(data){$('#ajax-code').html(data);
-
     }                 
               });
-
           });
       });  
     </script>
-    
-    
- 
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">

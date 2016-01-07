@@ -20,7 +20,38 @@
                 <div class ="col-sm-4" dir =rtl>
                     <button id="mybutton" class="btn btn-default"> Get Branch Sales  </button> 
                 </div>
-            </div>      
+            </div>  
+            </br>
+            <div class="row">
+                <div class ="col-sm-1" dir =rtl>
+                     From
+                </div>
+                <div class ="col-sm-3">
+                     <?php //echo CHtml::dateField('date_from','',array("class"=>"form-control")) ?>
+                    <?php                    
+                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'date_from',                                                                                                                                                          
+                                                                          //'value' => date('yy-m-d'),
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                    ?>                    
+                </div>
+    
+                <div class ="col-sm-1" dir="rtl">
+                     To
+                </div>
+                <div class ="col-sm-3">                     
+                    <?php                    
+                    $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+                                                                          'name'=>'date_to',                                                                                                                                                          
+                                                                          //'value' => date('yy-m-d'),
+                                                                          'options'=>array( 'showButtonPanel'=>true,'dateFormat'=>'yy-mm-dd',),
+                                                                          'htmlOptions'=>array('class'=>'form-control','readonly'=>'true'),
+                                                                        ));                                           
+                    ?>                              
+                </div>    
+            </div>
         <span id ="ajax">
           
         </span>
@@ -40,7 +71,7 @@
                           
               $.ajax({
                   url: "<?php echo Yii::app()->request->baseUrl; ?>/"+"index.php?r=Fullsalesreport/Getdata",
-                  data:{"id":$('#branchs').val()},
+                  data:{"id":$('#branchs').val(),"date_from":$('#date_from').val() ,"date_to":$('#date_to').val()},
                   method:'POST',
                   success:function(data){$('#ajax').html(data);}                 
               });

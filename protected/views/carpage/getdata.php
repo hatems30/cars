@@ -25,8 +25,8 @@
                      array('name'=>'م', 'type' => 'raw' , 'value'=> '$data[\'invoice_id\']'), 
                      array('name'=>'تاريخ البيع', 'type' => 'raw' , 'value'=> '$data[\'invoice_date\']'), 
                      array('name'=>'الموظف', 'type' => 'raw' , 'value'=> '$data[\'employee_name\']'), 
-                     array('name'=>'العميل', 'type' => 'raw' , 'value'=> '$data[\'customer_name\']'),        
-                     array('name'=>'نوع البيع', 'type' => 'raw' , 'value'=> '$data[\'finance_type\']'),                                                                   
+                     array('name'=>'العميل', 'type' => 'raw' , 'value'=> '$data[\'cust_name\']'),        
+                     array('name'=>'نوع البيع', 'type' => 'raw' , 'value'=> '$data[\'sales_type\']'),                                                                   
                     ),         
       
 ));

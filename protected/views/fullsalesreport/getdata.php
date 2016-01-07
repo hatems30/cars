@@ -4,7 +4,8 @@
     <thead>                                  
         <th style ="text-align:center; font-size: medium">الماركة</th>
         <th style ="text-align:center; font-size: medium">الموديل</th>                
-        <th style ="text-align:center; font-size: medium">الكود</th>   
+        <th style ="text-align:center; font-size: medium">الكود</th> 
+        <th style ="text-align:center; font-size: medium">رصيد البداية</th>   
         <th style ="text-align:center; font-size: medium">اجمالي الوارد</th>   
         <th style ="text-align:center; font-size: medium">مبيعات النقدي</th>   
         <th style ="text-align:center; font-size: medium">مبيعات البنوك</th>   
@@ -15,20 +16,50 @@
     </thead>
     <tbody class="detail" id="all_rows">
         
-        <?php         foreach ($params as $item):        ?>
+        <?php   
+               $total_cach_sales = 0 ; 
+               $total_bank_sales = 0 ;                
+               $total_premium_sales = 0 ; 
+               $total_dealer_sales = 0 ; 
+               $total_company_sales = 0 ;  
+               $final_total=0;
+               foreach ($params as $item):      
+        ?>
         <tr>            
             <td><?php echo $item['brand_name'] ?></td>
             <td><?php echo $item['model_name'] ?></td>                         
             <td><?php echo $item['code_name'] ?></td>
-            <td><font color="blue"><?php echo $item['total_in'] ?></font></td>                         
+            <td><font color="blue"><?php echo $item['first_total'] ?></font></td>                         
+            <td><font color="blue"><?php echo $item['total_in'] ?></font></td>     
             <td><font color="red"><?php echo $item['cach_sales']?></font></td>
             <td><font color="red"><?php echo $item['bank_sales'] ?></font></td>
             <td><font color="red"><?php echo $item['premium_sales'] ?></font></td>
             <td><font color="red"><?php echo $item['dealer_sales'] ?></font></td>
             <td><font color="red"><?php echo $item['company_sales'] ?></font></td>
-            <td><?php echo $item['final_total'] ?></td>
-                                                          
+            <td><?php echo $item['final_total'] ?></td>                                                          
         </tr>
-        <?php   endforeach;         ?>
+        <?php   
+               $total_cach_sales = $total_cach_sales + $item['cach_sales']; 
+               $total_bank_sales = $total_bank_sales + $item['bank_sales'] ;                
+               $total_premium_sales = $total_premium_sales + $item['premium_sales']; 
+               $total_dealer_sales = $total_dealer_sales + $item['dealer_sales'] ; 
+               $total_company_sales = $total_company_sales + $item['company_sales'] ;          
+               $final_total = $final_total + $item['final_total'] ;  
+        endforeach;         
+        ?>
+        
     </tbody>
+    <tfoot>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><?php echo $total_cach_sales ?> </td>
+    <td><?php echo $total_bank_sales ?> </td>
+    <td><?php echo $total_premium_sales ?> </td>
+    <td><?php echo $total_dealer_sales ?> </td>
+    <td><?php echo $total_company_sales ?> </td>
+    <td><?php echo $final_total ?> </td>    
+    </tfoot>
 </table>

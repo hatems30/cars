@@ -11,10 +11,7 @@ class CarpageController extends Controller
 		$this->render('index');
 		
 	}
-
-
         
-
 	public function actionGetdata()
 	{
 	            $this->layout = false;
@@ -58,17 +55,25 @@ $car = $dataProvider->data[0]['car_id'];
 
 //----------------------------------------------المبيعات----------------------------------------
                  
-                 $sql1 = "SELECT
-salestbl.invoice_id,
-salestbl.invoice_date,
-employees.employee_name,
-customers.customer_name,
-salestbl.finance_type
-FROM
-salestbl
+                 $sql1 = "
+SELECT salestbl.invoice_id, salestbl.invoice_date, employees.employee_name, customers.customer_name as cust_name , salestbl.finance_type as sales_type
+FROM salestbl
 INNER JOIN employees ON salestbl.employee_id = employees.employee_id
 INNER JOIN customers ON salestbl.customer_id = customers.customer_id
-where salestbl.car_id = $car";    
+where  salestbl.car_id = $car       
+UNION
+SELECT companysalestbl.invoice_id, companysalestbl.invoice_date, employees.employee_name, companiestbl.company_name as cust_name , 'شركات' as sales_type
+FROM companysalestbl
+INNER JOIN employees ON companysalestbl.employee_id = employees.employee_id
+INNER JOIN companiestbl ON companysalestbl.company_id = companiestbl.company_id
+where  companysalestbl.car_id = $car       
+UNION
+SELECT dealersalestbl.invoice_id, dealersalestbl.invoice_date, employees.employee_name, dealerstbl.dealer_name as cust_name , 'تجاري' as sales_type
+FROM dealersalestbl
+INNER JOIN employees ON dealersalestbl.employee_id = employees.employee_id
+INNER JOIN dealerstbl ON dealersalestbl.dealer_id = dealerstbl.dealer_id
+where  dealersalestbl.car_id = $car";
+ 
                  $dataProvider1=new CSqlDataProvider($sql1, 
                             array(
                            'keyField' => 'invoice_id',

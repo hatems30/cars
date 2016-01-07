@@ -98,10 +98,6 @@ class SalestblController extends Controller
 	public function actionCreate()
 	{
 		$model=new Salestbl;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Salestbl']))
 		{
                         $rnd =time().rand(0,9999);                       //customer image

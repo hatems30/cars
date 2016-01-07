@@ -346,7 +346,7 @@
              $(function(){    
                  
                  $('#Salestbl_discount').on('change',function(){                                                 
-                    document.getElementById('Salestbl_final_price').value =  $('#Salestbl_car_price').val() - (($('#Salestbl_discount').val()/100)*$('#Salestbl_car_price').val());    
+                    document.getElementById('Salestbl_final_price').value =  $('#Salestbl_car_price').val() - $('#Salestbl_discount').val();    
                     
                  });
                  

@@ -123,7 +123,7 @@ class Carstbl extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($id)
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
@@ -138,7 +138,7 @@ class Carstbl extends CActiveRecord
 		$criteria->compare('car_year',$this->car_year,true);
 		$criteria->compare('chass_no',$this->chass_no,true);
 		$criteria->compare('motor_no',$this->motor_no,true);
-		$criteria->compare('branch_id',$this->branch_id);
+		$criteria->compare('branch_id',$id);
 		$criteria->compare('store_id',$this->store_id);
 		$criteria->compare('supplier_id',$this->supplier_id);
 		$criteria->compare('add_date',$this->add_date,true);

@@ -78,6 +78,7 @@
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=dealerstbl/admin&view=admin"><b>عملاء البيع التجاري</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=traffictbl/admin&view=admin"><b>وحدات المرور</b></a></li>
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=mcenterstbl/admin&view=admin"><b>مراكز الصيانة</b></a></li>
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=noticestbl/admin&view=admin"><b>اشعارات</b></a></li>
           </ul>            
         </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Data</b><span class="caret"></span></a>            
@@ -112,8 +113,9 @@
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Holdsreport/view"><b>تقرير الحجوزات </b></a></li>            
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=employeesalesreport/view"><b>تقرير مبيعات Sales </b></a></li>   
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=buyreport/view"><b>تقرير السيارت المستلمة  </b></a></li> 
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=allsalesreport/view"><b>تقرير باجمالي المبيعات خلال فترة</b></a></li> 
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=fullsalesreport/view"><b>احصائية باجمالي المبيعات</b></a></li> 
-            
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Carlicensereport/view"><b>تقرير بالتراخيص</b></a></li>                                     
           </ul>            
         </li>  
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Customer Service</b><span class="caret"></span></a>            

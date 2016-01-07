@@ -36,9 +36,13 @@ $('.search-form form').submit(function(){
                <div class="col-sm-6" dir =rtl> <?php echo CHtml::link('<i class="fa fa-plus"></i> '.Yii::t('data','Create'),array('create'), array('class' => 'btn btn-default','href' => 'sss',)); ?></div>
            </div>
            </div>
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php 
+$user = Yii::app()->user->username;
+$user_data = User::model()->findByAttributes(array('username'=>$user));
+$id = $user_data['branch_id'];
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'carstbl-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->search($id),
 	'filter'=>$model,
 	'columns'=>array(
 		'car_id',
