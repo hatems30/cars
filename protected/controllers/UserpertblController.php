@@ -95,12 +95,10 @@ class UserpertblController extends Controller
 		{
 			$model->attributes=$_POST['Userpertbl'];
 			if($model->save())
-				$this->redirect(array('admin'));
+				$this->redirect(array('view','id'=>$model->per_id));
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array('model'=>$model,));
 	}
 
 	/**
