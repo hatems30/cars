@@ -33,13 +33,15 @@ $('.search-form form').submit(function(){
            </div>
            </div>
 <?php 
+/*
 $user = Yii::app()->user->username;
 $user_data = User::model()->findByAttributes(array('username'=>$user));
 $id = $user_data['id'];
-
+*/
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'userpertbl-grid',
-	'dataProvider'=>$model->search($id),
+	//'dataProvider'=>$model->search($id),
+        'dataProvider'=>$model->search($_REQUEST['id']),
 	//'filter'=>$model,
 	'columns'=>array(
 		'per_id',
