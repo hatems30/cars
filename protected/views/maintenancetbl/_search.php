@@ -22,8 +22,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'customer_name'); ?>
-		<?php echo $form->textField($model,'customer_name',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'branch_id'); ?>
+		<?php echo $form->textField($model,'branch_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'customer_id'); ?>
+		<?php echo $form->textField($model,'customer_id'); ?>
 	</div>
 
 	<div class="row">
@@ -47,8 +52,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'m_area'); ?>
-		<?php echo $form->textField($model,'m_area',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'employee_id'); ?>
+		<?php echo $form->textField($model,'employee_id'); ?>
 	</div>
 
 	<div class="row">

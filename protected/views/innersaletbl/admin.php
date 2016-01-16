@@ -32,7 +32,7 @@ $('.search-form form').submit(function(){
        <div class="panel panel-default">            
            <div class="panel-heading" dir =rtl>
                <div class="row">
-               <div class="col-sm-6"><b><font size="5" color="blue">التحويل بين الفروع</font></b></div>           
+               <div class="col-sm-7"><b><font size="5" color="blue">التحويل بين الفروع</font></b></div>           
                
            </div>
            </div>

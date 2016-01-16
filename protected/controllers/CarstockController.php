@@ -56,8 +56,8 @@ colors.color_name,
 carstbl.car_year,
 carstbl.chass_no,
 stores.store_name,
-carcode.sale_price,
-carcode.off_price,
+carstbl.sale_price,
+carstbl.off_price,
 carstbl.deposit_type,
 carstbl.deposit_name
 FROM

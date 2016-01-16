@@ -136,13 +136,27 @@ ORDER BY brands.brand_name , carmodel.model_name
                                          where carstbl.brand_id = $br_id and carstbl.model_id = $mo_id and carstbl.code_id = $co_id
                                          and companysalestbl.branch_id=$id and companysalestbl.invoice_date < '$date_from' ";
                       $all_company_sales_first = Yii::app()->db->createCommand($sql_company_sales_first)->queryAll();  
-                      $company_sales_first = count($all_company_sales_first);                                            
+                      $company_sales_first = count($all_company_sales_first);  
+                      
+                      $sql_inner_out_sales_first = "SELECT carstbl.brand_id, carstbl.model_id, carstbl.code_id
+                                         FROM carstbl INNER JOIN innersaletbl ON innersaletbl.car_id = carstbl.car_id 
+                                         where carstbl.brand_id = $br_id and carstbl.model_id = $mo_id and carstbl.code_id = $co_id 
+                                        and innersaletbl.from_branch_id = $id and innersaletbl.trs_date > '$date_from' and innersaletbl.trs_date < '$date_to' ";
+                      $all_inner_out_sales_first = Yii::app()->db->createCommand($sql_inner_out_sales_first)->queryAll();  
+                      $inner_out_sales_first = count($all_inner_out_sales_first); 
+                      
+                      $sql_inner_in_sales_first = "SELECT carstbl.brand_id, carstbl.model_id, carstbl.code_id
+                                         FROM carstbl INNER JOIN innersaletbl ON innersaletbl.car_id = carstbl.car_id 
+                                         where carstbl.brand_id = $br_id and carstbl.model_id = $mo_id and carstbl.code_id = $co_id 
+                                        and innersaletbl.to_branch_id = $id and innersaletbl.trs_date > '$date_from' and innersaletbl.trs_date < '$date_to' ";
+                      $all_inner_in_sales_first = Yii::app()->db->createCommand($sql_inner_in_sales_first)->queryAll();  
+                      $inner_in_sales_first = count($all_inner_in_sales_first);                       
 
 //------------------------------------------------------------------------------------
                       $sql_total_in = "SELECT carstbl.brand_id, carstbl.model_id, carstbl.code_id 
                                          FROM carstbl
                                          where carstbl.brand_id = $br_id and carstbl.model_id = $mo_id and carstbl.code_id = $co_id
-                                               and carstbl.branch_id = $id and carstbl.add_date > '$date_from' and carstbl.add_date < '$date_to' ";
+                                               and carstbl.branch_id = $id and carstbl.add_date >= '$date_from' and carstbl.add_date <= '$date_to' ";
                       $all_total_in = Yii::app()->db->createCommand($sql_total_in)->queryAll(); 
                       $total_in = count($all_total_in);                      
                                 
@@ -179,19 +193,36 @@ ORDER BY brands.brand_name , carmodel.model_name
                                          where carstbl.brand_id = $br_id and carstbl.model_id = $mo_id and carstbl.code_id = $co_id 
                                         and companysalestbl.branch_id = $id and companysalestbl.invoice_date > '$date_from' and companysalestbl.invoice_date < '$date_to' ";
                       $all_company_sales = Yii::app()->db->createCommand($sql_company_sales)->queryAll();  
-                      $company_sales = count($all_company_sales);  
+                      $company_sales = count($all_company_sales);
+                      
+                      $sql_inner_out_sales = "SELECT carstbl.brand_id, carstbl.model_id, carstbl.code_id
+                                         FROM carstbl INNER JOIN innersaletbl ON innersaletbl.car_id = carstbl.car_id 
+                                         where carstbl.brand_id = $br_id and carstbl.model_id = $mo_id and carstbl.code_id = $co_id 
+                                        and innersaletbl.from_branch_id = $id and innersaletbl.trs_date > '$date_from' and innersaletbl.trs_date < '$date_to' ";
+                      $all_inner_out_sales = Yii::app()->db->createCommand($sql_inner_out_sales)->queryAll();  
+                      $inner_out_sales = count($all_inner_out_sales); 
+                      
+                      $sql_inner_in_sales = "SELECT carstbl.brand_id, carstbl.model_id, carstbl.code_id
+                                         FROM carstbl INNER JOIN innersaletbl ON innersaletbl.car_id = carstbl.car_id 
+                                         where carstbl.brand_id = $br_id and carstbl.model_id = $mo_id and carstbl.code_id = $co_id 
+                                        and innersaletbl.to_branch_id = $id and innersaletbl.trs_date > '$date_from' and innersaletbl.trs_date < '$date_to' ";
+                      $all_inner_in_sales = Yii::app()->db->createCommand($sql_inner_in_sales)->queryAll();  
+                      $inner_in_sales = count($all_inner_in_sales);                       
+                      
 
                       $params[$k]['brand_name']= $all[$k]['brand_name'];
                       $params[$k]['model_name']= $all[$k]['model_name'];
                       $params[$k]['code_name']= $all[$k]['code_name'];                       
-                      $params[$k]['first_total']= ($total_in_first) - ($cach_sales_first + $bank_sales_first + $premium_sales_first + $dealer_sales_first + $company_sales_first);                      
+                      $params[$k]['first_total']= ($total_in_first + $inner_in_sales_first ) - ($cach_sales_first + $bank_sales_first + $premium_sales_first + $dealer_sales_first + $company_sales_first + $inner_in_sales_first);                      
                       $params[$k]['total_in']= $total_in ;
+                      $params[$k]['inner_in_sales']= $inner_in_sales ;
                       $params[$k]['cach_sales']= $cach_sales ;
                       $params[$k]['bank_sales']= $bank_sales ;
                       $params[$k]['premium_sales']= $premium_sales ;
                       $params[$k]['dealer_sales']= $dealer_sales ;
                       $params[$k]['company_sales']= $company_sales ;
-                      $params[$k]['final_total']= ($params[$k]['first_total'] + $total_in) - ($cach_sales + $bank_sales + $premium_sales + $dealer_sales + $company_sales);
+                      $params[$k]['inner_out_sales']= $inner_out_sales ;
+                      $params[$k]['final_total']= ($params[$k]['first_total'] + $total_in + $inner_in_sales ) - ($cach_sales + $bank_sales + $premium_sales + $dealer_sales + $company_sales + $inner_out_sales);
                     }                    
                     $this->render('getdata',array('params' => $params));                   	      
         }

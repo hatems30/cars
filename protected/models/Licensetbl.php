@@ -104,14 +104,14 @@ class Licensetbl extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($id)
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('License_id',$this->License_id);
-		$criteria->compare('branch_id',$this->branch_id);
+		$criteria->compare('branch_id',$id);
 		$criteria->compare('car_id',$this->car_id);
 		$criteria->compare('employee_id',$this->employee_id);
 		$criteria->compare('traffic_id',$this->traffic_id);

@@ -95,7 +95,7 @@ class MaintenancetblController extends Controller
 		{
 			$model->attributes=$_POST['Maintenancetbl'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->m_hold_id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
@@ -119,7 +119,7 @@ class MaintenancetblController extends Controller
 		{
 			$model->attributes=$_POST['Maintenancetbl'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->m_hold_id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(

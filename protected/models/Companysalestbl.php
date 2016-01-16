@@ -47,6 +47,7 @@ class Companysalestbl extends CActiveRecord
                         array('final_price','safe'),
                         array('image','safe'),                      
                         array('image', 'length', 'max'=>255, 'on'=>'insert,update'),
+                        array('price', 'checkprice', 'on'=>'insert,update'),  
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('invoice_id, invoice_date, branch_id, employee_id, car_id, price, company_id, notes', 'safe', 'on'=>'search'),
@@ -56,6 +57,15 @@ class Companysalestbl extends CActiveRecord
 	/**
 	 * @return array relational rules.
 	 */
+        public function checkprice($attribute)                
+        {   
+            $tmp = Carstbl::model()->findByAttributes(array('car_id'=>$this->car_id),'sale_price');                          
+               if ( $tmp['sale_price'] > $this->price )
+                  {
+                    $this->addError($attribute,'عفوا السعر اقل من سعر البيع');
+                  }                                      
+        } 
+        
 	public function relations()
 	{
 		// NOTE: you may need to adjust the relation name and the related

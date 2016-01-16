@@ -75,8 +75,7 @@ class Salestbl extends CActiveRecord
         
         public function checkprice($attribute)                
         {   
-            $tmp_code = Carstbl::model()->findByAttributes(array('car_id'=>$this->car_id),'code_id');    
-            $tmp = Carcode::model()->findByAttributes(array('code_id'=>$tmp_code['code_id']),'sale_price');            
+            $tmp = Carstbl::model()->findByAttributes(array('car_id'=>$this->car_id),'sale_price');                          
                if ( $tmp['sale_price'] > $this->car_price )
                   {
                     $this->addError($attribute,'عفوا السعر اقل من سعر البيع');

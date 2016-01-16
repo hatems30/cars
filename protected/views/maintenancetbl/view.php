@@ -23,12 +23,13 @@ $this->menu=array(
 	'attributes'=>array(
 		'm_hold_id',
 		'm_hold_date',
-		'customer_name',
+		'branch_id',
+		'customer_id',
 		'car_data',
 		'm_type',
 		'm_center_id',
 		'm_date',
-		'm_area',
+		'employee_id',
 		'notes',
 	),
 )); ?>

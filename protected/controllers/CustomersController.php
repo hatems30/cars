@@ -43,7 +43,7 @@ class CustomersController extends Controller
                         {
                             return array(
                                         array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                                              'actions' => array('create', 'update', 'admin', 'delete', 'view'),
+                                              'actions' => array('create', 'update', 'admin', 'delete', 'view' , 'getcars' ),
                                               'users' => array('@'),),
                                         array('deny', // deny all users
                                               'users' => array('*'),),
@@ -75,10 +75,38 @@ class CustomersController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		$this->render('view',array('model'=>$this->loadModel($id),));
 	}
+        
+        public function actionGetcars()
+	{        
+            
+          
+                $this->layout = false;
+	        $id = $_REQUEST['id'];   
+            $params =array();
+                $sql="
+SELECT brands.brand_name, carmodel.model_name, carcode.code_name, carstbl.chass_no, salestbl.invoice_id, salestbl.invoice_date, salestbl.finance_type, salestbl.customer_id
+FROM salestbl
+INNER JOIN carstbl ON salestbl.car_id = carstbl.car_id
+INNER JOIN brands ON carstbl.brand_id = brands.brand_id
+INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id AND carmodel.model_id = carstbl.model_id
+INNER JOIN carcode ON carcode.brand_id = brands.brand_id AND carcode.model_id = carmodel.model_id AND carstbl.code_id = carcode.code_id 
+where customer_id = $id
+";                
+                
+                    $all=Yii::app()->db->createCommand($sql)->queryAll();                     
+                    foreach ($all as $k=>$v)
+                    {
+                      $params[$k]['brand_name']= $all[$k]['brand_name']; 
+                      $params[$k]['model_name']= $all[$k]['model_name']; 
+                      $params[$k]['code_name']= $all[$k]['code_name'];                                             
+                      $params[$k]['chass_no']= $all[$k]['chass_no'];   
+                      $params[$k]['finance_type']= $all[$k]['finance_type'];                                                  
+                    }                    
+                    $this->render('getcars',array('params' => $params));                
+	}  
+        
 
 	/**
 	 * Creates a new model.

@@ -115,7 +115,9 @@
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=buyreport/view"><b>تقرير السيارت المستلمة  </b></a></li> 
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=allsalesreport/view"><b>تقرير باجمالي المبيعات خلال فترة</b></a></li> 
             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=fullsalesreport/view"><b>احصائية باجمالي المبيعات</b></a></li> 
-            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Carlicensereport/view"><b>تقرير بالتراخيص</b></a></li>                                     
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Carlicensereport/view"><b>تقرير بالتراخيص</b></a></li>  
+            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Innersalesreport/view"><b>تقرير بالتحويلات بين الفروع</b></a></li>  
+            
           </ul>            
         </li>  
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Customer Service</b><span class="caret"></span></a>            

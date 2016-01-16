@@ -82,7 +82,8 @@ brands.brand_name,
 carmodel.model_name,
 carcode.code_name,
 carstbl.chass_no,
-salestbl.car_price
+salestbl.car_price , 
+customers.mobile
 FROM
 salestbl
 INNER JOIN employees ON salestbl.employee_id = employees.employee_id
@@ -94,6 +95,7 @@ INNER JOIN carcode ON carcode.brand_id = brands.brand_id AND carcode.model_id = 
 where 
 salestbl.branch_id = $id and 
 salestbl.invoice_date >= '$date_from' and salestbl.invoice_date <= '$date_to'
+    
 UNION
 SELECT
 companysalestbl.invoice_id,
@@ -105,7 +107,8 @@ brands.brand_name,
 carmodel.model_name,
 carcode.code_name,
 carstbl.chass_no,
-companysalestbl.price
+companysalestbl.price,
+'' as mobile
 FROM
 companysalestbl
 INNER JOIN carstbl ON companysalestbl.car_id = carstbl.car_id
@@ -129,7 +132,8 @@ brands.brand_name,
 carmodel.model_name,
 carcode.code_name,
 carstbl.chass_no,
-dealersalestbl.price
+dealersalestbl.price,
+'' as mobile
 FROM
 dealersalestbl
 INNER JOIN carstbl ON dealersalestbl.car_id = carstbl.car_id
@@ -141,6 +145,31 @@ INNER JOIN employees ON dealersalestbl.employee_id = employees.employee_id
 where
 dealersalestbl.branch_id = $id and 
 dealersalestbl.invoice_date >= '$date_from' and dealersalestbl.invoice_date <= '$date_to'
+
+union
+SELECT
+innersaletbl.trs_id as invoice_id ,
+innersaletbl.trs_date as invoice_date ,
+'inner' as sales_type ,
+branchs.branch_name ,
+employees.employee_name,
+brands.brand_name,
+carmodel.model_name,
+carcode.code_name,
+carstbl.chass_no,
+innersaletbl.price,
+'' as mobile
+FROM
+innersaletbl
+INNER JOIN carstbl ON innersaletbl.car_id = carstbl.car_id
+INNER JOIN employees ON innersaletbl.employee_id = employees.employee_id
+INNER JOIN branchs ON innersaletbl.to_branch_id = branchs.branch_id
+INNER JOIN brands ON carstbl.brand_id = brands.brand_id
+INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id AND carmodel.model_id = carstbl.model_id
+INNER JOIN carcode ON carcode.brand_id = brands.brand_id AND carcode.model_id = carmodel.model_id AND carstbl.code_id = carcode.code_id
+where
+innersaletbl.from_branch_id = $id and 
+innersaletbl.trs_date >= '$date_from' and innersaletbl.trs_date <= '$date_to'
 order by 2
 ";                                                                  
                     $all=Yii::app()->db->createCommand($sql)->queryAll();                     
@@ -156,6 +185,7 @@ order by 2
                       $params[$k]['code_name']= $all[$k]['code_name'];                                             
                       $params[$k]['chass_no']= $all[$k]['chass_no'];   
                       $params[$k]['car_price']= $all[$k]['car_price'];      
+                      $params[$k]['mobile']= $all[$k]['mobile'];  
                       
                     }                    
                     $this->render('getdata',array('params' => $params));                   	      

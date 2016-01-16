@@ -2,7 +2,7 @@
 <div class="panel panel-default">
     <div class="panel-heading" dir =rtl>
         <div class="row">
-            <div class="col-sm-8"><b><font size="5" color="blue">تقرير التراخيص</font></b></div>                          
+            <div class="col-sm-7"><b><font size="5" color="blue">تقرير التراخيص</font></b></div>                          
         </div>
     </div>
     <div class="panel-body">

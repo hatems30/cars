@@ -165,6 +165,23 @@
 		<?php echo $form->error($model,'off_price'); ?>
                 </div>
 	</div>
+                                      
+        	<div class="row">
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'sale_price'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->textField($model,'sale_price',array("class"=>"form-control")); ?>
+		<?php echo $form->error($model,'sale_price'); ?>
+                </div>
+                <div class ="col-sm-3">
+		<?php echo $form->labelEx($model,'car_factor'); ?>
+                </div>
+                <div class ="col-sm-3" dir =rtl>
+		<?php echo $form->textField($model,'car_factor' ,array("class"=>"form-control") ); ?>
+		<?php echo $form->error($model,'car_factor'); ?>
+                </div>
+	</div>                                      
                                         
   <?php
                 }}
