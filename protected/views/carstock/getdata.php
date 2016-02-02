@@ -49,6 +49,8 @@ if($branch==$emps['branch_id'])
                      array('name'=>'اللون', 'type' => 'raw' , 'value'=> '$data[\'color_name\']'),  
                      array('name'=>'السنة', 'type' => 'raw' , 'value'=> '$data[\'car_year\']'),  
                      array('name'=>'الشاسيه', 'type' => 'raw' , 'value'=> '$data[\'chass_no\']'),                       
+                     array('name'=>'سعر البيع', 'type' => 'raw' , 'value'=> '$data[\'sale_price\']'),                     
+                     array('name'=>'السعر الرسمي', 'type' => 'raw' , 'value'=> '$data[\'off_price\']'),        
                     ),         
 ));  
      
