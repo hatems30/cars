@@ -73,13 +73,16 @@
           $(function(){
           $('#mybutton').on('click',function(){
               
-           //alert ($('#branchs').val());
-                          
+               //$('html, body').css("cursor", "wait");                       
               $.ajax({                  
                   url: "<?php echo Yii::app()->request->baseUrl; ?>/index.php?r=Carstock/Getdata",
                   data:{"id":$('#branchs').val() , "brand_id":$('#brands').val() ,"model_id":$('#carmodels').val() },
                   method:'POST',
-                  success:function(data){$('#ajax').html(data);}                 
+                  success:function(data)
+                                       {
+                                           $('#ajax').html(data);
+                                           $('html, body').css("cursor", "auto");                                       
+                                       }                 
               });
           })
       });   

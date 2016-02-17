@@ -44,7 +44,8 @@ class Dealersalestbl extends CActiveRecord
                         array('confirm_stat','safe'),
                         array('discount','safe'), 
                         array('final_price','safe'),     
-                        array('price', 'checkprice', 'on'=>'insert,update'),  
+                        array('price', 'checkprice', 'on'=>'insert,update'),
+                        array('invoice_date', 'checkdate', 'on'=>'insert,update'),  
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('invoice_id, invoice_date, branch_id, employee_id, dealer_id, car_id, price, notes', 'safe', 'on'=>'search'),
@@ -62,6 +63,14 @@ class Dealersalestbl extends CActiveRecord
                     $this->addError($attribute,'عفوا السعر اقل من سعر البيع');
                   }                                      
         } 
+        public function checkdate($attribute)                
+        {   
+            $tmp = Carstbl::model()->findByAttributes(array('car_id'=>$this->car_id),'add_date');                          
+               if ( $tmp['add_date'] > $this->invoice_date)
+                  {
+                    $this->addError($attribute,'عفوا تاريخ البيع قبل تاريخ الاضافة');
+                  }                                      
+        }          
         
 	public function relations()
 	{

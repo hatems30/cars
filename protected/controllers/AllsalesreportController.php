@@ -83,7 +83,8 @@ carmodel.model_name,
 carcode.code_name,
 carstbl.chass_no,
 salestbl.car_price , 
-customers.mobile
+customers.mobile,
+salestbl.discount
 FROM
 salestbl
 INNER JOIN employees ON salestbl.employee_id = employees.employee_id
@@ -108,7 +109,8 @@ carmodel.model_name,
 carcode.code_name,
 carstbl.chass_no,
 companysalestbl.price,
-'' as mobile
+'' as mobile,
+companysalestbl.discount
 FROM
 companysalestbl
 INNER JOIN carstbl ON companysalestbl.car_id = carstbl.car_id
@@ -133,7 +135,8 @@ carmodel.model_name,
 carcode.code_name,
 carstbl.chass_no,
 dealersalestbl.price,
-'' as mobile
+'' as mobile ,
+dealersalestbl.discount
 FROM
 dealersalestbl
 INNER JOIN carstbl ON dealersalestbl.car_id = carstbl.car_id
@@ -158,7 +161,8 @@ carmodel.model_name,
 carcode.code_name,
 carstbl.chass_no,
 innersaletbl.price,
-'' as mobile
+'' as mobile,
+'0' as discount
 FROM
 innersaletbl
 INNER JOIN carstbl ON innersaletbl.car_id = carstbl.car_id
@@ -185,6 +189,7 @@ order by 2
                       $params[$k]['code_name']= $all[$k]['code_name'];                                             
                       $params[$k]['chass_no']= $all[$k]['chass_no'];   
                       $params[$k]['car_price']= $all[$k]['car_price'];      
+                      $params[$k]['discount']= $all[$k]['discount'];      
                       $params[$k]['mobile']= $all[$k]['mobile'];  
                       
                     }                    

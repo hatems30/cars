@@ -45,7 +45,67 @@ class CarstockController extends Controller
             $this->layout = false;
 		$id = $_REQUEST['id'];            
                 
-
+// -------------------
+                
+                $sql = "delete from carstocktbl";
+                yii::app()->db->createCommand($sql)->execute();
+                
+                $sql="SELECT
+carstbl.car_id,
+brands.brand_name,
+carmodel.model_name,
+carcode.code_name,
+carstbl.car_year,
+carstbl.chass_no,
+carstbl.off_price,
+carstbl.sale_price,
+colors.color_name
+FROM
+carstbl
+INNER JOIN brands ON carstbl.brand_id = brands.brand_id
+INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id AND carmodel.model_id = carstbl.model_id
+INNER JOIN carcode ON carcode.brand_id = brands.brand_id AND carcode.model_id = carmodel.model_id AND carstbl.code_id = carcode.code_id
+INNER JOIN colors ON carstbl.color_id = colors.color_id
+WHERE 
+carstbl.branch_id = $id and 
+carstbl.car_id not in 
+(
+SELECT salestbl.car_id from salestbl 
+UNION select dealersalestbl.car_id from dealersalestbl
+UNION select companysalestbl.car_id from companysalestbl
+UNION select innersaletbl.car_id from innersaletbl 
+UNION select holdtbl.car_id from holdtbl 
+)
+";                                    
+                    $all=Yii::app()->db->createCommand($sql)->queryAll();                 
+                    foreach ($all as $k=>$v)
+                    {
+                       $carid = $all[$k]['car_id'] ;
+                       $chassno = $all[$k]['chass_no'] ;
+                       $saleprice = $all[$k]['sale_price'] ;
+                       $offprice = $all[$k]['off_price'] ;
+                       $sql_insert = "insert into carstocktbl(car_id , chass_no , sale_price , off_price) values ($carid , $chassno , $saleprice , $offprice )";
+                       yii::app()->db->createCommand($sql_insert)->execute();
+                    }                       
+$sql_inner = "SELECT DISTINCT innersaletbl.car_id from innersaletbl where innersaletbl.car_id not in (SELECT salestbl.car_id from salestbl UNION select dealersalestbl.car_id from dealersalestbl UNION select companysalestbl.car_id from companysalestbl) ";     
+                    $all_inner=Yii::app()->db->createCommand($sql_inner)->queryAll();                 
+                    foreach ($all_inner as $k1=>$v1)
+                    {
+                        $carid = $all_inner[$k1]['car_id'] ; 
+                        $sql = "SELECT if ((select innersaletbl.to_branch_id from innersaletbl where trs_id in (select MAX(innersaletbl.trs_id) from innersaletbl where car_id = $carid GROUP BY car_id))= $id , (SELECT  carstbl.chass_no from carstbl where carstbl.car_id = $carid LIMIT 1) , 'false') as 'chass_no' ";
+                        $all_dtl =Yii::app()->db->createCommand($sql)->queryAll();                          
+                          if ($all_dtl[0]['chass_no'] != 'false')
+                          {
+                            $carid = 00 ;
+                            $chassno = $all_dtl[0]['chass_no'] ;
+                            $saleprice = 00 ;
+                            $offprice = 00 ;
+                            $sql_insert = "insert into carstocktbl(car_id , chass_no , sale_price , off_price) values ($carid , $chassno , $saleprice , $offprice )";
+                            yii::app()->db->createCommand($sql_insert)->execute();
+                          }                             
+                    }                
+                
+//-------------------------                
                 $sql1="SELECT
 carstbl.car_id,
 brands.brand_name,
@@ -67,38 +127,20 @@ INNER JOIN carmodel ON carmodel.brand_id = brands.brand_id AND carstbl.model_id 
 INNER JOIN carcode ON carcode.brand_id = brands.brand_id AND carcode.model_id = carmodel.model_id AND carstbl.code_id = carcode.code_id
 INNER JOIN colors ON carstbl.color_id = colors.color_id
 INNER JOIN stores ON carstbl.store_id = stores.store_id 
+where carstbl.chass_no in (select carstocktbl.chass_no from carstocktbl)";                
 
-where carstbl.branch_id=$id
-   
-and carstbl.car_id not in (select car_id from salestbl) 
-and carstbl.car_id not in (select car_id from dealersalestbl) 
-and carstbl.car_id not in (select car_id from companysalestbl)
-and carstbl.car_id not in (select car_id from holdtbl)
-and carstbl.car_id not in (select car_id from innersaletbl where innersaletbl.from_branch_id = $id)";
                 
-$sql2="or carstbl.car_id in (SELECT innersaletbl.car_id FROM innersaletbl INNER JOIN carstbl ON innersaletbl.car_id = carstbl.car_id
-where innersaletbl.to_branch_id = $id
-and carstbl.car_id not in (select car_id from salestbl) 
-and carstbl.car_id not in (select car_id from dealersalestbl) 
-and carstbl.car_id not in (select car_id from companysalestbl)
-and carstbl.car_id not in (select car_id from holdtbl)
-and carstbl.car_id not in (select car_id from innersaletbl where innersaletbl.from_branch_id = $id))";                
-
                   if(!empty($_REQUEST['brand_id']))
                     {
-                     $sql1.=" and carstbl.brand_id ='{$_REQUEST['brand_id']}'";
-                     $sql2.=" and carstbl.brand_id ='{$_REQUEST['brand_id']}'";
-                    }                
-                              
+                     $sql1.=" and carstbl.brand_id ='{$_REQUEST['brand_id']}'";                     
+                    }                                              
                  if(!empty($_REQUEST['model_id']))
                     {
-                     $sql1.=" and carstbl.model_id ='{$_REQUEST['model_id']}'";
-                     $sql2.=" and carstbl.model_id ='{$_REQUEST['model_id']}'";
-                    } 
-                   
+                     $sql1.=" and carstbl.model_id ='{$_REQUEST['model_id']}'";                     
+                    }   
+         
                     
-                    $sql = $sql1.$sql2;    
-                    $all=Yii::app()->db->createCommand($sql)->queryAll();                 
+                    $all1=Yii::app()->db->createCommand($sql1)->queryAll();                 
                     $params=array();
                     if (isset($_REQUEST['id']))
                     {
@@ -112,9 +154,9 @@ and carstbl.car_id not in (select car_id from innersaletbl where innersaletbl.fr
                     {
                     $params['model_id']= $_REQUEST['model_id'];
                     }                    
-                $dataProvider=new CSqlDataProvider($sql, array(
+                $dataProvider=new CSqlDataProvider($sql1, array(
                             'keyField' => 'car_id',
-                             'totalItemCount'=>count($all),
+                             'totalItemCount'=>count($all1),
                             'sort'=>array('attributes'=>array('car_id',),),
                          //   'enablePagination'=>true,
                             'pagination'=>array('pageSize'=>10,'params'=>$params),

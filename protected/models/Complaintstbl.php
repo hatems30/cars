@@ -35,7 +35,7 @@ class Complaintstbl extends CActiveRecord
 		return array(
 			array('complaint_date, employee_id, customer_name, complaint_detail', 'required'),
 			array('employee_id', 'numerical', 'integerOnly'=>true),
-			array('customer_name, car_data, complaint_detail, notes', 'length', 'max'=>255),
+			array('customer_name, car_data, notes', 'length', 'max'=>255),
                         array('branch_id , telephone , email , old_car','safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

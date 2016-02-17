@@ -63,6 +63,7 @@ class Salestbl extends CActiveRecord
                         array('image', 'length', 'max'=>255, 'on'=>'insert,update'),                
                         array('car_price', 'checkprice', 'on'=>'insert,update'),  
                         array('bank_id', 'checkbank', 'on'=>'insert,update'),  
+                        array('invoice_date', 'checkdate', 'on'=>'insert,update'),  
                         array('discount','safe'), 
                         array('final_price','safe'), 
                     
@@ -81,7 +82,15 @@ class Salestbl extends CActiveRecord
                     $this->addError($attribute,'عفوا السعر اقل من سعر البيع');
                   }                                      
         } 
-                public function checkbank($attribute)                
+        public function checkdate($attribute)                
+        {   
+            $tmp = Carstbl::model()->findByAttributes(array('car_id'=>$this->car_id),'add_date');                          
+               if ( $tmp['add_date'] > $this->invoice_date)
+                  {
+                    $this->addError($attribute,'عفوا تاريخ البيع قبل تاريخ الاضافة');
+                  }                                      
+        }         
+        public function checkbank($attribute)                
         {   
             $tmp_code = Carstbl::model()->findByAttributes(array('car_id'=>$this->car_id),'code_id');    
             $tmp = Carcode::model()->findByAttributes(array('code_id'=>$tmp_code['code_id']),'sale_price');  

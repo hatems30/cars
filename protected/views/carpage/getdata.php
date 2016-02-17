@@ -16,6 +16,21 @@
 ));
 
      ?>
+<?php  
+     $this->widget('zii.widgets.grid.CGridView', array(
+    'dataProvider'=>$dataProvider4,
+    'columns'=>array( 
+
+                     array('name'=>'م', 'type' => 'raw' , 'value'=> '$data[\'trs_id\']'), 
+                     array('name'=>'تاريخ', 'type' => 'raw' , 'value'=> '$data[\'trs_date\']'), 
+                     array('name'=>'الفرع المحول منه', 'type' => 'raw' , 'value'=> '$data[\'from_name\']'), 
+                     array('name'=>'الفرع المحول اليه', 'type' => 'raw' , 'value'=> '$data[\'to_name\']'),                                                                                             
+                     array('name'=>'الموظف', 'type' => 'raw' , 'value'=> '$data[\'employee_name\']'),
+                    ),         
+      
+));
+
+     ?>
 
 <?php  
      $this->widget('zii.widgets.grid.CGridView', array(
@@ -63,3 +78,4 @@
 ));
 
      ?>
+

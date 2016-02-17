@@ -14,6 +14,8 @@
         <th style ="text-align:center; font-size: medium">الكود</th> 
         <th style ="text-align:center; font-size: medium">رقم الشاسيه</th> 
         <th style ="text-align:center; font-size: medium">سعر البيع</th>          
+        <th style ="text-align:center; font-size: medium">الخصم</th>    
+        <th style ="text-align:center; font-size: medium">السعر بعد الخصم</th>  
     </thead>
     <tbody class="detail" id="all_rows">
         
@@ -50,6 +52,8 @@
             <td style="color: red "><?php echo $item['code_name'] ?></td>            
             <td style="color: red "><?php echo $item['chass_no'] ?></td>  
             <td><?php echo $item['car_price'] ?></td>                                                                                                                  
+            <td><?php echo $item['discount'] ?></td>   
+            <td><?php echo $item['car_price'] - $item['discount'] ?></td> 
         </tr>
         <?php   
                     $no = $no + 1 ;

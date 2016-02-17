@@ -134,8 +134,38 @@ where licensetbl.car_id = $car";
     'pagination'=>array(
         'pageSize'=>1000,
     ),
-));                 
-                $this->render('getdata',array('dataProvider' => $dataProvider,'dataProvider1' => $dataProvider1 ,'dataProvider2' => $dataProvider2 , 'dataProvider3' => $dataProvider3));
+));        
+
+//------------------------------------------------------------التحويل-------------------------------------------                 
+
+                 $sql4 = "SELECT
+innersaletbl.trs_id,
+innersaletbl.trs_date,
+from_br.branch_name as from_name ,
+to_br.branch_name as to_name ,
+employees.employee_name
+FROM
+innersaletbl
+INNER JOIN branchs as from_br ON innersaletbl.from_branch_id = from_br.branch_id       
+INNER JOIN branchs as to_br ON innersaletbl.to_branch_id = to_br.branch_id 
+INNER JOIN employees  ON innersaletbl.employee_id = employees.employee_id
+where innersaletbl.car_id = 395
+ORDER BY innersaletbl.trs_date
+";    
+                 $dataProvider4=new CSqlDataProvider($sql4, 
+                            array(
+                           'keyField' => 'trs_id',
+                           // 'totalItemCount'=>$count,
+                            'sort'=>array(
+                            'attributes'=>array(
+                            'innersalestbl.trs_id',
+        ),
+    ),
+    'pagination'=>array(
+        'pageSize'=>1000,
+    ),
+));                   
+                $this->render('getdata',array('dataProvider' => $dataProvider,'dataProvider1' => $dataProvider1 ,'dataProvider2' => $dataProvider2 , 'dataProvider3' => $dataProvider3 , 'dataProvider4' => $dataProvider4 ));
                 		
 	}
         
