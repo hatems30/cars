@@ -153,7 +153,7 @@ where carstbl.chass_no in (select carstocktbl.chass_no from carstocktbl)";
                 $dataProvider=new CSqlDataProvider($sql, array(
                             'keyField' => 'car_id',
                              'totalItemCount'=>count($all),
-                            'sort'=>array('attributes'=>array('car_id',),),
+                            'sort'=>array('attributes'=>array('call_id',),),
                          //   'enablePagination'=>true,
                             'pagination'=>array('pageSize'=>10,'params'=>$params),
 ));                

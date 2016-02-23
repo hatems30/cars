@@ -22,7 +22,7 @@
                     </div>
                     <div class ="col-sm-3">
                          <?php                                                           
-                             $models = Suppliers::model()->findall();
+                             $models = Suppliers::model()->findall(array('order' => 'supplier_name'));
                              $list = CHtml::listData($models, 'supplier_id', 'supplier_name');
                              echo CHtml::dropDownList('suppliers', $models, $list,array( 'class'=>'form-control' , 'empty'=>'')); 
                           ?>

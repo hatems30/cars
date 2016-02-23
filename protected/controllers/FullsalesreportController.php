@@ -69,7 +69,12 @@ class FullsalesreportController extends Controller
 	            $this->layout = false;
 		    $id = $_REQUEST['id'];    
                     $date_from = $_REQUEST['date_from'];
-                    $date_to = $_REQUEST['date_to'];                                 
+                    $date_to = $_REQUEST['date_to']; 
+                    if ($date_to < $date_from)
+                    {
+                        echo "<div class='col-sm-8'><b><font size='5' color='red'>عفوا تاريخ البداية اكبر من تاريخ النهاية</font></b></div>";
+                        exit;
+                    }
                     $sql = "SELECT
 carstbl.brand_id ,
 carstbl.model_id ,

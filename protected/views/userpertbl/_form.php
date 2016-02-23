@@ -22,7 +22,7 @@
        <div class="panel panel-default"> 
                        <div class="panel-heading">
                <div class="row">
-               <div class="col-sm-7"><b><font size="5" color="blue">بيانات السيارات</font></b></div>           
+               <div class="col-sm-7"><b><font size="5" color="blue">الصلاحيات </font></b></div>           
                
            </div>
            </div>
@@ -43,7 +43,7 @@
 		<?php echo $form->labelEx($model,'controller_id'); ?>
                 </div>
                 <div class ="col-md-3" dir="rtl">
-		<?php echo $form->dropDownList($model,'controller_id', CHtml::listData(Controllers::model()->findAll(), 'controller_id', 'controller_form_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
+		<?php echo $form->dropDownList($model,'controller_id', CHtml::listData(Controllers::model()->findAll(array('order' => 'controller_form_name')), 'controller_id', 'controller_form_name'),array("class"=>"form-control" , 'empty'=>''));  ?>
 		<?php echo $form->error($model,'controller_id'); ?>
                 </div>
 	</div>

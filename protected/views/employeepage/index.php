@@ -73,7 +73,7 @@
 </div>
         <span id ="ajax">
           
-        </span>]
+        </span>
         </div>
   </div>
 <script type ="text/javascript">

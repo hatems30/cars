@@ -32,7 +32,7 @@ class CarlicensereportController extends Controller
                         {
                             return array(
                                         array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                                              'actions' => array('create', 'update', 'admin', 'delete', 'view','Getdata'),
+                                              'actions' => array('create', 'update', 'admin', 'delete', 'view','Getdata' , 'Getemployees'),
                                               'users' => array('@'),),
                                         array('deny', // deny all users
                                               'users' => array('*'),),
@@ -63,7 +63,16 @@ class CarlicensereportController extends Controller
 		$this->render('index');
 		
 	}
-
+       public function actionGetemployees()
+	{        	                  
+              $this->layout = false;
+              $id = $_REQUEST['id'];                          
+              $sql="SELECT employee_id , employee_name from employees where branch_id = $id and employee_type = 'تراخيص' ";                
+              $connection=Yii::app()->db;
+              $command=$connection->createCommand($sql);
+              $data = $command->queryAll($sql);
+              $this->render('getemployees',array('data' => $data));	
+	} 
 	public function actionGetdata()
 	{
 	            $this->layout = false;

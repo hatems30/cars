@@ -16,6 +16,14 @@ class CarpageController extends Controller
 	{
 	            $this->layout = false;
                     $id = $_REQUEST['id'];                                                                     
+                    $car_row = Carstbl::model()->findByAttributes(array('chass_no'=>$id));
+                    $car = $car_row['car_id'];
+                    if (empty($car))
+                    {
+                         echo "<div class='col-sm-8'><b><font size='5' color='red'>عفوا لا توجد سيارة بهذا الرقم</font></b></div>";
+                        exit;
+                    }
+
                  $sql = "SELECT
 carstbl.car_id,
 brands.brand_name,
@@ -51,8 +59,6 @@ where carstbl.chass_no = $id";
 //echo "<pre>";
 //print_r($dataProvider->data[0]['car_id']);
 //exit;
-$car = $dataProvider->data[0]['car_id'];
-
 //----------------------------------------------المبيعات----------------------------------------
                  
                  $sql1 = "
@@ -149,7 +155,7 @@ innersaletbl
 INNER JOIN branchs as from_br ON innersaletbl.from_branch_id = from_br.branch_id       
 INNER JOIN branchs as to_br ON innersaletbl.to_branch_id = to_br.branch_id 
 INNER JOIN employees  ON innersaletbl.employee_id = employees.employee_id
-where innersaletbl.car_id = 395
+where innersaletbl.car_id = $car
 ORDER BY innersaletbl.trs_date
 ";    
                  $dataProvider4=new CSqlDataProvider($sql4, 

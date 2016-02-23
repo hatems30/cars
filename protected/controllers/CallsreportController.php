@@ -71,9 +71,7 @@ class CallsreportController extends Controller
                     $id = $_REQUEST['id'];                    
                     $empid = $_REQUEST['employee_id'];                    
                     $start_date = $_REQUEST['start_date'];                
-                    $end_date = $_REQUEST['end_date'];                   
-                //$count=Yii::app()->db->createCommand('SELECT COUNT(*) FROM carstbl')->queryScalar();
-                
+                    $end_date = $_REQUEST['end_date'];                                                        
                  $sql = "SELECT
 callstbl.call_id,
 callstbl.call_date,
@@ -98,18 +96,40 @@ and callstbl.call_date >= '$start_date' and callstbl.call_date <= '$end_date' ";
                     {
                      $sql.=" and callstbl.service_employee_id ='{$_REQUEST['employee_id']}'";                     
                     }  
+                 if(!empty($_REQUEST['how_id']))
+                    {
+                     $sql.=" and callstbl.how_id ='{$_REQUEST['how_id']}'";                     
+                    }        
+                    $all=Yii::app()->db->createCommand($sql)->queryAll(); 
+                    $params=array();
+                    if (isset($_REQUEST['id']))
+                    {
+                       $params['id']= $_REQUEST['id'];
+                    }
+                    if (isset($_REQUEST['employee_id']))
+                    {
+                       $params['employee_id']= $_REQUEST['employee_id'];
+                    }
+                    if (isset($_REQUEST['how_id']))
+                    {
+                       $params['how_id']= $_REQUEST['how_id'];
+                    }                    
+                    if (isset($_REQUEST['start_date']))
+                    {
+                       $params['start_date']= $_REQUEST['start_date'];
+                    }
+                    if (isset($_REQUEST['end_date']))
+                    {
+                       $params['end_date']= $_REQUEST['end_date'];
+                    }                    
+                    
                 $dataProvider=new CSqlDataProvider($sql, 
                             array(
                            'keyField' => 'call_id',
-                           // 'totalItemCount'=>$count,
+                           'totalItemCount'=>count($all),
                             'sort'=>array(
-                            'attributes'=>array(
-                            'callstbl.call_id',
-        ),
-    ),
-    'pagination'=>array(
-        'pageSize'=>1000,
-    ),
+                            'attributes'=>array('callstbl.call_id',),),
+                            'pagination'=>array('pageSize'=>10,'params'=>$params),
 ));
                 
 

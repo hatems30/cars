@@ -88,19 +88,32 @@ and complaintstbl.complaint_date >= '$start_date' and complaintstbl.complaint_da
                     {
                      $sql.=" and complaintstbl.employee_id ='{$_REQUEST['employee_id']}'";                     
                     } 
+                    $all=Yii::app()->db->createCommand($sql)->queryAll();
+                    $params=array();
+                    if (isset($_REQUEST['id']))
+                    {
+                       $params['id']= $_REQUEST['id'];
+                    }
+                    if (isset($_REQUEST['employee_id']))
+                    {
+                        $params['employee_id']= $_REQUEST['employee_id'];
+                    }
+                    if (isset($_REQUEST['start_date']))
+                    {
+                       $params['start_date']= $_REQUEST['start_date'];
+                    } 
+                    if (isset($_REQUEST['end_date']))
+                    {
+                       $params['end_date']= $_REQUEST['end_date'];
+                    }    
                 $dataProvider=new CSqlDataProvider($sql, 
                             array(
                            'keyField' => 'complaint_id',
-                           // 'totalItemCount'=>$count,
+                            'totalItemCount'=>count($all),
                             'sort'=>array(
                             'attributes'=>array(
-                            'complaintstbl.complaint_id',
-        ),
-    ),
-    'pagination'=>array(
-        'pageSize'=>10,
-    ),
-));
+                            'complaintstbl.complaint_id',),),
+                            'pagination'=>array('pageSize'=>10,'params'=>$params),));
                 
             
                 $this->render('getdata',array('dataProvider' => $dataProvider));

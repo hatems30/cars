@@ -1,10 +1,7 @@
 <?php  
      $this->widget('zii.widgets.grid.CGridView', array(
     'dataProvider'=>$dataProvider,
-    'columns'=>array( 
-  
-         
-        
+    'columns'=>array(                   
                      array('name'=>'مسلسل', 'type' => 'raw' , 'value'=> '$data[\'call_id\']'), 
                      array('name'=>'التاريخ', 'type' => 'raw' , 'value'=> '$data[\'call_date\']'), 
                      array('name'=>'الوقت', 'type' => 'raw' , 'value'=> '$data[\'call_time\']'), 
